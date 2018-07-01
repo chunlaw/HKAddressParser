@@ -2,6 +2,7 @@
 import sys
 import bisect
 import json
+import unicodedata
 
 class Phases:
 
@@ -30,27 +31,29 @@ class Phases:
             return self._phases[idx-1]
         return None
 
+    def parseAddress(self, addr):
+        result = []
+        start = 0
+        while ( start < len( addr ) ):
+            end = len(addr)
+            while ( start < end ):
+                string = addr[start:end]
+                token = self.searchPhase(string)
+                if token == None:
+                    end = end - 1 
+                else:
+                    result += [token]
+                    break
+            if (end == start):
+                if ( len(result) > 0 and result[-1][1] == '?' ):
+                    result[-1][0] += addr[start]
+                else:
+                    result += [ [addr[start], '?'] ]
+            start += len(string)
+        return result
+
 
 if __name__ == "__main__":
     ph = Phases()
     address = sys.argv[1]
-    start = 0
-    result = []
-    while ( start < len( address ) ):
-        end = len(address)
-        while ( start < end ):
-            string = address[start:end]
-            token = ph.searchPhase(string)
-            if token == None:
-                end = end - 1 
-            else:
-                result += [token]
-                break
-        if (end == start):
-            if ( len(result) > 0 and result[-1][1] == '?' ):
-                result[-1][0] += address[start]
-            else:
-                result += [ [address[start], '?'] ]
-        start += len(string)
-    
-    print json.dumps(result, ensure_ascii=False)
+    print json.dumps(ph.parseAddress(address), ensure_ascii=False)
