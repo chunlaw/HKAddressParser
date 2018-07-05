@@ -7,16 +7,16 @@ import unicodedata
 class Phases:
 
     def __init__(self):
-        text = open("data/district_only.chi", "r").read()
+        text = open("data/district_only.chi", "r", encoding='utf8').read()
         districts = text.split("\n")
         phases = [ (district, "d") for district in districts ]
-        text = open("data/street_only.chi", "r").read()
+        text = open("data/street_only.chi", "r", encoding='utf8').read()
         streets = text.split("\n")
         phases += [ ( street, "s" ) for street in streets ]
-        text = open("data/building_only.chi", "r").read()
+        text = open("data/building_only.chi", "r", encoding='utf8').read()
         buildings = text.split("\n")
         phases += [ ( building, "b" ) for building in buildings ]
-        text = open("data/estate_only.chi", "r").read()
+        text = open("data/estate_only.chi", "r", encoding='utf8').read()
         estates = text.split("\n")
         phases += [ ( estate, 'e')  for estate in estates ]
         phases.sort( key=lambda t: t[0] )
@@ -56,4 +56,4 @@ class Phases:
 if __name__ == "__main__":
     ph = Phases()
     address = sys.argv[1]
-    print json.dumps(ph.parseAddress(address), ensure_ascii=False)
+    print (json.dumps(ph.parseAddress(address), ensure_ascii=False))
