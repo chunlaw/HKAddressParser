@@ -7,18 +7,24 @@ import unicodedata
 class Phases:
 
     def __init__(self):
-        text = open("data/district_only.chi", "r", encoding='utf8').read()
-        districts = text.split("\n")
-        phases = [ (district, "d") for district in districts ]
-        text = open("data/street_only.chi", "r", encoding='utf8').read()
+        text = open("data/region.chi", "r", encoding='utf8').read()
+        regions = text.split("\n")
+        phases = [ (region, "r") for region in regions ]
+        text = open("data/subDistrict.chi", "r", encoding='utf8').read()
+        subDistricts = text.split("\n")
+        phases += [ (subDistrict, "sd") for subDistrict in subDistricts ]
+        text = open("data/street.chi", "r", encoding='utf8').read()
         streets = text.split("\n")
         phases += [ ( street, "s" ) for street in streets ]
-        text = open("data/building_only.chi", "r", encoding='utf8').read()
+        text = open("data/building.chi", "r", encoding='utf8').read()
         buildings = text.split("\n")
         phases += [ ( building, "b" ) for building in buildings ]
-        text = open("data/estate_only.chi", "r", encoding='utf8').read()
+        text = open("data/estate.chi", "r", encoding='utf8').read()
         estates = text.split("\n")
         phases += [ ( estate, 'e')  for estate in estates ]
+        text = open("data/village.chi", "r", encoding='utf8').read()
+        villages = text.split("\n")
+        phases += [ ( village, 'v')  for village in villages ]
         phases.sort( key=lambda t: t[0] )
         self._phases = phases
         self._keys = [phase[0] for phase in phases]
