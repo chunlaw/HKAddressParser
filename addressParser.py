@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 
 class Phrases:
 
+    # Initialize dictionary
     def __init__(self):
         text = open("data/region.chi", "r", encoding='utf8').read()
         regions = text.split("\n")
@@ -60,6 +61,7 @@ class Phrases:
             start += len(string)
         return result
 
+    # Get Results from OGCIO API
     def queryOGCIO(self, RequestAddress, n):
         base_url = "https://www.als.ogcio.gov.hk/lookup?"
         r = session.get(base_url, 
@@ -72,6 +74,7 @@ class Phrases:
         return(json.loads(str(soup))['SuggestedAddress'])
 
 class Utilities:
+
     def flattenJSON(self, data, json_items):
         for key, value in data.items():
             if hasattr(value, 'items'):
@@ -80,11 +83,6 @@ class Utilities:
                 d = {key: value}
                 json_items.update(d)
         return json_items
-
-        
-                
-            
-            
 
 if __name__ == "__main__":
     # Tokenizer
@@ -102,13 +100,15 @@ if __name__ == "__main__":
     }
 
     parsedchunks = ph.parseAddress(address)
+    print("Input String:")
     print(parsedchunks)
     print("================================================================================================")
+    print("Possible Results")
 
     possibleResults = []
 
     for idx, address in enumerate(ph.queryOGCIO(address,200)): # Loop OGCIO results
-        addr = address['Address']['PremisesAddress']['ChiPremisesAddress']
+        addr = address['Address']['PremisesAddress']['ChiPremisesAddress'] # Focus on Chinese Address
         flatOGCIO = (ut.flattenJSON(addr, {}))
         match = {}
         for key, value in flatOGCIO.items():
@@ -116,12 +116,12 @@ if __name__ == "__main__":
                 if (p[0] == value):
                     d = {key: value}
                     match.update(d)
-        
         flatOGCIO['matchCount'] = len(match)
         possibleResults.append(flatOGCIO)
 
-    matchCounts = [x['matchCount'] for x in possibleResults]
-    
+    matchCounts = [x['matchCount'] for x in possibleResults] # Get Maximum no of matches
+
+    # Print possible results with maximum matches
     for r in possibleResults:
         if (r['matchCount'] == max(matchCounts)):
             print(r)
