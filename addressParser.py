@@ -11,7 +11,6 @@ class Phrases:
     def __init__(self):
         text = open("data/region.chi", "r", encoding='utf8').read()
         regions = text.split("\n")
-<<<<<<< HEAD
         phrases = [ (region, "r") for region in regions ]
         text = open("data/subDistrict.chi", "r", encoding='utf8').read()
         subDistricts = text.split("\n")
@@ -31,27 +30,6 @@ class Phrases:
         phrases.sort( key=lambda t: t[0] )
         self._phrases = phrases
         self._keys = [phrase[0] for phrase in phrases]
-=======
-        phases = [ (region, "r") for region in regions ]
-        text = open("data/subDistrict.chi", "r", encoding='utf8').read()
-        subDistricts = text.split("\n")
-        phases += [ (subDistrict, "sd") for subDistrict in subDistricts ]
-        text = open("data/street.chi", "r", encoding='utf8').read()
-        streets = text.split("\n")
-        phases += [ ( street, "s" ) for street in streets ]
-        text = open("data/building.chi", "r", encoding='utf8').read()
-        buildings = text.split("\n")
-        phases += [ ( building, "b" ) for building in buildings ]
-        text = open("data/estate.chi", "r", encoding='utf8').read()
-        estates = text.split("\n")
-        phases += [ ( estate, 'e')  for estate in estates ]
-        text = open("data/village.chi", "r", encoding='utf8').read()
-        villages = text.split("\n")
-        phases += [ ( village, 'v')  for village in villages ]
-        phases.sort( key=lambda t: t[0] )
-        self._phases = phases
-        self._keys = [phase[0] for phase in phases]
->>>>>>> 9cdf66650c37488ce826d62a68d490ab83ed6821
 
     def searchPhrase(self, string):
         idx = bisect.bisect_right ( self._keys, string )
@@ -93,12 +71,27 @@ class Phrases:
         soup = BeautifulSoup(r.content, 'html.parser')
         return(json.loads(str(soup))['SuggestedAddress'])
 
+class Utilities:
+    def flattenJSON(self, data, json_items):
+        for key, value in data.items():
+            if hasattr(value, 'items'):
+                self.flattenJSON(value, json_items)
+            else:
+                d = {key: value}
+                json_items.update(d)
+        return json_items
+
+        
+                
+            
+            
 
 if __name__ == "__main__":
     # Tokenizer
     ph = Phrases()
+    ut = Utilities()
+
     address = sys.argv[1]
-    print (json.dumps(ph.parseAddress(address), ensure_ascii=False))
 
     # Look for OGCIO Result
     session = requests.Session()
@@ -108,7 +101,29 @@ if __name__ == "__main__":
         "Accept-Encoding":"gzip"
     }
 
-    for p in ph.parseAddress(address):
-        if (p[1] == 'b'):
-            for addr in (ph.queryOGCIO(p[0],10)): # Return 10 results
-                print(addr)
+    parsedchunks = ph.parseAddress(address)
+    print(parsedchunks)
+    print("================================================================================================")
+
+    possibleResults = []
+
+    for idx, address in enumerate(ph.queryOGCIO(address,200)): # Loop OGCIO results
+        addr = address['Address']['PremisesAddress']['ChiPremisesAddress']
+        flatOGCIO = (ut.flattenJSON(addr, {}))
+        match = {}
+        for key, value in flatOGCIO.items():
+            for p in reversed(parsedchunks):
+                if (p[0] == value):
+                    d = {key: value}
+                    match.update(d)
+        
+        flatOGCIO['matchCount'] = len(match)
+        possibleResults.append(flatOGCIO)
+
+    matchCounts = [x['matchCount'] for x in possibleResults]
+    
+    for r in possibleResults:
+        if (r['matchCount'] == max(matchCounts)):
+            print(r)
+    
+        
