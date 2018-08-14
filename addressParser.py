@@ -36,6 +36,8 @@ class Phrases:
         self._initMatched = None
         self._initResidue = None
 
+        self._tempResult = None
+
     def searchPhrase(self, string, phrases):
         keys = [i[1] for i in phrases]
         idx = bisect.bisect_right (keys, string)
@@ -56,15 +58,11 @@ class Phrases:
         return None
 
 
-    def findMatch(self, inputList):
+    def findMatch(self):
         result = []
-        print("findmatch")
-        print(inputList)
-
         for c in self._initMatched:
-            result += [item for item in inputList if item[1] == c[0]]
-        print(result)
-        print(''.join(c[1] for c in list(set(inputList) - set(result))))
+            result += [item for item in ph._tempResult if item[1] == c[0]]
+        ph._tempResult = list(set(ph._tempResult) - set(result))
         return result
 
     def parseAddress(self, a):
@@ -160,7 +158,9 @@ if __name__ == "__main__":
     possibleResults = []
 
     for idx, chiAddr in enumerate(ph.getOGCIOchi(address)):
-        parsedresult = ph.findMatch(chiAddr) + ph.parseAddress(chiAddr)
+        ph._tempResult = chiAddr
+        parsedresult = ph.findMatch()
+        parsedresult += ph.parseAddress(ph._tempResult)
         possibleResults.append([p for p in parsedresult if type(p) is tuple])
     matchCounts = max([len(x) for x in possibleResults])
 
