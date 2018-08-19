@@ -1,169 +1,139 @@
-# -*- coding: utf-8 -*-
 import sys
 import bisect
 import json
 import unicodedata
 import requests
+import re
 from bs4 import BeautifulSoup
 
-class Phrases:
 
-    # Initialize dictionary
-    def __init__(self):
-        text = open("data/region.chi", "r", encoding='utf8').read()
-        regions = text.split("\n")
-        phrases = [ (region, "r") for region in regions ]
-        text = open("data/subDistrict.chi", "r", encoding='utf8').read()
-        subDistricts = text.split("\n")
-        phrases += [ (subDistrict, "sd") for subDistrict in subDistricts ]
-        text = open("data/street.chi", "r", encoding='utf8').read()
-        streets = text.split("\n")
-        phrases += [ ( street, "s" ) for street in streets ]
-        text = open("data/building.chi", "r", encoding='utf8').read()
-        buildings = text.split("\n")
-        phrases += [ ( building, "b" ) for building in buildings ]
-        text = open("data/estate.chi", "r", encoding='utf8').read()
-        estates = text.split("\n")
-        phrases += [ ( estate, 'e')  for estate in estates ]
-        text = open("data/village.chi", "r", encoding='utf8').read()
-        villages = text.split("\n")
-        phrases += [ ( village, 'v')  for village in villages ]
-        phrases.sort( key=lambda t: t[0] )
+class Address:
+    def __init__(self, addr):
+        self._inputAddr = addr
+        self._OGCIOresult = self.queryOGCIO(addr, 200)
+        self._result = self.flattenOGCIO()
+        
 
-        self._phrases = phrases
-        self._keys = [phrase[0] for phrase in phrases]
+    def flattenOGCIO(self):
+        flat_result = []
+        for addr in self._OGCIOresult:
+            temp = {
+                'chi': self.flattenJSON(addr['Address']['PremisesAddress']['ChiPremisesAddress'], []),
+                'eng': self.flattenJSON(addr['Address']['PremisesAddress']['EngPremisesAddress'], []),
+                'geo': addr['Address']['PremisesAddress']['GeospatialInformation']
+            }
+            flat_result.append(temp)
+        return(flat_result)
 
-        self._initMatched = None
-        self._initResidue = None
 
-        self._tempResult = None
+    def ParseAddress(self):
+        for idx, addr in enumerate(self._result):
+                self._tempOGIOAddr = addr['chi']
+                parsedResult = self.getChiAddress()
+                self._result[idx]['status'] = parsedResult
+                self._result[idx]['matched'] = len([p for p in parsedResult if type(p) is tuple])
 
+
+        maxCount = max([m['matched'] for m in self._result])
+
+        print("OGCIO Results: {}, Maximum match: {}".format(len(self._result), maxCount))
+        print("------------------------")
+        for idx, r in enumerate(self._result):
+            print(r['chi'])
+            # if r[idx]['matched'] == maxCount:
+            #     #temp_coord = [('Latitude', self._result[idx]['geo'][0]['Latitude']), ('Longitude', self._result[idx]['geo'][0]['Longitude'])]
+
+            #     print(r[idx]['chi'])
+            #     print("--- {} matched | {}".format(r[idx]['matched'], r[idx]['status']))
+            #     return(r[idx])
+        
+
+# class Phrases:
     def searchPhrase(self, string, phrases):
+        phrases.sort(key=lambda t: t[1])
         keys = [i[1] for i in phrases]
         idx = bisect.bisect_right (keys, string)
+        # print(string)
         if ( idx == 0 ):
             return None
         if ( string == phrases[idx-1][1] ):
+            # print("---")
+            # print(string)
+            # print("---")
+            self._tempOGIOAddr = [i for i in self._tempOGIOAddr if i[1] != string]
             return phrases[idx-1]
         return None
 
-    def searchPhrase0(self, string):
-        keys = self._keys
-        phrases = self._phrases
-        idx = bisect.bisect_right ( keys, string )
-        if ( idx == 0 ):
-            return None
-        if ( string == phrases[idx-1][0] ):
-            return phrases[idx-1]
-        return None
-
-
-    def findMatch(self):
-        result = []
-        for c in self._initMatched:
-            result += [item for item in ph._tempResult if item[1] == c[0]]
-        ph._tempResult = list(set(ph._tempResult) - set(result))
-        return result
-
-    def parseAddress(self, a):
-        result = []
-        start = 0
-        while ( start < len( self._initResidue ) ):
-            end = len(self._initResidue)
-            while ( start < end ):
-                string = self._initResidue[start:end]
-                token = self.searchPhrase(string, a)
-                if token == None:
-                    end = end - 1 
-                else:
-                    result += [token]
-                    break
-            if (end == start):
-                if ( len(result) > 0 and result[-1][1] == '?' ):
-                    result[-1][0] += self._initResidue[start]
-                else:
-                    result += [ [self._initResidue[start], '?'] ]
-            start += len(string)
-        return result
-
-    def parseAddress0(self, addr):
+    def getChiAddress(self):
+        addr = self._inputAddr
         result = []
         start = 0
         while ( start < len( addr ) ):
             end = len(addr)
             while ( start < end ):
                 string = addr[start:end]
-                token = self.searchPhrase0(string)
+                token = self.searchPhrase(string, self._tempOGIOAddr)
                 if token == None:
                     end = end - 1 
                 else:
                     result += [token]
                     break
             if (end == start):
-                if ( len(result) > 0 and result[-1][1] == '?' ):
-                    result[-1][0] += addr[start]
+                if ( len(result) > 0 and result[-1][0] == '?' ):
+                    result[-1][1] += addr[start]
                 else:
-                    result += [ [addr[start], '?'] ]
+                    result += [ ['?',addr[start]] ]
             start += len(string)
         return result
 
     # Get Results from OGCIO API
     def queryOGCIO(self, RequestAddress, n):
+        session = requests.Session()
+        headers = {
+            "Accept": "application/json",
+            "Accept-Language":"en,zh-Hant",
+            "Accept-Encoding":"gzip"
+        }  
         base_url = "https://www.als.ogcio.gov.hk/lookup?"
+
         r = session.get(base_url, 
                     headers = headers, 
                     params = {
                         "q": RequestAddress,
                         "n": n
                     })
+
         soup = BeautifulSoup(r.content, 'html.parser')
         return(json.loads(str(soup))['SuggestedAddress'])
 
-    def getOGCIOchi(self, request):
-        chiResults =[]
-        for addr in self.queryOGCIO(request,1): # Loop OGCIO results
-            chiResult = addr['Address']['PremisesAddress']['ChiPremisesAddress'] # Focus on Chinese Address
-            flat = (self.flattenJSON(chiResult, []))
-            flat.sort(key=lambda t: t[1])#, reverse=True)
-            chiResults.append(flat)
-        return chiResults
 
     def flattenJSON(self, data, json_items):
         for key, value in data.items():
-            if hasattr(value, 'items'):
+            if type(value) is dict:
                 self.flattenJSON(value, json_items)
+            elif type(value) is list:
+                for i in value:
+                    self.flattenJSON(i, json_items)
             else:
-                json_items.append((key, value))
+                if key == 'StreetName' or key == 'VillageName' or key == 'EstateName':
+                    #if re.search('\s[^A-z0-9,\s]', value):
+                    if re.search('[\u4e00-\u9fff]+', value):
+                        # print(value.split(" "))
+                        for idx, st in enumerate(value.split(" ")):
+                            json_items.append((key+str(idx+1), str(st)))
+                else:
+                    json_items.append((key, str(value)))
         return json_items
 
+
+
 if __name__ == "__main__":
-    ph = Phrases()
-    address = sys.argv[1]
+  
+    #ph = Phrases()
+    ad = Address(sys.argv[1])
 
-    # Look for OGCIO Result
-    session = requests.Session()
-    headers = {
-        "Accept": "application/json",
-        "Accept-Language":"en,zh-Hant",
-        "Accept-Encoding":"gzip"
-    }
+    ad.ParseAddress()
 
-    parsedchunks = ph.parseAddress0(address)
-    print("In-house result ----------------------------------------")
-    ph._initMatched = [p for p in parsedchunks if type(p) is tuple]
-    ph._initResidue = ''.join(c[0] for c in parsedchunks if type(c) is list)
     
-    print("Known : {} | Unknown : {}".format(ph._initMatched, ph._initResidue))
-    
-    possibleResults = []
-
-    for idx, chiAddr in enumerate(ph.getOGCIOchi(address)):
-        ph._tempResult = chiAddr
-        parsedresult = ph.findMatch()
-        parsedresult += ph.parseAddress(ph._tempResult)
-        possibleResults.append([p for p in parsedresult if type(p) is tuple])
-    matchCounts = max([len(x) for x in possibleResults])
-
-    for r in possibleResults:
-        if (len(r) == matchCounts):
-            print("{} matched |  {}".format(len(r), r))
+            
+            
