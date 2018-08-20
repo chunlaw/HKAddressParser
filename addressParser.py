@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 
 class Address:
     def __init__(self, addr):
-        self._inputAddr = addr
+        self._inputAddr = self.removeFloor(addr)
         self._OGCIOresult = self.queryOGCIO(addr, 200)
         self._result = self.flattenOGCIO()
         
@@ -38,15 +38,35 @@ class Address:
 
         print("OGCIO Results: {}, Maximum match: {}".format(len(self._result), maxCount))
         print("------------------------")
-        for idx, r in enumerate(self._result):
-            #print(r['chi'])
-            if r['matched'] == maxCount:
-                #temp_coord = [('Latitude', self._result[idx]['geo'][0]['Latitude']), ('Longitude', self._result[idx]['geo'][0]['Longitude'])]
 
-                print(r['chi'])
-                print("--- {} matched | {}".format(r['matched'], r['status']))
-                return(r)
+        for result in self._result:
+            result['level'] = ''
+            result['charlen'] = 0
+            for pair in result['status']:
+                if 'StreetName' in pair[0]:
+                    result['level'] = 'street'
+                    result['charlen'] += len(pair[1])
+                elif 'BuildingNoFrom' in pair[0] and result['level'] == 'street':
+                    result['level'] = 'streetNo'
+                    result['charlen'] += len(pair[1])
+                elif ('BuildingName' in pair[0] or 'VillageName' in pair[0] or 'EstateName' in pair[0]):
+                    result['charlen'] += len(pair[1])
+                    if result['level'] == '':
+                        result['level'] = 'building'
+                elif 'BlockDescriptor' in pair[0]:
+                    result['charlen'] += len(pair[1])
+        #print(self._result) 
+
+        sort_order = {"streetNo": 3, "building": 2, "street": 1, "": 0}
+        #self._result.sort(key=lambda x: (sort_order[x['level']], x['charlen']), reverse=True)
+        self._result.sort(key=lambda x: x['charlen'], reverse=True)
         
+        
+
+        for a in self._result:
+            print(a['status'] , a['level'], a['charlen'])
+
+        return self._result[0]
 
 # class Phrases:
     def searchPhrase(self, string, phrases):
@@ -116,7 +136,6 @@ class Address:
                     self.flattenJSON(i, json_items)
             else:
                 if key == 'StreetName' or key == 'VillageName' or key == 'EstateName':
-                    #if re.search('\s[^A-z0-9,\s]', value):
                     if re.search('[\u4e00-\u9fff]+', value):
                         # print(value.split(" "))
                         for idx, st in enumerate(value.split(" ")):
@@ -125,14 +144,20 @@ class Address:
                     json_items.append((key, str(value)))
         return json_items
 
+    def removeFloor(self, inputAddress):
+        return re.sub("([0-9A-z\-\s]+[樓層]|[0-9A-z號\-\s]+[舖鋪]|地[下庫]|平台).*", "", inputAddress)
 
 
 if __name__ == "__main__":
   
-    #ph = Phrases()
+    print(sys.argv[1])
     ad = Address(sys.argv[1])
+    
+    
+
 
     ad.ParseAddress()
+    print(ad._inputAddr)
 
     
             
