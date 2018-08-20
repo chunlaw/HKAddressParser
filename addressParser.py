@@ -39,13 +39,13 @@ class Address:
         print("OGCIO Results: {}, Maximum match: {}".format(len(self._result), maxCount))
         print("------------------------")
         for idx, r in enumerate(self._result):
-            print(r['chi'])
-            # if r[idx]['matched'] == maxCount:
-            #     #temp_coord = [('Latitude', self._result[idx]['geo'][0]['Latitude']), ('Longitude', self._result[idx]['geo'][0]['Longitude'])]
+            #print(r['chi'])
+            if r['matched'] == maxCount:
+                #temp_coord = [('Latitude', self._result[idx]['geo'][0]['Latitude']), ('Longitude', self._result[idx]['geo'][0]['Longitude'])]
 
-            #     print(r[idx]['chi'])
-            #     print("--- {} matched | {}".format(r[idx]['matched'], r[idx]['status']))
-            #     return(r[idx])
+                print(r['chi'])
+                print("--- {} matched | {}".format(r['matched'], r['status']))
+                return(r)
         
 
 # class Phrases:
