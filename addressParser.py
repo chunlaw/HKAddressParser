@@ -11,7 +11,10 @@ class Address:
     def __init__(self, addr):
         self._inputAddr = self.removeFloor(addr)
         self._OGCIOresult = self.queryOGCIO(addr, 200)
-        self._result = self.flattenOGCIO()
+        if self._OGCIOresult is not None:
+            self._result = self.flattenOGCIO()
+        else:
+            self._result = None
         
 
     def flattenOGCIO(self):
@@ -58,13 +61,14 @@ class Address:
         #print(self._result) 
 
         sort_order = {"streetNo": 3, "building": 2, "street": 1, "": 0}
-        #self._result.sort(key=lambda x: (sort_order[x['level']], x['charlen']), reverse=True)
-        self._result.sort(key=lambda x: x['charlen'], reverse=True)
+        self._result.sort(key=lambda x: (sort_order[x['level']], x['charlen']), reverse=True)
         
         
-
-        for a in self._result:
+        # print sorted result
+        for a in self._result[:3]:
             print(a['status'] , a['level'], a['charlen'])
+            print(a['chi'])
+        
 
         return self._result[0]
 
@@ -73,13 +77,9 @@ class Address:
         phrases.sort(key=lambda t: t[1])
         keys = [i[1] for i in phrases]
         idx = bisect.bisect_right (keys, string)
-        # print(string)
         if ( idx == 0 ):
             return None
         if ( string == phrases[idx-1][1] ):
-            # print("---")
-            # print(string)
-            # print("---")
             self._tempOGIOAddr = [i for i in self._tempOGIOAddr if i[1] != string]
             return phrases[idx-1]
         return None
@@ -124,7 +124,10 @@ class Address:
                     })
 
         soup = BeautifulSoup(r.content, 'html.parser')
-        return(json.loads(str(soup))['SuggestedAddress'])
+        if 'SuggestedAddress' in json.loads(str(soup)):
+            return(json.loads(str(soup))['SuggestedAddress'])
+        else:
+            return None
 
 
     def flattenJSON(self, data, json_items):
@@ -137,7 +140,6 @@ class Address:
             else:
                 if key == 'StreetName' or key == 'VillageName' or key == 'EstateName':
                     if re.search('[\u4e00-\u9fff]+', value):
-                        # print(value.split(" "))
                         for idx, st in enumerate(value.split(" ")):
                             json_items.append((key+str(idx+1), str(st)))
                 else:
@@ -153,11 +155,13 @@ if __name__ == "__main__":
     print(sys.argv[1])
     ad = Address(sys.argv[1])
     
+    if ad._result is not None:
+        ad.ParseAddress()
+        print(ad._inputAddr)
+    else:
+        print("No Result from OGCIO")
+
     
-
-
-    ad.ParseAddress()
-    print(ad._inputAddr)
 
     
             
