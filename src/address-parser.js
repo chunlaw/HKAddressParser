@@ -100,7 +100,6 @@ function keyMatch(key, keyName) {
 }
 
 function parseAddress(address, resultHash) {
-  log(`Going to look up ${address}`);
   for (const record of resultHash) {
     const searchParsedResult = search(address, record);
     const matchStatus = {
