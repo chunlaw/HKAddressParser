@@ -45,41 +45,47 @@
 </template>
 
 <script>
-  import AddressParser from './../../../src/address-parser';
-  export default {
-    data: () => ({
-      address: '銅鑼灣謝斐道488號',
-      count: 200,
-      results: []
-    }),
-    methods: {
-      async submit () {
-        this.results = [];
-        //const res = await fetch('http://localhost:8081/search/' + this.address);
-        const URL = `https://www.als.ogcio.gov.hk/lookup?q=${this.address}&n=${this.count}`;
-        const res = await fetch(URL, {
-          headers: {
-            Accept: 'application/json'
-          }
-        });
-        const data = await res.json();
-        this.results = await AddressParser.searchResult(this.address, data);
-      },
-      levelToString (level) {
-        switch (level) {
-          case 0: return '?';
-          case 1: return '街名';
-          case 2: return '大廈名/村名';
-          case 3: return '街道名稱';
+import AddressParser from "./../../../src/address-parser";
+export default {
+  data: () => ({
+    address: "銅鑼灣謝斐道488號",
+    count: 200,
+    results: []
+  }),
+  methods: {
+    async submit() {
+      this.results = [];
+      //const res = await fetch('http://localhost:8081/search/' + this.address);
+      const URL = `https://www.als.ogcio.gov.hk/lookup?q=${this.address}&n=${
+        this.count
+      }`;
+      const res = await fetch(URL, {
+        headers: {
+          Accept: "application/json"
         }
-        return '?';
+      });
+      const data = await res.json();
+      this.results = await AddressParser.searchResult(this.address, data);
+    },
+    levelToString(level) {
+      switch (level) {
+        case 0:
+          return "?";
+        case 1:
+          return "街名";
+        case 2:
+          return "大廈名/村名";
+        case 3:
+          return "街道名稱";
       }
+      return "?";
     }
   }
+};
 </script>
 
 <style>
 .form {
-  width: 80%
+  width: 80%;
 }
 </style>
