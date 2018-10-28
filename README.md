@@ -4,6 +4,19 @@ Based on database only, no machine learning and, why!?
 
 `python addressParser.py <Hong Kong address in Chinese>`
 
+## To start the web version of the app
+```
+cd web
+npm run serve
+```
+
+## To build the web version
+```
+cd web
+npm run build
+```
+
+
 追究屠城責任　結束一黨專政
 
 Mapping Sheet
