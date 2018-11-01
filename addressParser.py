@@ -5,12 +5,12 @@ import unicodedata
 import requests
 import re
 from bs4 import BeautifulSoup
-
+import ogcioUtil
 
 class Address:
     def __init__(self, addr):
         self._inputAddr = self.removeFloor(addr)
-        self._OGCIOresult = self.queryOGCIO(addr, 200)
+        self._OGCIOresult = self.queryOGCIO(addr, 20)
         if self._OGCIOresult is not None:
             self._result = self.flattenOGCIO()
         else:
@@ -19,55 +19,53 @@ class Address:
 
     def flattenOGCIO(self):
         flat_result = []
-        for addr in self._OGCIOresult:
+        for idx,addr in enumerate(self._OGCIOresult):
             temp = {
-                'chi': self.flattenJSON(addr['Address']['PremisesAddress']['ChiPremisesAddress'], []),
-                'eng': self.flattenJSON(addr['Address']['PremisesAddress']['EngPremisesAddress'], []),
-                'geo': addr['Address']['PremisesAddress']['GeospatialInformation']
+                'rank': idx,
+                'chi': addr['Address']['PremisesAddress']['ChiPremisesAddress'],
+                'eng': addr['Address']['PremisesAddress']['EngPremisesAddress'],
+                'geo': addr['Address']['PremisesAddress']['GeospatialInformation'],
             }
             flat_result.append(temp)
         return(flat_result)
 
 
     def ParseAddress(self):
-        for idx, addr in enumerate(self._result):
-                self._tempOGIOAddr = addr['chi']
-                parsedResult = self.getChiAddress()
-                self._result[idx]['status'] = parsedResult
-                self._result[idx]['matched'] = len([p for p in parsedResult if type(p) is tuple])
+        for (idx,aResult) in enumerate(self._result):
+            self._result[idx]['match'] = ogcioUtil.getSimilarityWithOGCIO(self._inputAddr, aResult['chi'])
 
 
-        maxCount = max([m['matched'] for m in self._result])
+        # maxCount = max([m['matched'] for m in self._result])
+        #
+        # print("OGCIO Results: {}, Maximum match: {}".format(len(self._result), maxCount))
+        # print("------------------------")
+        #
+        # for result in self._result:
+        #     result['level'] = ''
+        #     result['charlen'] = 0
+        #     for pair in result['status']:
+        #         if 'StreetName' in pair[0]:
+        #             result['level'] = 'street'
+        #             result['charlen'] += len(pair[1])
+        #         elif 'BuildingNoFrom' in pair[0] and result['level'] == 'street':
+        #             result['level'] = 'streetNo'
+        #             result['charlen'] += len(pair[1])
+        #         elif ('BuildingName' in pair[0] or 'VillageName' in pair[0] or 'EstateName' in pair[0]):
+        #             result['charlen'] += len(pair[1])
+        #             if result['level'] == '':
+        #                 result['level'] = 'building'
+        #         elif 'BlockDescriptor' in pair[0]:
+        #             result['charlen'] += len(pair[1])
+        # #print(self._result)
 
-        print("OGCIO Results: {}, Maximum match: {}".format(len(self._result), maxCount))
-        print("------------------------")
-
-        for result in self._result:
-            result['level'] = ''
-            result['charlen'] = 0
-            for pair in result['status']:
-                if 'StreetName' in pair[0]:
-                    result['level'] = 'street'
-                    result['charlen'] += len(pair[1])
-                elif 'BuildingNoFrom' in pair[0] and result['level'] == 'street':
-                    result['level'] = 'streetNo'
-                    result['charlen'] += len(pair[1])
-                elif ('BuildingName' in pair[0] or 'VillageName' in pair[0] or 'EstateName' in pair[0]):
-                    result['charlen'] += len(pair[1])
-                    if result['level'] == '':
-                        result['level'] = 'building'
-                elif 'BlockDescriptor' in pair[0]:
-                    result['charlen'] += len(pair[1])
-        #print(self._result) 
-
-        sort_order = {"streetNo": 3, "building": 2, "street": 1, "": 0}
-        self._result.sort(key=lambda x: (sort_order[x['level']], x['charlen']), reverse=True)
+        #sort_order = {"streetNo": 3, "building": 2, "street": 1, "": 0}
+        self._result.sort(key=lambda x: x['match'].score, reverse=True)
         
         
         # print sorted result
         for a in self._result[:3]:
-            print(a['status'] , a['level'], a['charlen'])
-            print(a['chi'])
+            print("=========")
+            print(a)
         
 
         return self._result[0]
