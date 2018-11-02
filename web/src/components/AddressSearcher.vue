@@ -61,7 +61,9 @@ export default {
       }`;
       const res = await fetch(URL, {
         headers: {
-          Accept: "application/json"
+          Accept: "application/json",
+          "Accept-Language":"en,zh-Hant",
+          "Accept-Encoding":"gzip"
         }
       });
       const data = await res.json();
