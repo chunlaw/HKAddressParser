@@ -28,12 +28,10 @@
 <script>
 import AddressParser from "./../../../src/address-parser";
 import SingleMatch from "./../components/SingleMatch";
-import BestMatch from "./../components/BestMatch";
 
 export default {
   components: {
-    SingleMatch,
-    BestMatch
+    SingleMatch
   },
   data: () => ({
     address: "",
