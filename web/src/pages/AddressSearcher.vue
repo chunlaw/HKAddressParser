@@ -5,38 +5,19 @@
       <v-text-field
         v-model="address"
         label="Address"
+        placeholder="e.g. 銅鑼灣謝斐道488號"
         required
       ></v-text-field>
 
-
-      <v-btn
-        @click="submit"
-      >
+      <v-btn @click="submit">
         Search
       </v-btn>
-      <template>
-       <div v-for="result in results">
 
-            <v-card>
-              <v-card-title primary-title>
-                <span class="grey--text">{{ 'Match: ' + levelToString(result.status.level) }}</span>
-              </v-card-title>
-              <v-card-title primary-title>
-                <span class="grey--text">{{ result.geo.Latitude + ":" + result.geo.Longitude }}</span>
-              </v-card-title>
-              <v-card-title primary-title>
 
-                <ul>
-                 <li v-for="value, index in result.chi">
-                   {{ index +":" + value }}
-                  </li>
-                  </ul>
-              </v-card-title>
+      <div v-for="(result, index) in results" :key="index">
+        <SingleMatch :result="result" :rank="index"/>
+      </div>
 
-              <br>
-            </v-card>
-        </div>
-      </template>
     </v-form>
 
 
@@ -46,9 +27,14 @@
 
 <script>
 import AddressParser from "./../../../src/address-parser";
+import SingleMatch from "./../components/SingleMatch";
+
 export default {
+  components: {
+    SingleMatch
+  },
   data: () => ({
-    address: "銅鑼灣謝斐道488號",
+    address: "",
     count: 200,
     results: []
   }),
@@ -62,13 +48,16 @@ export default {
       const res = await fetch(URL, {
         headers: {
           Accept: "application/json",
-          "Accept-Language":"en,zh-Hant",
-          "Accept-Encoding":"gzip"
+          "Accept-Language": "en,zh-Hant",
+          "Accept-Encoding": "gzip"
         }
       });
       const data = await res.json();
       this.results = await AddressParser.searchResult(this.address, data);
     },
+    /**
+     * Match the level from the parser to some meaningful information
+     */
     levelToString(level) {
       switch (level) {
         case 0:
