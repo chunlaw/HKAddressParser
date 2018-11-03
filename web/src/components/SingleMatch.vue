@@ -7,7 +7,10 @@
         <div class="grey--text">{{ result.geo.Latitude + "," + result.geo.Longitude }}</div>
       </div>
       <v-container grid-list-md text-xs-left>
-          <v-layout row wrap v-for="(value, key, index) in result.chi" :key="index" :class="index % 2 === 0 ? 'row-even': 'row-odd'">
+          <v-layout row wrap v-for="(value, key, index) in result.chi" :key="index"
+              :class="(index % 2 === 0 ? 'row-even': 'row-odd') + (isMatch(key)? ' matched': '')"
+          >
+
             <v-flex class="field-title" xs4>{{ key }}</v-flex>
             <v-flex xs8>{{ value }}</v-flex>
           </v-layout>
@@ -28,13 +31,18 @@ export default {
       status: Object,
       geo: Object,
       chi: Object,
-      eng: Object
+      eng: Object,
+      matches: Array
     }
   },
   data: () => ({}),
   methods: {
     levelToString: utils.levelToString,
-    fullChineseAddressFromResult: utils.fullChineseAddressFromResult
+    fullChineseAddressFromResult: utils.fullChineseAddressFromResult,
+    isMatch: function (key) {
+      return this.result.matches.indexOf(key) >= 0;
+    }
+
   }
 };
 </script>
@@ -54,5 +62,10 @@ export default {
 
 .row-even {
   background-color: #cdffff;
+}
+
+.matched {
+  color: red;
+  font-weight: bolder;
 }
 </style>
