@@ -102,34 +102,41 @@ function keyMatch(key, keyName) {
 function parseAddress(address, resultHash) {
   for (const record of resultHash) {
     const searchParsedResult = search(address, record);
-    const matchStatus = {
+    const matchScore = {
       level: -1,
       charlen: 0
     };
+    const matches = [];
     for (const { key, val } of searchParsedResult) {
       if (keyMatch(key, 'StreetName')) {
-        matchStatus.level = 1;
-        matchStatus.charlen += val.length;
-      } else if (keyMatch(key, 'BuildingNoFrom') && matchStatus.level === 1) {
-        matchStatus.level = 3;
-        matchStatus.charlen += val.length;
+        matchScore.level = 1;
+        matchScore.charlen += val.length;
+        matches.push('StreetName');
+      } else if (keyMatch(key, 'BuildingNoFrom') && matchScore.level === 1) {
+        matchScore.level = 3;
+        matchScore.charlen += val.length;
+        matches.push('BuildingNoFrom');
       } else if (keyMatch(key, 'BuildingName') || keyMatch(key, 'VillageName') || keyMatch(key, 'EstateName')) {
-        matchStatus.charlen += val.length;
-        if (matchStatus.level === -1) {
-          matchStatus.level = 2;
+        matchScore.charlen += val.length;
+        if (matchScore.level === -1) {
+          matchScore.level = 2;
         }
+        // remove the digit at the end
+        matches.push(key.replace(/\d+$/g, ''));
       } else if (keyMatch(key, 'BlockDescriptor')) {
-        matchStatus.charlen += val.length;
+        matchScore.charlen += val.length;
+        matches.push('BlockDescriptor');
       }
     }
 
-    record.status = matchStatus;
+    record.score = matchScore;
+    record.matches = matches;
   }
 
   resultHash = resultHash.sort((a, b) => {
-    return a.status.level !== b.status.level
-      ? b.status.level - a.status.level
-      : b.status.charlen - a.status.charlen;
+    return a.score.level !== b.score.level
+      ? b.score.level - a.score.level
+      : b.score.charlen - a.score.charlen;
   });
   return (resultHash.slice(0, 200));
 }

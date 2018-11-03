@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import AddressSearcher from './components/AddressSearcher'
+import AddressSearcher from './pages/AddressSearcher'
 
 export default {
   name: 'App',
