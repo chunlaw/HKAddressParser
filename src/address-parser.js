@@ -1,3 +1,5 @@
+import { dcDistrict } from './constants';
+
 /**
  * To parse the address from OGCIO. this file should be compatible with node.js and js running in browser
  *
@@ -13,7 +15,7 @@ function removeFloor(address) {
 function flattenJson(data, isChinese) {
   const result = {};
   for (const key of Object.keys(data)) {
-    const val = data[key];
+    let val = data[key];
     if (typeof (val) === 'object') {
       Object.assign(result, flattenJson(val, isChinese));
     } else if (typeof (val) === 'string') {
@@ -27,6 +29,9 @@ function flattenJson(data, isChinese) {
           result[key + (i + 1)] = tokens[i];
         }
       } else {
+        if(key == 'DcDistrict') {
+          val = dcDistrictMapping(val, isChinese);
+        } 
         result[key] = val;
       }
     }
@@ -141,6 +146,15 @@ function parseAddress(address, resultHash) {
   return (resultHash.slice(0, 200));
 }
 
+function dcDistrictMapping(val, isChinese) {
+  for (let district in dcDistrict) {
+    if (district === val) {
+      return isChinese? dcDistrict[district].chi : dcDistrict[district].eng;
+    } 
+  }
+  return isChinese? dcDistrict['invalid'].chi : dcDistrict['invalid'].eng;
+}
+
 /**
  * Standalone version of address parsing.
  * @param {*} address
@@ -153,6 +167,4 @@ async function searchResult(address, responseFromOGCIO) {
 }
 
 // node.js exports
-module.exports = {
-  searchResult
-};
+export default { searchResult };
