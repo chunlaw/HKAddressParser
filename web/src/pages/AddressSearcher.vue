@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-layout >
-     <v-form ref="form" class="form">
+     <v-form ref="form" class="form" @submit.prevent="submit">
       <v-text-field
         v-model="address"
         label="Address"
