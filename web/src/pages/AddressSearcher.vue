@@ -1,6 +1,9 @@
 <template>
   <v-container>
+    <ArcGISMap ref='topMap'/>
     <v-layout >
+     
+     
      <v-form ref="form" class="form" @submit.prevent="submit">
       <v-text-field
         v-model="address"
@@ -28,10 +31,12 @@
 <script>
 import AddressParser from "./../../../src/address-parser";
 import SingleMatch from "./../components/SingleMatch";
+import ArcGISMap from "./../components/ArcGISMap";
 
 export default {
   components: {
-    SingleMatch
+    SingleMatch,
+    ArcGISMap
   },
   data: () => ({
     address: "",
@@ -54,6 +59,8 @@ export default {
       });
       const data = await res.json();
       this.results = await AddressParser.searchResult(this.address, data);
+      await this.$refs.topMap.gotoLatLng(Number(this.results[0].geo.Latitude),
+                                         Number(this.results[0].geo.Longitude));
     },
     /**
      * Match the level from the parser to some meaningful information
