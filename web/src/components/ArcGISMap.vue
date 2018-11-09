@@ -13,7 +13,6 @@ import esriLoader from "esri-loader";
 import proj4 from "proj4";
 
 var arcgisUrl = "https://js.arcgis.com/3.20/";
-var tmpmap = 0;
 
 //ref:
 // https://blog.tiger-workshop.com/hk1980-grid-to-wgs84/
@@ -25,7 +24,7 @@ proj4.defs("EPSG:4326"  ,"+proj=longlat +datum=WGS84 +no_defs");
 export default{
     data: function(){
         return {
-            map : 0
+            //map : {}
         }
     },
 
@@ -97,14 +96,13 @@ export default{
                         maxZoom: 19
                     });
 
-                    this.map = [];
-
-
                     _map.addLayer(bLayer);
                     _map.addLayer(bLabelLayer);
 
-                    tmpmap = _map;
-                    //console.log("asdf", this.map);
+                    //FIXME: should I declare map property elsewhere 
+                    //instead of just add it here? 
+                    this.map = _map; 
+
                 })  
         },
         
@@ -149,8 +147,9 @@ export default{
                     // console.log(result)
 
                     //TODO: add a pin on the map at the location
-                    tmpmap.centerAndZoom(new Point(result[0],result[1], new SpatialReference({ wkid: 102140 })), 19);
-                    //tmpmap.centerAt(new Point(114.15,22.29));
+                    //this.map.centerAndZoom(new Point(result[0],result[1], new SpatialReference({ wkid: 102140 })), 19);
+                    this.map.centerAndZoom(new Point(result[0],result[1], new SpatialReference({ wkid: 102140 })), 19);
+                    //this.map.centerAt(new Point(114.15,22.29));
                     
                 })
         }
