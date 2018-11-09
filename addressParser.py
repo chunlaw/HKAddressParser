@@ -10,7 +10,7 @@ import ogcioUtil
 class Address:
     def __init__(self, addr):
         self._inputAddr = self.removeFloor(addr)
-        self._OGCIOresult = self.queryOGCIO(addr, 20)
+        self._OGCIOresult = self.queryOGCIO(self._inputAddr, 20)
         if self._OGCIOresult is not None:
             self._result = self.flattenOGCIO()
         else:
