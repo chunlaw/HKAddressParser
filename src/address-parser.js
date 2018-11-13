@@ -1,16 +1,27 @@
-import { dcDistrict } from './constants';
+const { dcDistrict } = require('./constants');
 
 /**
  * To parse the address from OGCIO. this file should be compatible with node.js and js running in browser
  *
  */
 
-const log = console.log;
+const log = console.log; // eslint-disable-line
 
 function removeFloor(address) {
   const addr = address.replace(/([0-9A-z\-\s]+[樓層]|[0-9A-z號\-\s]+[舖鋪]|地[下庫]|平台).*/g, '');
   return addr;
 }
+
+
+function dcDistrictMapping(val, isChinese) {
+  for (const district in dcDistrict) {
+    if (district === val) {
+      return isChinese ? dcDistrict[district].chi : dcDistrict[district].eng;
+    }
+  }
+  return isChinese ? dcDistrict.invalid.chi : dcDistrict.invalid.eng;
+}
+
 
 function flattenJson(data, isChinese) {
   const result = {};
@@ -29,9 +40,9 @@ function flattenJson(data, isChinese) {
           result[key + (i + 1)] = tokens[i];
         }
       } else {
-        if(key == 'DcDistrict') {
+        if (key === 'DcDistrict') {
           val = dcDistrictMapping(val, isChinese);
-        } 
+        }
         result[key] = val;
       }
     }
@@ -40,13 +51,11 @@ function flattenJson(data, isChinese) {
 }
 
 function normalizeResponse(responseFromOGCIO) {
-  return responseFromOGCIO.SuggestedAddress.map((record) => {
-    return {
-      chi: flattenJson(record.Address.PremisesAddress.ChiPremisesAddress, true),
-      eng: flattenJson(record.Address.PremisesAddress.EngPremisesAddress, false),
-      geo: flattenJson(record.Address.PremisesAddress.GeospatialInformation, false),
-    };
-  });
+  return responseFromOGCIO.SuggestedAddress.map(record => ({
+    chi: flattenJson(record.Address.PremisesAddress.ChiPremisesAddress, true),
+    eng: flattenJson(record.Address.PremisesAddress.EngPremisesAddress, false),
+    geo: flattenJson(record.Address.PremisesAddress.GeospatialInformation, false),
+  }));
 }
 
 function searchPhrase(str, searchPhrases) {
@@ -139,21 +148,14 @@ function parseAddress(address, resultHash) {
   }
 
   resultHash = resultHash.sort((a, b) => {
-    return a.score.level !== b.score.level
+    const level = a.score.level !== b.score.level
       ? b.score.level - a.score.level
       : b.score.charlen - a.score.charlen;
+    return level;
   });
   return (resultHash.slice(0, 200));
 }
 
-function dcDistrictMapping(val, isChinese) {
-  for (let district in dcDistrict) {
-    if (district === val) {
-      return isChinese? dcDistrict[district].chi : dcDistrict[district].eng;
-    } 
-  }
-  return isChinese? dcDistrict['invalid'].chi : dcDistrict['invalid'].eng;
-}
 
 /**
  * Standalone version of address parsing.
@@ -167,4 +169,4 @@ async function searchResult(address, responseFromOGCIO) {
 }
 
 // node.js exports
-export default { searchResult };
+module.exports = { searchResult };
