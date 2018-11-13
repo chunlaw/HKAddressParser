@@ -1,4 +1,4 @@
-function levelToString(level) {
+function levelToString (level) {
   switch (level) {
     case 1:
       return '街名'
@@ -14,7 +14,7 @@ function levelToString(level) {
 const SORTING_PRORITY_CHI = ['Region', 'DcDistrict', 'VillageName', 'StreetName', 'BuildingNoFrom', 'BuildingNoTo', 'EstateName', 'BlockNo', 'BlockDescriptor', 'BuildingName'];
 const SORTING_PRORITY_ENG = [];
 
-function getSortingPriorityForField(lang, field) {
+function getSortingPriorityForField (lang, field) {
   const priorityArray = lang === 'EN' ? SORTING_PRORITY_ENG : SORTING_PRORITY_CHI;
   for (let i = 0; i < priorityArray.length; i += 1) {
     const fieldName = priorityArray[i];
@@ -28,7 +28,7 @@ function getSortingPriorityForField(lang, field) {
  * Adding the street no prefix and also filter out unwanted fields
  * @param {*} addressTokens
  */
-function concatChineseAddress(addressTokens) {
+function concatChineseAddress (addressTokens) {
   const addresses = [];
   for (let i = 0; i < addressTokens.length; i += 1) {
     const { field, value } = addressTokens[i];
@@ -63,7 +63,7 @@ function concatChineseAddress(addressTokens) {
  * Format the chinese address from the given result set
  * @param {*} result
  */
-function fullChineseAddressFromResult(result) {
+function fullChineseAddressFromResult (result) {
   const addressFields = [];
   for (const key of Object.keys(result)) {
     addressFields.push(key);
