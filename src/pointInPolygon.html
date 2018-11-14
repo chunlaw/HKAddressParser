@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@5/turf.min.js"></script>
+
+    <!-- Please place the DC2015.js JSON file in the suitable dir -->
+    <script src="DC2015.js"></script>
+</head>
+
+<body>
+    <div>Default: 油麻地彌敦道524號地下</div>
+    Input coordinate [latitude, longitude]: <input type="text" id="point" value="22.3125724, 114.1710367">
+    <input type="submit" value="Submit" id="submit">
+
+    <div>CACODE: <span id="cacode"></span></div>
+    <div>CNAME: <span id="cname"></span></div>
+    <div>DISTRICT: <span id="district"></span></div>
+
+    <div id="result"></div>
+    <script>
+        // Core logic
+        // 1. loop the 431 polygons of District Council Constituency Area
+        // 2. check if the point lies in that polygon
+        // 3. if yes return the polygon
+        function retrieveDistrict(suggestedLngLat) {
+            const point = turf.point(suggestedLngLat);
+            const dcArea = turf.featureCollection(dc2015.features);
+
+            dcArea.features.forEach(e => {
+                if (turf.booleanPointInPolygon(point, turf.polygon(e.geometry.coordinates))) {
+                    document.getElementById("cacode").innerHTML = e.properties.CACODE;
+                    document.getElementById("cname").innerHTML = e.properties.CNAME;
+                    document.getElementById("district").innerHTML = e.properties.DISTRICT_T;
+                    // this function is supposed to return subDistrict, which is 油麻地 for this default example
+                    // subDistrict refernece: https://www.rvd.gov.hk/doc/tc/hkpr13/06.pdf
+                    // Example of subDistrict for Eastern district : 天后、北角、西灣河、柴灣、寶馬山、鰂魚涌、筲箕灣、小西灣
+                    return e.properties;
+                }
+            });
+        }
+
+        // For html
+        const sumbitBtn = document.getElementById("submit").addEventListener('click', function () {
+            const coordStr = document.getElementById("point").value.split(",");
+            retrieveDistrict([coordStr[1], coordStr[0]]) // Note order: longitude, latitude
+        })
+
+    </script>
+
+</body>
+
+</html>
