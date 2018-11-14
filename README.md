@@ -1,10 +1,12 @@
 # Hong Kong Address Parser
 
-Hong Kong Address Parser converts unformatted Hong Kong address into tagged address parts with corresponding coordinates. All results are verified by string matching.
+Hong Kong Address Parser converts unformatted Hong Kong address into standardize tagged address parts with corresponding coordinates. All results are verified by string matching.
+
+Release 0.1 (2018-11-07) : [https://addressparser.g0vhk.io](https://addressparser.g0vhk.io)
 
 # We need your help!
-Mapping sub-districts into district council constituency area [(Mapping Sheet)](
-https://docs.google.com/spreadsheets/d/1mNui-FsnnEiIXAGA-UBalqjywyBGhKMly2T9dLDhY7U/edit#gid=0)
+⋅⋅⋅Mapping sub-districts into district council constituency area, please refer to this [spreadsheet](
+https://docs.google.com/spreadsheets/d/1mNui-FsnnEiIXAGA-UBalqjywyBGhKMly2T9dLDhY7U/edit#gid=415942179)
 
 
 # How to use
