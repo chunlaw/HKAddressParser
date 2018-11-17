@@ -14,7 +14,7 @@ WORKDIR /opt/app
 COPY . /opt/app
 COPY .eslintrc.js /opt/app
 # Copy the standalone script
-COPY ./../src/address-parser.js /opt/src
+
 
 
 RUN npm run build

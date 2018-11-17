@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import AddressParser from "./../../../src/address-parser";
+import AddressParser from "./../lib/address-parser";
 import SingleMatch from "./../components/SingleMatch";
 import ArcGISMap from "./../components/ArcGISMap";
 
