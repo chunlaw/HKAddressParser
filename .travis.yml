@@ -5,25 +5,42 @@ sudo: required
 language: node_js
 node_js:
     - "8"
+stages:
+  - lint
+  - test
+  - build
+  - name: deploy
+    if: branch = master
 
 services:
   - docker
 
-branches:
-  only:
-    - master            # only run CI on the master branch
-    - /^PR /            # also build pull requests
+# branches:
+#   only:
+#     - master            # only run CI on the master branch
+#     - /^PR /            # also build pull requests
 
 before_install:
   - cd web
   - npm install
 
 lint:
-script:
-  - npm run lint
-  - npm run build
-  - npm run test-ci
+  script:
+    - npm run lint
 
-# TODO: push docker image
+# Do unit testing
+test:
+  script:
+    - npm run test-ci
+
+build:
+  script:
+    - docker build -t g0vhk/addressparser .
+
+deploy:
+  script:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push g0vhk/addressparser
+
 # TODO: trigger k8s deployment
 #after_success:
