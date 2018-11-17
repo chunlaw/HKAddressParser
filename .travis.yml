@@ -12,6 +12,8 @@ stages:
   - name: deploy
     if: branch = master
 
+cache: npm
+
 services:
   - docker
 
@@ -24,23 +26,25 @@ before_install:
   - cd web
   - npm install
 
-lint:
-  script:
-    - npm run lint
+jobs:
+  include:
+    - stage: lint
+      script:
+        - npm run lint
 
-# Do unit testing
-test:
-  script:
-    - npm run test-ci
+    # Do unit testing
+    - stage: test
+      script:
+        - npm run test-ci
 
-build:
-  script:
-    - docker build -t g0vhk/addressparser .
+    - stage: build
+      script:
+        - docker build -t g0vhk/addressparser .
 
-deploy:
-  script:
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push g0vhk/addressparser
+    - stage: deploy
+      script:
+      - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+      - docker push g0vhk/addressparser
 
 # TODO: trigger k8s deployment
 #after_success:
