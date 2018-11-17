@@ -2,8 +2,8 @@
   <v-container>
     <ArcGISMap ref='topMap'/>
     <v-layout >
-     
-     
+
+
      <v-form ref="form" class="form" @submit.prevent="submit">
       <v-text-field
         v-model="address"
@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import AddressParser from "./../../../src/address-parser";
+import AddressParser from "./../lib/address-parser";
 import SingleMatch from "./../components/SingleMatch";
 import ArcGISMap from "./../components/ArcGISMap";
 
@@ -44,7 +44,7 @@ export default {
     results: []
   }),
   methods: {
-    async submit() {
+    submit: async function submit() {
       this.results = [];
       //const res = await fetch('http://localhost:8081/search/' + this.address);
       const URL = `https://www.als.ogcio.gov.hk/lookup?q=${this.address}&n=${

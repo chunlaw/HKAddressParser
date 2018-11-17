@@ -1,6 +1,11 @@
 module.exports = {
-    "extends": "standard",
-    "rules": {
-      'semi': 0
-    }
+  extends: [
+    'plugin:vue/essential'
+  ],
+  "parserOptions": {
+    "ecmaVersion": 8
+  },
+  rules: {
+    semi: 0
+  }
 };

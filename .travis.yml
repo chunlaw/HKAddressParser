@@ -1,0 +1,51 @@
+# Travis CI config
+# http://docs.travis-ci.com/user/languages/javascript-with-nodejs/
+
+sudo: required
+language: node_js
+node_js:
+    - "8"
+stages:
+  - test
+  - build
+  - name: deploy
+    if: branch = master
+env:
+  global:
+    - REPO=addressparser
+    - ORG=g0vhk
+
+cache: npm
+
+services:
+  - docker
+
+# branches:
+#   only:
+#     - master            # only run CI on the master branch
+#     - /^PR /            # also build pull requests
+
+before_install:
+  - cd web
+  - npm install
+
+jobs:
+  include:
+    # TODO: unit testing
+    - stage: test
+      script:
+        - npm run lint
+    #     - npm run test-ci
+
+    - stage: build
+      script:
+        - docker build -t g0vhk/addressparser .
+
+    - stage: deploy
+      script:
+      - docker build -t $ORG/$REPO:latest .
+      - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+      # push to latest if master branch
+      - if [[ $TRAVIS_BRANCH = master ]]; then docker push $ORG/$REPO:latest; else true; fi
+      # push tag as well
+      - if [[ $TRAVIS_TAG = $TRAVIS_BRANCH ]]; then docker push $ORG/$REPO:$TRAVIS_TAG; else true ; fi
