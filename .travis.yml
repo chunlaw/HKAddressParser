@@ -10,6 +10,10 @@ stages:
   - build
   - name: deploy
     if: branch = master
+env:
+  global:
+    - REPO=addressparser
+    - ORG=g0vhk
 
 cache: npm
 
@@ -39,8 +43,9 @@ jobs:
 
     - stage: deploy
       script:
-      - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-      - docker push g0vhk/addressparser
-
-# TODO: trigger k8s deployment
-#after_success:
+      - docker build -t $ORG/$REPO:latest .
+      - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+      # push to latest if master branch
+      - if [[ $TRAVIS_BRANCH = master ]]; then docker push $ORG/$REPO:latest; else true; fi
+      # push tag as well
+      - if [[ $TRAVIS_TAG = $TRAVIS_BRANCH ]]; then docker push $ORG/$REPO:$TRAVIS_TAG; else true ; fi
