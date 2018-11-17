@@ -1,7 +1,7 @@
 FROM node:8.12.0-alpine
 
 # Install app dependencies
-COPY ./web/package.json /tmp/package.json
+COPY ./package.json /tmp/package.json
 RUN cd /tmp && npm install --production
 RUN npm install -g pm2
 
@@ -11,10 +11,10 @@ RUN mkdir -p /opt/src
 WORKDIR /opt/app
 
 # Bundle app source
-COPY ./web/. /opt/app
-COPY ./web/.eslintrc.js /opt/app
+COPY . /opt/app
+COPY .eslintrc.js /opt/app
 # Copy the standalone script
-COPY ./src/address-parser.js /opt/src
+COPY ./../src/address-parser.js /opt/src
 
 
 RUN npm run build
