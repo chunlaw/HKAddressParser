@@ -78,7 +78,7 @@ export default {
   },
   data: () => ({
     addressString:
-      "筲箕灣筲箕灣道203至205號,九龍灣宏開道8號其士商業中心地下8號舖,旺角彌敦道591號,新蒲崗衍慶街55至57號,佐敦吳松街120號地下,牛頭角順利邨利溢樓,美孚新邨萬事達廣場1樓N95號C舖",
+      "",
     addressesToSearch: [],
     errorMessage: null,
     count: 200,
