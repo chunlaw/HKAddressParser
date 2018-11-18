@@ -62,22 +62,6 @@ export default {
       await this.$refs.topMap.gotoLatLng(Number(this.results[0].geo.Latitude),
                                          Number(this.results[0].geo.Longitude));
     },
-    /**
-     * Match the level from the parser to some meaningful information
-     */
-    levelToString(level) {
-      switch (level) {
-        case 0:
-          return "?";
-        case 1:
-          return "街名";
-        case 2:
-          return "大廈名/村名";
-        case 3:
-          return "街道名稱";
-      }
-      return "?";
-    }
   }
 };
 </script>
