@@ -11,9 +11,7 @@ stages:
   - name: build
     if: branch = master
   - name: deploy
-    if: branch = master
-  # Deploy to github pages on every branch 
-  - name: deploy-page
+    if: branch = master  
   
 env:
   global:
@@ -55,7 +53,7 @@ jobs:
       # push tag as well
       - if [[ $TRAVIS_TAG = $TRAVIS_BRANCH ]]; then docker push $ORG/$REPO:$TRAVIS_TAG; else true ; fi
 
-    - stage: deploy-page
+    - stage: deploy
       script:
         - npm run build
       deploy:
@@ -63,6 +61,6 @@ jobs:
         skip-cleanup: true
         github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
         keep-history: true
-        local-dir: dist
+        local-dir: web/dist # the local dir is relative to root and ignoring the one set with before_install
         on:
           branch: master
