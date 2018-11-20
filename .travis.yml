@@ -8,7 +8,7 @@ node_js:
 stages:
   - test
   # Build the docker image only on master branch
-  - build:
+  - name: build
     if: branch = master
   - name: deploy
     if: branch = master
@@ -64,3 +64,5 @@ jobs:
         github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
         keep-history: true
         local-dir: dist
+        on:
+          branch: master
