@@ -159,7 +159,7 @@ export default {
         this.errorMessage = "No address to search";
         return;
       }
-      this.addressesToSearch = this.addressString.split(/\n/).fliter(address => address !== null && address.length > 0);
+      this.addressesToSearch = this.addressString.split(/\n/).filter(address => address !== null && address.length > 0);
       async.eachOfLimit(
         this.addressesToSearch,
         5,
