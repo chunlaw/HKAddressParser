@@ -5,7 +5,8 @@ import unicodedata
 import requests
 import re
 from bs4 import BeautifulSoup
-from . import u
+from . import util
+
 
 class Address:
     def __init__(self, addr):
@@ -18,7 +19,7 @@ class Address:
 
     def flattenOGCIO(self):
         flat_result = []
-        for idx,addr in enumerate(self._OGCIOresult):
+        for idx, addr in enumerate(self._OGCIOresult):
             temp = {
                 'rank': idx,
                 'chi': addr['Address']['PremisesAddress']['ChiPremisesAddress'],
@@ -28,45 +29,17 @@ class Address:
             flat_result.append(temp)
         return(flat_result)
 
-
-
     def ParseAddress(self):
-        for (idx,aResult) in enumerate(self._result):
-            self._result[idx]['match'] = util.getSimilarityWithOGCIO(self._inputAddr, aResult['chi'])
+        for (idx, aResult) in enumerate(self._result):
+            self._result[idx]['match'] = util.getSimilarityWithOGCIO(
+                self._inputAddr, aResult['chi'])
 
-
-        # maxCount = max([m['matched'] for m in self._result])
-        #
-        # print("OGCIO Results: {}, Maximum match: {}".format(len(self._result), maxCount))
-        # print("------------------------")
-        #
-        # for result in self._result:
-        #     result['level'] = ''
-        #     result['charlen'] = 0
-        #     for pair in result['status']:
-        #         if 'StreetName' in pair[0]:
-        #             result['level'] = 'street'
-        #             result['charlen'] += len(pair[1])
-        #         elif 'BuildingNoFrom' in pair[0] and result['level'] == 'street':
-        #             result['level'] = 'streetNo'
-        #             result['charlen'] += len(pair[1])
-        #         elif ('BuildingName' in pair[0] or 'VillageName' in pair[0] or 'EstateName' in pair[0]):
-        #             result['charlen'] += len(pair[1])
-        #             if result['level'] == '':
-        #                 result['level'] = 'building'
-        #         elif 'BlockDescriptor' in pair[0]:
-        #             result['charlen'] += len(pair[1])
-        # #print(self._result)
-
-        #sort_order = {"streetNo": 3, "building": 2, "street": 1, "": 0}
         self._result.sort(key=lambda x: x['match'].score, reverse=True)
 
-
         # print sorted result
-        for a in self._result[:3]:
-            print("=========")
-            print(a)
-
+        # for a in self._result[:3]:
+        #     print("=========")
+        #     print(a)
 
         return self._result[0]
 
@@ -74,11 +47,12 @@ class Address:
     def searchPhrase(self, string, phrases):
         phrases.sort(key=lambda t: t[1])
         keys = [i[1] for i in phrases]
-        idx = bisect.bisect_right (keys, string)
-        if ( idx == 0 ):
+        idx = bisect.bisect_right(keys, string)
+        if (idx == 0):
             return None
-        if ( string == phrases[idx-1][1] ):
-            self._tempOGIOAddr = [i for i in self._tempOGIOAddr if i[1] != string]
+        if (string == phrases[idx-1][1]):
+            self._tempOGIOAddr = [
+                i for i in self._tempOGIOAddr if i[1] != string]
             return phrases[idx-1]
         return None
 
@@ -86,9 +60,9 @@ class Address:
         addr = self._inputAddr
         result = []
         start = 0
-        while ( start < len( addr ) ):
+        while (start < len(addr)):
             end = len(addr)
-            while ( start < end ):
+            while (start < end):
                 string = addr[start:end]
                 token = self.searchPhrase(string, self._tempOGIOAddr)
                 if token == None:
@@ -97,10 +71,10 @@ class Address:
                     result += [token]
                     break
             if (end == start):
-                if ( len(result) > 0 and result[-1][0] == '?' ):
+                if (len(result) > 0 and result[-1][0] == '?'):
                     result[-1][1] += addr[start]
                 else:
-                    result += [ ['?',addr[start]] ]
+                    result += [['?', addr[start]]]
             start += len(string)
         return result
 
@@ -109,24 +83,23 @@ class Address:
         session = requests.Session()
         headers = {
             "Accept": "application/json",
-            "Accept-Language":"en,zh-Hant",
-            "Accept-Encoding":"gzip"
+            "Accept-Language": "en,zh-Hant",
+            "Accept-Encoding": "gzip"
         }
         base_url = "https://www.als.ogcio.gov.hk/lookup?"
 
         r = session.get(base_url,
-                    headers = headers,
-                    params = {
-                        "q": RequestAddress,
-                        "n": n
-                    })
+                        headers=headers,
+                        params={
+                            "q": RequestAddress,
+                            "n": n
+                        })
 
         soup = BeautifulSoup(r.content, 'html.parser')
         if 'SuggestedAddress' in json.loads(str(soup)):
             return(json.loads(str(soup))['SuggestedAddress'])
         else:
             return None
-
 
     def flattenJSON(self, data, json_items):
         for key, value in data.items():

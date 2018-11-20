@@ -54,6 +54,7 @@ function normalizeResponse(responseFromOGCIO) {
   return responseFromOGCIO.SuggestedAddress.map(record => ({
     chi: flattenJson(record.Address.PremisesAddress.ChiPremisesAddress, true),
     eng: flattenJson(record.Address.PremisesAddress.EngPremisesAddress, false),
+    // TODO: geo should return a list instead of json
     geo: flattenJson(record.Address.PremisesAddress.GeospatialInformation, false),
   }));
 }
