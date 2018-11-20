@@ -17,6 +17,7 @@ env:
   global:
     - REPO=addressparser
     - ORG=g0vhk
+    - BASE_URL=HKAddressParser
 
 cache: npm
 
