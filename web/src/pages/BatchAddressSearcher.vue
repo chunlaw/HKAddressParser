@@ -12,20 +12,20 @@
         <v-textarea
           outline
           name="input-7-1"
-          label="Please input the addresses to search. (Seperated by ',')"
+          label="請輸入地址（每行一個地址）"
           value=""
           v-model="addressString"
         ></v-textarea>
 
       <v-btn @click="submit">
-        Search
+        拆地址
       </v-btn>
       <download-excel
           v-if="results.length > 0 && results.length === addressesToSearch.length"
           :data="normalizedResults"
           type="csv"
           >
-          <v-btn>Download</v-btn>
+          <v-btn>下載 CSV</v-btn>
           <!-- <img src="download_icon.png"> -->
       </download-excel>
 
@@ -156,10 +156,10 @@ export default {
       this.errorMessage = null;
       this.results = [];
       if (this.addressString.length === 0) {
-        this.errorMessage = "No address to search";
+        this.errorMessage = "請輸入地址";
         return;
       }
-      this.addressesToSearch = this.addressString.split(",");
+      this.addressesToSearch = this.addressString.split("\n");
       async.eachOfLimit(
         this.addressesToSearch,
         5,

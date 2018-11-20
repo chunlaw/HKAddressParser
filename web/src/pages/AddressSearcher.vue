@@ -1,30 +1,33 @@
 <template>
   <v-container>
     <ArcGISMap ref='topMap'/>
-    <v-layout >
-
 
      <v-form ref="form" class="form" @submit.prevent="submit">
+
       <v-text-field
         v-model="address"
-        label="Address"
-        placeholder="e.g. 銅鑼灣謝斐道488號"
+        label="請輸入地址"
+        placeholder="如：九龍佐敦彌敦道380號"
+        append-icon="search"
         required
       ></v-text-field>
 
       <v-btn @click="submit">
-        Search
+        拆地址
       </v-btn>
-
-
-      <div v-for="(result, index) in results" :key="index">
-        <SingleMatch :result="result" :rank="index"/>
-      </div>
-
     </v-form>
 
+    <v-container
+            fluid
+            grid-list-lg
+          >
+          <div v-for="(result, index) in results" :key="index">
+            <SingleMatch :result="result" :rank="index"/>
+          </div>
+    </v-container>
 
-    </v-layout>
+
+    
   </v-container>
 </template>
 
@@ -52,22 +55,18 @@ export default {
       }`;
       const res = await fetch(URL, {
         headers: {
-          Accept: "application/json",
+          "Accept": "application/json",
           "Accept-Language": "en,zh-Hant",
           "Accept-Encoding": "gzip"
         }
       });
       const data = await res.json();
       this.results = await AddressParser.searchResult(this.address, data);
-      await this.$refs.topMap.gotoLatLng(Number(this.results[0].geo.Latitude),
-                                         Number(this.results[0].geo.Longitude));
-    },
+      await this.$refs.topMap.gotoLatLng(
+        Number(this.results[0].geo.Latitude),
+        Number(this.results[0].geo.Longitude)
+      );
+    }
   }
 };
 </script>
-
-<style>
-.form {
-  width: 80%;
-}
-</style>

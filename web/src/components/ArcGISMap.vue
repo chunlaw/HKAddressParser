@@ -3,9 +3,6 @@
 </template>
 
 
-
-
-
 <script>
 // following instrution from blogpost
 // http://alan9uo.iteye.com/blog/2393171
@@ -88,7 +85,6 @@ export default{
 
                     var _map = new Map("map-area", 
                     {
-                        //center: new Point(823100,831200, new SpatialReference({ wkid: 2326 })),
                         center: new Point(823100,831200, new SpatialReference({ wkid: 102140 })),
                         showAttribution: true,
                         zoom: 11,
