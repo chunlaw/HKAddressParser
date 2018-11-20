@@ -7,13 +7,17 @@ node_js:
     - "8"
 stages:
   - test
-  - build
-  - name: deploy
+  # Build the docker image only on master branch
+  - name: build
     if: branch = master
+  - name: deploy
+    if: branch = master  
+  
 env:
   global:
     - REPO=addressparser
     - ORG=g0vhk
+    - BASE_URL=HKAddressParser
 
 cache: npm
 
@@ -49,3 +53,15 @@ jobs:
       - if [[ $TRAVIS_BRANCH = master ]]; then docker push $ORG/$REPO:latest; else true; fi
       # push tag as well
       - if [[ $TRAVIS_TAG = $TRAVIS_BRANCH ]]; then docker push $ORG/$REPO:$TRAVIS_TAG; else true ; fi
+
+    - stage: deploy
+      script:
+        - npm run build
+      deploy:
+        provider: pages
+        skip-cleanup: true
+        github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+        keep-history: true
+        local-dir: web/dist # the local dir is relative to root and ignoring the one set with before_install
+        on:
+          branch: master
