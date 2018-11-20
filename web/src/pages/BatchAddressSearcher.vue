@@ -12,7 +12,7 @@
         <v-textarea
           outline
           name="input-7-1"
-          label="Please input the addresses to search. (Seperated by ',')"
+          label="Please input the addresses to search. (Seperated by newlines)"
           value=""
           v-model="addressString"
         ></v-textarea>
@@ -159,7 +159,7 @@ export default {
         this.errorMessage = "No address to search";
         return;
       }
-      this.addressesToSearch = this.addressString.split(",");
+      this.addressesToSearch = this.addressString.split(/\n/).fliter(address => address !== null && address.length > 0);
       async.eachOfLimit(
         this.addressesToSearch,
         5,
