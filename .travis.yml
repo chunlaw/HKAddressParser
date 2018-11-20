@@ -7,9 +7,12 @@ node_js:
     - "8"
 stages:
   - test
-  - build
+  # Build the docker image only on master branch
+  - build:
+    if: branch = master
   - name: deploy
     if: branch = master
+  # Deploy to github pages on every branch 
   - name: deploy-page
   
 env:
@@ -53,9 +56,11 @@ jobs:
       - if [[ $TRAVIS_TAG = $TRAVIS_BRANCH ]]; then docker push $ORG/$REPO:$TRAVIS_TAG; else true ; fi
 
     - stage: deploy-page
-      provider: pages
-      skip-cleanup: true
-      github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
-      keep-history: true
-      on:
-        branch: master
+      script:
+        - npm run build
+      deploy:
+        provider: pages
+        skip-cleanup: true
+        github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+        keep-history: true
+        local-dir: dist
