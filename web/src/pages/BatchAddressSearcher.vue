@@ -78,7 +78,7 @@ export default {
     ArcGISMap
   },
   data: () => ({
-    addressString: "銅鑼灣禮頓道33號\n銅鑼灣禮頓道34號\n銅鑼灣禮頓道35號",
+    addressString: "",
     addressesToSearch: [],
     errorMessage: null,
     count: 200,
