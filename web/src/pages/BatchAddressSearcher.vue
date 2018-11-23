@@ -68,6 +68,7 @@ import SingleMatch from "./../components/SingleMatch";
 import ArcGISMap from "./../components/ArcGISMap";
 import async from "async";
 import utils from "./../utils";
+import dclookup from "./../utils/dclookup.js"
 
 const SEARCH_LIMIT = 200;
 
@@ -77,8 +78,7 @@ export default {
     ArcGISMap
   },
   data: () => ({
-    addressString:
-      "",
+    addressString: "銅鑼灣禮頓道33號\n銅鑼灣禮頓道34號\n銅鑼灣禮頓道35號",
     addressesToSearch: [],
     errorMessage: null,
     count: 200,
@@ -94,12 +94,16 @@ export default {
       return [
         // the raw search
         {
-          text: "Address",
+          text: "地址",
           value: "address"
         },
         {
-          text: "Full Result",
+          text: "結果",
           value: "full_result"
+        },
+        {
+          text: "選區",
+          value: "dc_name"
         },
         {
           text: "Latitude",
@@ -126,6 +130,7 @@ export default {
         let json = {
           address: this.addressesToSearch[index],
           full_address: utils.fullChineseAddressFromResult(result[0].chi),
+          dc_name: dclookup.dcNameFromCoordinates(result[0].geo.Latitude, result[0].geo.Longitude).cname,
           lat: result[0].geo.Latitude,
           long: result[0].geo.Longitude
         };

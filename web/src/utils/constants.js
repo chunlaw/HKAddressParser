@@ -77,7 +77,7 @@ const dcDistrict = {
   }
 };
 
-
+// MUST use common js style to let address-parse "require" work normally
 module.exports = {
   dcDistrict
 };
