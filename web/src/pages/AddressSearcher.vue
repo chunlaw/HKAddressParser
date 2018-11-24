@@ -21,9 +21,11 @@
             fluid
             grid-list-lg
           >
-          <div v-for="(result, index) in results" :key="index">
-            <SingleMatch :result="result" :rank="index"/>
-          </div>
+          <v-expansion-panel focusable>
+            <div v-for="(result, index) in results" :key="index" class="expansion-wrapper">
+              <SingleMatch :result="result" :rank="index"/>
+            </div>
+          </v-expansion-panel>
     </v-container>
 
 
@@ -70,3 +72,11 @@ export default {
   }
 };
 </script>
+
+
+<style>
+.expansion-wrapper {
+  width: 100%;
+}
+
+</style>
