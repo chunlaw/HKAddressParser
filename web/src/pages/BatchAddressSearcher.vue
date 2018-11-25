@@ -65,18 +65,13 @@
 <script>
 import AddressParser from "./../lib/address-parser";
 import SingleMatch from "./../components/SingleMatch";
-import ArcGISMap from "./../components/ArcGISMap";
 import async from "async";
 import utils from "./../utils";
-import dclookup from "./../utils/dclookup.js"
+import dclookup from "./../utils/dclookup.js";
 
 const SEARCH_LIMIT = 200;
 
 export default {
-  components: {
-    SingleMatch,
-    ArcGISMap
-  },
   data: () => ({
     addressString: "",
     addressesToSearch: [],
@@ -130,7 +125,10 @@ export default {
         let json = {
           address: this.addressesToSearch[index],
           full_address: utils.fullChineseAddressFromResult(result[0].chi),
-          dc_name: dclookup.dcNameFromCoordinates(result[0].geo.Latitude, result[0].geo.Longitude).cname,
+          dc_name: dclookup.dcNameFromCoordinates(
+            result[0].geo.Latitude,
+            result[0].geo.Longitude
+          ).cname,
           lat: result[0].geo.Latitude,
           long: result[0].geo.Longitude
         };
