@@ -12,6 +12,8 @@
         required
       ></v-text-field>
 
+      <SearchFilter ref="searchFilter"/>
+    
       <v-btn @click="submit">
         拆地址
       </v-btn>
@@ -23,7 +25,7 @@
           >
           <v-expansion-panel focusable>
             <div v-for="(result, index) in results" :key="index" class="expansion-wrapper">
-              <SingleMatch :result="result" :rank="index"/>
+              <SingleMatch :result="result" :rank="index" :filterOptions="filterOptions"/>
             </div>
           </v-expansion-panel>
     </v-container>
@@ -37,19 +39,24 @@
 import AddressParser from "./../lib/address-parser";
 import SingleMatch from "./../components/SingleMatch";
 import ArcGISMap from "./../components/ArcGISMap";
+import SearchFilter from "./../components/SearchFilter";
 
 export default {
   components: {
     SingleMatch,
-    ArcGISMap
+    ArcGISMap,
+    SearchFilter
   },
   data: () => ({
     address: "",
     count: 200,
-    results: []
+    results: [],
+    filterOptions: {}
   }),
   methods: {
     submit: async function submit() {
+
+   
       this.results = [];
       //const res = await fetch('http://localhost:8081/search/' + this.address);
       const URL = `https://www.als.ogcio.gov.hk/lookup?q=${this.address}&n=${
@@ -62,7 +69,8 @@ export default {
           "Accept-Encoding": "gzip"
         }
       });
-      const data = await res.json();
+      const data = await res.json();   
+      this.filterOptions = await this.$refs.searchFilter.getFilterOptions();
       this.results = await AddressParser.searchResult(this.address, data);
       await this.$refs.topMap.gotoLatLng(
         Number(this.results[0].geo.Latitude),
