@@ -2,12 +2,12 @@ FROM node:8.12.0-alpine
 
 # Install app dependencies
 COPY ./package.json /tmp/package.json
+COPY ./package-lock.json /tmp/package-lock.json
 RUN cd /tmp && npm install --production
 RUN npm install -g pm2
 
 # Create app directory
 RUN mkdir -p /opt/app && cp -a /tmp/node_modules /opt/app/
-RUN mkdir -p /opt/src
 WORKDIR /opt/app
 
 # Bundle app source
