@@ -3,8 +3,8 @@
     <div slot="header">
       <h3 class="headline mb-0">{{ fullChineseAddressFromResult(result.chi) }}</h3>
       <span class="pt-2">{{ rank === 0 ? 'BEST MATCH!' : `Rank #${rank + 1}` }}</span>
-      <v-chip 
-        color="primary" 
+      <v-chip
+        color="primary"
         text-color="white"
         disabled
         small
@@ -14,6 +14,10 @@
     <v-card >
       <v-card-title primary-title>
         <v-container grid-list-md text-xs-left>
+            <v-layout row wrap class="row-odd">
+                <v-flex class="field-title" xs4>選區</v-flex>
+                <v-flex xs8>{{ district.cname }}</v-flex>
+            </v-layout>
             <v-layout row wrap v-for="(value, key, index) in result.chi" :key="index"
                 :class="(index % 2 === 0 ? 'row-even': 'row-odd') + (isMatch(key)? ' matched': '')"
             >
@@ -21,7 +25,7 @@
               <v-flex xs8>{{ value }}</v-flex>
             </v-layout>
         </v-container>
-        
+
         <!-- <span class="grey--text">{{ 'Match: ' + levelToString(result.status.level) }}</span> -->
       </v-card-title>
       <br>
@@ -31,6 +35,7 @@
 
 <script>
 import utils from "./../utils";
+import dclookup from "./../utils/dclookup.js";
 export default {
   props: {
     rank: Number,
@@ -40,6 +45,11 @@ export default {
       chi: Object,
       eng: Object,
       matches: Array
+    }
+  },
+  computed: {
+    district: function () {
+      return dclookup.dcNameFromCoordinates(this.result.geo.Latitude, this.result.geo.Longitude)
     }
   },
   data: () => ({}),
