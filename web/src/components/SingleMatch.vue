@@ -1,5 +1,5 @@
 <template>
-  <v-expansion-panel-content :disabled="disableContent">
+  <v-expansion-panel-content :disabled="disableContent" :value="rank === 0">
     <div slot="header">
       <h3 class="headline mb-0">{{ fullChineseAddressFromResult(result.chi) }}</h3>
       <span class="pt-2">{{ rank === 0 ? 'BEST MATCH!' : `Rank #${rank + 1}` }}</span>
