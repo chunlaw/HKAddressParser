@@ -5,11 +5,13 @@
                 <v-checkbox
                     :label="`Region`"
                     v-model="region"
+                    color="teal"
                 ></v-checkbox>
 
                 <v-checkbox
                     :label="`DC District`"
                     v-model="dcDistrict"
+                    color="teal"
                 ></v-checkbox>
 
             </v-flex>
@@ -17,17 +19,19 @@
                 <v-checkbox
                     :label="`Building Number from`"
                     v-model="buildingNoFrom"
+                    color="teal"
                 ></v-checkbox>
-
                 <v-checkbox
                     :label="`Building Name`"
                     v-model="buildingName"
+                    color="teal"
                 ></v-checkbox>
             </v-flex>
             <v-flex xs12 sm4 md4>
                 <v-checkbox
                     :label="`Street Name`"
                     v-model="streetName"
+                    color="teal"
                 ></v-checkbox>
             </v-flex>
         </v-layout>
