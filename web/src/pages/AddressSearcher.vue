@@ -48,11 +48,9 @@
 
     <v-layout justify-center row>
       <v-flex xs10 lg6>
-        <v-expansion-panel focusable>
-          <div v-for="(result, index) in results" :key="index" class="expansion-wrapper">
-            <SingleMatch :result="result" :rank="index" :filterOptions="filterOptions"/>
-          </div>
-        </v-expansion-panel>
+        <div v-for="(result, index) in results" :key="index" class="expansion-wrapper">
+          <SingleMatch :result="result" :rank="index" :filterOptions="filterOptions"/>
+        </div>
       </v-flex>
     </v-layout>
 

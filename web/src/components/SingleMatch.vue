@@ -1,4 +1,5 @@
 <template>
+<v-expansion-panel focusable>
   <v-expansion-panel-content :disabled="disableContent" :value="rank === 0">
     <div slot="header">
       <h3 class="headline mb-0">{{ fullChineseAddressFromResult(result.chi) }}</h3>
@@ -12,8 +13,8 @@
       <span class="pt-2 grey--text">{{ result.geo.Latitude + "," + result.geo.Longitude }}</span>
     </div>
     <v-card>
-      <v-card-title primary-title>
-        <v-container grid-list-md text-xs-left>
+      <v-card-title>
+        <v-container>
             <v-layout row wrap class="row-odd">
                 <v-flex class="field-title" xs4>選區</v-flex>
                 <v-flex xs8>{{ district.cname }}</v-flex>
@@ -32,6 +33,7 @@
       <br>
     </v-card>
   </v-expansion-panel-content>
+  </v-expansion-panel>
 </template>
 
 <script>
@@ -86,10 +88,6 @@ export default {
 </script>
 
 <style>
-.form {
-  width: 80%;
-}
-
 .field-title {
   border-right: 1px solid;
 }
