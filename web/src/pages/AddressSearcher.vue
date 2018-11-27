@@ -7,42 +7,39 @@
             <h1 class="teal--text">我哋幫你解決難搞地址</h1>
           </v-card-title>
           <v-card-text>
-          <h3>輸入中英文香港地址，我們幫你解析成
-          <span class="amber lighten-4 red--text px-1">地區</span>、
-          <span class="amber lighten-4 red--text px-1">街道門牌</span>、
-          <span class="amber lighten-4 red--text px-1">大廈</span>、
-          <span class="amber lighten-4 red--text px-1">坐標</span>，連
-          <span class="amber lighten-4 red--text px-1">區議會小選區</span>都有
-          </h3>
-          <v-form ref="form" class="form" @submit.prevent="submit">
+            <h3>
+              輸入中英文香港地址，我們幫你解析成
+              <span class="amber lighten-4 red--text px-1">地區</span>、
+              <span class="amber lighten-4 red--text px-1">街道門牌</span>、
+              <span class="amber lighten-4 red--text px-1">大廈</span>、
+              <span class="amber lighten-4 red--text px-1">坐標</span>，連
+              <span class="amber lighten-4 red--text px-1">區議會小選區</span>都有
+            </h3>
+            <v-form ref="form" class="form" @submit.prevent="submit">
+              <v-text-field
+                v-model="address"
+                placeholder="九龍佐敦彌敦道380號"
+                append-icon="search"
+                required
+              ></v-text-field>
 
-            <v-text-field
-              v-model="address"
-              placeholder="九龍佐敦彌敦道380號"
-              append-icon="search"
-              required
-            ></v-text-field>
+              <v-expansion-panel popout>
+                <v-expansion-panel-content>
+                  <div slot="header">進階選項</div>
+                  <SearchFilter ref="searchFilter"/>
+                </v-expansion-panel-content>
+              </v-expansion-panel>
 
-        <v-expansion-panel popout>
-          <v-expansion-panel-content>
-            <div slot="header">進階選項</div>
-            <SearchFilter ref="searchFilter"/>
-          </v-expansion-panel-content>
-        </v-expansion-panel>
-      
-            <v-btn @click="submit" dark class="teal">
-              拆地址
-            </v-btn>
-          </v-form>
+              <v-btn @click="submit" dark class="teal">拆地址</v-btn>
+            </v-form>
           </v-card-text>
         </v-card>
-        
       </v-flex>
     </v-layout>
 
     <v-layout justify-center row v-if="toggleMap">
       <v-flex xs10 lg6>
-        <ArcGISMap ref='topMap'/>
+        <ArcGISMap ref="topMap"/>
       </v-flex>
     </v-layout>
 
@@ -65,7 +62,12 @@
               <span>如果你識Python, node.js, vue.js，歡迎過嚟俾意見幫吓手！</span>
             </v-card-text>
             <v-card-actions>
-              <v-btn outline color="teal" href="https://github.com/g0vhk-io/HKAddressParser" target="_blank">Github</v-btn>
+              <v-btn
+                outline
+                color="teal"
+                href="https://github.com/g0vhk-io/HKAddressParser"
+                target="_blank"
+              >Github</v-btn>
             </v-card-actions>
           </v-card-text>
         </v-card>
@@ -86,7 +88,6 @@
         </v-card>
       </v-flex>
     </v-layout>
-
   </v-container>
 </template>
 
