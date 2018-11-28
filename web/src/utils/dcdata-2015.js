@@ -1,4 +1,4 @@
-var dc2015 = {
+export default {
     "type": "FeatureCollection",
     "features": [
         {

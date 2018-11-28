@@ -12,20 +12,20 @@
         <v-textarea
           outline
           name="input-7-1"
-          label="Please input the addresses to search. (Seperated by ',')"
+          label="請輸入地址（每行一個地址）"
           value=""
           v-model="addressString"
         ></v-textarea>
 
       <v-btn @click="submit">
-        Search
+        拆地址
       </v-btn>
       <download-excel
           v-if="results.length > 0 && results.length === addressesToSearch.length"
           :data="normalizedResults"
           type="csv"
           >
-          <v-btn>Download</v-btn>
+          <v-btn>下載 CSV</v-btn>
           <!-- <img src="download_icon.png"> -->
       </download-excel>
 
@@ -65,20 +65,15 @@
 <script>
 import AddressParser from "./../lib/address-parser";
 import SingleMatch from "./../components/SingleMatch";
-import ArcGISMap from "./../components/ArcGISMap";
 import async from "async";
 import utils from "./../utils";
+import dclookup from "./../utils/dclookup.js";
 
 const SEARCH_LIMIT = 200;
 
 export default {
-  components: {
-    SingleMatch,
-    ArcGISMap
-  },
   data: () => ({
-    addressString:
-      "",
+    addressString: "",
     addressesToSearch: [],
     errorMessage: null,
     count: 200,
@@ -94,12 +89,16 @@ export default {
       return [
         // the raw search
         {
-          text: "Address",
+          text: "地址",
           value: "address"
         },
         {
-          text: "Full Result",
+          text: "結果",
           value: "full_result"
+        },
+        {
+          text: "選區",
+          value: "dc_name"
         },
         {
           text: "Latitude",
@@ -126,6 +125,10 @@ export default {
         let json = {
           address: this.addressesToSearch[index],
           full_address: utils.fullChineseAddressFromResult(result[0].chi),
+          dc_name: dclookup.dcNameFromCoordinates(
+            result[0].geo.Latitude,
+            result[0].geo.Longitude
+          ).cname,
           lat: result[0].geo.Latitude,
           long: result[0].geo.Longitude
         };
@@ -156,10 +159,10 @@ export default {
       this.errorMessage = null;
       this.results = [];
       if (this.addressString.length === 0) {
-        this.errorMessage = "No address to search";
+        this.errorMessage = "請輸入地址";
         return;
       }
-      this.addressesToSearch = this.addressString.split(",");
+      this.addressesToSearch = this.addressString.split("\n");
       async.eachOfLimit(
         this.addressesToSearch,
         5,

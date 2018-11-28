@@ -9,6 +9,7 @@
     "test-ci": "echo 1"
   },
   "dependencies": {
+    "@turf/turf": "^5.1.6",
     "@vue/cli-plugin-babel": "^3.0.5",
     "@vue/cli-plugin-eslint": "^3.0.5",
     "@vue/cli-service": "^3.0.5",
