@@ -7,7 +7,7 @@
           disabled
           small
         >{{ `Rank ${rank + 1}` }} {{ (rank === 0)? ' - Best Match!' : ''}}</v-chip>
-        <h2>{{ fullChineseAddressFromResult(result.chi) }} <br/> {{result.eng}}</h2>
+        <h2>{{ fullChineseAddressFromResult(result.chi) }} <br/> {{fullEnglishAddressFromResult(result.eng)}}</h2>
         <span
           class="text-xs-right grey--text"
         >{{ result.geo.Latitude + ", " + result.geo.Longitude }}</span>
@@ -78,6 +78,7 @@ export default {
   methods: {
     levelToString: utils.levelToString,
     fullChineseAddressFromResult: utils.fullChineseAddressFromResult,
+    fullEnglishAddressFromResult: utils.fullEnglishAddressFromResult,
     isMatch: function (key) {
       return this.result.matches.indexOf(key) >= 0;
     },
