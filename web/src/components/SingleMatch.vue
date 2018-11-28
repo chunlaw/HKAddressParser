@@ -7,7 +7,7 @@
           disabled
           small
         >{{ `Rank ${rank + 1}` }} {{ (rank === 0)? ' - Best Match!' : ''}}</v-chip>
-        <h2>{{ fullChineseAddressFromResult(result.chi) }}</h2>
+        <h2>{{ fullChineseAddressFromResult(result.chi) }} <br/> {{result.eng}}</h2>
         <span
           class="text-xs-right grey--text"
         >{{ result.geo.Latitude + ", " + result.geo.Longitude }}</span>
@@ -30,8 +30,8 @@
           v-if="filterOptions[massageKey(key)]"
         >
           <v-list-tile>
-            <v-list-tile-content>{{ key }}</v-list-tile-content>
-            <v-list-tile-content class="align-end">{{ value }}</v-list-tile-content>
+            <v-list-tile-content> {{ resultKey[massageKey(key)].eng }} <br/> {{ resultKey[massageKey(key)].chi }}</v-list-tile-content>
+            <v-list-tile-content class="align-end">{{key != 'BuildingNoFrom' ? result.eng[key] + '\n' + value : value}}  </v-list-tile-content>
           </v-list-tile>
           <v-divider></v-divider>
         </v-list>
@@ -43,6 +43,7 @@
 <script>
 import utils from "./../utils";
 import dclookup from "./../utils/dclookup.js";
+import resultKeyLookup from "./../utils/resultKeyLookup.js";
 export default {
   props: {
     rank: Number,
@@ -62,10 +63,12 @@ export default {
     }
   },
   data: () => ({
-    disableContent: false
+    disableContent: false,
+    resultKey: {}
   }),
   mounted: function () {
     this.disableExpansionPanelContent();
+    this.resultKey = resultKeyLookup;
   },
   computed: {
     district: function () {
@@ -95,5 +98,10 @@ export default {
 .matched {
   color: red !important;
   font-weight: bolder;
+}
+
+.align-end {
+  text-align: right;
+  white-space: pre;
 }
 </style>
