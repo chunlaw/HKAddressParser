@@ -1,0 +1,17 @@
+{
+  "name": "accuracy_test",
+  "version": "1.0.0",
+  "description": "To test the python script and also the js script accuracy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nandi Wong",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.6.1",
+    "bluebird": "^3.5.3",
+    "fast-csv": "^2.4.1",
+    "request": "^2.88.0"
+  }
+}
