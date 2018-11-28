@@ -74,7 +74,19 @@ function fullChineseAddressFromResult (result) {
   return concatChineseAddress(addressFields.map(field => ({ field, value: result[field] })));
 }
 
+/**
+ * Format the english address from the given result set
+ * @param {*} result
+ */
+function fullEnglishAddressFromResult (result) {
+  let { BuildingName, StreetName, BuildingNoFrom, DcDistrict, Region } = result;
+  BuildingName = BuildingName ? `${BuildingName},` : ' ';
+  StreetName = StreetName ? `${StreetName},` : ' ';
+  return `${BuildingName} ${BuildingNoFrom} ${StreetName} ${Region}`.trim();
+}
+
 export default {
   levelToString,
-  fullChineseAddressFromResult
+  fullChineseAddressFromResult,
+  fullEnglishAddressFromResult
 }
