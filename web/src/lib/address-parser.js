@@ -35,10 +35,10 @@ function flattenJson(data, isChinese) {
           || key === 'VillageName'
           || key === 'EstateName')
         && val.indexOf(' ') >= 0) {
+        // to deal with case like '屯門 青麟路'
+        // We always compare with the last word
         const tokens = val.split(' ');
-        for (let i = 0; i < tokens.length; i++) {
-          result[key + (i + 1)] = tokens[i];
-        }
+        result[key] = tokens.splice;
       } else {
         if (key === 'DcDistrict') {
           val = dcDistrictMapping(val, isChinese);
