@@ -2,8 +2,8 @@
 
 Hong Kong Address Parser converts unformatted Hong Kong address into standardize tagged address parts with corresponding coordinates. All results are verified by string matching.
 
-Current Release - 0.2 (2018-11-25) : [addressparser.g0vhk.io](https://addressparser.g0vhk.io)  
-Release 0.1 (2018-11-07) 
+Current Release - 0.2 (2018-11-25) : [addressparser.g0vhk.io](https://addressparser.g0vhk.io)
+Release 0.1 (2018-11-07)
 
 ## We need your help!
 - Mapping sub-districts into district council constituency area, please refer to this [spreadsheet](
@@ -82,7 +82,7 @@ const address = 'Some address to search';
 const n = 100;
 const URL = 'https://www.als.ogcio.gov.hk/lookup';
 
-# Since the addressParser wont call the ogcio directly but take the return json as param, we need to call the ogcio explicitly
+// Since the addressParser wont call the ogcio directly but take the return json as param, we need to call the ogcio explicitly
 const result = request.getAsync(URL, {
   headers: {
     Accept: 'application/json'
@@ -94,7 +94,7 @@ const result = request.getAsync(URL, {
   json: {}
 }).then(res => {
 
-  #
+  // Run the address parser with the response from ogcio
   return addressParser.searchResult(address, res.body);
 }).then( results => {
   // The results contain the sorted address that the top one should be the most aliked result
