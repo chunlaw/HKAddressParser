@@ -40,19 +40,65 @@ describe('cli', () => {
       }
     }
   })
-  // reset the buffer
-  function clearBuffer() {
-    buffer = [];
-  }
 
-  describe('searchResult', () => {
+  describe('searchResult', async () => {
+
+    it('should eliminate all the Chi/Eng keys of the ogcio result', () => {
+      const { result } = testCases[0];
+      const addressToTest = result.SuggestedAddress[0].Address;
+      const eliminateLangKeys = getFunc('eliminateLangKeys');
+      const chi = eliminateLangKeys(addressToTest.PremisesAddress.ChiPremisesAddress);
+      const eng = eliminateLangKeys(addressToTest.PremisesAddress.EngPremisesAddress);
+      for (const key of Object.keys(chi)) {
+        expect(key.indexOf('Chi')).to.be.eq(-1);
+      }
+      for (const key of Object.keys(eng)) {
+        expect(key.indexOf('Eng')).to.be.eq(-1);
+      }      
+    })
+
+    it('should match number from a sting', () => {
+      const tryToMatchAnyNumber = getFunc('tryToMatchAnyNumber');
+      const address = "馬頭圍道123號33樓B座";
+      let result = tryToMatchAnyNumber(address, 123);
+      expect(result).to.be.true;
+      result = tryToMatchAnyNumber(address, 33);
+      expect(result).to.be.true;
+
+      result = tryToMatchAnyNumber(address, 1234);
+      expect(result).to.be.false;
+    })
+
+
+    it('should match number within the range ', () => {
+      const tryToMatchRangeOfNumber = getFunc('tryToMatchRangeOfNumber');
+      const address = "馬頭圍道123號33樓B座";
+      let result = tryToMatchRangeOfNumber(address, 123, 125, true);
+      expect(result).to.be.true;
+      result = tryToMatchRangeOfNumber(address, 29, 50, true);
+      expect(result).to.be.true;
+
+      result = tryToMatchRangeOfNumber(address, 29, 50, false);
+      expect(result).to.be.false;
+
+      result = tryToMatchRangeOfNumber(address, 1, 9, true);
+      expect(result).to.be.false;
+    })
+
+
     it('should return the search result', async () => {
       const searchResultFunc = getFunc('searchResult');
       const { address, result } = testCases[0];
-      const parsedResult = searchResultFunc(address, result);
-      expect(parsedResult).to.be.not.null;
+      const parsedResults = await searchResultFunc(address, result);
+      expect(parsedResults).to.be.not.null;
+      expect(parsedResults).to.be.a('array');
+      for (const parsedResult of parsedResults) {
+        expect(parsedResult.chi).to.be.a('object');
+        expect(parsedResult.eng).to.be.a('object');
+        expect(parsedResult.geo).to.be.a('array');
+        expect(parsedResult.matches).to.be.a('array');
+        expect(parsedResult.score).to.be.a('number');
+      }      
     });
-
-
   });
 });
