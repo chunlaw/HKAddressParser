@@ -65,6 +65,11 @@ function dcDistrictMapping(val, isChinese) {
  * @param {*} stringToSearch
  */
 function partialMatch(string, stringToSearch) {
+  // some exceptional case if the word from OGCIO contains directly the search address, we consider it as a full match
+  if (stringToSearch.indexOf(string) >= 0) {
+    return 1.0;
+  }
+
   for (let i = 0; i < stringToSearch.length; i ++) {
     for (let end = stringToSearch.length; end > i; end --) {
       const substring = stringToSearch.substring(i, end);
@@ -158,13 +163,18 @@ function searchSimilarityForStreetOrVillage(type, address, BuildingNoFrom, Build
     const from = parseInt(BuildingNoFrom, 10);
     const to = BuildingNoTo ? parseInt(BuildingNoTo, 10) : from;
     const isOdd = parseInt(BuildingNoFrom, 10) % 2 == 1;
+    // If the street name and also the street no. is matched. we should give it a very high score
     if (from === to) {
       if (!tryToMatchAnyNumber(address, from)) {
         sim.confident = CONFIDENT_MATCH_NAME;
+      } else {
+        sim.confident *= 1.5;
       }
     } else {
       if (!tryToMatchRangeOfNumber(address, from, to, isOdd)) {
         sim.confident = CONFIDENT_MATCH_NAME;
+      } else {
+        sim.confident *= 1.5;
       }
     }
   } else {
@@ -320,7 +330,7 @@ function transformDistrict(ogcioRecord) {
 }
 
 function parseAddress(address, normalizedOGCIOResult) {
-  for (const record of normalizedOGCIOResult) {
+  for (let record of normalizedOGCIOResult) {
     const matches = findMatchFromOGCIORecord(address, record);
     record.score = calculateScoreFromMatches(matches);
     record.matches = matches;
