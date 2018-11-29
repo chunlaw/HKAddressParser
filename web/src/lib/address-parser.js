@@ -266,12 +266,12 @@ function searchOccuranceForVillage(address, {VillageName, BuildingNoFrom, Buildi
  */
 function searchOccurance(address, ogcioRecordElementKey, ogcioRecordElement) {
   switch (ogcioRecordElementKey) {
-    case 'Street':  return searchOccuranceForStreet(address, ogcioRecordElement); break;
-    case 'Village': return searchOccuranceForVillage(address, ogcioRecordElement); break;
-    case 'Block':   return searchOccuranceForBlock(address, ogcioRecordElement); break;
-    case 'Phase':   return searchOccuranceForPhase(address, ogcioRecordElement); break;
-    case 'Estate':  return searchOccuranceForEstate(address, ogcioRecordElement); break;
-    case 'Region':  return searchOccuranceForRegion(address, ogcioRecordElement); break;
+    case OGCIO_KEY_STREET:  return searchOccuranceForStreet(address, ogcioRecordElement); break;
+    case OGCIO_KEY_VILLAGE: return searchOccuranceForVillage(address, ogcioRecordElement); break;
+    case OGCIO_KEY_BLOCK:   return searchOccuranceForBlock(address, ogcioRecordElement); break;
+    case OGCIO_KEY_PHASE:   return searchOccuranceForPhase(address, ogcioRecordElement); break;
+    case OGCIO_KEY_ESTATE:  return searchOccuranceForEstate(address, ogcioRecordElement); break;
+    case OGCIO_KEY_REGION:  return searchOccuranceForRegion(address, ogcioRecordElement); break;
     case OGCIO_KEY_BUILDING_NAME:   return searchOccuranceForBuildingName(address, ogcioRecordElement); break;
   }
   return null;
@@ -309,11 +309,14 @@ function findMatchFromOGCIORecord(address, ogcioRecord) {
   return matchedPhrase;
 }
 
-function keyMatch(key, keyName) {
-  if (key.indexOf(keyName) >= 0) {
-    return true;
+function transformDistrict(ogcioRecord) {
+  if (ogcioRecord.eng.District) {
+    ogcioRecord.eng.District.DcDistrict = dcDistrictMapping(ogcioRecord.eng.District.DcDistrict, false);
   }
-  return false;
+  if (ogcioRecord.chi.District) {
+    ogcioRecord.chi.District.DcDistrict = dcDistrictMapping(ogcioRecord.chi.District.DcDistrict, true);
+  }
+  return  ogcioRecord;
 }
 
 function parseAddress(address, normalizedOGCIOResult) {
@@ -321,6 +324,8 @@ function parseAddress(address, normalizedOGCIOResult) {
     const matches = findMatchFromOGCIORecord(address, record);
     record.score = calculateScoreFromMatches(matches);
     record.matches = matches;
+    // Also tranform the district code to name directly
+    record = transformDistrict(record);
   }
 
   normalizedOGCIOResult = normalizedOGCIOResult.sort((a, b) => {
