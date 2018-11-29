@@ -49,7 +49,7 @@ export default {
     rank: Number,
     result: {
       status: Object,
-      geo: Object,
+      geo: Array,
       chi: Object,
       eng: Object,
       matches: Array
@@ -72,7 +72,7 @@ export default {
   },
   computed: {
     district: function () {
-      return dclookup.dcNameFromCoordinates(this.result.geo.Latitude, this.result.geo.Longitude)
+      return dclookup.dcNameFromCoordinates(this.result.geo[0].Latitude, this.result.geo[0].Longitude)
     }
   },
   methods: {

@@ -11,7 +11,7 @@ function levelToString (level) {
   }
 }
 
-const SORTING_PRORITY_CHI = ['Region', 'DcDistrict', 'VillageName', 'StreetName', 'BuildingNoFrom', 'BuildingNoTo', 'EstateName', 'BlockNo', 'BlockDescriptor', 'BuildingName', 'PhaseName'];
+const SORTING_PRORITY_CHI = ['Region', 'District', 'Street', 'Estate', 'Block', 'BuildingName', 'Phase'];
 const SORTING_PRORITY_ENG = [];
 
 function getSortingPriorityForField (lang, field) {

@@ -129,8 +129,8 @@ export default {
       this.filterOptions = await this.$refs.searchFilter.getFilterOptions();
       this.results = await AddressParser.searchResult(this.address, data);
       await this.$refs.topMap.gotoLatLng(
-        Number(this.results[0].geo.Latitude),
-        Number(this.results[0].geo.Longitude)
+        Number(this.results[0].geo[0].Latitude),
+        Number(this.results[0].geo[0].Longitude)
       );
     }
   }
