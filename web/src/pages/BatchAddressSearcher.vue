@@ -65,9 +65,10 @@
 <script>
 import AddressParser from "./../lib/address-parser";
 import SingleMatch from "./../components/SingleMatch";
-import async from "async";
+import asyncLib from "async";
 import utils from "./../utils";
 import dclookup from "./../utils/dclookup.js";
+import asyncify from 'async/asyncify';
 
 const SEARCH_LIMIT = 200;
 
@@ -126,15 +127,21 @@ export default {
           address: this.addressesToSearch[index],
           full_address: utils.fullChineseAddressFromResult(result[0].chi),
           dc_name: dclookup.dcNameFromCoordinates(
-            result[0].geo.Latitude,
-            result[0].geo.Longitude
+            result[0].geo[0].Latitude,
+            result[0].geo[0].Longitude
           ).cname,
-          lat: result[0].geo.Latitude,
-          long: result[0].geo.Longitude
+          lat: result[0].geo[0].Latitude,
+          long: result[0].geo[0].Longitude
         };
 
         headers.forEach(field => {
-          json[field] = result[0].chi[field] ? result[0].chi[field] : "";
+          if (field.includes('.')) {
+            const [mainField,subField] = field.split('.');
+            json[field] = result[0].chi[mainField] && result[0].chi[mainField][subField]  ? result[0].chi[mainField][subField] : "";
+          } else {
+            json[field] = result[0].chi[field] ? result[0].chi[field] : "";
+          }
+
         });
 
         return json;
@@ -147,10 +154,21 @@ export default {
       let headers = [];
       this.results.forEach(result => {
         // result is an array
-        const singleResult = result[0].chi;
-        const keys = Object.keys(singleResult);
+        // TODO: eng address
+        const chineseResult = result[0].chi;
+        const keys = Object.keys(chineseResult);
+        let flattenedKeys = [];
+        for (const key of keys) {
+          if (typeof(chineseResult[key]) === 'object') {
+            for (const subkey of Object.keys(chineseResult[key])) {
+              flattenedKeys.push(`${key}.${subkey}`);
+            }
+          } else {
+            flattenedKeys.push(key);
+          }
+        }
         // Get the union of headers
-        headers = [...new Set([...headers, ...keys])];
+        headers = [...new Set([...headers, ...flattenedKeys])];
       });
       return headers;
     },
@@ -163,11 +181,11 @@ export default {
         return;
       }
       this.addressesToSearch = this.addressString.split("\n");
-      async.eachOfLimit(
+      asyncLib.eachOfLimit(
         this.addressesToSearch,
-        5,
+        10,
         // binding this for setting the results during the process
-        searchSingleResult.bind(this),
+        asyncify(searchSingleResult.bind(this)),
         err => {
           // All query finished
         }
@@ -177,7 +195,7 @@ export default {
 };
 
 async function searchSingleResult(address, key) {
-  //const res = await fetch('http://localhost:8081/search/' + this.address);
+  // //const res = await fetch('http://localhost:8081/search/' + this.address);
   const URL = `https://www.als.ogcio.gov.hk/lookup?q=${address}&n=${SEARCH_LIMIT}`;
   const res = await fetch(URL, {
     headers: {

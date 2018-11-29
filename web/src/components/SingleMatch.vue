@@ -10,7 +10,7 @@
         <h2>{{ fullChineseAddressFromResult(result.chi) }} <br/> {{fullEnglishAddressFromResult(result.eng)}}</h2>
         <span
           class="text-xs-right grey--text"
-        >{{ result.geo.Latitude + ", " + result.geo.Longitude }}</span>
+        >{{ result.geo[0].Latitude + ", " + result.geo[0].Longitude }}</span>
       </div>
       <v-card class="ma-4 pa-3">
         <v-list dense subheader>
@@ -30,7 +30,7 @@
           v-if="filterOptions[massageKey(key)]"
         >
           <v-list-tile>
-            <v-list-tile-content> {{ resultKey[massageKey(key)].eng }} <br/> {{ resultKey[massageKey(key)].chi }}</v-list-tile-content>
+            <!-- <v-list-tile-content> {{ resultKey[massageKey(key)].eng }} <br/> {{ resultKey[massageKey(key)].chi }}</v-list-tile-content> -->
             <v-list-tile-content class="align-end">{{key != 'BuildingNoFrom' ? result.eng[key] + '\n' + value : value}}  </v-list-tile-content>
           </v-list-tile>
           <v-divider></v-divider>
