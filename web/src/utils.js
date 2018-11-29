@@ -11,19 +11,6 @@ function levelToString (level) {
   }
 }
 
-const SORTING_PRORITY_CHI = ['Region', 'District', 'Street', 'Estate', 'Block', 'BuildingName', 'Phase'];
-const SORTING_PRORITY_ENG = [];
-
-function getSortingPriorityForField (lang, field) {
-  const priorityArray = lang === 'EN' ? SORTING_PRORITY_ENG : SORTING_PRORITY_CHI;
-  for (let i = 0; i < priorityArray.length; i += 1) {
-    const fieldName = priorityArray[i];
-    if (field.indexOf(fieldName) >= 0) return i;
-  }
-  console.error(`unknown field : ${field}`);
-  return -1;
-}
-
 /**
  * Adding the street no prefix and also filter out unwanted fields
  * @param {*} addressTokens
@@ -36,6 +23,8 @@ function concatChineseAddress (addressTokens) {
       // not showing in address
       continue;
     }
+
+    console.log(addressTokens);
 
     if (field === 'BuildingNoFrom') {
       addresses.push(value);
@@ -59,19 +48,46 @@ function concatChineseAddress (addressTokens) {
   return addresses.join('');
 }
 
+function safeFieldValue(obj, key) {
+  return obj && obj[key] ? obj[key]: '';
+}
+
+function engBuildingNumberFromField(field) {
+  if (!field || (!field.BuildingNoFrom && !field.BuildingNoTo)) {
+    return '';
+  }
+  if (field.BuildingNoFrom && field.BuildingNoTo) {
+    return `${field.BuildingNoFrom}-${field.BuildingNoTo}`;
+  } else {
+    return `${field.BuildingNoTo ? field.BuildingNoTo : field.BuildingNoFrom}`;
+  }
+}
+
+
+function chineseBuildingNumberFromField(field) {
+  if (!field || (!field.BuildingNoFrom && !field.BuildingNoTo)) {
+    return '';
+  }
+  if (field.BuildingNoFrom && field.BuildingNoTo) {
+    return `${field.BuildingNoFrom}至${field.BuildingNoTo}號`;
+  } else {
+    return `${field.BuildingNoTo ? field.BuildingNoTo : field.BuildingNoFrom}號`;
+  }
+}
 /**
  * Format the chinese address from the given result set
  * @param {*} result
  */
 function fullChineseAddressFromResult (result) {
-  const addressFields = [];
-  for (const key of Object.keys(result)) {
-    addressFields.push(key);
-  }
-  addressFields.sort((field1, field2) => getSortingPriorityForField('CHI', field1) -
-    getSortingPriorityForField('CHI', field2));
+  const { Street, Block, Phase, Estate, Village } = result;
+  const region = safeFieldValue(result, 'Region');
+  const streetName = safeFieldValue(Street, 'StreetName');
+  const streetNumber = chineseBuildingNumberFromField(Street);
+  const villageName = safeFieldValue(Village, 'VillageName');
+  const villageNumber = chineseBuildingNumberFromField(Village);
+  const buildingName = safeFieldValue(result, 'BuildingName');
 
-  return concatChineseAddress(addressFields.map(field => ({ field, value: result[field] })));
+  return `${region}${villageName}${villageNumber}${streetName}${streetNumber}${buildingName}`.trim();
 }
 
 /**
@@ -79,10 +95,15 @@ function fullChineseAddressFromResult (result) {
  * @param {*} result
  */
 function fullEnglishAddressFromResult (result) {
-  let { BuildingName, StreetName, BuildingNoFrom, DcDistrict, Region } = result;
-  BuildingName = BuildingName ? `${BuildingName},` : ' ';
-  StreetName = StreetName ? `${StreetName},` : ' ';
-  return `${BuildingName} ${BuildingNoFrom} ${StreetName} ${Region}`.trim();
+  const { Street, Block, Phase, Estate, Village } = result;
+  const region = safeFieldValue(result, 'Region');
+  const streetName = safeFieldValue(Street, 'StreetName');
+  const streetNumber = engBuildingNumberFromField(Street);
+  const villageName = safeFieldValue(Village, 'VillageName');
+  const villageNumber = engBuildingNumberFromField(Village);
+  const buildingName = safeFieldValue(result, 'BuildingName');
+  return [buildingName,`${streetNumber} ${streetName}`,`${villageNumber} ${villageName}`,region].filter(token => token.match(/\S/)).join(', ');
+
 }
 
 export default {
