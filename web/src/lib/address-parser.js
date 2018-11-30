@@ -7,6 +7,7 @@ const { dcDistrict } = require('../utils/constants');
 
 const CONFIDENT_ALL_MATCH = 1.0;
 const CONFIDENT_MULTIPLIER_NAME_ONLY = 0.5;
+const CONFIDENT_MULTIPLIER_PARTIAL_MATCH = 0.7;
 const CONFIDENT_MULTIPLIER_OPPOSITE_STREET = 0.75;
 const CONFIDENT_MULTIPLIER_FULL_STREET_MATCH = 1.5;
 
@@ -170,8 +171,8 @@ function matchAllMatchedWords(address, matchedWords) {
 }
 /**
  * Find the longest set of matches that has highest score and not overlapping
- * @param {*} address 
- * @param {*} matches 
+ * @param {*} address
+ * @param {*} matches
  */
 function findMaximumNonOverlappingMatches(address, matches) {
   if (matches.length === 1) {
@@ -181,7 +182,7 @@ function findMaximumNonOverlappingMatches(address, matches) {
     return [];
   }
 
-  let longestMatchScore = 0; 
+  let longestMatchScore = 0;
   let longestMatch = [];
   for (const match of matches) {
     if (matchAllMatchedWords(address, match.matchedWords)) {
@@ -205,7 +206,16 @@ function findMaximumNonOverlappingMatches(address, matches) {
  * @param {*} matchPercentage
  */
 function modifyConfidentByPartialMatchPercentage(confident, matchPercentage) {
-  return confident * matchPercentage * matchPercentage;
+  return confident * matchPercentage * matchPercentage * CONFIDENT_MULTIPLIER_PARTIAL_MATCH;
+}
+
+
+function calculateScoreFromMatches(matches) {
+  let score = 0;
+  for (const match of matches) {
+    score += SCORE_SCHEME[match.matchedKey] * match.confident;
+  }
+  return score;
 }
 
 function searchSimilarityForStreetOrVillage(type, address, addressToSearch, BuildingNoFrom, BuildingNoTo) {
@@ -217,7 +227,7 @@ function searchSimilarityForStreetOrVillage(type, address, addressToSearch, Buil
     const { matchPercentage, matchedWord } = findPartialMatch(address, addressToSearch);
     if (matchPercentage > 0) {
       sim.confident = modifyConfidentByPartialMatchPercentage(CONFIDENT_ALL_MATCH, matchPercentage);
-      sim.matchedWords.push(matchedWord);    
+      sim.matchedWords.push(matchedWord);
     }
   }
   // total match of the streetname
@@ -229,11 +239,11 @@ function searchSimilarityForStreetOrVillage(type, address, addressToSearch, Buil
     if (from === to) {
       if (!tryToMatchAnyNumber(address, from)) {
         if (tryToMatchRangeOfNumber(address, from, to, !isOdd)) {
-          // ratio 1       
-          sim.confident *= CONFIDENT_MULTIPLIER_OPPOSITE_STREET;   
+          // ratio 1
+          sim.confident *= CONFIDENT_MULTIPLIER_OPPOSITE_STREET;
         } else {
           sim.confident *= CONFIDENT_MULTIPLIER_NAME_ONLY;
-        }  
+        }
       } else {
         sim.matchedWords.push(from + '');
         sim.confident *= CONFIDENT_MULTIPLIER_FULL_STREET_MATCH;
@@ -242,11 +252,11 @@ function searchSimilarityForStreetOrVillage(type, address, addressToSearch, Buil
       if (!tryToMatchRangeOfNumber(address, from, to, isOdd)) {
         // Try to look up at opposite street
         if (tryToMatchRangeOfNumber(address, from, to, !isOdd)) {
-          // ratio 1       
-          sim.confident *= CONFIDENT_MULTIPLIER_OPPOSITE_STREET;   
+          // ratio 1
+          sim.confident *= CONFIDENT_MULTIPLIER_OPPOSITE_STREET;
         } else {
           sim.confident *= CONFIDENT_MULTIPLIER_NAME_ONLY;
-        }        
+        }
       } else {
         // TODO: cannot mark the street/village number that we have came across
         sim.confident *= CONFIDENT_MULTIPLIER_FULL_STREET_MATCH;
@@ -316,13 +326,13 @@ function searchOccuranceForBuildingName(address, buildingName) {
 
 function searchOccuranceForStreet(address, {StreetName, BuildingNoFrom, BuildingNoTo}) {
   const streetsToTest = splitValueForSpaceIfChinese(StreetName);
-  return searchSimilarityForStreetOrVillage(OGCIO_KEY_STREET, address, streetsToTest, BuildingNoFrom, BuildingNoTo);  
+  return searchSimilarityForStreetOrVillage(OGCIO_KEY_STREET, address, streetsToTest, BuildingNoFrom, BuildingNoTo);
 }
 
 
 function searchOccuranceForVillage(address, {VillageName, BuildingNoFrom, BuildingNoTo}) {
   const streetsToTest = splitValueForSpaceIfChinese(VillageName);
-  return searchSimilarityForStreetOrVillage(OGCIO_KEY_VILLAGE, address, streetsToTest, BuildingNoFrom, BuildingNoTo);  
+  return searchSimilarityForStreetOrVillage(OGCIO_KEY_VILLAGE, address, streetsToTest, BuildingNoFrom, BuildingNoTo);
 }
 
 /**
@@ -341,14 +351,6 @@ function searchOccurance(address, ogcioRecordElementKey, ogcioRecordElement) {
   return null;
 }
 
-function calculateScoreFromMatches(matches) {
-  let score = 0;
-  for (const match of matches) {
-    score += SCORE_SCHEME[match.matchedKey] * match.confident +
-     (match.matchedWords.map(word => word.length).reduce((p,c) => p + c, 0) * SCORE_PER_MATCHED_CHAR * SCORE_SCHEME[match.matchedKey]);
-  }
-  return score;
-}
 
 function findMatchFromOGCIORecord(address, ogcioRecord) {
   const matches = [];
@@ -364,7 +366,7 @@ function findMatchFromOGCIORecord(address, ogcioRecord) {
       }
       matches.push(occurance);
     }
-    
+
     if (ogcioRecord.eng[key] !== undefined && !isChinese(address)) {
       const occurance = searchOccurance(address, key, ogcioRecord.eng[key]);
       if (occurance === null) {
