@@ -15,8 +15,8 @@
       <v-card class="ma-4 pa-3">
         <v-list dense subheader>
           <v-list-tile>
-            <v-list-tile-content>選區</v-list-tile-content>
-            <v-list-tile-content class="align-end">{{ district.cname }}</v-list-tile-content>
+            <v-list-tile-content>{{ resultKey['electoralDistrict'].eng }} <br/> {{ resultKey['electoralDistrict'].chi }}</v-list-tile-content>
+            <v-list-tile-content class="align-end">{{ district.cname }} <br/> {{ district.ename }}</v-list-tile-content>
           </v-list-tile>
           <v-divider></v-divider>
         </v-list>
