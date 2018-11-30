@@ -76,7 +76,6 @@ export default {
   methods: {
     textForKey: ogcioHelper.textForKey,
     textForValue: ogcioHelper.textForValue,    
-    levelToString: utils.levelToString,
     fullChineseAddressFromResult: ogcioHelper.fullChineseAddressFromResult,
     fullEnglishAddressFromResult: ogcioHelper.fullEnglishAddressFromResult,
     // To a confident level of 0-4
