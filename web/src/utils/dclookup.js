@@ -16,6 +16,7 @@ export default {
         return {
           code: feature.properties.CACODE,
           cname: feature.properties.CNAME,
+          ename: feature.properties.ENAME,
           district: feature.properties.DISTRICT_T,
         }
       };
@@ -23,6 +24,7 @@ export default {
     return {
       code: 'unknown',
       cname: 'unknown',
+      ename: 'unknown',
       district: 'unknown',
     }
 
