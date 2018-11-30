@@ -15,8 +15,8 @@
       <v-card class="ma-4 pa-3">
         <v-list dense subheader>
           <v-list-tile>
-            <v-list-tile-content>{{ resultKey['electoralDistrict'].eng }} <br/> {{ resultKey['electoralDistrict'].chi }}</v-list-tile-content>
-            <v-list-tile-content class="align-end">{{ district.cname }} <br/> {{ district.ename }}</v-list-tile-content>
+            <v-list-tile-content>{{ resultKey['electoralDistrict'].chi }}<br/>{{ resultKey['electoralDistrict'].eng }}</v-list-tile-content>
+            <v-list-tile-content class="align-end">{{ district.cname }}<br/>{{ district.ename }}</v-list-tile-content>
           </v-list-tile>
           <v-divider></v-divider>
         </v-list>
@@ -30,8 +30,8 @@
           v-if="filterOptions[massageKey(key)]"
         >
           <v-list-tile>
-            <v-list-tile-content> {{ resultKey[massageKey(key)].eng }} <br/> {{ resultKey[massageKey(key)].chi }}</v-list-tile-content>
-            <v-list-tile-content class="align-end">{{key != 'BuildingNoFrom' ? result.eng[key] + '\n' + value : value}}  </v-list-tile-content>
+            <v-list-tile-content>{{ resultKey[massageKey(key)].chi }}<br/>{{ resultKey[massageKey(key)].eng }}</v-list-tile-content>
+            <v-list-tile-content class="align-end">{{key != 'BuildingNoFrom' ? value + '\n' + result.eng[key] : value}}</v-list-tile-content>
           </v-list-tile>
           <v-divider></v-divider>
         </v-list>

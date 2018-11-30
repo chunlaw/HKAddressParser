@@ -4,7 +4,7 @@ const resultKeyLookup = {
         chi: '地區'
     },
     dcDistrict: {
-        eng: 'District Councils District',
+        eng: 'District Council Districts',
         chi: '區議會分區'
     },
     streetName: {
@@ -12,16 +12,16 @@ const resultKeyLookup = {
         chi: '街道名稱'
     },
     buildingNoFrom: {
-        eng: 'Building Number From',
-        chi: '大廈編號'
+        eng: 'Street Number From',
+        chi: '街道門牌'
     },
     buildingName: {
         eng: 'Building Name',
         chi: '大廈名稱'
     },
     electoralDistrict: {
-        eng: 'Electoral District',
-        chi: '選區'
+        eng: 'District Council Constituency Area',
+        chi: '區議會選區'
     }
 }
 

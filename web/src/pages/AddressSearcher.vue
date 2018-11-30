@@ -13,7 +13,7 @@
               <span class="amber lighten-4 red--text px-1">街道門牌</span>、
               <span class="amber lighten-4 red--text px-1">大廈</span>、
               <span class="amber lighten-4 red--text px-1">坐標</span>，連
-              <span class="amber lighten-4 red--text px-1">區議會小選區</span>都有
+              <span class="amber lighten-4 red--text px-1">區議會選區</span>都有
             </h3>
             <v-form ref="form" class="form" @submit.prevent="submit">
               <v-text-field
