@@ -24,10 +24,9 @@
         <v-list
           dense
           subheader
-          v-for="(value, key, index) in result.chi"
-          :key="index"
-          :class="(isMatch(key)? ' matched': '')"
-          v-if="enabled(key)"
+          v-for="key in filteredKeys"
+          :key="key"
+          :class="`match_level_${getConfidentLevel(key)}`"
         >
           <v-list-tile>
             <v-list-tile-content> {{ textForKey(key, 'eng') }} <br/> {{ textForKey(key, 'chi') }}</v-list-tile-content>
@@ -57,19 +56,22 @@ export default {
     filterOptions: Array
   },
   data: () => ({
-    disableContent: false
+    disableContent: false,
+    filteredKeys: []
   }),
   mounted: function () {
     this.disableExpansionPanelContent();
+    this.filteredKeys = this.getFilteredKeys();
     this.$root.$on('filterUpdate', (options) => {
       this.filterOptions = options;
+      this.filteredKeys = this.getFilteredKeys();
       this.$forceUpdate();
     })
   },
   computed: {
     district: function () {
       return dclookup.dcNameFromCoordinates(this.result.geo[0].Latitude, this.result.geo[0].Longitude)
-    }
+    },    
   },
   methods: {
     textForKey: ogcioHelper.textForKey,
@@ -77,12 +79,12 @@ export default {
     levelToString: utils.levelToString,
     fullChineseAddressFromResult: ogcioHelper.fullChineseAddressFromResult,
     fullEnglishAddressFromResult: ogcioHelper.fullEnglishAddressFromResult,
-    isMatch: function (key) {
-      return this.result.matches.indexOf(key) >= 0;
+    // To a confident level of 0-4
+    getConfidentLevel: function (key) {
+      return Math.min(4, (this.result.matches.filter(match => match.matchedKey === key).map(match => match.confident).reduce((p,c) => c, 0) * 5) | 0);
     },
-    enabled: function(key) {
-      const option = this.filterOptions.find(opt => opt.key === key);
-      return option ? option.enabled : true;
+    getFilteredKeys: function() {
+      return this.filteredKeys = this.filterOptions.filter(opt => opt.enabled && this.result.chi[opt.key] !== undefined ).map(opt => opt.key);
     },
     disableExpansionPanelContent: function () {
       const filterOptions = this.filterOptions;
@@ -95,10 +97,25 @@ export default {
 </script>
 
 <style>
-.matched {
+.match_level_1 {
+  color: rgb(255, 144, 144) !important;
+  font-weight: bolder;
+}
+
+.match_level_2 {
+  color: rgb(231, 141, 141) !important;
+}
+
+.match_level_3 {
+  color: rgb(248, 87, 87) !important;
+}
+
+.match_level_4 {
   color: red !important;
   font-weight: bolder;
 }
+
+
 
 .align-end {
   text-align: right;

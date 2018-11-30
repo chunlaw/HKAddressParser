@@ -7,7 +7,7 @@ const { dcDistrict } = require('../utils/constants');
 
 const CONFIDENT_ALL_MATCH = 1.0;
 const CONFIDENT_MATCH_NAME = 0.5;
-const CONFIDENT_NOT_FOUND = 0.0;
+const CONFIDENT_REVERSE_MATCH = 0.9;
 
 const OGCIO_KEY_BLOCK = 'Block';
 const OGCIO_KEY_PHASE = 'Phase';
@@ -67,7 +67,7 @@ function dcDistrictMapping(val, isChinese) {
 function partialMatch(string, stringToSearch) {
   // some exceptional case if the word from OGCIO contains directly the search address, we consider it as a full match
   if (stringToSearch.indexOf(string) >= 0) {
-    return 1.0;
+    return CONFIDENT_REVERSE_MATCH;
   }
 
   for (let i = 0; i < stringToSearch.length; i ++) {
@@ -246,7 +246,7 @@ function searchOccuranceForStreet(address, {StreetName, BuildingNoFrom, Building
   } else {
     const matchPercentage = partialMatch(address, StreetName);
     if (matchPercentage > 0) {
-      const match = searchSimilarityForStreetOrVillage(OGCIO_KEY_VILLAGE, address, BuildingNoFrom, BuildingNoTo);
+      const match = searchSimilarityForStreetOrVillage(OGCIO_KEY_STREET, address, BuildingNoFrom, BuildingNoTo);
       match.confident = modifyConfidentByPartialMatchPercentage(match.confident, matchPercentage);
       return match;
     }

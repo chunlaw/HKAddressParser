@@ -56,7 +56,6 @@ function textForValue(record, key, lang) {
     return record[lang][key];
   }
 
-  
   return Object.values(record[lang][key]).join();
 }
 
