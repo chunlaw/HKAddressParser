@@ -1,15 +1,66 @@
-function levelToString (level) {
-  switch (level) {
-    case 1:
-      return '街名'
-    case 2:
-      return '大廈名/村名'
-    case 3:
-      return '街道名稱'
-    case 0:
-    default: return '?'
+const OGCIO_KEY_BLOCK = 'Block';
+const OGCIO_KEY_PHASE = 'Phase';
+const OGCIO_KEY_ESTATE = 'Estate';
+const OGCIO_KEY_VILLAGE = 'Village';
+const OGCIO_KEY_REGION = 'Region';
+const OGCIO_KEY_STREET = 'Street';
+const OGCIO_KEY_DISTRICT = 'District';
+const OGCIO_KEY_LOT = 'Lot';
+const OGCIO_KEY_STRUCTURED_LOT = 'StructuredLot';
+const OGCIO_KEY_BUILDING_NAME = 'BuildingName';
+
+const keys = {
+  eng: {
+    // level 1 keys
+    [OGCIO_KEY_BLOCK]: 'Block',
+    [OGCIO_KEY_PHASE]: 'Phase',
+    [OGCIO_KEY_ESTATE]: 'Estate',
+    [OGCIO_KEY_VILLAGE]: 'Village',
+    [OGCIO_KEY_REGION]: 'Region',
+    [OGCIO_KEY_DISTRICT]: 'District',
+    [OGCIO_KEY_STREET]: 'Street',
+    [OGCIO_KEY_BUILDING_NAME]: 'Building Name',
+    // level 2 keys
+    [`${OGCIO_KEY_DISTRICT}.DcDistrict`]: '區議會分區',
+  },
+  chi: {
+    // level 1 keys
+    [OGCIO_KEY_BLOCK]: '座數',
+    [OGCIO_KEY_PHASE]: '期數',
+    [OGCIO_KEY_ESTATE]: '屋邨',
+    [OGCIO_KEY_VILLAGE]: '村',
+    [OGCIO_KEY_REGION]: '區域',
+    [OGCIO_KEY_DISTRICT]: '地區',
+    [OGCIO_KEY_STREET]: '街道',
+    [OGCIO_KEY_BUILDING_NAME]: '大廈名稱',
+    // level 2 keys
+    [`${OGCIO_KEY_DISTRICT}.DcDistrict`]: '區議會分區',
   }
 }
+
+function textForKey(key, lang) {
+  return keys[lang]
+    ? (keys[lang][key]
+      ? keys[lang][key]
+      : '')
+    : '';
+}
+
+function textForValue(record, key, lang) {
+  
+  if (!record[lang]) {
+    return '';
+  }
+
+  if (typeof(record[lang][key]) === 'string') {
+    return record[lang][key];
+  }
+
+  
+  return Object.values(record[lang][key]).join();
+}
+
+
 
 function safeFieldValue(obj, key) {
   return obj && obj[key] ? obj[key]: '';
@@ -69,8 +120,11 @@ function fullEnglishAddressFromResult (result) {
 
 }
 
+
 export default {
-  levelToString,
-  fullChineseAddressFromResult,
-  fullEnglishAddressFromResult
-}
+  topLevelKeys: () => Object.keys(keys.chi).map((key) => ({ key, value: keys.chi[key] })).filter(key => !key.key.includes('.')),
+  textForKey,
+  textForValue,
+  fullEnglishAddressFromResult,
+  fullChineseAddressFromResult
+} 
