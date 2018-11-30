@@ -27,11 +27,11 @@
           v-for="(value, key, index) in result.chi"
           :key="index"
           :class="(isMatch(key)? ' matched': '')"
-          v-if="filterOptions[massageKey(key)]"
+          v-if="enabled(key)"
         >
           <v-list-tile>
-            <!-- <v-list-tile-content> {{ resultKey[massageKey(key)].eng }} <br/> {{ resultKey[massageKey(key)].chi }}</v-list-tile-content> -->
-            <v-list-tile-content class="align-end">{{key != 'BuildingNoFrom' ? result.eng[key] + '\n' + value : value}}  </v-list-tile-content>
+            <v-list-tile-content> {{ textForKey(key, 'eng') }} <br/> {{ textForKey(key, 'chi') }}</v-list-tile-content>
+            <v-list-tile-content class="align-end"> {{ textForValue(result, key, 'eng') }} <br /> {{ textForValue(result, key, 'chi') }} </v-list-tile-content>
           </v-list-tile>
           <v-divider></v-divider>
         </v-list>
@@ -43,7 +43,7 @@
 <script>
 import utils from "./../utils";
 import dclookup from "./../utils/dclookup.js";
-import resultKeyLookup from "./../utils/resultKeyLookup.js";
+import ogcioHelper from "./../utils/ogcio-helper.js";
 export default {
   props: {
     rank: Number,
@@ -54,21 +54,17 @@ export default {
       eng: Object,
       matches: Array
     },
-    filterOptions: {
-      region: Boolean,
-      dcDistrict: Boolean,
-      buildingNoFrom: Boolean,
-      buildingName: Boolean,
-      streetName: Boolean
-    }
+    filterOptions: Array
   },
   data: () => ({
-    disableContent: false,
-    resultKey: {}
+    disableContent: false
   }),
   mounted: function () {
     this.disableExpansionPanelContent();
-    this.resultKey = resultKeyLookup;
+    this.$root.$on('filterUpdate', (options) => {
+      this.filterOptions = options;
+      this.$forceUpdate();
+    })
   },
   computed: {
     district: function () {
@@ -76,14 +72,17 @@ export default {
     }
   },
   methods: {
+    textForKey: ogcioHelper.textForKey,
+    textForValue: ogcioHelper.textForValue,    
     levelToString: utils.levelToString,
-    fullChineseAddressFromResult: utils.fullChineseAddressFromResult,
-    fullEnglishAddressFromResult: utils.fullEnglishAddressFromResult,
+    fullChineseAddressFromResult: ogcioHelper.fullChineseAddressFromResult,
+    fullEnglishAddressFromResult: ogcioHelper.fullEnglishAddressFromResult,
     isMatch: function (key) {
       return this.result.matches.indexOf(key) >= 0;
     },
-    massageKey: function (key) {
-      return key.charAt(0).toLowerCase() + key.slice(1);
+    enabled: function(key) {
+      const option = this.filterOptions.find(opt => opt.key === key);
+      return option ? option.enabled : true;
     },
     disableExpansionPanelContent: function () {
       const filterOptions = this.filterOptions;

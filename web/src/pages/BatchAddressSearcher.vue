@@ -67,7 +67,8 @@ import AddressParser from "./../lib/address-parser";
 import SingleMatch from "./../components/SingleMatch";
 import asyncLib from "async";
 import utils from "./../utils";
-import dclookup from "./../utils/dclookup.js";
+import dclookup from "./../utils/dclookup";
+import ogcioHelper from "./../utils/ogcio-helper";
 import asyncify from 'async/asyncify';
 
 const SEARCH_LIMIT = 200;
@@ -125,7 +126,7 @@ export default {
       const results = this.results.map((result, index) => {
         let json = {
           address: this.addressesToSearch[index],
-          full_address: utils.fullChineseAddressFromResult(result[0].chi),
+          full_address: ogcioHelper.fullChineseAddressFromResult(result[0].chi),
           dc_name: dclookup.dcNameFromCoordinates(
             result[0].geo[0].Latitude,
             result[0].geo[0].Longitude

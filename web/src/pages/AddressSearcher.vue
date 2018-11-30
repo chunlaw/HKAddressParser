@@ -26,7 +26,7 @@
               <v-expansion-panel popout>
                 <v-expansion-panel-content>
                   <div slot="header">進階選項</div>
-                  <SearchFilter ref="searchFilter"/>
+                  <SearchFilter :filterOptions.sync="filterOptions"/>
                 </v-expansion-panel-content>
               </v-expansion-panel>
 
@@ -96,6 +96,7 @@ import AddressParser from "./../lib/address-parser";
 import SingleMatch from "./../components/SingleMatch";
 import ArcGISMap from "./../components/ArcGISMap";
 import SearchFilter from "./../components/SearchFilter";
+import ogcioHelper from "./../utils/ogcio-helper";
 
 export default {
   components: {
@@ -110,6 +111,11 @@ export default {
     filterOptions: {},
     toggleMap: false
   }),
+  created: function() {
+    this.filterOptions = ogcioHelper.topLevelKeys();
+    this.filterOptions.forEach(option => option.enabled = true);
+    
+  },
   methods: {
     submit: async function submit() {
       this.results = [];
@@ -126,7 +132,6 @@ export default {
       });
       const data = await res.json();
       this.toggleMap = true;
-      this.filterOptions = await this.$refs.searchFilter.getFilterOptions();
       this.results = await AddressParser.searchResult(this.address, data);
       await this.$refs.topMap.gotoLatLng(
         Number(this.results[0].geo[0].Latitude),
