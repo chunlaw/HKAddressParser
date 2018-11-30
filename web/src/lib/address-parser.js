@@ -300,7 +300,7 @@ function findMatchFromOGCIORecord(address, ogcioRecord) {
 
   // First we look up everything that exists in that address
   for (const key of elementPriority) {
-    if (ogcioRecord.chi[key] !== undefined) {
+    if (ogcioRecord.chi[key] !== undefined && isChinese(address)) {
       //
       const occurance = searchOccurance(address, key, ogcioRecord.chi[key]);
 
@@ -308,7 +308,9 @@ function findMatchFromOGCIORecord(address, ogcioRecord) {
         continue;
       }
       matchedPhrase.push(occurance);
-    } else if (ogcioRecord.eng[key] !== undefined) {
+    }
+    
+    if (ogcioRecord.eng[key] !== undefined && !isChinese(address)) {
       const occurance = searchOccurance(address, key, ogcioRecord.eng[key]);
       if (occurance === null) {
         continue;
@@ -351,7 +353,7 @@ function parseAddress(address, normalizedOGCIOResult) {
  * @param {*} responseFromOGCIO Raw json response from ogcio
  */
 async function searchResult(address, responseFromOGCIO) {
-  const normalizedAddress = removeFloor(address);
+  const normalizedAddress = removeFloor(address).toUpperCase();
   const normalizedOGCIOResult = normalizeResponse(responseFromOGCIO);
   return parseAddress(normalizedAddress, normalizedOGCIOResult);
 }
