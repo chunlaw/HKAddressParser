@@ -100,5 +100,23 @@ describe('cli', () => {
         expect(parsedResult.score).to.be.a('number');
       }      
     });
+
+    it('should find the longest match without overlapping', async () => {
+      const findMaximumNonOverlappingMatches = getFunc('findMaximumNonOverlappingMatches');
+      const addressToTest = '香港中環皇后大道中80號H QUEEN\'S 23樓';
+      const matches = [{
+        matchedKey: 'Street',
+        matchedWords: ['皇后大道中'],
+        confident: 1
+      },{
+        matchedKey: 'Building',
+        matchedWords: ['皇后大道中'],
+        confident: 1
+      }];
+
+      const maximumMatches = findMaximumNonOverlappingMatches(addressToTest, matches);
+      expect(maximumMatches.length).to.be.eq(1);
+    });
+    
   });
 });

@@ -6,7 +6,11 @@
 const { dcDistrict } = require('../utils/constants');
 
 const CONFIDENT_ALL_MATCH = 1.0;
-const CONFIDENT_MATCH_NAME = 0.5;
+const CONFIDENT_MULTIPLIER_NAME_ONLY = 0.5;
+const CONFIDENT_MULTIPLIER_OPPOSITE_STREET = 0.75;
+const CONFIDENT_MULTIPLIER_FULL_STREET_MATCH = 1.5;
+
+
 const CONFIDENT_REVERSE_MATCH = 0.9;
 
 const OGCIO_KEY_BLOCK = 'Block';
@@ -27,6 +31,8 @@ const SCORE_SCHEME = {
   [OGCIO_KEY_BLOCK]: 20,
 };
 
+const SCORE_PER_MATCHED_CHAR = 0.1;
+
 // priority in asscending order
 const elementPriority = [OGCIO_KEY_BUILDING_NAME, OGCIO_KEY_BLOCK, OGCIO_KEY_PHASE, OGCIO_KEY_ESTATE, OGCIO_KEY_VILLAGE
   , OGCIO_KEY_STREET, OGCIO_KEY_REGION];
@@ -34,9 +40,11 @@ const elementPriority = [OGCIO_KEY_BUILDING_NAME, OGCIO_KEY_BLOCK, OGCIO_KEY_PHA
 const log = console.log; // eslint-disable-line
 
 class Match {
-  constructor(confident, matchedKey) {
+  constructor(confident, matchedKey, matchedWords) {
     this.confident = confident;
     this.matchedKey = matchedKey;
+    // array of words that matched
+    this.matchedWords = matchedWords;
   }
 }
 
@@ -64,21 +72,30 @@ function dcDistrictMapping(val, isChinese) {
  * @param {*} string
  * @param {*} stringToSearch
  */
-function partialMatch(string, stringToSearch) {
+function findPartialMatch(string, stringToSearch) {
+  const match = {
+    matchPercentage: 0,
+    matchedWord: null
+  };
   // some exceptional case if the word from OGCIO contains directly the search address, we consider it as a full match
   if (stringToSearch.indexOf(string) >= 0) {
-    return CONFIDENT_REVERSE_MATCH;
-  }
-
-  for (let i = 0; i < stringToSearch.length; i ++) {
-    for (let end = stringToSearch.length; end > i; end --) {
-      const substring = stringToSearch.substring(i, end);
-      if (string.includes(substring)) {
-        return (substring.length * 1.0 / stringToSearch.length)
+    match.matchPercentage = 0.9;
+    match.matchedWord = string;
+  } else {
+    masterLoop:
+    for (let i = 0; i < stringToSearch.length; i ++) {
+      for (let end = stringToSearch.length; end > i; end --) {
+        const substring = stringToSearch.substring(i, end);
+        if (string.includes(substring)) {
+          match.matchPercentage = (substring.length * 1.0 / stringToSearch.length);
+          match.matchedWord = substring;
+          break masterLoop;
+        }
       }
     }
   }
-  return 0;
+
+  return match;
 }
 
 /**
@@ -147,6 +164,41 @@ function splitValueForSpaceIfChinese(value) {
   return value;
 }
 
+
+function matchAllMatchedWords(address, matchedWords) {
+  return matchedWords.map(word => address.includes(word)).reduce((p,c) => p && c, true);
+}
+/**
+ * Find the longest set of matches that has highest score and not overlapping
+ * @param {*} address 
+ * @param {*} matches 
+ */
+function findMaximumNonOverlappingMatches(address, matches) {
+  if (matches.length === 1) {
+    if (matches[0].matchedWord !== null && matchAllMatchedWords(address, matches[0].matchedWords)) {
+      return matches;
+    }
+    return [];
+  }
+
+  let longestMatchScore = 0; 
+  let longestMatch = [];
+  for (const match of matches) {
+    if (matchAllMatchedWords(address, match.matchedWords)) {
+      let subAddress = address;
+      match.matchedWords.forEach(word => subAddress = subAddress.replace(word, ''));
+      const localLongestMatch = findMaximumNonOverlappingMatches(subAddress, matches.filter(m => m.matchedKey !== match.matchedKey));
+      localLongestMatch.push(match);
+      const score = calculateScoreFromMatches(localLongestMatch);
+      if (score > longestMatchScore) {
+        longestMatchScore = score;
+        longestMatch = localLongestMatch;
+      }
+    }
+  }
+  return longestMatch;
+}
+
 /**
  * To calcutate the final confident with partical match
  * @param {*} confident
@@ -156,8 +208,18 @@ function modifyConfidentByPartialMatchPercentage(confident, matchPercentage) {
   return confident * matchPercentage * matchPercentage;
 }
 
-function searchSimilarityForStreetOrVillage(type, address, BuildingNoFrom, BuildingNoTo) {
-  const sim = new Match(CONFIDENT_ALL_MATCH, type)
+function searchSimilarityForStreetOrVillage(type, address, addressToSearch, BuildingNoFrom, BuildingNoTo) {
+  const sim = new Match(0, type, []);
+  if (address.includes(addressToSearch)) {
+    sim.confident = CONFIDENT_ALL_MATCH;
+    sim.matchedWords.push(addressToSearch);
+  } else {
+    const { matchPercentage, matchedWord } = findPartialMatch(address, addressToSearch);
+    if (matchPercentage > 0) {
+      sim.confident = modifyConfidentByPartialMatchPercentage(CONFIDENT_ALL_MATCH, matchPercentage);
+      sim.matchedWords.push(matchedWord);    
+    }
+  }
   // total match of the streetname
   if (BuildingNoFrom) {
     const from = parseInt(BuildingNoFrom, 10);
@@ -166,29 +228,42 @@ function searchSimilarityForStreetOrVillage(type, address, BuildingNoFrom, Build
     // If the street name and also the street no. is matched. we should give it a very high score
     if (from === to) {
       if (!tryToMatchAnyNumber(address, from)) {
-        sim.confident = CONFIDENT_MATCH_NAME;
+        if (tryToMatchRangeOfNumber(address, from, to, !isOdd)) {
+          // ratio 1       
+          sim.confident *= CONFIDENT_MULTIPLIER_OPPOSITE_STREET;   
+        } else {
+          sim.confident *= CONFIDENT_MULTIPLIER_NAME_ONLY;
+        }  
       } else {
-        sim.confident *= 1.5;
+        sim.matchedWords.push(from + '');
+        sim.confident *= CONFIDENT_MULTIPLIER_FULL_STREET_MATCH;
       }
     } else {
       if (!tryToMatchRangeOfNumber(address, from, to, isOdd)) {
-        sim.confident = CONFIDENT_MATCH_NAME;
+        // Try to look up at opposite street
+        if (tryToMatchRangeOfNumber(address, from, to, !isOdd)) {
+          // ratio 1       
+          sim.confident *= CONFIDENT_MULTIPLIER_OPPOSITE_STREET;   
+        } else {
+          sim.confident *= CONFIDENT_MULTIPLIER_NAME_ONLY;
+        }        
       } else {
-        sim.confident *= 1.5;
+        // TODO: cannot mark the street/village number that we have came across
+        sim.confident *= CONFIDENT_MULTIPLIER_FULL_STREET_MATCH;
       }
     }
   } else {
-    sim.confident = CONFIDENT_MATCH_NAME;
+    sim.confident *= CONFIDENT_MULTIPLIER_NAME_ONLY;
   }
   return sim;
 }
 
-function searchOccuranceForBlock(address, { BlockDescriptor, BlockNo, BuildingName}) {
-  if (address.includes(BuildingName)) {
-    const match = new Match(CONFIDENT_ALL_MATCH, OGCIO_KEY_BLOCK);
+function searchOccuranceForBlock(address, { BlockDescriptor, BlockNo}) {
+  if (address.includes(BlockNo + BlockDescriptor)) {
+    const match = new Match(CONFIDENT_ALL_MATCH, OGCIO_KEY_BLOCK, [BlockNo, BlockDescriptor]);
     if (BlockNo) {
       if (!tryToMatchAnyNumber(address, parseInt(BlockNo, 10))) {
-        match.confident = CONFIDENT_MATCH_NAME;
+        match.confident = CONFIDENT_MULTIPLIER_NAME_ONLY;
       }
     }
     return match;
@@ -197,11 +272,11 @@ function searchOccuranceForBlock(address, { BlockDescriptor, BlockNo, BuildingNa
 }
 
 function searchOccuranceForPhase(address, { PhaseNo, PhaseName}) {
-  if (address.includes(PhaseName)) {
-    const match = new Match(CONFIDENT_ALL_MATCH, OGCIO_KEY_PHASE);
+  if (address.includes(PhaseName + PhaseNo)) {
+    const match = new Match(CONFIDENT_ALL_MATCH, OGCIO_KEY_PHASE, [PhaseNo, PhaseName]);
     if (PhaseNo) {
       if (!tryToMatchAnyNumber(address, parseInt(PhaseNo, 10))) {
-        match.confident = CONFIDENT_MATCH_NAME;
+        match.confident = CONFIDENT_MULTIPLIER_NAME_ONLY;
       }
     }
     return match;
@@ -211,25 +286,25 @@ function searchOccuranceForPhase(address, { PhaseNo, PhaseName}) {
 
 function searchOccuranceForEstate(address, { EstateName }) {
   if (address.includes(EstateName)) {
-    return new Match(CONFIDENT_ALL_MATCH, OGCIO_KEY_ESTATE);
+    return new Match(CONFIDENT_ALL_MATCH, OGCIO_KEY_ESTATE, [EstateName]);
   }
   return null;
 }
 
 function searchOccuranceForRegion(address, region) {
   if (address.includes(region)) {
-    return new Match(CONFIDENT_ALL_MATCH, OGCIO_KEY_REGION);
+    return new Match(CONFIDENT_ALL_MATCH, OGCIO_KEY_REGION, [region]);
   }
   return null;
 }
 
 function searchOccuranceForBuildingName(address, buildingName) {
   if (address.includes(buildingName)) {
-    return new Match(CONFIDENT_ALL_MATCH, OGCIO_KEY_BUILDING_NAME);
+    return new Match(CONFIDENT_ALL_MATCH, OGCIO_KEY_BUILDING_NAME, [buildingName]);
   } else {
-    const matchPercentage = partialMatch(address, buildingName);
+    const { matchPercentage, matchedWord } = findPartialMatch(address, buildingName);
     if (matchPercentage > 0) {
-      const match = new Match(CONFIDENT_ALL_MATCH, OGCIO_KEY_BUILDING_NAME);
+      const match = new Match(CONFIDENT_ALL_MATCH, OGCIO_KEY_BUILDING_NAME, [matchedWord]);
       match.confident = modifyConfidentByPartialMatchPercentage(match.confident, matchPercentage);
       return match;
     }
@@ -241,34 +316,13 @@ function searchOccuranceForBuildingName(address, buildingName) {
 
 function searchOccuranceForStreet(address, {StreetName, BuildingNoFrom, BuildingNoTo}) {
   const streetsToTest = splitValueForSpaceIfChinese(StreetName);
-  if (address.includes(streetsToTest)) {
-    return searchSimilarityForStreetOrVillage(OGCIO_KEY_STREET, address, BuildingNoFrom, BuildingNoTo);
-  } else {
-    const matchPercentage = partialMatch(address, StreetName);
-    if (matchPercentage > 0) {
-      const match = searchSimilarityForStreetOrVillage(OGCIO_KEY_STREET, address, BuildingNoFrom, BuildingNoTo);
-      match.confident = modifyConfidentByPartialMatchPercentage(match.confident, matchPercentage);
-      return match;
-    }
-  }
-
-  return null;
+  return searchSimilarityForStreetOrVillage(OGCIO_KEY_STREET, address, streetsToTest, BuildingNoFrom, BuildingNoTo);  
 }
 
 
 function searchOccuranceForVillage(address, {VillageName, BuildingNoFrom, BuildingNoTo}) {
   const streetsToTest = splitValueForSpaceIfChinese(VillageName);
-  if (address.includes(streetsToTest)) {
-    return searchSimilarityForStreetOrVillage(OGCIO_KEY_VILLAGE, address, BuildingNoFrom, BuildingNoTo);
-  } else {
-    const matchPercentage = partialMatch(address, VillageName);
-    if (matchPercentage > 0) {
-      const match = searchSimilarityForStreetOrVillage(OGCIO_KEY_VILLAGE, address, BuildingNoFrom, BuildingNoTo);
-      match.confident = modifyConfidentByPartialMatchPercentage(match.confident, matchPercentage);
-      return match;
-    }
-  }
-  return null;
+  return searchSimilarityForStreetOrVillage(OGCIO_KEY_VILLAGE, address, streetsToTest, BuildingNoFrom, BuildingNoTo);  
 }
 
 /**
@@ -290,13 +344,14 @@ function searchOccurance(address, ogcioRecordElementKey, ogcioRecordElement) {
 function calculateScoreFromMatches(matches) {
   let score = 0;
   for (const match of matches) {
-    score += SCORE_SCHEME[match.matchedKey] * match.confident;
+    score += SCORE_SCHEME[match.matchedKey] * match.confident +
+     (match.matchedWords.map(word => word.length).reduce((p,c) => p + c, 0) * SCORE_PER_MATCHED_CHAR * SCORE_SCHEME[match.matchedKey]);
   }
   return score;
 }
 
 function findMatchFromOGCIORecord(address, ogcioRecord) {
-  const matchedPhrase = [];
+  const matches = [];
 
   // First we look up everything that exists in that address
   for (const key of elementPriority) {
@@ -307,7 +362,7 @@ function findMatchFromOGCIORecord(address, ogcioRecord) {
       if (occurance === null) {
         continue;
       }
-      matchedPhrase.push(occurance);
+      matches.push(occurance);
     }
     
     if (ogcioRecord.eng[key] !== undefined && !isChinese(address)) {
@@ -315,10 +370,10 @@ function findMatchFromOGCIORecord(address, ogcioRecord) {
       if (occurance === null) {
         continue;
       }
-      matchedPhrase.push(occurance);
+      matches.push(occurance);
     }
   }
-  return matchedPhrase;
+  return findMaximumNonOverlappingMatches(address, matches);
 }
 
 function transformDistrict(ogcioRecord) {
@@ -359,4 +414,4 @@ async function searchResult(address, responseFromOGCIO) {
 }
 
 // node.js exports
-module.exports = { searchResult };
+module.exports = { searchResult, calculateScoreFromMatches };
