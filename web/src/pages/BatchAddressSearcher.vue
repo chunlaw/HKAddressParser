@@ -66,7 +66,6 @@
 import AddressParser from "./../lib/address-parser";
 import SingleMatch from "./../components/SingleMatch";
 import asyncLib from "async";
-import utils from "./../utils";
 import dclookup from "./../utils/dclookup";
 import ogcioHelper from "./../utils/ogcio-helper";
 import asyncify from 'async/asyncify';

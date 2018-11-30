@@ -15,7 +15,7 @@
       <v-card class="ma-4 pa-3">
         <v-list dense subheader>
           <v-list-tile>
-            <v-list-tile-content>{{ resultKey['electoralDistrict'].eng }} <br/> {{ resultKey['electoralDistrict'].chi }}</v-list-tile-content>
+            <v-list-tile-content>Electoral District <br/> 選區 </v-list-tile-content>
             <v-list-tile-content class="align-end">{{ district.cname }} <br/> {{ district.ename }}</v-list-tile-content>
           </v-list-tile>
           <v-divider></v-divider>
@@ -40,7 +40,6 @@
 </template>
 
 <script>
-import utils from "./../utils";
 import dclookup from "./../utils/dclookup.js";
 import ogcioHelper from "./../utils/ogcio-helper.js";
 export default {
@@ -71,11 +70,11 @@ export default {
   computed: {
     district: function () {
       return dclookup.dcNameFromCoordinates(this.result.geo[0].Latitude, this.result.geo[0].Longitude)
-    },    
+    },
   },
   methods: {
     textForKey: ogcioHelper.textForKey,
-    textForValue: ogcioHelper.textForValue,    
+    textForValue: ogcioHelper.textForValue,
     fullChineseAddressFromResult: ogcioHelper.fullChineseAddressFromResult,
     fullEnglishAddressFromResult: ogcioHelper.fullEnglishAddressFromResult,
     // To a confident level of 0-4
