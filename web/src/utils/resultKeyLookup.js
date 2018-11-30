@@ -18,6 +18,10 @@ const resultKeyLookup = {
     buildingName: {
         eng: 'Building Name',
         chi: '大廈名稱'
+    },
+    electoralDistrict: {
+        eng: 'Electoral District',
+        chi: '選區'
     }
 }
 
