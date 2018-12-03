@@ -6,6 +6,6 @@ Vue.use(VueAnalytics, {
   id: process.env.VUE_APP_GA_TRACKING_ID || '',
   router,
   debug: {
-    enabled: true
+    enabled: process.env.VUE_APP_GA_DEBUG || false,
   }
 })
