@@ -30,9 +30,9 @@ const result = request.getAsync(URL, {
     geo: result.geo
   };
   console.log(JSON.stringify(output));
-  
+
 }).catch(error => {
-  // console.log(error);
+  // console.log(error.stack);
   console.log('{}');
 })
 

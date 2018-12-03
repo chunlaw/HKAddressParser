@@ -10,13 +10,13 @@
         <h2>{{ fullChineseAddressFromResult(result.chi) }} <br/> {{fullEnglishAddressFromResult(result.eng)}}</h2>
         <span
           class="text-xs-right grey--text"
-        >{{ result.geo.Latitude + ", " + result.geo.Longitude }}</span>
+        >{{ result.geo[0].Latitude + ", " + result.geo[0].Longitude }}</span>
       </div>
       <v-card class="ma-4 pa-3">
         <v-list dense subheader>
           <v-list-tile>
-            <v-list-tile-content>{{ resultKey['electoralDistrict'].chi }}<br/>{{ resultKey['electoralDistrict'].eng }}</v-list-tile-content>
-            <v-list-tile-content class="align-end">{{ district.cname }}<br/>{{ district.ename }}</v-list-tile-content>
+            <v-list-tile-content>District Council Constituency Area <br/> 區議會選區 </v-list-tile-content>
+            <v-list-tile-content class="align-end">{{ district.cname }} <br/> {{ district.ename }}</v-list-tile-content>
           </v-list-tile>
           <v-divider></v-divider>
         </v-list>
@@ -24,14 +24,13 @@
         <v-list
           dense
           subheader
-          v-for="(value, key, index) in result.chi"
-          :key="index"
-          :class="(isMatch(key)? ' matched': '')"
-          v-if="filterOptions[massageKey(key)]"
+          v-for="key in filteredKeys"
+          :key="key"
+          :class="`match_level_${getConfidentLevel(key)}`"
         >
           <v-list-tile>
-            <v-list-tile-content>{{ resultKey[massageKey(key)].chi }}<br/>{{ resultKey[massageKey(key)].eng }}</v-list-tile-content>
-            <v-list-tile-content class="align-end">{{key != 'BuildingNoFrom' ? value + '\n' + result.eng[key] : value}}</v-list-tile-content>
+            <v-list-tile-content> {{ resultKey[massageKey(key)].eng }} <br/> {{ resultKey[massageKey(key)].chi }}</v-list-tile-content>
+            <v-list-tile-content class="align-end">{{key != 'BuildingNoFrom' ? result.eng[key] + '\n' + value : value}}  </v-list-tile-content>
           </v-list-tile>
           <v-divider></v-divider>
         </v-list>
@@ -41,49 +40,49 @@
 </template>
 
 <script>
-import utils from "./../utils";
 import dclookup from "./../utils/dclookup.js";
-import resultKeyLookup from "./../utils/resultKeyLookup.js";
+import ogcioHelper from "./../utils/ogcio-helper.js";
 export default {
   props: {
     rank: Number,
     result: {
       status: Object,
-      geo: Object,
+      geo: Array,
       chi: Object,
       eng: Object,
       matches: Array
     },
-    filterOptions: {
-      region: Boolean,
-      dcDistrict: Boolean,
-      buildingNoFrom: Boolean,
-      buildingName: Boolean,
-      streetName: Boolean
-    }
+    filterOptions: Array
   },
   data: () => ({
     disableContent: false,
-    resultKey: {}
+    filteredKeys: []
   }),
   mounted: function () {
     this.disableExpansionPanelContent();
-    this.resultKey = resultKeyLookup;
+    this.filteredKeys = this.getFilteredKeys();
+    this.$root.$on('filterUpdate', (options) => {
+      this.filterOptions = options;
+      this.filteredKeys = this.getFilteredKeys();
+      this.$forceUpdate();
+    })
   },
   computed: {
     district: function () {
-      return dclookup.dcNameFromCoordinates(this.result.geo.Latitude, this.result.geo.Longitude)
-    }
+      return dclookup.dcNameFromCoordinates(this.result.geo[0].Latitude, this.result.geo[0].Longitude)
+    },
   },
   methods: {
-    levelToString: utils.levelToString,
-    fullChineseAddressFromResult: utils.fullChineseAddressFromResult,
-    fullEnglishAddressFromResult: utils.fullEnglishAddressFromResult,
-    isMatch: function (key) {
-      return this.result.matches.indexOf(key) >= 0;
+    textForKey: ogcioHelper.textForKey,
+    textForValue: ogcioHelper.textForValue,
+    fullChineseAddressFromResult: ogcioHelper.fullChineseAddressFromResult,
+    fullEnglishAddressFromResult: ogcioHelper.fullEnglishAddressFromResult,
+    // To a confident level of 0-4
+    getConfidentLevel: function (key) {
+      return Math.min(4, (this.result.matches.filter(match => match.matchedKey === key).map(match => match.confident).reduce((p,c) => c, 0) * 5) | 0);
     },
-    massageKey: function (key) {
-      return key.charAt(0).toLowerCase() + key.slice(1);
+    getFilteredKeys: function() {
+      return this.filteredKeys = this.filterOptions.filter(opt => opt.enabled && this.result.chi[opt.key] !== undefined ).map(opt => opt.key);
     },
     disableExpansionPanelContent: function () {
       const filterOptions = this.filterOptions;
@@ -96,10 +95,25 @@ export default {
 </script>
 
 <style>
-.matched {
+.match_level_1 {
+  color: rgb(255, 144, 144) !important;
+  font-weight: bolder;
+}
+
+.match_level_2 {
+  color: rgb(231, 141, 141) !important;
+}
+
+.match_level_3 {
+  color: rgb(248, 87, 87) !important;
+}
+
+.match_level_4 {
   color: red !important;
   font-weight: bolder;
 }
+
+
 
 .align-end {
   text-align: right;
