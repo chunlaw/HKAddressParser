@@ -97,6 +97,10 @@ import SingleMatch from "./../components/SingleMatch";
 import ArcGISMap from "./../components/ArcGISMap";
 import SearchFilter from "./../components/SearchFilter";
 import ogcioHelper from "./../utils/ogcio-helper";
+import {
+  trackSingleSearch,
+  trackSingleSearchResult
+} from "./../utils/ga-helper";
 
 export default {
   components: {
@@ -113,8 +117,7 @@ export default {
   }),
   created: function() {
     this.filterOptions = ogcioHelper.topLevelKeys();
-    this.filterOptions.forEach(option => option.enabled = true);
-    
+    this.filterOptions.forEach(option => (option.enabled = true));
   },
   methods: {
     submit: async function submit() {
@@ -123,6 +126,7 @@ export default {
       const URL = `https://www.als.ogcio.gov.hk/lookup?q=${this.address}&n=${
         this.count
       }`;
+      trackSingleSearch(this, this.address);
       const res = await fetch(URL, {
         headers: {
           Accept: "application/json",
@@ -133,6 +137,11 @@ export default {
       const data = await res.json();
       this.toggleMap = true;
       this.results = await AddressParser.searchResult(this.address, data);
+      if (this.results && this.results.length > 0) {
+        const result = this.results[0];
+        trackSingleSearchResult(this, this.address, result.score | 0);
+      }
+
       await this.$refs.topMap.gotoLatLng(
         Number(this.results[0].geo[0].Latitude),
         Number(this.results[0].geo[0].Longitude)
