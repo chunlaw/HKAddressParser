@@ -20,7 +20,7 @@
         <v-list dense subheader>
           <v-list-tile>
             <v-list-tile-content>District Council Constituency Area<br>區議會選區</v-list-tile-content>
-            <v-list-tile-content class="align-end">{{ district.cname }}<br>{{ district.ename }}</v-list-tile-content>
+            <v-list-tile-content class="align-end">{{ district.ename }}<br>{{ district.cname }}</v-list-tile-content>
           </v-list-tile>
           <v-divider></v-divider>
         </v-list>
@@ -34,8 +34,7 @@
         >
           <v-list-tile>
             <v-list-tile-content>{{ textForKey(key, 'eng') }}<br/>{{ textForKey(key, 'chi') }}</v-list-tile-content>
-            <v-list-tile-content class="align-end">{{ textForValue(result, key, 'eng') }}<br/>{{ textForValue(result, key, 'chi') }}
-            </v-list-tile-content>
+            <v-list-tile-content class="align-end">{{ textForValue(result, key, 'eng') }}<br/>{{ textForValue(result, key, 'chi') }}</v-list-tile-content>
           </v-list-tile>
           <v-divider></v-divider>
         </v-list>

@@ -64,6 +64,21 @@ export const trackBatchSearch = function(component, addresses) {
 
 
 
+/**
+ * Track the batch search result
+ * @param {Component} component
+ * @param {String} address
+ */
+export const trackBatchSearchResult = function(component, address, score) {
+  component.$ga.event({
+    eventCategory: GA_CATEGORY_BATCH_SEARCH,
+    eventAction: GA_ACTION_SEARCH_RESULT,
+    eventLabel: address,
+    eventValue: score
+  })
+}
+
+
 export const trackToggleFilterOption = function(component, optionKey, isOn) {
   component.$ga.event({
     eventCategory: GA_CATEGORY_SINGLE_SEARCH,
