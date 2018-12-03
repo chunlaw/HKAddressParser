@@ -15,7 +15,7 @@ env:
   global:
     - REPO=addressparser
     - ORG=g0vhk
-    - BASE_URL=$(basename $TRAVIS_REPO_SLUG) # Get the repo name from the slug "user_name/repo_name"
+
 
 cache: npm
 
