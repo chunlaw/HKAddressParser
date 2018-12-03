@@ -29,8 +29,8 @@
           :class="`match_level_${getConfidentLevel(key)}`"
         >
           <v-list-tile>
-            <v-list-tile-content> {{ textForKey(key, 'eng') }} <br/> {{ textForKey(key, 'chi') }}</v-list-tile-content>
-            <v-list-tile-content class="align-end"> {{ textForValue(result, key, 'eng') }} <br /> {{ textForValue(result, key, 'chi') }} </v-list-tile-content>
+            <v-list-tile-content> {{ resultKey[massageKey(key)].eng }} <br/> {{ resultKey[massageKey(key)].chi }}</v-list-tile-content>
+            <v-list-tile-content class="align-end">{{key != 'BuildingNoFrom' ? result.eng[key] + '\n' + value : value}}  </v-list-tile-content>
           </v-list-tile>
           <v-divider></v-divider>
         </v-list>
