@@ -69,7 +69,10 @@ import asyncLib from "async";
 import dclookup from "./../utils/dclookup";
 import ogcioHelper from "./../utils/ogcio-helper";
 import asyncify from 'async/asyncify';
-
+import {
+  trackBatchSearch,
+  trackBatchSearchResult
+} from "./../utils/ga-helper";
 const SEARCH_LIMIT = 200;
 
 export default {
@@ -181,6 +184,7 @@ export default {
         return;
       }
       this.addressesToSearch = this.addressString.split("\n");
+      trackBatchSearch(this, this.addressesToSearch);
       asyncLib.eachOfLimit(
         this.addressesToSearch,
         10,
@@ -188,6 +192,7 @@ export default {
         asyncify(searchSingleResult.bind(this)),
         err => {
           // All query finished
+          console.error(err);
         }
       );
     }
@@ -208,6 +213,12 @@ async function searchSingleResult(address, key) {
   const records = await AddressParser.searchResult(address, data);
 
   this.$set(this.results, key, records);
+  if (records && records.length > 0) {
+    const result = records[0];
+    // ! cant do the batch result here as it will exceeds the rate of GA
+    // https://developers.google.com/analytics/devguides/collection/analyticsjs/limits-quotas
+    // trackBatchSearchResult(this, address, result.score | 0);
+  }
   return records;
 }
 </script>

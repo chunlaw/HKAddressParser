@@ -50,7 +50,9 @@ jobs:
 
     - stage: deploy
       script:
+        - echo "VUE_APP_GA_TRACKING_ID=$GA_TRACKING_ID" >> .env
         - npm run build
+
       deploy:
         provider: pages
         skip-cleanup: true
