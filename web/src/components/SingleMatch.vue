@@ -7,7 +7,11 @@
           disabled
           small
         >{{ `Rank ${rank + 1}` }} {{ (rank === 0)? ' - Best Match!' : ''}}</v-chip>
-        <h2>{{ fullChineseAddressFromResult(result.chi) }} <br/> {{fullEnglishAddressFromResult(result.eng)}}</h2>
+        <h2>
+          {{ fullChineseAddressFromResult(result.chi) }}
+          <br>
+          {{fullEnglishAddressFromResult(result.eng)}}
+        </h2>
         <span
           class="text-xs-right grey--text"
         >{{ result.geo[0].Latitude + ", " + result.geo[0].Longitude }}</span>
@@ -15,8 +19,8 @@
       <v-card class="ma-4 pa-3">
         <v-list dense subheader>
           <v-list-tile>
-            <v-list-tile-content>District Council Constituency Area <br/> 區議會選區 </v-list-tile-content>
-            <v-list-tile-content class="align-end">{{ district.cname }} <br/> {{ district.ename }}</v-list-tile-content>
+            <v-list-tile-content>District Council Constituency Area<br>區議會選區</v-list-tile-content>
+            <v-list-tile-content class="align-end">{{ district.cname }}<br>{{ district.ename }}</v-list-tile-content>
           </v-list-tile>
           <v-divider></v-divider>
         </v-list>
@@ -29,8 +33,9 @@
           :class="`match_level_${getConfidentLevel(key)}`"
         >
           <v-list-tile>
-            <v-list-tile-content> {{ resultKey[massageKey(key)].eng }} <br/> {{ resultKey[massageKey(key)].chi }}</v-list-tile-content>
-            <v-list-tile-content class="align-end">{{key != 'BuildingNoFrom' ? result.eng[key] + '\n' + value : value}}  </v-list-tile-content>
+            <v-list-tile-content>{{ textForKey(key, 'eng') }}<br/>{{ textForKey(key, 'chi') }}</v-list-tile-content>
+            <v-list-tile-content class="align-end">{{ textForValue(result, key, 'eng') }}<br/>{{ textForValue(result, key, 'chi') }}
+            </v-list-tile-content>
           </v-list-tile>
           <v-divider></v-divider>
         </v-list>
@@ -56,21 +61,26 @@ export default {
   },
   data: () => ({
     disableContent: false,
-    filteredKeys: []
+    filteredKeys: [],
+    localFilterOptions: []
   }),
-  mounted: function () {
-    this.disableExpansionPanelContent();
+  mounted: function() {
+    this.localFilterOptions = this.filterOptions;
     this.filteredKeys = this.getFilteredKeys();
-    this.$root.$on('filterUpdate', (options) => {
-      this.filterOptions = options;
+    this.disableExpansionPanelContent();
+    this.$root.$on("filterUpdate", options => {
+      this.localFilterOptions = options;
       this.filteredKeys = this.getFilteredKeys();
       this.$forceUpdate();
-    })
+    });
   },
   computed: {
-    district: function () {
-      return dclookup.dcNameFromCoordinates(this.result.geo[0].Latitude, this.result.geo[0].Longitude)
-    },
+    district: function() {
+      return dclookup.dcNameFromCoordinates(
+        this.result.geo[0].Latitude,
+        this.result.geo[0].Longitude
+      );
+    }
   },
   methods: {
     textForKey: ogcioHelper.textForKey,
@@ -78,16 +88,26 @@ export default {
     fullChineseAddressFromResult: ogcioHelper.fullChineseAddressFromResult,
     fullEnglishAddressFromResult: ogcioHelper.fullEnglishAddressFromResult,
     // To a confident level of 0-4
-    getConfidentLevel: function (key) {
-      return Math.min(4, (this.result.matches.filter(match => match.matchedKey === key).map(match => match.confident).reduce((p,c) => c, 0) * 5) | 0);
+    getConfidentLevel: function(key) {
+      return Math.min(
+        4,
+        (this.result.matches
+          .filter(match => match.matchedKey === key)
+          .map(match => match.confident)
+          .reduce((p, c) => c, 0) *
+          5) |
+          0
+      );
     },
     getFilteredKeys: function() {
-      return this.filteredKeys = this.filterOptions.filter(opt => opt.enabled && this.result.chi[opt.key] !== undefined ).map(opt => opt.key);
+      return (this.filteredKeys = this.localFilterOptions
+        .filter(opt => opt.enabled && this.result.chi[opt.key] !== undefined)
+        .map(opt => opt.key));
     },
-    disableExpansionPanelContent: function () {
-      const filterOptions = this.filterOptions;
-      if(Object.keys(filterOptions).every((key) => !filterOptions[key])) {
-          this.disableContent = true;
+    disableExpansionPanelContent: function() {
+      const opts = this.localFilterOptions;
+      if (Object.keys(opts).every(key => !opts[key].enabled)) {
+        this.disableContent = true;
       }
     }
   }
@@ -112,8 +132,6 @@ export default {
   color: red !important;
   font-weight: bolder;
 }
-
-
 
 .align-end {
   text-align: right;
