@@ -52,7 +52,7 @@ jobs:
       script:
         - echo "VUE_APP_GA_TRACKING_ID=$GA_TRACKING_ID" >> .env
         - npm run build
-        - if [[ ! -z "$DOMAIN" ]]; then echo $DOMAIN >> web/dist/CNAME; fi
+        - if [[ ! -z "$DOMAIN" ]]; then echo $DOMAIN >> dist/CNAME; fi
 
       deploy:
         provider: pages
