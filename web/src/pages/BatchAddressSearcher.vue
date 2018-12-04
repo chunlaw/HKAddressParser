@@ -101,7 +101,11 @@ export default {
           value: "full_result"
         },
         {
-          text: "選區",
+          text: "地區",
+          value: "subdistrict_name"
+        },
+        {
+          text: "區議會選區",
           value: "dc_name"
         },
         {
@@ -129,6 +133,10 @@ export default {
         let json = {
           address: this.addressesToSearch[index],
           full_address: ogcioHelper.fullChineseAddressFromResult(result[0].chi),
+          subdistrict_name: dclookup.dcNameFromCoordinates(
+            result[0].geo[0].Latitude,
+            result[0].geo[0].Longitude
+          ).csubdistrict,
           dc_name: dclookup.dcNameFromCoordinates(
             result[0].geo[0].Latitude,
             result[0].geo[0].Longitude
