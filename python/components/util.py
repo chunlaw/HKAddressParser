@@ -91,8 +91,9 @@ def matchDict(inAddr, inDict):
             matches += matchDict(inAddr, v)
         elif type(v) == str:
             matches += matchStr(inAddr, k, v)
-        else:
-            print("Unhandled content: ", k, v)
+        # Not printing any error here
+        # else:
+        #     print("Unhandled content: ", k, v)
     return matches
 
 
@@ -144,9 +145,9 @@ def getSimilarityWithOGCIO(inAddr, ogcioResult):
             score-=1
             continue
 
-        if fieldName not in scoreDict:
-            print("ignored ", fieldName, fieldVal)
-            print(ogcioResult)
+        # if fieldName not in scoreDict:
+        #     print("ignored ", fieldName, fieldVal)
+        #     print(ogcioResult)
 
         score += scoreDict.get(fieldName,0) * goodness
         for i in range(matchSpan[0],matchSpan[1]) : inAddrHasMatch[i] = True

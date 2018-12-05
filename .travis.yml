@@ -8,11 +8,9 @@ node_js:
 stages:
   - test
   # Build the docker image only on master branch
-  - name: build
-    if: branch = master
   - name: deploy
-    if: branch = master  
-  
+    if: branch = master
+
 env:
   global:
     - REPO=addressparser
@@ -41,10 +39,6 @@ jobs:
         - npm run lint
     #     - npm run test-ci
 
-    - stage: build
-      script:
-        - docker build -t g0vhk/addressparser .
-
     - stage: deploy
       script:
       - docker build -t $ORG/$REPO:latest .
@@ -56,7 +50,9 @@ jobs:
 
     - stage: deploy
       script:
+        - echo "VUE_APP_GA_TRACKING_ID=$GA_TRACKING_ID" >> .env
         - npm run build
+
       deploy:
         provider: pages
         skip-cleanup: true
