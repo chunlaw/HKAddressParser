@@ -13,12 +13,16 @@ import TileGrid from 'ol/tilegrid/TileGrid'
 import layerVector from 'ol/layer/Vector';
 import sourceVector from 'ol/source/Vector';
 import TopoJSON from 'ol/format/TopoJSON';
+import olFeature from 'ol/Feature';
+import olPoint from 'ol/geom/Point';
 import * as olControl from 'ol/control';
 import * as olInteraction from 'ol/interaction';
 import * as olStyle from 'ol/style';
+import olCircleStyle from 'ol/style/Circle';
 import XYZ from 'ol/source/XYZ';
 import * as proj from "ol/proj";
 import * as olProj4 from "ol/proj/proj4";
+import OSM from 'ol/source/OSM';
 
 import dcAreaJSON from '../utils/HKDistrictArea.json';
 
@@ -133,7 +137,7 @@ export default{
             }
             var tpj = new TopoJSON({defaultDataProjection: 'EPSG:2326'});
             var dcAreaFeatures = tpj.readFeatures( dcAreaJSON);
-            var vector1 = new layerVector({
+            var vectorDcBounds = new layerVector({
                         source: new sourceVector({
                             features : dcAreaFeatures,
                             overlaps: true
@@ -143,7 +147,42 @@ export default{
                         //maxResolution: 4000
             });
 
-            var apikey = '584b2fa686f14ba283874318b3b8d6b0' //api.hkmapservice.gov.hk starter key
+
+            var poiMarker = new olFeature({
+                    geometry: new olPoint( [ 835734.814750178, 817851.4540029846 ])                    
+            });
+            
+            // var poiStyle = new olStyle.Style({
+            //                     image: new olCircleStyle({
+            //                             radius: 7,
+            //                             fill: new olStyle.Fill({color: 'black'}),
+            //                             stroke: new olStyle.Stroke({
+            //                                 color: 'white', width: 2
+            //                             })
+            //                     })
+            //                 });
+            
+            var poiStyle = new olStyle.Style({
+                image: new olStyle.Icon(/** @type {module:ol/style/Icon~Options} */ ({
+                    anchor: [0.5, 1.0],
+                    anchorXUnits: 'fraction',
+                    anchorYUnits: 'fraction',
+                    src: '/map_pin.png',  //FIXME: bad practice: using static asset under folder /public 
+                    scale: 0.25
+                }))
+            });
+
+            poiMarker.setStyle(poiStyle);
+            this.poiMarker = poiMarker;
+
+            var vectorPOI = new layerVector({
+                                source: new sourceVector({
+                                    features: [poiMarker],
+                                    overlaps: true
+                                })
+                            });
+
+            var apikey = '?????????' //api.hkmapservice.gov.hk starter key
 
             var map = new Map({
                         
@@ -155,25 +194,31 @@ export default{
 
                         layers: [
                             new TileLayer({
-                            source: 	new XYZ({
-                                // attributions: attributions,
-                                projection: projection,
-                                tileGrid: 	tileGrid,
-                                url: 		'https://api.hkmapservice.gov.hk/osm/xyz/basemap/HK80/2016/tile/{z}/{x}/{y}.png?key=' + apikey
-                            })
-                            }),
-                            
-                            new TileLayer({
-                            source: 	new XYZ({
-                                projection: projection,
-                                tileGrid: 	tileGrid,
-                                url: 		'https://api.hkmapservice.gov.hk/osm/xyz/label-tc/HK80/2016/tile/{z}/{x}/{y}.png?key=' + apikey
-                            }),
-                            //minResolution:0.2,
-                            //maxResolution:5
+                            source: new OSM()
                             }),
 
-                            vector1,
+                            // new TileLayer({                                
+                            // source: 	new XYZ({
+                            //     // attributions: attributions,
+                            //     projection: projection,
+                            //     tileGrid: 	tileGrid,
+                            //     url: 		'https://api.hkmapservice.gov.hk/osm/xyz/basemap/HK80/2016/tile/{z}/{x}/{y}.png?key=' + apikey
+                            // })
+                            // }),
+                            
+                            // new TileLayer({
+                            // source: 	new XYZ({
+                            //     projection: projection,
+                            //     tileGrid: 	tileGrid,
+                            //     url: 		'https://api.hkmapservice.gov.hk/osm/xyz/label-tc/HK80/2016/tile/{z}/{x}/{y}.png?key=' + apikey
+                            // }),
+                            // //minResolution:0.2,
+                            // //maxResolution:5
+                            // }),
+
+                            vectorPOI,
+                            vectorDcBounds
+                            
                         ],
 
                         view: new View({
@@ -197,6 +242,8 @@ export default{
             //TODO: add a pin on the map at the location
             
             this.map.getView().animate({center: result, zoom: 18});
+            console.log(result);
+            this.poiMarker.setGeometry(new olPoint(result));
             //this.map.centerAt(new Point(114.15,22.29));
                     
             
