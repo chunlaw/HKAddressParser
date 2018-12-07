@@ -1,5 +1,40 @@
 # Road map and release
 
+## 2018-12-05
+
+### Updates
+
+#### Release 0.4
+
+1. eng output for batch level
+2. GA
+    1. tick/cross for single and batch -> GA
+3. Score (display in  both single and batch)
+    1. Character matched (percentage)
+    2. Input address type (Street/ Area, etc)
+4. Expand first result for single search
+5. SEO/ documentation/ UI/ Use case
+6. Ho Wa
+    1. github page  
+    2. Create an acoount and restart, set up travis CI, we use github page
+
+## 2018-11-21
+
+### Updates
+
+#### Release 0.3
+
+1. eng output for both single (done), batch level 
+2. seperate test cases to 2 files
+    1. all success cases + failed cases that exceeds in OGCIO but we failed (partial done)
+    2. address that cant search at OGCIO (partial done)
+3. constituency area
+    1. subdistrict (partial done)
+4. GA (partial done)
+5. prefill data for google form
+6. ranking score on batch search
+
+
 ## 2018-11-07
 
 ## Road Map
@@ -15,22 +50,6 @@
     2. google form
     3. GA
 3. continuous integration
-
-## 2018-11-21
-
-### Updates
-
-#### Release 0.3
-
-1. eng output for both single/batch level
-2. seperate test cases to 2 files
-    1. all success cases + failed cases that exceeds in OGCIO but we failed
-    2. address that cant search at OGCIO
-3. constituency area
-    1. subdistrict
-4. GA
-5. prefill data for google form
-6. ranking score on batch search
 
 ### Backlog
 
