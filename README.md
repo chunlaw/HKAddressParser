@@ -30,8 +30,13 @@ https://docs.google.com/spreadsheets/d/1mNui-FsnnEiIXAGA-UBalqjywyBGhKMly2T9dLDh
 # Get into the web folder
 cd web
 
-# Install the required libraries and start the localhost version
+# Set up GA Tracking ID
+cp .env-default .env
 
+# Update VUE_APP_GA_TRACKING_ID in .env
+VUE_APP_GA_TRACKING_ID=UA-XXXXX
+
+# Install the required libraries and start the localhost version
 npm install
 npm run serve
 ```
