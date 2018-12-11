@@ -6,13 +6,21 @@ const GA_ACTION_SATISFICATION = 'rating';
 const GA_ACTION_TOGGLE_FILTER = 'toogle_filter';
 
 
+function trackEvent(component, param) {
+  if (component.$ga) {
+    component.$ga.event(param);
+  } else {
+    // do nothing if GA is not set up
+  }
+}
+
 /**
  * Track the user has initialize a single search
  * @param {Component} component
  * @param {String} address
  */
 export const trackSingleSearch = function(component, address) {
-  component.$ga.event({
+  trackEvent(component, {
     eventCategory: GA_CATEGORY_SINGLE_SEARCH,
     eventAction: GA_ACTION_SEARCH,
     eventLabel: address
@@ -25,7 +33,7 @@ export const trackSingleSearch = function(component, address) {
  * @param {String} address
  */
 export const trackSingleSearchResult = function(component, address, score) {
-  component.$ga.event({
+  trackEvent(component, {
     eventCategory: GA_CATEGORY_SINGLE_SEARCH,
     eventAction: GA_ACTION_SEARCH_RESULT,
     eventLabel: address,
@@ -40,7 +48,7 @@ export const trackSingleSearchResult = function(component, address, score) {
  * @param {int} satisfication 1-100. 100 = satisfy
  */
 export const trackSingleSearchSatisfication = function(component, address, satisfication) {
-  component.$ga.event({
+  trackEvent(component, {
     eventCategory: GA_CATEGORY_SINGLE_SEARCH,
     eventAction: GA_ACTION_SATISFICATION,
     eventLabel: address
@@ -54,7 +62,7 @@ export const trackSingleSearchSatisfication = function(component, address, satis
  */
 export const trackBatchSearch = function(component, addresses) {
   addresses.forEach(address => {
-    component.$ga.event({
+    trackEvent(component, {
       eventCategory: GA_CATEGORY_BATCH_SEARCH,
       eventAction: GA_ACTION_SEARCH,
       eventLabel: address
@@ -70,7 +78,7 @@ export const trackBatchSearch = function(component, addresses) {
  * @param {String} address
  */
 export const trackBatchSearchResult = function(component, address, score) {
-  component.$ga.event({
+  trackEvent(component, {
     eventCategory: GA_CATEGORY_BATCH_SEARCH,
     eventAction: GA_ACTION_SEARCH_RESULT,
     eventLabel: address,
@@ -80,7 +88,7 @@ export const trackBatchSearchResult = function(component, address, score) {
 
 
 export const trackToggleFilterOption = function(component, optionKey, isOn) {
-  component.$ga.event({
+  trackEvent(component, {
     eventCategory: GA_CATEGORY_SINGLE_SEARCH,
     eventAction: GA_ACTION_TOGGLE_FILTER,
     eventLabel: optionKey,
