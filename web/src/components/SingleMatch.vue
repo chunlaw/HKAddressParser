@@ -6,7 +6,10 @@
           text-color="black"
           disabled
           small
-        >{{ `Rank ${rank + 1}` }} {{ (rank === 0)? ' - Best Match!' : ''}}</v-chip>
+        >{{ `Rank ${rank + 1}` }} {{ (rank === 0)? ' - Best Match!' : ''}}
+        </v-chip>
+        <CommentButton />
+        <CommentButton />
         <h2>
           <p>{{ fullChineseAddressFromResult(result.chi) }}</p>
           <p>{{ fullEnglishAddressFromResult(result.eng) }}</p>
@@ -14,6 +17,9 @@
         <span
           class="text-xs-right grey--text"
         >{{ result.geo[0].Latitude + ", " + result.geo[0].Longitude }}</span>
+
+
+
       </div>
       <v-card class="ma-4 pa-3">
         <v-list dense subheader>
@@ -66,7 +72,12 @@
 <script>
 import dclookup from "./../utils/dclookup.js";
 import ogcioHelper from "./../utils/ogcio-helper.js";
+import CommentButton from './CommentButton';
+
 export default {
+  components: {
+    CommentButton,
+  },
   props: {
     rank: Number,
     result: {
@@ -104,6 +115,10 @@ export default {
     }
   },
   methods: {
+    tick: function (e) {
+      e.stopPropagation();
+      console.log('tick');
+    },
     textForKey: ogcioHelper.textForKey,
     textForValue: ogcioHelper.textForValue,
     fullChineseAddressFromResult: ogcioHelper.fullChineseAddressFromResult,
