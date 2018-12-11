@@ -1,5 +1,5 @@
 <template>
-  <v-expansion-panel focusable expand v-model="expanded">
+  <v-expansion-panel focusable expand :value="expanded">
     <v-expansion-panel-content :disabled="disableContent">
       <div slot="header">
         <v-chip
@@ -73,7 +73,6 @@ import dclookup from "./../utils/dclookup.js";
 import ogcioHelper from "./../utils/ogcio-helper.js";
 export default {
   props: {
-    expanded: Array,
     rank: Number,
     result: {
       status: Object,
@@ -87,7 +86,8 @@ export default {
   data: () => ({
     disableContent: false,
     filteredKeys: [],
-    localFilterOptions: []
+    localFilterOptions: [],
+    expanded: [false], // set the default value by the rank. first object should be expanded
   }),
   mounted: function() {
     this.localFilterOptions = this.filterOptions;
@@ -98,6 +98,7 @@ export default {
       this.filteredKeys = this.getFilteredKeys();
       this.$forceUpdate();
     });
+    this.expanded = [this.rank === 0];
   },
   computed: {
     district: function() {
