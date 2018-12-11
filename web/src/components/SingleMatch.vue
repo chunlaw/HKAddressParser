@@ -1,6 +1,6 @@
 <template>
-  <v-expansion-panel focusable>
-    <v-expansion-panel-content :disabled="disableContent" :value="rank === 0">
+  <v-expansion-panel focusable expand v-model="expanded">
+    <v-expansion-panel-content :disabled="disableContent">
       <div slot="header">
         <v-chip
           text-color="black"
@@ -10,7 +10,7 @@
         <h2>
           {{ fullChineseAddressFromResult(result.chi) }}
           <br>
-          {{fullEnglishAddressFromResult(result.eng)}}
+          {{ fullEnglishAddressFromResult(result.eng) }}
         </h2>
         <span
           class="text-xs-right grey--text"
@@ -19,13 +19,25 @@
       <v-card class="ma-4 pa-3">
         <v-list dense subheader>
           <v-list-tile>
-            <v-list-tile-content>Sub District<br>地區</v-list-tile-content>
-            <v-list-tile-content class="align-end">{{ district.esubdistrict }}<br>{{ district.csubdistrict }}</v-list-tile-content>
+            <v-list-tile-content>Sub District
+              <br>地區
+            </v-list-tile-content>
+            <v-list-tile-content class="align-end">
+              {{ district.esubdistrict }}
+              <br>
+              {{ district.csubdistrict }}
+            </v-list-tile-content>
           </v-list-tile>
           <v-divider></v-divider>
           <v-list-tile>
-            <v-list-tile-content>District Council Constituency Area<br>區議會選區</v-list-tile-content>
-            <v-list-tile-content class="align-end">{{ district.ename }}<br>{{ district.cname }}</v-list-tile-content>
+            <v-list-tile-content>District Council Constituency Area
+              <br>區議會選區
+            </v-list-tile-content>
+            <v-list-tile-content class="align-end">
+              {{ district.ename }}
+              <br>
+              {{ district.cname }}
+            </v-list-tile-content>
           </v-list-tile>
           <v-divider></v-divider>
         </v-list>
@@ -38,8 +50,16 @@
           :class="`match_level_${getConfidentLevel(key)}`"
         >
           <v-list-tile>
-            <v-list-tile-content>{{ textForKey(key, 'eng') }}<br/>{{ textForKey(key, 'chi') }}</v-list-tile-content>
-            <v-list-tile-content class="align-end">{{ textForValue(result, key, 'eng') }}<br/>{{ textForValue(result, key, 'chi') }}</v-list-tile-content>
+            <v-list-tile-content>
+              {{ textForKey(key, 'eng') }}
+              <br>
+              {{ textForKey(key, 'chi') }}
+            </v-list-tile-content>
+            <v-list-tile-content class="align-end">
+              {{ textForValue(result, key, 'eng') }}
+              <br>
+              {{ textForValue(result, key, 'chi') }}
+            </v-list-tile-content>
           </v-list-tile>
           <v-divider></v-divider>
         </v-list>
@@ -53,6 +73,7 @@ import dclookup from "./../utils/dclookup.js";
 import ogcioHelper from "./../utils/ogcio-helper.js";
 export default {
   props: {
+    expanded: Array,
     rank: Number,
     result: {
       status: Object,
