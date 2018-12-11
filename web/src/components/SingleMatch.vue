@@ -8,9 +8,8 @@
           small
         >{{ `Rank ${rank + 1}` }} {{ (rank === 0)? ' - Best Match!' : ''}}</v-chip>
         <h2>
-          {{ fullChineseAddressFromResult(result.chi) }}
-          <br>
-          {{ fullEnglishAddressFromResult(result.eng) }}
+          <p>{{ fullChineseAddressFromResult(result.chi) }}</p>
+          <p>{{ fullEnglishAddressFromResult(result.eng) }}</p>
         </h2>
         <span
           class="text-xs-right grey--text"
@@ -23,9 +22,8 @@
               <br>地區
             </v-list-tile-content>
             <v-list-tile-content class="align-end">
-              {{ district.esubdistrict }}
-              <br>
-              {{ district.csubdistrict }}
+              <p>{{ district.esubdistrict }}</p>
+              <p>{{ district.csubdistrict }}</p>
             </v-list-tile-content>
           </v-list-tile>
           <v-divider></v-divider>
@@ -34,9 +32,8 @@
               <br>區議會選區
             </v-list-tile-content>
             <v-list-tile-content class="align-end">
-              {{ district.ename }}
-              <br>
-              {{ district.cname }}
+              <p>{{ district.ename }}</p>
+              <p>{{ district.cname }}</p>
             </v-list-tile-content>
           </v-list-tile>
           <v-divider></v-divider>
@@ -51,14 +48,12 @@
         >
           <v-list-tile>
             <v-list-tile-content>
-              {{ textForKey(key, 'eng') }}
-              <br>
-              {{ textForKey(key, 'chi') }}
+              <p>{{ textForKey(key, 'eng') }}</p>
+              <p>{{ textForKey(key, 'chi') }}</p>
             </v-list-tile-content>
             <v-list-tile-content class="align-end">
-              {{ textForValue(result, key, 'eng') }}
-              <br>
-              {{ textForValue(result, key, 'chi') }}
+              <p>{{ textForValue(result, key, 'eng') }}</p>
+              <p>{{ textForValue(result, key, 'chi') }}</p>
             </v-list-tile-content>
           </v-list-tile>
           <v-divider></v-divider>
@@ -87,7 +82,7 @@ export default {
     disableContent: false,
     filteredKeys: [],
     localFilterOptions: [],
-    expanded: [false], // set the default value by the rank. first object should be expanded
+    expanded: [false] // set the default value by the rank. first object should be expanded
   }),
   mounted: function() {
     this.localFilterOptions = this.filterOptions;
@@ -162,5 +157,9 @@ export default {
 .align-end {
   text-align: right;
   white-space: pre;
+}
+
+p {
+  margin: 0px;
 }
 </style>
