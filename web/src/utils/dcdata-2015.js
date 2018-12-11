@@ -9,12 +9,10 @@ export default {
                 "CACODE": "Q13",
                 "ENAME": "Kwan Po",
                 "CNAME": "軍寶",
-                "E00_CENTRO": 845169.476738,
-                "E00_CENT_1": 819389.125233,
                 "DISTRICT_T": "西貢區",
                 "DISTRICT_E": "Sai Kung",
-                "SHAPE_AREA": 308388.620645,
-                "SHAPE_LEN": 4277.713573
+                "SUBDISTIRCT_T": "將軍澳",
+                "SUBDISTIRCT_E": "Tseung Kwan O"
             },
             "geometry": {
                 "type": "Polygon",
@@ -156,12 +154,10 @@ export default {
                 "CACODE": "Q25",
                 "ENAME": "Kwong Ming",
                 "CNAME": "廣明",
-                "E00_CENTRO": 844703.64008,
-                "E00_CENT_1": 819318.022003,
                 "DISTRICT_T": "西貢區",
                 "DISTRICT_E": "Sai Kung",
-                "SHAPE_AREA": 273555.299972,
-                "SHAPE_LEN": 2349.297464
+                "SUBDISTIRCT_T": "將軍澳",
+                "SUBDISTIRCT_E": "Tseung Kwan O"
             },
             "geometry": {
                 "type": "Polygon",
@@ -283,12 +279,10 @@ export default {
                 "CACODE": "G17",
                 "ENAME": "Hok Yuen Laguna Verde",
                 "CNAME": "鶴園海逸",
-                "E00_CENTRO": 838028.949606,
-                "E00_CENT_1": 819106.353047,
                 "DISTRICT_T": "九龍城區",
                 "DISTRICT_E": "Kowloon City",
-                "SHAPE_AREA": 960988.586508,
-                "SHAPE_LEN": 4492.00841
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -398,12 +392,10 @@ export default {
                 "CACODE": "E17",
                 "ENAME": "East Tsim Sha Tsui & King's Park",
                 "CNAME": "尖東及京士柏",
-                "E00_CENTRO": 835609.428812,
-                "E00_CENT_1": 818067.644324,
                 "DISTRICT_T": "油尖旺區",
                 "DISTRICT_E": "Yau Tsim Mong",
-                "SHAPE_AREA": 2371378.22854,
-                "SHAPE_LEN": 8441.047901
+                "SUBDISTIRCT_T": "尖東",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -609,12 +601,10 @@ export default {
                 "CACODE": "E01",
                 "ENAME": "Tsim Sha Tsui West",
                 "CNAME": "尖沙咀西",
-                "E00_CENTRO": 834482.304513,
-                "E00_CENT_1": 818170.468151,
                 "DISTRICT_T": "油尖旺區",
                 "DISTRICT_E": "Yau Tsim Mong",
-                "SHAPE_AREA": 4397466.69484,
-                "SHAPE_LEN": 10279.686848
+                "SUBDISTIRCT_T": "尖沙咀",
+                "SUBDISTIRCT_E": "Tsim Sha Tsui"
             },
             "geometry": {
                 "type": "Polygon",
@@ -756,12 +746,10 @@ export default {
                 "CACODE": "E16",
                 "ENAME": "Yau Ma Tei North",
                 "CNAME": "油麻地北",
-                "E00_CENTRO": 835393.251518,
-                "E00_CENT_1": 819717.546803,
                 "DISTRICT_T": "油尖旺區",
                 "DISTRICT_E": "Yau Tsim Mong",
-                "SHAPE_AREA": 135793.469022,
-                "SHAPE_LEN": 1936.739981
+                "SUBDISTIRCT_T": "旺角, 廣華醫院",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -831,12 +819,10 @@ export default {
                 "CACODE": "G23",
                 "ENAME": "Oi Man",
                 "CNAME": "愛民",
-                "E00_CENTRO": 836637.108548,
-                "E00_CENT_1": 819242.437545,
                 "DISTRICT_T": "九龍城區",
                 "DISTRICT_E": "Kowloon City",
-                "SHAPE_AREA": 368492.013998,
-                "SHAPE_LEN": 4528.529611
+                "SUBDISTIRCT_T": "何文田",
+                "SUBDISTIRCT_E": "Ho Man Tin"
             },
             "geometry": {
                 "type": "Polygon",
@@ -1024,12 +1010,10 @@ export default {
                 "CACODE": "J27",
                 "ENAME": "Tsui Ping",
                 "CNAME": "翠屏",
-                "E00_CENTRO": 842073.037342,
-                "E00_CENT_1": 819391.336221,
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SHAPE_AREA": 362912.120231,
-                "SHAPE_LEN": 4135.462418
+                "SUBDISTIRCT_T": "觀塘",
+                "SUBDISTIRCT_E": "Kwun Tong"
             },
             "geometry": {
                 "type": "Polygon",
@@ -1251,12 +1235,10 @@ export default {
                 "CACODE": "Q14",
                 "ENAME": "Nam On",
                 "CNAME": "南安",
-                "E00_CENTRO": 845169.476738,
-                "E00_CENT_1": 819389.125233,
                 "DISTRICT_T": "西貢區",
                 "DISTRICT_E": "Sai Kung",
-                "SHAPE_AREA": 166679.299553,
-                "SHAPE_LEN": 2411.631817
+                "SUBDISTIRCT_T": "坑口",
+                "SUBDISTIRCT_E": "Hang Hau"
             },
             "geometry": {
                 "type": "Polygon",
@@ -1354,12 +1336,10 @@ export default {
                 "CACODE": "J32",
                 "ENAME": "Ting On",
                 "CNAME": "定安",
-                "E00_CENTRO": 840698.357742,
-                "E00_CENT_1": 819706.752588,
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SHAPE_AREA": 82454.855861,
-                "SHAPE_LEN": 1848.949628
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -1469,12 +1449,10 @@ export default {
                 "CACODE": "E06",
                 "ENAME": "Mong Kok West",
                 "CNAME": "旺角西",
-                "E00_CENTRO": 835393.251518,
-                "E00_CENT_1": 819717.546803,
                 "DISTRICT_T": "油尖旺區",
                 "DISTRICT_E": "Yau Tsim Mong",
-                "SHAPE_AREA": 150946.869507,
-                "SHAPE_LEN": 1607.835786
+                "SUBDISTIRCT_T": "旺角",
+                "SUBDISTIRCT_E": "Mong Kok"
             },
             "geometry": {
                 "type": "Polygon",
@@ -1532,12 +1510,10 @@ export default {
                 "CACODE": "D04",
                 "ENAME": "Lei Tung I",
                 "CNAME": "利東一",
-                "E00_CENTRO": 834368.943146,
-                "E00_CENT_1": 810384.486324,
                 "DISTRICT_T": "南區",
                 "DISTRICT_E": "Southern",
-                "SHAPE_AREA": 2147250.92419,
-                "SHAPE_LEN": 7263.816611
+                "SUBDISTIRCT_T": "鴨脷洲",
+                "SUBDISTIRCT_E": "Ap Lei Chau"
             },
             "geometry": {
                 "type": "Polygon",
@@ -1707,12 +1683,10 @@ export default {
                 "CACODE": "D06",
                 "ENAME": "South Horizons East",
                 "CNAME": "海怡東",
-                "E00_CENTRO": 833374.754159,
-                "E00_CENT_1": 811044.570081,
                 "DISTRICT_T": "南區",
                 "DISTRICT_E": "Southern",
-                "SHAPE_AREA": 1030941.26567,
-                "SHAPE_LEN": 4309.026844
+                "SUBDISTIRCT_T": "鴨脷洲",
+                "SUBDISTIRCT_E": "Ap Lei Chau"
             },
             "geometry": {
                 "type": "Polygon",
@@ -1822,12 +1796,10 @@ export default {
                 "CACODE": "D14",
                 "ENAME": "Shek Yue",
                 "CNAME": "石漁",
-                "E00_CENTRO": 834296.195819,
-                "E00_CENT_1": 812359.59649,
                 "DISTRICT_T": "南區",
                 "DISTRICT_E": "Southern",
-                "SHAPE_AREA": 74689.866476,
-                "SHAPE_LEN": 1237.211883
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -1909,12 +1881,10 @@ export default {
                 "CACODE": "C33",
                 "ENAME": "Tsui Tak",
                 "CNAME": "翠德",
-                "E00_CENTRO": 842434.196434,
-                "E00_CENT_1": 814005.371397,
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SHAPE_AREA": 158185.946771,
-                "SHAPE_LEN": 2292.054449
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -2024,12 +1994,10 @@ export default {
                 "CACODE": "C09",
                 "ENAME": "Yan Lam",
                 "CNAME": "欣藍",
-                "E00_CENTRO": 844083.688451,
-                "E00_CENT_1": 814610.337844,
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SHAPE_AREA": 962540.973503,
-                "SHAPE_LEN": 4314.902908
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -2111,12 +2079,10 @@ export default {
                 "CACODE": "E14",
                 "ENAME": "Mong Kok East",
                 "CNAME": "旺角東",
-                "E00_CENTRO": 835667.125966,
-                "E00_CENT_1": 820559.269813,
                 "DISTRICT_T": "油尖旺區",
                 "DISTRICT_E": "Yau Tsim Mong",
-                "SHAPE_AREA": 315074.614765,
-                "SHAPE_LEN": 2660.950445
+                "SUBDISTIRCT_T": "旺角 / 花墟",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -2206,12 +2172,10 @@ export default {
                 "CACODE": "G07",
                 "ENAME": "Kadoorie",
                 "CNAME": "嘉道理",
-                "E00_CENTRO": 836125.935331,
-                "E00_CENT_1": 820419.193518,
                 "DISTRICT_T": "九龍城區",
                 "DISTRICT_E": "Kowloon City",
-                "SHAPE_AREA": 432875.764867,
-                "SHAPE_LEN": 2814.454006
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -2313,12 +2277,10 @@ export default {
                 "CACODE": "J07",
                 "ENAME": "Jordan Valley",
                 "CNAME": "佐敦谷",
-                "E00_CENTRO": 840503.654264,
-                "E00_CENT_1": 820766.258494,
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SHAPE_AREA": 203265.704926,
-                "SHAPE_LEN": 2283.465836
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -2428,12 +2390,10 @@ export default {
                 "CACODE": "D01",
                 "ENAME": "Aberdeen",
                 "CNAME": "香港仔",
-                "E00_CENTRO": 834199.574694,
-                "E00_CENT_1": 811750.951193,
                 "DISTRICT_T": "南區",
                 "DISTRICT_E": "Southern",
-                "SHAPE_AREA": 1042840.28327,
-                "SHAPE_LEN": 9023.779867
+                "SUBDISTIRCT_T": "香港仔",
+                "SUBDISTIRCT_E": "Aberdeen"
             },
             "geometry": {
                 "type": "Polygon",
@@ -2831,12 +2791,10 @@ export default {
                 "CACODE": "D15",
                 "ENAME": "Wong Chuk Hang",
                 "CNAME": "黃竹坑",
-                "E00_CENTRO": 835009.508559,
-                "E00_CENT_1": 812514.955592,
                 "DISTRICT_T": "南區",
                 "DISTRICT_E": "Southern",
-                "SHAPE_AREA": 2694239.12613,
-                "SHAPE_LEN": 10616.555319
+                "SUBDISTIRCT_T": "黃竹坑",
+                "SUBDISTIRCT_E": "Wong Chuk Hang"
             },
             "geometry": {
                 "type": "Polygon",
@@ -3338,12 +3296,10 @@ export default {
                 "CACODE": "D16",
                 "ENAME": "Bays Area",
                 "CNAME": "海灣",
-                "E00_CENTRO": 837154.220205,
-                "E00_CENT_1": 810534.996662,
                 "DISTRICT_T": "南區",
                 "DISTRICT_E": "Southern",
-                "SHAPE_AREA": 23278242.2836,
-                "SHAPE_LEN": 28588.338169
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -4125,12 +4081,10 @@ export default {
                 "CACODE": "D17",
                 "ENAME": "Stanley & Shek O",
                 "CNAME": "赤柱及石澳",
-                "E00_CENTRO": 842819.810172,
-                "E00_CENT_1": 808960.694172,
                 "DISTRICT_T": "南區",
                 "DISTRICT_E": "Southern",
-                "SHAPE_AREA": 53472038.6198,
-                "SHAPE_LEN": 36907.068807
+                "SUBDISTIRCT_T": "赤柱 / 石澳",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -4768,12 +4722,10 @@ export default {
                 "CACODE": "D12",
                 "ENAME": "Chi Fu",
                 "CNAME": "置富",
-                "E00_CENTRO": 832526.800547,
-                "E00_CENT_1": 813331.178856,
                 "DISTRICT_T": "南區",
                 "DISTRICT_E": "Southern",
-                "SHAPE_AREA": 1206080.69463,
-                "SHAPE_LEN": 5529.919781
+                "SUBDISTIRCT_T": "置富",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -4983,12 +4935,10 @@ export default {
                 "CACODE": "T08",
                 "ENAME": "Lamma & Po Toi",
                 "CNAME": "南丫及蒲台",
-                "E00_CENTRO": 832834.186517,
-                "E00_CENT_1": 805414.697192,
                 "DISTRICT_T": "離島區",
                 "DISTRICT_E": "Islands",
-                "SHAPE_AREA": 232086553.344,
-                "SHAPE_LEN": 84904.175754
+                "SUBDISTIRCT_T": "南丫島",
+                "SUBDISTIRCT_E": "Lamma Island"
             },
             "geometry": {
                 "type": "Polygon",
@@ -5102,12 +5052,10 @@ export default {
                 "CACODE": "B11",
                 "ENAME": "Stubbs Road",
                 "CNAME": "司徒拔道",
-                "E00_CENTRO": 836377.714256,
-                "E00_CENT_1": 813788.110778,
                 "DISTRICT_T": "灣仔區",
                 "DISTRICT_E": "Wan Chai",
-                "SHAPE_AREA": 4203151.66892,
-                "SHAPE_LEN": 12833.192757
+                "SUBDISTIRCT_T": "跑馬地",
+                "SUBDISTIRCT_E": "Happy Valley"
             },
             "geometry": {
                 "type": "Polygon",
@@ -5849,12 +5797,10 @@ export default {
                 "CACODE": "D11",
                 "ENAME": "Pokfulam",
                 "CNAME": "薄扶林",
-                "E00_CENTRO": 830878.177393,
-                "E00_CENT_1": 813825.497156,
                 "DISTRICT_T": "南區",
                 "DISTRICT_E": "Southern",
-                "SHAPE_AREA": 6080366.1896,
-                "SHAPE_LEN": 11226.492549
+                "SUBDISTIRCT_T": "薄扶林",
+                "SUBDISTIRCT_E": "Pok Fu Lam"
             },
             "geometry": {
                 "type": "Polygon",
@@ -6116,12 +6062,10 @@ export default {
                 "CACODE": "A04",
                 "ENAME": "Peak",
                 "CNAME": "山頂",
-                "E00_CENTRO": 833721.736284,
-                "E00_CENT_1": 814271.499209,
                 "DISTRICT_T": "中西區",
                 "DISTRICT_E": "Central & Western",
-                "SHAPE_AREA": 5739199.59481,
-                "SHAPE_LEN": 13329.391498
+                "SUBDISTIRCT_T": "山頂",
+                "SUBDISTIRCT_E": "Peak"
             },
             "geometry": {
                 "type": "Polygon",
@@ -6787,12 +6731,10 @@ export default {
                 "CACODE": "C05",
                 "ENAME": "Shaukeiwan",
                 "CNAME": "筲箕灣",
-                "E00_CENTRO": 841650.643768,
-                "E00_CENT_1": 815521.910397,
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SHAPE_AREA": 103103.23701,
-                "SHAPE_LEN": 2008.624831
+                "SUBDISTIRCT_T": "筲箕灣",
+                "SUBDISTIRCT_E": "Shau Kei Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -6910,12 +6852,10 @@ export default {
                 "CACODE": "C04",
                 "ENAME": "Aldrich Bay",
                 "CNAME": "愛秩序灣",
-                "E00_CENTRO": 841412.043798,
-                "E00_CENT_1": 815851.578327,
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SHAPE_AREA": 101249.098245,
-                "SHAPE_LEN": 1339.913882
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -6969,12 +6909,10 @@ export default {
                 "CACODE": "A05",
                 "ENAME": "University",
                 "CNAME": "大學",
-                "E00_CENTRO": 832240.728362,
-                "E00_CENT_1": 815603.269058,
                 "DISTRICT_T": "中西區",
                 "DISTRICT_E": "Central & Western",
-                "SHAPE_AREA": 1528325.3364,
-                "SHAPE_LEN": 6512.000712
+                "SUBDISTIRCT_T": "西半山",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -7292,12 +7230,10 @@ export default {
                 "CACODE": "C14",
                 "ENAME": "Mount Parker",
                 "CNAME": "柏架山",
-                "E00_CENTRO": 839687.284574,
-                "E00_CENT_1": 814583.744778,
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SHAPE_AREA": 4170285.08477,
-                "SHAPE_LEN": 14743.596414
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -7939,12 +7875,10 @@ export default {
                 "CACODE": "A14",
                 "ENAME": "Centre Street",
                 "CNAME": "正街",
-                "E00_CENTRO": 832727.929861,
-                "E00_CENT_1": 816331.937775,
                 "DISTRICT_T": "中西區",
                 "DISTRICT_E": "Central & Western",
-                "SHAPE_AREA": 108379.555573,
-                "SHAPE_LEN": 1770.620716
+                "SUBDISTIRCT_T": "西營盤",
+                "SUBDISTIRCT_E": "Sai Ying Pun"
             },
             "geometry": {
                 "type": "Polygon",
@@ -8018,12 +7952,10 @@ export default {
                 "CACODE": "C06",
                 "ENAME": "A Kung Ngam",
                 "CNAME": "阿公岩",
-                "E00_CENTRO": 842007.334246,
-                "E00_CENT_1": 815831.264453,
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SHAPE_AREA": 1736763.84949,
-                "SHAPE_LEN": 7784.22269
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -8317,12 +8249,10 @@ export default {
                 "CACODE": "C20",
                 "ENAME": "Kam Ping",
                 "CNAME": "錦屏",
-                "E00_CENTRO": 838710.639663,
-                "E00_CENT_1": 816803.413225,
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SHAPE_AREA": 81285.998976,
-                "SHAPE_LEN": 1607.309549
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -8392,12 +8322,10 @@ export default {
                 "CACODE": "C32",
                 "ENAME": "Lok Hong",
                 "CNAME": "樂康",
-                "E00_CENTRO": 842352.813124,
-                "E00_CENT_1": 814710.233176,
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SHAPE_AREA": 592036.469311,
-                "SHAPE_LEN": 3902.837946
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -8599,12 +8527,10 @@ export default {
                 "CACODE": "B09",
                 "ENAME": "Broadwood",
                 "CNAME": "樂活",
-                "E00_CENTRO": 837352.161228,
-                "E00_CENT_1": 814888.176774,
                 "DISTRICT_T": "灣仔區",
                 "DISTRICT_E": "Wan Chai",
-                "SHAPE_AREA": 537761.06833,
-                "SHAPE_LEN": 3555.256009
+                "SUBDISTIRCT_T": "跑馬地",
+                "SUBDISTIRCT_E": "Happy Valley"
             },
             "geometry": {
                 "type": "Polygon",
@@ -8794,12 +8720,10 @@ export default {
                 "CACODE": "Q15",
                 "ENAME": "Hong King",
                 "CNAME": "康景",
-                "E00_CENTRO": 844245.005165,
-                "E00_CENT_1": 819976.295063,
                 "DISTRICT_T": "西貢區",
                 "DISTRICT_E": "Sai Kung",
-                "SHAPE_AREA": 513557.492013,
-                "SHAPE_LEN": 4106.071778
+                "SUBDISTIRCT_T": "將軍澳",
+                "SUBDISTIRCT_E": "Tseung Kwan O"
             },
             "geometry": {
                 "type": "Polygon",
@@ -8997,12 +8921,10 @@ export default {
                 "CACODE": "Q18",
                 "ENAME": "Yan Ying",
                 "CNAME": "欣英",
-                "E00_CENTRO": 844652.901694,
-                "E00_CENT_1": 820553.888741,
                 "DISTRICT_T": "西貢區",
                 "DISTRICT_E": "Sai Kung",
-                "SHAPE_AREA": 129125.286564,
-                "SHAPE_LEN": 1708.490846
+                "SUBDISTIRCT_T": "寶琳",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -9076,12 +8998,10 @@ export default {
                 "CACODE": "G01",
                 "ENAME": "Ma Tau Wai",
                 "CNAME": "馬頭圍",
-                "E00_CENTRO": 837335.041029,
-                "E00_CENT_1": 820627.07139,
                 "DISTRICT_T": "九龍城區",
                 "DISTRICT_E": "Kowloon City",
-                "SHAPE_AREA": 340409.139477,
-                "SHAPE_LEN": 3186.375121
+                "SUBDISTIRCT_T": "馬頭圍",
+                "SUBDISTIRCT_E": "Ma Tau Wai"
             },
             "geometry": {
                 "type": "Polygon",
@@ -9183,12 +9103,10 @@ export default {
                 "CACODE": "Q17",
                 "ENAME": "Po Lam",
                 "CNAME": "寶林",
-                "E00_CENTRO": 844253.658039,
-                "E00_CENT_1": 820738.308873,
                 "DISTRICT_T": "西貢區",
                 "DISTRICT_E": "Sai Kung",
-                "SHAPE_AREA": 209427.427693,
-                "SHAPE_LEN": 2242.115933
+                "SUBDISTIRCT_T": "寶琳",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -9310,12 +9228,10 @@ export default {
                 "CACODE": "F08",
                 "ENAME": "Nam Cheong West",
                 "CNAME": "南昌西",
-                "E00_CENTRO": 834332.443535,
-                "E00_CENT_1": 820765.758276,
                 "DISTRICT_T": "深水埗區",
                 "DISTRICT_E": "Sham Shui Po",
-                "SHAPE_AREA": 317475.143394,
-                "SHAPE_LEN": 3085.946906
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -9433,12 +9349,10 @@ export default {
                 "CACODE": "G08",
                 "ENAME": "Prince",
                 "CNAME": "太子",
-                "E00_CENTRO": 836733.976911,
-                "E00_CENT_1": 820905.300613,
                 "DISTRICT_T": "九龍城區",
                 "DISTRICT_E": "Kowloon City",
-                "SHAPE_AREA": 756917.826124,
-                "SHAPE_LEN": 4950.238857
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -9568,12 +9482,10 @@ export default {
                 "CACODE": "D07",
                 "ENAME": "South Horizons West",
                 "CNAME": "海怡西",
-                "E00_CENTRO": 832900.962312,
-                "E00_CENT_1": 811419.775784,
                 "DISTRICT_T": "南區",
                 "DISTRICT_E": "Southern",
-                "SHAPE_AREA": 326694.035108,
-                "SHAPE_LEN": 2952.84719
+                "SUBDISTIRCT_T": "鴨脷洲",
+                "SUBDISTIRCT_E": "Ap Lei Chau"
             },
             "geometry": {
                 "type": "Polygon",
@@ -9651,12 +9563,10 @@ export default {
                 "CACODE": "D02",
                 "ENAME": "Ap Lei Chau Estate",
                 "CNAME": "鴨脷洲邨",
-                "E00_CENTRO": 833582.830674,
-                "E00_CENT_1": 811771.155107,
                 "DISTRICT_T": "南區",
                 "DISTRICT_E": "Southern",
-                "SHAPE_AREA": 91728.248008,
-                "SHAPE_LEN": 1445.596321
+                "SUBDISTIRCT_T": "鴨脷洲",
+                "SUBDISTIRCT_E": "Ap Lei Chau"
             },
             "geometry": {
                 "type": "Polygon",
@@ -9754,12 +9664,10 @@ export default {
                 "CACODE": "C35",
                 "ENAME": "Kai Hiu",
                 "CNAME": "佳曉",
-                "E00_CENTRO": 843632.874424,
-                "E00_CENT_1": 813588.21893,
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SHAPE_AREA": 154989.870755,
-                "SHAPE_LEN": 2271.511903
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -9865,12 +9773,10 @@ export default {
                 "CACODE": "B10",
                 "ENAME": "Happy Valley",
                 "CNAME": "跑馬地",
-                "E00_CENTRO": 836915.549857,
-                "E00_CENT_1": 814711.038168,
                 "DISTRICT_T": "灣仔區",
                 "DISTRICT_E": "Wan Chai",
-                "SHAPE_AREA": 444881.182546,
-                "SHAPE_LEN": 3604.138973
+                "SUBDISTIRCT_T": "跑馬地",
+                "SUBDISTIRCT_E": "Happy Valley"
             },
             "geometry": {
                 "type": "Polygon",
@@ -10052,12 +9958,10 @@ export default {
                 "CACODE": "A07",
                 "ENAME": "Kwun Lung",
                 "CNAME": "觀龍",
-                "E00_CENTRO": 831319.468754,
-                "E00_CENT_1": 815624.176826,
                 "DISTRICT_T": "中西區",
                 "DISTRICT_E": "Central & Western",
-                "SHAPE_AREA": 237301.669537,
-                "SHAPE_LEN": 2787.348422
+                "SUBDISTIRCT_T": "堅尼地城",
+                "SUBDISTIRCT_E": "Kennedy Town"
             },
             "geometry": {
                 "type": "Polygon",
@@ -10191,12 +10095,10 @@ export default {
                 "CACODE": "C07",
                 "ENAME": "Heng Fa Chuen",
                 "CNAME": "杏花邨",
-                "E00_CENTRO": 842909.211318,
-                "E00_CENT_1": 815468.869084,
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SHAPE_AREA": 740855.852776,
-                "SHAPE_LEN": 4039.036881
+                "SUBDISTIRCT_T": "杏花邨",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -10326,12 +10228,10 @@ export default {
                 "CACODE": "C16",
                 "ENAME": "Fortress Hill",
                 "CNAME": "炮台山",
-                "E00_CENTRO": 838063.169131,
-                "E00_CENT_1": 816488.913703,
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SHAPE_AREA": 143663.664787,
-                "SHAPE_LEN": 2272.797901
+                "SUBDISTIRCT_T": "北角",
+                "SUBDISTIRCT_E": "North Point"
             },
             "geometry": {
                 "type": "Polygon",
@@ -10465,12 +10365,10 @@ export default {
                 "CACODE": "C17",
                 "ENAME": "City Garden",
                 "CNAME": "城市花園",
-                "E00_CENTRO": 837736.04204,
-                "E00_CENT_1": 816995.589142,
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SHAPE_AREA": 581950.016302,
-                "SHAPE_LEN": 3151.859427
+                "SUBDISTIRCT_T": "北角",
+                "SUBDISTIRCT_E": "North Point"
             },
             "geometry": {
                 "type": "Polygon",
@@ -10544,12 +10442,10 @@ export default {
                 "CACODE": "A10",
                 "ENAME": "Shek Tong Tsui",
                 "CNAME": "石塘咀",
-                "E00_CENTRO": 831965.634882,
-                "E00_CENT_1": 817021.656505,
                 "DISTRICT_T": "中西區",
                 "DISTRICT_E": "Central & Western",
-                "SHAPE_AREA": 1030299.19752,
-                "SHAPE_LEN": 4474.359929
+                "SUBDISTIRCT_T": "石塘咀",
+                "SUBDISTIRCT_E": "Shek Tong Tsui"
             },
             "geometry": {
                 "type": "Polygon",
@@ -10627,12 +10523,10 @@ export default {
                 "CACODE": "Q08",
                 "ENAME": "Do Shin",
                 "CNAME": "都善",
-                "E00_CENTRO": 843839.633125,
-                "E00_CENT_1": 817701.47077,
                 "DISTRICT_T": "西貢區",
                 "DISTRICT_E": "Sai Kung",
-                "SHAPE_AREA": 79103.314286,
-                "SHAPE_LEN": 1266.976298
+                "SUBDISTIRCT_T": "將軍澳",
+                "SUBDISTIRCT_E": "Tseung Kwan O"
             },
             "geometry": {
                 "type": "Polygon",
@@ -10702,12 +10596,10 @@ export default {
                 "CACODE": "T09",
                 "ENAME": "Cheung Chau South",
                 "CNAME": "長洲南",
-                "E00_CENTRO": 820961.040178,
-                "E00_CENT_1": 806544.19454,
                 "DISTRICT_T": "離島區",
                 "DISTRICT_E": "Islands",
-                "SHAPE_AREA": 6970745.93309,
-                "SHAPE_LEN": 12767.081879
+                "SUBDISTIRCT_T": "長洲",
+                "SUBDISTIRCT_E": "Cheung Chau"
             },
             "geometry": {
                 "type": "Polygon",
@@ -10901,12 +10793,10 @@ export default {
                 "CACODE": "T10",
                 "ENAME": "Cheung Chau North",
                 "CNAME": "長洲北",
-                "E00_CENTRO": 820919.994726,
-                "E00_CENT_1": 808529.83799,
                 "DISTRICT_T": "離島區",
                 "DISTRICT_E": "Islands",
-                "SHAPE_AREA": 8874233.28042,
-                "SHAPE_LEN": 13738.505185
+                "SUBDISTIRCT_T": "長洲",
+                "SUBDISTIRCT_E": "Cheung Chau"
             },
             "geometry": {
                 "type": "Polygon",
@@ -11104,12 +10994,10 @@ export default {
                 "CACODE": "D05",
                 "ENAME": "Lei Tung II",
                 "CNAME": "利東二",
-                "E00_CENTRO": 834012.565204,
-                "E00_CENT_1": 811424.416545,
                 "DISTRICT_T": "南區",
                 "DISTRICT_E": "Southern",
-                "SHAPE_AREA": 99930.267027,
-                "SHAPE_LEN": 1519.536126
+                "SUBDISTIRCT_T": "鴨脷洲",
+                "SUBDISTIRCT_E": "Ap Lei Chau"
             },
             "geometry": {
                 "type": "Polygon",
@@ -11219,12 +11107,10 @@ export default {
                 "CACODE": "M05",
                 "ENAME": "Yuen Long Centre",
                 "CNAME": "元朗中心",
-                "E00_CENTRO": 821189.074824,
-                "E00_CENT_1": 834016.880822,
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SHAPE_AREA": 322368.764533,
-                "SHAPE_LEN": 3168.455204
+                "SUBDISTIRCT_T": "元朗",
+                "SUBDISTIRCT_E": "Yuen Long"
             },
             "geometry": {
                 "type": "Polygon",
@@ -11362,12 +11248,10 @@ export default {
                 "CACODE": "P12",
                 "ENAME": "San Fu",
                 "CNAME": "新富",
-                "E00_CENTRO": 834675.81212,
-                "E00_CENT_1": 834012.994556,
                 "DISTRICT_T": "大埔區",
                 "DISTRICT_E": "Tai Po",
-                "SHAPE_AREA": 941417.167655,
-                "SHAPE_LEN": 5238.615307
+                "SUBDISTIRCT_T": "大埔",
+                "SUBDISTIRCT_E": "Tai Po"
             },
             "geometry": {
                 "type": "Polygon",
@@ -11605,12 +11489,10 @@ export default {
                 "CACODE": "P01",
                 "ENAME": "Tai Po Hui",
                 "CNAME": "大埔墟",
-                "E00_CENTRO": 835339.496297,
-                "E00_CENT_1": 834226.040055,
                 "DISTRICT_T": "大埔區",
                 "DISTRICT_E": "Tai Po",
-                "SHAPE_AREA": 396506.934101,
-                "SHAPE_LEN": 2855.480988
+                "SUBDISTIRCT_T": "大埔",
+                "SUBDISTIRCT_E": "Tai Po"
             },
             "geometry": {
                 "type": "Polygon",
@@ -11712,12 +11594,10 @@ export default {
                 "CACODE": "P08",
                 "ENAME": "Kwong Fuk & Plover Cove",
                 "CNAME": "廣福及寶湖",
-                "E00_CENTRO": 835790.253006,
-                "E00_CENT_1": 834407.2211,
                 "DISTRICT_T": "大埔區",
                 "DISTRICT_E": "Tai Po",
-                "SHAPE_AREA": 233455.728498,
-                "SHAPE_LEN": 3189.963268
+                "SUBDISTIRCT_T": "大埔",
+                "SUBDISTIRCT_E": "Tai Po"
             },
             "geometry": {
                 "type": "Polygon",
@@ -11847,12 +11727,10 @@ export default {
                 "CACODE": "M04",
                 "ENAME": "Pek Long",
                 "CNAME": "北朗",
-                "E00_CENTRO": 820991.139509,
-                "E00_CENT_1": 834543.553648,
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SHAPE_AREA": 388303.137679,
-                "SHAPE_LEN": 4105.563922
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -12042,12 +11920,10 @@ export default {
                 "CACODE": "P07",
                 "ENAME": "Fu Ming Sun",
                 "CNAME": "富明新",
-                "E00_CENTRO": 836009.648788,
-                "E00_CENT_1": 834720.238236,
                 "DISTRICT_T": "大埔區",
                 "DISTRICT_E": "Tai Po",
-                "SHAPE_AREA": 153068.525805,
-                "SHAPE_LEN": 1963.929913
+                "SUBDISTIRCT_T": "大埔",
+                "SUBDISTIRCT_E": "Tai Po"
             },
             "geometry": {
                 "type": "Polygon",
@@ -12141,12 +12017,10 @@ export default {
                 "CACODE": "P16",
                 "ENAME": "Old Market & Serenity",
                 "CNAME": "舊墟及太湖",
-                "E00_CENTRO": 834859.27589,
-                "E00_CENT_1": 834895.129017,
                 "DISTRICT_T": "大埔區",
                 "DISTRICT_E": "Tai Po",
-                "SHAPE_AREA": 148203.985319,
-                "SHAPE_LEN": 2105.84407
+                "SUBDISTIRCT_T": "大埔",
+                "SUBDISTIRCT_E": "Tai Po"
             },
             "geometry": {
                 "type": "Polygon",
@@ -12244,12 +12118,10 @@ export default {
                 "CACODE": "P06",
                 "ENAME": "Yee Fu",
                 "CNAME": "怡富",
-                "E00_CENTRO": 836144.698223,
-                "E00_CENT_1": 834988.073051,
                 "DISTRICT_T": "大埔區",
                 "DISTRICT_E": "Tai Po",
-                "SHAPE_AREA": 194534.191097,
-                "SHAPE_LEN": 2286.081639
+                "SUBDISTIRCT_T": "大埔",
+                "SUBDISTIRCT_E": "Tai Po"
             },
             "geometry": {
                 "type": "Polygon",
@@ -12359,12 +12231,10 @@ export default {
                 "CACODE": "M16",
                 "ENAME": "Shui Oi",
                 "CNAME": "瑞愛",
-                "E00_CENTRO": 817816.301325,
-                "E00_CENT_1": 835088.924623,
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SHAPE_AREA": 175796.941387,
-                "SHAPE_LEN": 1859.812335
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -12430,12 +12300,10 @@ export default {
                 "CACODE": "M29",
                 "ENAME": "Kingswood South",
                 "CNAME": "嘉湖南",
-                "E00_CENTRO": 818304.851366,
-                "E00_CENT_1": 835015.188485,
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SHAPE_AREA": 539663.359132,
-                "SHAPE_LEN": 4306.32135
+                "SUBDISTIRCT_T": "天水圍",
+                "SUBDISTIRCT_E": "Tin Shui Wai"
             },
             "geometry": {
                 "type": "Polygon",
@@ -12601,12 +12469,10 @@ export default {
                 "CACODE": "P03",
                 "ENAME": "Chung Ting",
                 "CNAME": "頌汀",
-                "E00_CENTRO": 835307.750261,
-                "E00_CENT_1": 834990.719749,
                 "DISTRICT_T": "大埔區",
                 "DISTRICT_E": "Tai Po",
-                "SHAPE_AREA": 230113.847492,
-                "SHAPE_LEN": 3850.896483
+                "SUBDISTIRCT_T": "大埔",
+                "SUBDISTIRCT_E": "Tai Po"
             },
             "geometry": {
                 "type": "Polygon",
@@ -12772,12 +12638,10 @@ export default {
                 "CACODE": "M25",
                 "ENAME": "Kingswood North",
                 "CNAME": "嘉湖北",
-                "E00_CENTRO": 818632.344105,
-                "E00_CENT_1": 835554.628784,
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SHAPE_AREA": 368928.606329,
-                "SHAPE_LEN": 2778.79358
+                "SUBDISTIRCT_T": "天水圍",
+                "SUBDISTIRCT_E": "Tin Shui Wai"
             },
             "geometry": {
                 "type": "Polygon",
@@ -12883,12 +12747,10 @@ export default {
                 "CACODE": "C03",
                 "ENAME": "Lei King Wan",
                 "CNAME": "鯉景灣",
-                "E00_CENTRO": 841203.889842,
-                "E00_CENT_1": 816506.636356,
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SHAPE_AREA": 470109.173236,
-                "SHAPE_LEN": 3058.060672
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -12962,12 +12824,10 @@ export default {
                 "CACODE": "C02",
                 "ENAME": "Tai Koo Shing East",
                 "CNAME": "太古城東",
-                "E00_CENTRO": 840824.199699,
-                "E00_CENT_1": 816737.57533,
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SHAPE_AREA": 474516.790437,
-                "SHAPE_LEN": 3104.861877
+                "SUBDISTIRCT_T": "太古城",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -13037,12 +12897,10 @@ export default {
                 "CACODE": "J22",
                 "ENAME": "Yau Lai",
                 "CNAME": "油麗",
-                "E00_CENTRO": 842303.45849,
-                "E00_CENT_1": 818069.433546,
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SHAPE_AREA": 94068.161439,
-                "SHAPE_LEN": 1852.378628
+                "SUBDISTIRCT_T": "油塘",
+                "SUBDISTIRCT_E": "Yau Tong"
             },
             "geometry": {
                 "type": "Polygon",
@@ -13132,12 +12990,10 @@ export default {
                 "CACODE": "Q07",
                 "ENAME": "Wai King",
                 "CNAME": "維景",
-                "E00_CENTRO": 843839.633125,
-                "E00_CENT_1": 817701.47077,
                 "DISTRICT_T": "西貢區",
                 "DISTRICT_E": "Sai Kung",
-                "SHAPE_AREA": 1523553.03481,
-                "SHAPE_LEN": 7693.278086
+                "SUBDISTIRCT_T": "調景嶺",
+                "SUBDISTIRCT_E": "Tiu Keng Leng"
             },
             "geometry": {
                 "type": "Polygon",
@@ -13567,12 +13423,10 @@ export default {
                 "CACODE": "G20",
                 "ENAME": "Hung Hom Bay",
                 "CNAME": "紅磡灣",
-                "E00_CENTRO": 837245.697811,
-                "E00_CENT_1": 818525.502958,
                 "DISTRICT_T": "九龍城區",
                 "DISTRICT_E": "Kowloon City",
-                "SHAPE_AREA": 113969.369927,
-                "SHAPE_LEN": 2088.355085
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -13686,12 +13540,10 @@ export default {
                 "CACODE": "J24",
                 "ENAME": "Yau Tong West",
                 "CNAME": "油塘西",
-                "E00_CENTRO": 842039.102059,
-                "E00_CENT_1": 817357.229755,
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SHAPE_AREA": 2807175.7674,
-                "SHAPE_LEN": 9843.430964
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -13993,12 +13845,10 @@ export default {
                 "CACODE": "M03",
                 "ENAME": "Nam Ping",
                 "CNAME": "南屏",
-                "E00_CENTRO": 820501.906031,
-                "E00_CENT_1": 834301.260245,
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SHAPE_AREA": 173419.747421,
-                "SHAPE_LEN": 1707.334803
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -14088,12 +13938,10 @@ export default {
                 "CACODE": "P15",
                 "ENAME": "Tai Wo",
                 "CNAME": "太和",
-                "E00_CENTRO": 834761.234614,
-                "E00_CENT_1": 834682.990126,
                 "DISTRICT_T": "大埔區",
                 "DISTRICT_E": "Tai Po",
-                "SHAPE_AREA": 123207.485183,
-                "SHAPE_LEN": 1603.909473
+                "SUBDISTIRCT_T": "大埔",
+                "SUBDISTIRCT_E": "Tai Po"
             },
             "geometry": {
                 "type": "Polygon",
@@ -14171,12 +14019,10 @@ export default {
                 "CACODE": "P02",
                 "ENAME": "Tai Po Central",
                 "CNAME": "大埔中",
-                "E00_CENTRO": 835598.235432,
-                "E00_CENT_1": 834762.67097,
                 "DISTRICT_T": "大埔區",
                 "DISTRICT_E": "Tai Po",
-                "SHAPE_AREA": 168952.099189,
-                "SHAPE_LEN": 1953.45265
+                "SUBDISTIRCT_T": "大埔",
+                "SUBDISTIRCT_E": "Tai Po"
             },
             "geometry": {
                 "type": "Polygon",
@@ -14274,12 +14120,10 @@ export default {
                 "CACODE": "P04",
                 "ENAME": "Tai Yuen",
                 "CNAME": "大元",
-                "E00_CENTRO": 835482.050543,
-                "E00_CENT_1": 835098.514321,
                 "DISTRICT_T": "大埔區",
                 "DISTRICT_E": "Tai Po",
-                "SHAPE_AREA": 138224.713273,
-                "SHAPE_LEN": 1858.556449
+                "SUBDISTIRCT_T": "大埔",
+                "SUBDISTIRCT_E": "Tai Po"
             },
             "geometry": {
                 "type": "Polygon",
@@ -14381,12 +14225,10 @@ export default {
                 "CACODE": "M18",
                 "ENAME": "Chung Wah",
                 "CNAME": "頌華",
-                "E00_CENTRO": 817756.088225,
-                "E00_CENT_1": 835721.434149,
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SHAPE_AREA": 122890.172807,
-                "SHAPE_LEN": 1933.000666
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -14460,12 +14302,10 @@ export default {
                 "CACODE": "Q03",
                 "ENAME": "Sai Kung Islands",
                 "CNAME": "西貢離島",
-                "E00_CENTRO": 859134.217545,
-                "E00_CENT_1": 825466.478424,
                 "DISTRICT_T": "西貢區",
                 "DISTRICT_E": "Sai Kung",
-                "SHAPE_AREA": 329285384.971,
-                "SHAPE_LEN": 84224.849348
+                "SUBDISTIRCT_T": "西貢",
+                "SUBDISTIRCT_E": "Sai Kung"
             },
             "geometry": {
                 "type": "Polygon",
@@ -15591,12 +15431,10 @@ export default {
                 "CACODE": "M21",
                 "ENAME": "Yat Chak",
                 "CNAME": "逸澤",
-                "E00_CENTRO": 817885.276621,
-                "E00_CENT_1": 836468.468823,
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SHAPE_AREA": 132941.964541,
-                "SHAPE_LEN": 1495.226492
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -15642,12 +15480,10 @@ export default {
                 "CACODE": "M34",
                 "ENAME": "Pat Heung North",
                 "CNAME": "八鄉北",
-                "E00_CENTRO": 828004.275906,
-                "E00_CENT_1": 834649.724385,
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SHAPE_AREA": 16691307.8859,
-                "SHAPE_LEN": 20923.349034
+                "SUBDISTIRCT_T": "八鄉",
+                "SUBDISTIRCT_E": "Pat Heung"
             },
             "geometry": {
                 "type": "Polygon",
@@ -16621,12 +16457,10 @@ export default {
                 "CACODE": "P13",
                 "ENAME": "Lam Tsuen Valley",
                 "CNAME": "林村谷",
-                "E00_CENTRO": 832020.360558,
-                "E00_CENT_1": 834087.262343,
                 "DISTRICT_T": "大埔區",
                 "DISTRICT_E": "Tai Po",
-                "SHAPE_AREA": 18574174.4272,
-                "SHAPE_LEN": 22569.369616
+                "SUBDISTIRCT_T": "林村",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -17636,12 +17470,10 @@ export default {
                 "CACODE": "M14",
                 "ENAME": "Ha Tsuen",
                 "CNAME": "廈村",
-                "E00_CENTRO": 812676.339894,
-                "E00_CENT_1": 834354.629732,
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SHAPE_AREA": 44172640.586,
-                "SHAPE_LEN": 34510.810109
+                "SUBDISTIRCT_T": "廈村",
+                "SUBDISTIRCT_E": "Ha Tsuen"
             },
             "geometry": {
                 "type": "Polygon",
@@ -18143,12 +17975,10 @@ export default {
                 "CACODE": "N06",
                 "ENAME": "Yan Shing",
                 "CNAME": "欣盛",
-                "E00_CENTRO": 832265.655728,
-                "E00_CENT_1": 837691.276398,
                 "DISTRICT_T": "北區",
                 "DISTRICT_E": "North",
-                "SHAPE_AREA": 3071977.57039,
-                "SHAPE_LEN": 10207.428128
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -18682,12 +18512,10 @@ export default {
                 "CACODE": "P17",
                 "ENAME": "Hong Lok Yuen",
                 "CNAME": "康樂園",
-                "E00_CENTRO": 836324.032064,
-                "E00_CENT_1": 836906.806196,
                 "DISTRICT_T": "大埔區",
                 "DISTRICT_E": "Tai Po",
-                "SHAPE_AREA": 19877660.3778,
-                "SHAPE_LEN": 29224.465446
+                "SUBDISTIRCT_T": "大埔",
+                "SUBDISTIRCT_E": "Tai Po"
             },
             "geometry": {
                 "type": "Polygon",
@@ -19797,12 +19625,10 @@ export default {
                 "CACODE": "N08",
                 "ENAME": "Fanling South",
                 "CNAME": "粉嶺南",
-                "E00_CENTRO": 832265.655728,
-                "E00_CENT_1": 837691.276398,
                 "DISTRICT_T": "北區",
                 "DISTRICT_E": "North",
-                "SHAPE_AREA": 679538.786911,
-                "SHAPE_LEN": 6038.835464
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -20104,12 +19930,10 @@ export default {
                 "CACODE": "N10",
                 "ENAME": "Yu Tai",
                 "CNAME": "御太",
-                "E00_CENTRO": 830896.345125,
-                "E00_CENT_1": 839780.139349,
                 "DISTRICT_T": "北區",
                 "DISTRICT_E": "North",
-                "SHAPE_AREA": 5455063.00236,
-                "SHAPE_LEN": 14522.996169
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -20903,12 +20727,10 @@ export default {
                 "CACODE": "M31",
                 "ENAME": "Fairview Park",
                 "CNAME": "錦綉花園",
-                "E00_CENTRO": 821719.060572,
-                "E00_CENT_1": 839014.946633,
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SHAPE_AREA": 8477760.79179,
-                "SHAPE_LEN": 16722.029938
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -21422,12 +21244,10 @@ export default {
                 "CACODE": "M13",
                 "ENAME": "Ping Shan North",
                 "CNAME": "屏山北",
-                "E00_CENTRO": 818979.710441,
-                "E00_CENT_1": 832415.010333,
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SHAPE_AREA": 23145973.9552,
-                "SHAPE_LEN": 27944.153411
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -22061,12 +21881,10 @@ export default {
                 "CACODE": "M32",
                 "ENAME": "San Tin",
                 "CNAME": "新田",
-                "E00_CENTRO": 824898.944444,
-                "E00_CENT_1": 838544.348431,
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SHAPE_AREA": 28685916.305,
-                "SHAPE_LEN": 32732.322967
+                "SUBDISTIRCT_T": "新田",
+                "SUBDISTIRCT_E": "San Tin"
             },
             "geometry": {
                 "type": "Polygon",
@@ -23408,12 +23226,10 @@ export default {
                 "CACODE": "N18",
                 "ENAME": "Queen's Hill",
                 "CNAME": "皇后山",
-                "E00_CENTRO": 835138.639201,
-                "E00_CENT_1": 840497.416149,
                 "DISTRICT_T": "北區",
                 "DISTRICT_E": "North",
-                "SHAPE_AREA": 15920166.4529,
-                "SHAPE_LEN": 23821.703744
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -24423,12 +24239,10 @@ export default {
                 "CACODE": "N11",
                 "ENAME": "Sheung Shui Rural",
                 "CNAME": "上水鄉郊",
-                "E00_CENTRO": 829009.563923,
-                "E00_CENT_1": 839908.730191,
                 "DISTRICT_T": "北區",
                 "DISTRICT_E": "North",
-                "SHAPE_AREA": 20193808.1895,
-                "SHAPE_LEN": 34860.496796
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -26050,12 +25864,10 @@ export default {
                 "CACODE": "P19",
                 "ENAME": "Sai Kung North",
                 "CNAME": "西貢北",
-                "E00_CENTRO": 855557.975162,
-                "E00_CENT_1": 837073.512179,
                 "DISTRICT_T": "大埔區",
                 "DISTRICT_E": "Tai Po",
-                "SHAPE_AREA": 176672485.915,
-                "SHAPE_LEN": 71668.244815
+                "SUBDISTIRCT_T": "西貢",
+                "SUBDISTIRCT_E": "Sai Kung"
             },
             "geometry": {
                 "type": "Polygon",
@@ -27189,12 +27001,10 @@ export default {
                 "CACODE": "P18",
                 "ENAME": "Shuen Wan",
                 "CNAME": "船灣",
-                "E00_CENTRO": 848820.429362,
-                "E00_CENT_1": 840069.375427,
                 "DISTRICT_T": "大埔區",
                 "DISTRICT_E": "Tai Po",
-                "SHAPE_AREA": 102180122.677,
-                "SHAPE_LEN": 71598.661508
+                "SUBDISTIRCT_T": "大尾篤",
+                "SUBDISTIRCT_E": "Tai Mei Tuk"
             },
             "geometry": {
                 "type": "Polygon",
@@ -28384,12 +28194,10 @@ export default {
                 "CACODE": "M19",
                 "ENAME": "Yuet Yan",
                 "CNAME": "悅恩",
-                "E00_CENTRO": 817818.158366,
-                "E00_CENT_1": 835946.493996,
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SHAPE_AREA": 167517.988082,
-                "SHAPE_LEN": 2299.041118
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -28475,12 +28283,10 @@ export default {
                 "CACODE": "M22",
                 "ENAME": "Tin Heng",
                 "CNAME": "天恒",
-                "E00_CENTRO": 818139.308418,
-                "E00_CENT_1": 836903.709948,
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SHAPE_AREA": 215912.226934,
-                "SHAPE_LEN": 2128.055896
+                "SUBDISTIRCT_T": "天水圍",
+                "SUBDISTIRCT_E": "Tin Shui Wai"
             },
             "geometry": {
                 "type": "Polygon",
@@ -28570,12 +28376,10 @@ export default {
                 "CACODE": "D08",
                 "ENAME": "Wah Kwai",
                 "CNAME": "華貴",
-                "E00_CENTRO": 832396.421265,
-                "E00_CENT_1": 811842.618447,
                 "DISTRICT_T": "南區",
                 "DISTRICT_E": "Southern",
-                "SHAPE_AREA": 1007115.76905,
-                "SHAPE_LEN": 4492.263095
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -28693,12 +28497,10 @@ export default {
                 "CACODE": "D09",
                 "ENAME": "Wah Fu South",
                 "CNAME": "華富南",
-                "E00_CENTRO": 831802.46035,
-                "E00_CENT_1": 812238.956011,
                 "DISTRICT_T": "南區",
                 "DISTRICT_E": "Southern",
-                "SHAPE_AREA": 492250.027257,
-                "SHAPE_LEN": 3503.488086
+                "SUBDISTIRCT_T": "華富邨",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -28820,12 +28622,10 @@ export default {
                 "CACODE": "D13",
                 "ENAME": "Tin Wan",
                 "CNAME": "田灣",
-                "E00_CENTRO": 833301.42157,
-                "E00_CENT_1": 812443.856203,
                 "DISTRICT_T": "南區",
                 "DISTRICT_E": "Southern",
-                "SHAPE_AREA": 591055.318027,
-                "SHAPE_LEN": 4484.51084
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -29031,12 +28831,10 @@ export default {
                 "CACODE": "D10",
                 "ENAME": "Wah Fu North",
                 "CNAME": "華富北",
-                "E00_CENTRO": 832160.730635,
-                "E00_CENT_1": 812777.442864,
                 "DISTRICT_T": "南區",
                 "DISTRICT_E": "Southern",
-                "SHAPE_AREA": 202953.212173,
-                "SHAPE_LEN": 2330.001161
+                "SUBDISTIRCT_T": "華富邨",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -29166,12 +28964,10 @@ export default {
                 "CACODE": "C12",
                 "ENAME": "Wan Tsui",
                 "CNAME": "環翠",
-                "E00_CENTRO": 843551.233196,
-                "E00_CENT_1": 812877.27223,
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SHAPE_AREA": 2917307.39402,
-                "SHAPE_LEN": 10071.20411
+                "SUBDISTIRCT_T": "柴灣",
+                "SUBDISTIRCT_E": "Chai Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -29509,12 +29305,10 @@ export default {
                 "CACODE": "C10",
                 "ENAME": "Siu Sai Wan",
                 "CNAME": "小西灣",
-                "E00_CENTRO": 843593.811017,
-                "E00_CENT_1": 813865.600495,
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SHAPE_AREA": 118231.770013,
-                "SHAPE_LEN": 2060.497831
+                "SUBDISTIRCT_T": "小西灣",
+                "SUBDISTIRCT_E": "Siu Sai Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -29644,12 +29438,10 @@ export default {
                 "CACODE": "C34",
                 "ENAME": "Yue Wan",
                 "CNAME": "漁灣",
-                "E00_CENTRO": 843042.392728,
-                "E00_CENT_1": 813951.258746,
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SHAPE_AREA": 243563.056488,
-                "SHAPE_LEN": 2648.563801
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -29775,12 +29567,10 @@ export default {
                 "CACODE": "C13",
                 "ENAME": "Fei Tsui",
                 "CNAME": "翡翠",
-                "E00_CENTRO": 841008.679529,
-                "E00_CENT_1": 813745.060241,
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SHAPE_AREA": 1990901.76004,
-                "SHAPE_LEN": 6917.980105
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -30078,12 +29868,10 @@ export default {
                 "CACODE": "C11",
                 "ENAME": "King Yee",
                 "CNAME": "景怡",
-                "E00_CENTRO": 844515.232436,
-                "E00_CENT_1": 813795.054296,
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SHAPE_AREA": 1756360.51857,
-                "SHAPE_LEN": 6441.47918
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -30213,12 +30001,10 @@ export default {
                 "CACODE": "C31",
                 "ENAME": "Hing Man",
                 "CNAME": "興民",
-                "E00_CENTRO": 841588.237636,
-                "E00_CENT_1": 814469.576287,
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SHAPE_AREA": 862525.016585,
-                "SHAPE_LEN": 5546.867196
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -30484,12 +30270,10 @@ export default {
                 "CACODE": "J23",
                 "ENAME": "Chui Cheung",
                 "CNAME": "翠翔",
-                "E00_CENTRO": 842637.66457,
-                "E00_CENT_1": 817625.143872,
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SHAPE_AREA": 104055.344286,
-                "SHAPE_LEN": 2837.410412
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -30615,12 +30399,10 @@ export default {
                 "CACODE": "E02",
                 "ENAME": "Jordan South",
                 "CNAME": "佐敦南",
-                "E00_CENTRO": 835609.428812,
-                "E00_CENT_1": 818067.644324,
                 "DISTRICT_T": "油尖旺區",
                 "DISTRICT_E": "Yau Tsim Mong",
-                "SHAPE_AREA": 433368.757093,
-                "SHAPE_LEN": 3593.567194
+                "SUBDISTIRCT_T": "佐敦",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -30726,12 +30508,10 @@ export default {
                 "CACODE": "G19",
                 "ENAME": "Whampoa West",
                 "CNAME": "黃埔西",
-                "E00_CENTRO": 837359.068021,
-                "E00_CENT_1": 818317.221271,
                 "DISTRICT_T": "九龍城區",
                 "DISTRICT_E": "Kowloon City",
-                "SHAPE_AREA": 169323.528156,
-                "SHAPE_LEN": 2401.597245
+                "SUBDISTIRCT_T": "黃埔",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -30837,12 +30617,10 @@ export default {
                 "CACODE": "J20",
                 "ENAME": "Pak Nga",
                 "CNAME": "栢雅",
-                "E00_CENTRO": 842612.869673,
-                "E00_CENT_1": 818234.545567,
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SHAPE_AREA": 158824.949388,
-                "SHAPE_LEN": 2339.167574
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -30980,12 +30758,10 @@ export default {
                 "CACODE": "Q09",
                 "ENAME": "Kin Ming",
                 "CNAME": "健明",
-                "E00_CENTRO": 843808.262236,
-                "E00_CENT_1": 818533.915333,
                 "DISTRICT_T": "西貢區",
                 "DISTRICT_E": "Sai Kung",
-                "SHAPE_AREA": 105831.32635,
-                "SHAPE_LEN": 1568.769319
+                "SUBDISTIRCT_T": "調景嶺",
+                "SUBDISTIRCT_E": "Tiu Keng Leng"
             },
             "geometry": {
                 "type": "Polygon",
@@ -31079,12 +30855,10 @@ export default {
                 "CACODE": "Q06",
                 "ENAME": "Po Yee",
                 "CNAME": "寶怡",
-                "E00_CENTRO": 845132.429943,
-                "E00_CENT_1": 818484.750411,
                 "DISTRICT_T": "西貢區",
                 "DISTRICT_E": "Sai Kung",
-                "SHAPE_AREA": 584543.927194,
-                "SHAPE_LEN": 3753.252901
+                "SUBDISTIRCT_T": "將軍澳",
+                "SUBDISTIRCT_E": "Tseung Kwan O"
             },
             "geometry": {
                 "type": "Polygon",
@@ -31226,12 +31000,10 @@ export default {
                 "CACODE": "Q12",
                 "ENAME": "Fu Kwan",
                 "CNAME": "富君",
-                "E00_CENTRO": 844848.609998,
-                "E00_CENT_1": 818924.000869,
                 "DISTRICT_T": "西貢區",
                 "DISTRICT_E": "Sai Kung",
-                "SHAPE_AREA": 186949.673518,
-                "SHAPE_LEN": 1912.624482
+                "SUBDISTIRCT_T": "將軍澳",
+                "SUBDISTIRCT_E": "Tseung Kwan O"
             },
             "geometry": {
                 "type": "Polygon",
@@ -31321,12 +31093,10 @@ export default {
                 "CACODE": "E05",
                 "ENAME": "Charming",
                 "CNAME": "富榮",
-                "E00_CENTRO": 834948.143516,
-                "E00_CENT_1": 819435.111003,
                 "DISTRICT_T": "油尖旺區",
                 "DISTRICT_E": "Yau Tsim Mong",
-                "SHAPE_AREA": 160544.133466,
-                "SHAPE_LEN": 2110.664665
+                "SUBDISTIRCT_T": "大角咀 / 奧運",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -31396,12 +31166,10 @@ export default {
                 "CACODE": "J29",
                 "ENAME": "Yuet Wah",
                 "CNAME": "月華",
-                "E00_CENTRO": 841451.325587,
-                "E00_CENT_1": 819465.707017,
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SHAPE_AREA": 107542.920164,
-                "SHAPE_LEN": 1553.918029
+                "SUBDISTIRCT_T": "觀塘",
+                "SUBDISTIRCT_E": "Kwun Tong"
             },
             "geometry": {
                 "type": "Polygon",
@@ -31479,12 +31247,10 @@ export default {
                 "CACODE": "G15",
                 "ENAME": "To Kwa Wan North",
                 "CNAME": "土瓜灣北",
-                "E00_CENTRO": 837526.632367,
-                "E00_CENT_1": 819585.528566,
                 "DISTRICT_T": "九龍城區",
                 "DISTRICT_E": "Kowloon City",
-                "SHAPE_AREA": 76705.081617,
-                "SHAPE_LEN": 1195.330213
+                "SUBDISTIRCT_T": "土瓜灣",
+                "SUBDISTIRCT_E": "To Kwa Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -31558,12 +31324,10 @@ export default {
                 "CACODE": "Q23",
                 "ENAME": "Tak Ming",
                 "CNAME": "德明",
-                "E00_CENTRO": 845641.123943,
-                "E00_CENT_1": 819611.936436,
                 "DISTRICT_T": "西貢區",
                 "DISTRICT_E": "Sai Kung",
-                "SHAPE_AREA": 85089.561737,
-                "SHAPE_LEN": 1582.543915
+                "SUBDISTIRCT_T": "將軍澳",
+                "SUBDISTIRCT_E": "Tseung Kwan O"
             },
             "geometry": {
                 "type": "Polygon",
@@ -31637,12 +31401,10 @@ export default {
                 "CACODE": "G14",
                 "ENAME": "Hoi Sham",
                 "CNAME": "海心",
-                "E00_CENTRO": 837894.76266,
-                "E00_CENT_1": 819747.005755,
                 "DISTRICT_T": "九龍城區",
                 "DISTRICT_E": "Kowloon City",
-                "SHAPE_AREA": 196935.694051,
-                "SHAPE_LEN": 1868.725568
+                "SUBDISTIRCT_T": "土瓜灣",
+                "SUBDISTIRCT_E": "To Kwa Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -31708,12 +31470,10 @@ export default {
                 "CACODE": "G03",
                 "ENAME": "Ma Tau Kok",
                 "CNAME": "馬頭角",
-                "E00_CENTRO": 837521.026387,
-                "E00_CENT_1": 819923.167705,
                 "DISTRICT_T": "九龍城區",
                 "DISTRICT_E": "Kowloon City",
-                "SHAPE_AREA": 182495.869883,
-                "SHAPE_LEN": 2186.658671
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -31795,12 +31555,10 @@ export default {
                 "CACODE": "E09",
                 "ENAME": "Cherry",
                 "CNAME": "櫻桃",
-                "E00_CENTRO": 834780.913595,
-                "E00_CENT_1": 820044.636262,
                 "DISTRICT_T": "油尖旺區",
                 "DISTRICT_E": "Yau Tsim Mong",
-                "SHAPE_AREA": 183085.83951,
-                "SHAPE_LEN": 2183.376547
+                "SUBDISTIRCT_T": "旺角",
+                "SUBDISTIRCT_E": "Mong Kok"
             },
             "geometry": {
                 "type": "Polygon",
@@ -31890,12 +31648,10 @@ export default {
                 "CACODE": "G02",
                 "ENAME": "Ma Hang Chung",
                 "CNAME": "馬坑涌",
-                "E00_CENTRO": 837636.285118,
-                "E00_CENT_1": 820173.200908,
                 "DISTRICT_T": "九龍城區",
                 "DISTRICT_E": "Kowloon City",
-                "SHAPE_AREA": 139617.438505,
-                "SHAPE_LEN": 2330.360129
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -31977,12 +31733,10 @@ export default {
                 "CACODE": "E08",
                 "ENAME": "Olympic",
                 "CNAME": "奧運",
-                "E00_CENTRO": 833989.87722,
-                "E00_CENT_1": 820114.86752,
                 "DISTRICT_T": "油尖旺區",
                 "DISTRICT_E": "Yau Tsim Mong",
-                "SHAPE_AREA": 735831.579448,
-                "SHAPE_LEN": 4121.01772
+                "SUBDISTIRCT_T": "奧運",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -32088,12 +31842,10 @@ export default {
                 "CACODE": "J02",
                 "ENAME": "Kowloon Bay",
                 "CNAME": "九龍灣",
-                "E00_CENTRO": 839551.653105,
-                "E00_CENT_1": 820436.228142,
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SHAPE_AREA": 804863.051474,
-                "SHAPE_LEN": 4121.718102
+                "SUBDISTIRCT_T": "九龍灣",
+                "SUBDISTIRCT_E": "Kowloon Bay"
             },
             "geometry": {
                 "type": "Polygon",
@@ -32203,12 +31955,10 @@ export default {
                 "CACODE": "F07",
                 "ENAME": "Nam Cheong Central",
                 "CNAME": "南昌中",
-                "E00_CENTRO": 834654.076457,
-                "E00_CENT_1": 821134.814237,
                 "DISTRICT_T": "深水埗區",
                 "DISTRICT_E": "Sham Shui Po",
-                "SHAPE_AREA": 108932.887965,
-                "SHAPE_LEN": 1327.214255
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -32246,12 +31996,10 @@ export default {
                 "CACODE": "F09",
                 "ENAME": "Fu Cheong",
                 "CNAME": "富昌",
-                "E00_CENTRO": 833806.807068,
-                "E00_CENT_1": 820953.830662,
                 "DISTRICT_T": "深水埗區",
                 "DISTRICT_E": "Sham Shui Po",
-                "SHAPE_AREA": 680148.606087,
-                "SHAPE_LEN": 3579.427843
+                "SUBDISTIRCT_T": "雙昌",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -32329,12 +32077,10 @@ export default {
                 "CACODE": "G10",
                 "ENAME": "Lung Shing",
                 "CNAME": "龍城",
-                "E00_CENTRO": 837597.894109,
-                "E00_CENT_1": 821228.772705,
                 "DISTRICT_T": "九龍城區",
                 "DISTRICT_E": "Kowloon City",
-                "SHAPE_AREA": 303891.917038,
-                "SHAPE_LEN": 2536.57234
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -32428,12 +32174,10 @@ export default {
                 "CACODE": "J04",
                 "ENAME": "Lai Ching",
                 "CNAME": "麗晶",
-                "E00_CENTRO": 839271.661692,
-                "E00_CENT_1": 821360.640539,
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SHAPE_AREA": 130522.367273,
-                "SHAPE_LEN": 2039.849012
+                "SUBDISTIRCT_T": "九龍灣",
+                "SUBDISTIRCT_E": "Kowloon Bay"
             },
             "geometry": {
                 "type": "Polygon",
@@ -32515,12 +32259,10 @@ export default {
                 "CACODE": "G21",
                 "ENAME": "Hung Hom",
                 "CNAME": "紅磡",
-                "E00_CENTRO": 836981.015116,
-                "E00_CENT_1": 818649.94901,
                 "DISTRICT_T": "九龍城區",
                 "DISTRICT_E": "Kowloon City",
-                "SHAPE_AREA": 149182.842691,
-                "SHAPE_LEN": 1768.916451
+                "SUBDISTIRCT_T": "紅磡",
+                "SUBDISTIRCT_E": "Hung Hom"
             },
             "geometry": {
                 "type": "Polygon",
@@ -32618,12 +32360,10 @@ export default {
                 "CACODE": "G13",
                 "ENAME": "Kai Tak South",
                 "CNAME": "啟德南",
-                "E00_CENTRO": 839029.133716,
-                "E00_CENT_1": 819779.201054,
                 "DISTRICT_T": "九龍城區",
                 "DISTRICT_E": "Kowloon City",
-                "SHAPE_AREA": 4155839.81752,
-                "SHAPE_LEN": 12705.403844
+                "SUBDISTIRCT_T": "啟德",
+                "SUBDISTIRCT_E": "Kai Tak"
             },
             "geometry": {
                 "type": "Polygon",
@@ -32969,12 +32709,10 @@ export default {
                 "CACODE": "H22",
                 "ENAME": "Choi Wan South",
                 "CNAME": "彩雲南",
-                "E00_CENTRO": 840256.742449,
-                "E00_CENT_1": 821581.111702,
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SHAPE_AREA": 80770.972289,
-                "SHAPE_LEN": 1398.049908
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -33052,12 +32790,10 @@ export default {
                 "CACODE": "J05",
                 "ENAME": "Ping Shek",
                 "CNAME": "坪石",
-                "E00_CENTRO": 839743.851893,
-                "E00_CENT_1": 821459.063852,
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SHAPE_AREA": 222056.673405,
-                "SHAPE_LEN": 2200.416461
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -33175,12 +32911,10 @@ export default {
                 "CACODE": "J09",
                 "ENAME": "Sheung Shun",
                 "CNAME": "雙順",
-                "E00_CENTRO": 841107.667496,
-                "E00_CENT_1": 821501.022493,
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SHAPE_AREA": 276964.500016,
-                "SHAPE_LEN": 3588.919881
+                "SUBDISTIRCT_T": "順利邨",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -33342,12 +33076,10 @@ export default {
                 "CACODE": "F04",
                 "ENAME": "Shek Kip Mei",
                 "CNAME": "石硤尾",
-                "E00_CENTRO": 835185.732466,
-                "E00_CENT_1": 821470.371788,
                 "DISTRICT_T": "深水埗區",
                 "DISTRICT_E": "Sham Shui Po",
-                "SHAPE_AREA": 124992.124739,
-                "SHAPE_LEN": 1991.598403
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -33437,12 +33169,10 @@ export default {
                 "CACODE": "A01",
                 "ENAME": "Chung Wan",
                 "CNAME": "中環",
-                "E00_CENTRO": 834495.259627,
-                "E00_CENT_1": 816266.411017,
                 "DISTRICT_T": "中西區",
                 "DISTRICT_E": "Central & Western",
-                "SHAPE_AREA": 2898839.48376,
-                "SHAPE_LEN": 9082.124947
+                "SUBDISTIRCT_T": "中環",
+                "SUBDISTIRCT_E": "Central"
             },
             "geometry": {
                 "type": "Polygon",
@@ -33776,12 +33506,10 @@ export default {
                 "CACODE": "C01",
                 "ENAME": "Tai Koo Shing West",
                 "CNAME": "太古城西",
-                "E00_CENTRO": 840392.461215,
-                "E00_CENT_1": 816852.646713,
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SHAPE_AREA": 538947.708163,
-                "SHAPE_LEN": 3678.984121
+                "SUBDISTIRCT_T": "太古城",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -33895,12 +33623,10 @@ export default {
                 "CACODE": "A09",
                 "ENAME": "Belcher",
                 "CNAME": "寶翠",
-                "E00_CENTRO": 831608.730621,
-                "E00_CENT_1": 816533.265314,
                 "DISTRICT_T": "中西區",
                 "DISTRICT_E": "Central & Western",
-                "SHAPE_AREA": 225696.338506,
-                "SHAPE_LEN": 4572.137391
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -34002,12 +33728,10 @@ export default {
                 "CACODE": "Q21",
                 "ENAME": "Hau Tak",
                 "CNAME": "厚德",
-                "E00_CENTRO": 845330.428335,
-                "E00_CENT_1": 819890.103094,
                 "DISTRICT_T": "西貢區",
                 "DISTRICT_E": "Sai Kung",
-                "SHAPE_AREA": 115044.852059,
-                "SHAPE_LEN": 1854.654547
+                "SUBDISTIRCT_T": "坑口",
+                "SUBDISTIRCT_E": "Hang Hau"
             },
             "geometry": {
                 "type": "Polygon",
@@ -34089,12 +33813,10 @@ export default {
                 "CACODE": "J01",
                 "ENAME": "Kwun Tong Central",
                 "CNAME": "觀塘中心",
-                "E00_CENTRO": 840533.801706,
-                "E00_CENT_1": 819226.850372,
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SHAPE_AREA": 2048325.30567,
-                "SHAPE_LEN": 7962.927386
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -34364,12 +34086,10 @@ export default {
                 "CACODE": "G05",
                 "ENAME": "Sheung Lok",
                 "CNAME": "常樂",
-                "E00_CENTRO": 836918.47582,
-                "E00_CENT_1": 819659.646627,
                 "DISTRICT_T": "九龍城區",
                 "DISTRICT_E": "Kowloon City",
-                "SHAPE_AREA": 378756.854155,
-                "SHAPE_LEN": 2894.398088
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -34491,12 +34211,10 @@ export default {
                 "CACODE": "J31",
                 "ENAME": "Hong Lok",
                 "CNAME": "康樂",
-                "E00_CENTRO": 840826.767538,
-                "E00_CENT_1": 819872.718438,
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SHAPE_AREA": 177326.161689,
-                "SHAPE_LEN": 2392.757708
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -34650,12 +34368,10 @@ export default {
                 "CACODE": "Q22",
                 "ENAME": "Fu Nam",
                 "CNAME": "富藍",
-                "E00_CENTRO": 845615.852031,
-                "E00_CENT_1": 819876.84983,
                 "DISTRICT_T": "西貢區",
                 "DISTRICT_E": "Sai Kung",
-                "SHAPE_AREA": 175005.67659,
-                "SHAPE_LEN": 3188.068369
+                "SUBDISTIRCT_T": "坑口",
+                "SUBDISTIRCT_E": "Hang Hau"
             },
             "geometry": {
                 "type": "Polygon",
@@ -34809,12 +34525,10 @@ export default {
                 "CACODE": "J15",
                 "ENAME": "Sau Mau Ping Central",
                 "CNAME": "秀茂坪中",
-                "E00_CENTRO": 842197.910373,
-                "E00_CENT_1": 819817.752716,
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SHAPE_AREA": 66976.647193,
-                "SHAPE_LEN": 1277.57928
+                "SUBDISTIRCT_T": "秀茂坪",
+                "SUBDISTIRCT_E": "Sau Mau Ping"
             },
             "geometry": {
                 "type": "Polygon",
@@ -34880,12 +34594,10 @@ export default {
                 "CACODE": "J30",
                 "ENAME": "Hip Hong",
                 "CNAME": "協康",
-                "E00_CENTRO": 841239.333853,
-                "E00_CENT_1": 819890.653333,
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SHAPE_AREA": 204422.239754,
-                "SHAPE_LEN": 2004.551299
+                "SUBDISTIRCT_T": "觀塘",
+                "SUBDISTIRCT_E": "Kwun Tong"
             },
             "geometry": {
                 "type": "Polygon",
@@ -34995,12 +34707,10 @@ export default {
                 "CACODE": "J13",
                 "ENAME": "Hiu Lai",
                 "CNAME": "曉麗",
-                "E00_CENTRO": 841738.943914,
-                "E00_CENT_1": 819906.706584,
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SHAPE_AREA": 209912.189109,
-                "SHAPE_LEN": 3020.080611
+                "SUBDISTIRCT_T": "觀塘",
+                "SUBDISTIRCT_E": "Kwun Tong"
             },
             "geometry": {
                 "type": "Polygon",
@@ -35174,12 +34884,10 @@ export default {
                 "CACODE": "J37",
                 "ENAME": "Lok Wah South",
                 "CNAME": "樂華南",
-                "E00_CENTRO": 841084.523725,
-                "E00_CENT_1": 820174.408512,
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SHAPE_AREA": 94436.441447,
-                "SHAPE_LEN": 2168.123289
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -35301,12 +35009,10 @@ export default {
                 "CACODE": "J36",
                 "ENAME": "Lok Wah North",
                 "CNAME": "樂華北",
-                "E00_CENTRO": 840767.740324,
-                "E00_CENT_1": 820274.325171,
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SHAPE_AREA": 196591.008477,
-                "SHAPE_LEN": 2720.389661
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -35460,12 +35166,10 @@ export default {
                 "CACODE": "J12",
                 "ENAME": "Sau Mau Ping North",
                 "CNAME": "秀茂坪北",
-                "E00_CENTRO": 841771.467201,
-                "E00_CENT_1": 820160.865942,
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SHAPE_AREA": 291197.359308,
-                "SHAPE_LEN": 3539.762615
+                "SUBDISTIRCT_T": "秀茂坪",
+                "SUBDISTIRCT_E": "Sau Mau Ping"
             },
             "geometry": {
                 "type": "Polygon",
@@ -35631,12 +35335,10 @@ export default {
                 "CACODE": "T05",
                 "ENAME": "Tung Chung South",
                 "CNAME": "東涌南",
-                "E00_CENTRO": 809025.838382,
-                "E00_CENT_1": 818974.822913,
                 "DISTRICT_T": "離島區",
                 "DISTRICT_E": "Islands",
-                "SHAPE_AREA": 31146011.5685,
-                "SHAPE_LEN": 27817.738678
+                "SUBDISTIRCT_T": "東涌",
+                "SUBDISTIRCT_E": "Tung Chung"
             },
             "geometry": {
                 "type": "Polygon",
@@ -35898,12 +35600,10 @@ export default {
                 "CACODE": "E11",
                 "ENAME": "Tai Kok Tsui North",
                 "CNAME": "大角咀北",
-                "E00_CENTRO": 834643.803268,
-                "E00_CENT_1": 820511.227309,
                 "DISTRICT_T": "油尖旺區",
                 "DISTRICT_E": "Yau Tsim Mong",
-                "SHAPE_AREA": 115135.107442,
-                "SHAPE_LEN": 2054.960299
+                "SUBDISTIRCT_T": "大角咀",
+                "SUBDISTIRCT_E": "Tai Kok Tsui"
             },
             "geometry": {
                 "type": "Polygon",
@@ -35993,12 +35693,10 @@ export default {
                 "CACODE": "E13",
                 "ENAME": "Mong Kok North",
                 "CNAME": "旺角北",
-                "E00_CENTRO": 835257.410677,
-                "E00_CENT_1": 820277.24979,
                 "DISTRICT_T": "油尖旺區",
                 "DISTRICT_E": "Yau Tsim Mong",
-                "SHAPE_AREA": 212719.303149,
-                "SHAPE_LEN": 2320.603155
+                "SUBDISTIRCT_T": "旺角",
+                "SUBDISTIRCT_E": "Mong Kok"
             },
             "geometry": {
                 "type": "Polygon",
@@ -36076,12 +35774,10 @@ export default {
                 "CACODE": "Q16",
                 "ENAME": "Tsui Lam",
                 "CNAME": "翠林",
-                "E00_CENTRO": 843650.10285,
-                "E00_CENT_1": 820231.812648,
                 "DISTRICT_T": "西貢區",
                 "DISTRICT_E": "Sai Kung",
-                "SHAPE_AREA": 333850.102314,
-                "SHAPE_LEN": 3017.176033
+                "SUBDISTIRCT_T": "將軍澳",
+                "SUBDISTIRCT_E": "Tseung Kwan O"
             },
             "geometry": {
                 "type": "Polygon",
@@ -36267,12 +35963,10 @@ export default {
                 "CACODE": "G11",
                 "ENAME": "Sung Wong Toi",
                 "CNAME": "宋皇臺",
-                "E00_CENTRO": 839029.133716,
-                "E00_CENT_1": 819779.201054,
                 "DISTRICT_T": "九龍城區",
                 "DISTRICT_E": "Kowloon City",
-                "SHAPE_AREA": 189466.61856,
-                "SHAPE_LEN": 2454.622425
+                "SUBDISTIRCT_T": "馬頭圍",
+                "SUBDISTIRCT_E": "Ma Tau Wai"
             },
             "geometry": {
                 "type": "Polygon",
@@ -36370,12 +36064,10 @@ export default {
                 "CACODE": "E19",
                 "ENAME": "Jordan North",
                 "CNAME": "佐敦北",
-                "E00_CENTRO": 835697.8845,
-                "E00_CENT_1": 818654.19577,
                 "DISTRICT_T": "油尖旺區",
                 "DISTRICT_E": "Yau Tsim Mong",
-                "SHAPE_AREA": 155966.470949,
-                "SHAPE_LEN": 1621.328114
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -36445,12 +36137,10 @@ export default {
                 "CACODE": "Q10",
                 "ENAME": "Choi Kin",
                 "CNAME": "彩健",
-                "E00_CENTRO": 844173.848997,
-                "E00_CENT_1": 818644.867519,
                 "DISTRICT_T": "西貢區",
                 "DISTRICT_E": "Sai Kung",
-                "SHAPE_AREA": 157711.861838,
-                "SHAPE_LEN": 1950.224369
+                "SUBDISTIRCT_T": "調景嶺",
+                "SUBDISTIRCT_E": "Tiu Keng Leng"
             },
             "geometry": {
                 "type": "Polygon",
@@ -36536,12 +36226,10 @@ export default {
                 "CACODE": "G18",
                 "ENAME": "Whampoa East",
                 "CNAME": "黃埔東",
-                "E00_CENTRO": 838405.875566,
-                "E00_CENT_1": 818193.907927,
                 "DISTRICT_T": "九龍城區",
                 "DISTRICT_E": "Kowloon City",
-                "SHAPE_AREA": 2172407.21282,
-                "SHAPE_LEN": 7500.878989
+                "SUBDISTIRCT_T": "黃埔",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -36659,12 +36347,10 @@ export default {
                 "CACODE": "J25",
                 "ENAME": "Laguna City",
                 "CNAME": "麗港城",
-                "E00_CENTRO": 841170.782565,
-                "E00_CENT_1": 818255.366515,
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SHAPE_AREA": 944334.262096,
-                "SHAPE_LEN": 4839.304728
+                "SUBDISTIRCT_T": "鯉魚門",
+                "SUBDISTIRCT_E": "Lei Yue Mun"
             },
             "geometry": {
                 "type": "Polygon",
@@ -36782,12 +36468,10 @@ export default {
                 "CACODE": "E03",
                 "ENAME": "Jordan West",
                 "CNAME": "佐敦西",
-                "E00_CENTRO": 835040.453201,
-                "E00_CENT_1": 818790.267521,
                 "DISTRICT_T": "油尖旺區",
                 "DISTRICT_E": "Yau Tsim Mong",
-                "SHAPE_AREA": 330723.524603,
-                "SHAPE_LEN": 2735.327093
+                "SUBDISTIRCT_T": "渡船角",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -36869,12 +36553,10 @@ export default {
                 "CACODE": "G22",
                 "ENAME": "Ka Wai",
                 "CNAME": "家維",
-                "E00_CENTRO": 837264.202853,
-                "E00_CENT_1": 818919.675217,
                 "DISTRICT_T": "九龍城區",
                 "DISTRICT_E": "Kowloon City",
-                "SHAPE_AREA": 195666.304095,
-                "SHAPE_LEN": 2868.457785
+                "SUBDISTIRCT_T": "紅磡",
+                "SUBDISTIRCT_E": "Hung Hom"
             },
             "geometry": {
                 "type": "Polygon",
@@ -37008,12 +36690,10 @@ export default {
                 "CACODE": "Q24",
                 "ENAME": "Sheung Tak",
                 "CNAME": "尚德",
-                "E00_CENTRO": 844654.726215,
-                "E00_CENT_1": 819119.28247,
                 "DISTRICT_T": "西貢區",
                 "DISTRICT_E": "Sai Kung",
-                "SHAPE_AREA": 85880.881025,
-                "SHAPE_LEN": 1711.388985
+                "SUBDISTIRCT_T": "將軍澳",
+                "SUBDISTIRCT_E": "Tseung Kwan O"
             },
             "geometry": {
                 "type": "Polygon",
@@ -37115,12 +36795,10 @@ export default {
                 "CACODE": "J17",
                 "ENAME": "Lam Tin",
                 "CNAME": "藍田",
-                "E00_CENTRO": 842354.00536,
-                "E00_CENT_1": 818997.469795,
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SHAPE_AREA": 165281.006282,
-                "SHAPE_LEN": 1807.411376
+                "SUBDISTIRCT_T": "藍田",
+                "SUBDISTIRCT_E": "Lam Tin"
             },
             "geometry": {
                 "type": "Polygon",
@@ -37230,12 +36908,10 @@ export default {
                 "CACODE": "E04",
                 "ENAME": "Yau Ma Tei South",
                 "CNAME": "油麻地南",
-                "E00_CENTRO": 835210.03476,
-                "E00_CENT_1": 819115.150912,
                 "DISTRICT_T": "油尖旺區",
                 "DISTRICT_E": "Yau Tsim Mong",
-                "SHAPE_AREA": 455225.096478,
-                "SHAPE_LEN": 3352.684823
+                "SUBDISTIRCT_T": "油麻地",
+                "SUBDISTIRCT_E": "Yau Ma Tei"
             },
             "geometry": {
                 "type": "Polygon",
@@ -37329,12 +37005,10 @@ export default {
                 "CACODE": "J16",
                 "ENAME": "Hing Tin",
                 "CNAME": "興田",
-                "E00_CENTRO": 842624.713313,
-                "E00_CENT_1": 819226.241492,
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SHAPE_AREA": 102125.131062,
-                "SHAPE_LEN": 2020.248618
+                "SUBDISTIRCT_T": "藍田",
+                "SUBDISTIRCT_E": "Lam Tin"
             },
             "geometry": {
                 "type": "Polygon",
@@ -37436,12 +37110,10 @@ export default {
                 "CACODE": "S02",
                 "ENAME": "Kwai Shing East Estate",
                 "CNAME": "葵盛東邨",
-                "E00_CENTRO": 831206.37295,
-                "E00_CENT_1": 824993.028531,
                 "DISTRICT_T": "葵青區",
                 "DISTRICT_E": "Kwai Tsing",
-                "SHAPE_AREA": 110375.841795,
-                "SHAPE_LEN": 2058.23112
+                "SUBDISTIRCT_T": "葵涌",
+                "SUBDISTIRCT_E": "Kwai Chung"
             },
             "geometry": {
                 "type": "Polygon",
@@ -37591,12 +37263,10 @@ export default {
                 "CACODE": "S18",
                 "ENAME": "Kwai Shing West Estate",
                 "CNAME": "葵盛西邨",
-                "E00_CENTRO": 830172.318109,
-                "E00_CENT_1": 824266.018695,
                 "DISTRICT_T": "葵青區",
                 "DISTRICT_E": "Kwai Tsing",
-                "SHAPE_AREA": 1846700.57402,
-                "SHAPE_LEN": 6858.26196
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -37846,12 +37516,10 @@ export default {
                 "CACODE": "R16",
                 "ENAME": "Keng Hau",
                 "CNAME": "徑口",
-                "E00_CENTRO": 836000.021263,
-                "E00_CENT_1": 824995.588915,
                 "DISTRICT_T": "沙田區",
                 "DISTRICT_E": "Sha Tin",
-                "SHAPE_AREA": 460430.808523,
-                "SHAPE_LEN": 3234.494486
+                "SUBDISTIRCT_T": "大圍",
+                "SUBDISTIRCT_E": "Tai Wai"
             },
             "geometry": {
                 "type": "Polygon",
@@ -37977,12 +37645,10 @@ export default {
                 "CACODE": "S12",
                 "ENAME": "Kwai Fong",
                 "CNAME": "葵芳",
-                "E00_CENTRO": 831710.351491,
-                "E00_CENT_1": 824718.888192,
                 "DISTRICT_T": "葵青區",
                 "DISTRICT_E": "Kwai Tsing",
-                "SHAPE_AREA": 461310.131302,
-                "SHAPE_LEN": 3526.243948
+                "SUBDISTIRCT_T": "葵涌",
+                "SUBDISTIRCT_E": "Kwai Chung"
             },
             "geometry": {
                 "type": "Polygon",
@@ -38124,12 +37790,10 @@ export default {
                 "CACODE": "S01",
                 "ENAME": "Kwai Hing",
                 "CNAME": "葵興",
-                "E00_CENTRO": 831523.742864,
-                "E00_CENT_1": 825230.015498,
                 "DISTRICT_T": "葵青區",
                 "DISTRICT_E": "Kwai Tsing",
-                "SHAPE_AREA": 163477.057596,
-                "SHAPE_LEN": 2293.804334
+                "SUBDISTIRCT_T": "葵涌",
+                "SUBDISTIRCT_E": "Kwai Chung"
             },
             "geometry": {
                 "type": "Polygon",
@@ -38263,12 +37927,10 @@ export default {
                 "CACODE": "S09",
                 "ENAME": "Shek Lei South",
                 "CNAME": "石籬南",
-                "E00_CENTRO": 832611.756728,
-                "E00_CENT_1": 824919.668652,
                 "DISTRICT_T": "葵青區",
                 "DISTRICT_E": "Kwai Tsing",
-                "SHAPE_AREA": 658066.583712,
-                "SHAPE_LEN": 4617.269768
+                "SUBDISTIRCT_T": "葵涌",
+                "SUBDISTIRCT_E": "Kwai Chung"
             },
             "geometry": {
                 "type": "Polygon",
@@ -38518,12 +38180,10 @@ export default {
                 "CACODE": "K02",
                 "ENAME": "Yeung Uk Road",
                 "CNAME": "楊屋道",
-                "E00_CENTRO": 830262.324139,
-                "E00_CENT_1": 825295.16494,
                 "DISTRICT_T": "荃灣區",
                 "DISTRICT_E": "Tsuen Wan",
-                "SHAPE_AREA": 392187.700054,
-                "SHAPE_LEN": 3197.253733
+                "SUBDISTIRCT_T": "荃灣",
+                "SUBDISTIRCT_E": "Tsuen Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -38629,12 +38289,10 @@ export default {
                 "CACODE": "S11",
                 "ENAME": "Tai Pak Tin",
                 "CNAME": "大白田",
-                "E00_CENTRO": 832190.99868,
-                "E00_CENT_1": 825386.01174,
                 "DISTRICT_T": "葵青區",
                 "DISTRICT_E": "Kwai Tsing",
-                "SHAPE_AREA": 257832.484458,
-                "SHAPE_LEN": 2253.41795
+                "SUBDISTIRCT_T": "葵涌",
+                "SUBDISTIRCT_E": "Kwai Chung"
             },
             "geometry": {
                 "type": "Polygon",
@@ -38760,12 +38418,10 @@ export default {
                 "CACODE": "R17",
                 "ENAME": "Tin Sum",
                 "CNAME": "田心",
-                "E00_CENTRO": 836427.116922,
-                "E00_CENT_1": 825409.604099,
                 "DISTRICT_T": "沙田區",
                 "DISTRICT_E": "Sha Tin",
-                "SHAPE_AREA": 185344.576371,
-                "SHAPE_LEN": 2508.084553
+                "SUBDISTIRCT_T": "大圍",
+                "SUBDISTIRCT_E": "Tai Wai"
             },
             "geometry": {
                 "type": "Polygon",
@@ -38883,12 +38539,10 @@ export default {
                 "CACODE": "K01",
                 "ENAME": "Tak Wah",
                 "CNAME": "德華",
-                "E00_CENTRO": 830024.896617,
-                "E00_CENT_1": 825600.139561,
                 "DISTRICT_T": "荃灣區",
                 "DISTRICT_E": "Tsuen Wan",
-                "SHAPE_AREA": 268892.070913,
-                "SHAPE_LEN": 2698.203572
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -38990,12 +38644,10 @@ export default {
                 "CACODE": "K03",
                 "ENAME": "Hoi Bun",
                 "CNAME": "海濱",
-                "E00_CENTRO": 829658.814131,
-                "E00_CENT_1": 824916.395765,
                 "DISTRICT_T": "荃灣區",
                 "DISTRICT_E": "Tsuen Wan",
-                "SHAPE_AREA": 226509.211005,
-                "SHAPE_LEN": 1978.482559
+                "SUBDISTIRCT_T": "荃灣",
+                "SUBDISTIRCT_E": "Tsuen Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -39057,12 +38709,10 @@ export default {
                 "CACODE": "S03",
                 "ENAME": "Upper Tai Wo Hau",
                 "CNAME": "上大窩口",
-                "E00_CENTRO": 830719.951725,
-                "E00_CENT_1": 825318.604339,
                 "DISTRICT_T": "葵青區",
                 "DISTRICT_E": "Kwai Tsing",
-                "SHAPE_AREA": 84403.832398,
-                "SHAPE_LEN": 1218.709038
+                "SUBDISTIRCT_T": "葵涌",
+                "SUBDISTIRCT_E": "Kwai Chung"
             },
             "geometry": {
                 "type": "Polygon",
@@ -39136,12 +38786,10 @@ export default {
                 "CACODE": "S10",
                 "ENAME": "Shek Lei Norh",
                 "CNAME": "石籬北",
-                "E00_CENTRO": 832528.17723,
-                "E00_CENT_1": 825281.554924,
                 "DISTRICT_T": "葵青區",
                 "DISTRICT_E": "Kwai Tsing",
-                "SHAPE_AREA": 112631.508369,
-                "SHAPE_LEN": 1441.083938
+                "SUBDISTIRCT_T": "葵涌",
+                "SUBDISTIRCT_E": "Kwai Chung"
             },
             "geometry": {
                 "type": "Polygon",
@@ -39219,12 +38867,10 @@ export default {
                 "CACODE": "S04",
                 "ENAME": "Lower Tai Wo Hau",
                 "CNAME": "下大窩口",
-                "E00_CENTRO": 830877.138506,
-                "E00_CENT_1": 825519.854217,
                 "DISTRICT_T": "葵青區",
                 "DISTRICT_E": "Kwai Tsing",
-                "SHAPE_AREA": 89642.260631,
-                "SHAPE_LEN": 1584.987726
+                "SUBDISTIRCT_T": "葵涌",
+                "SUBDISTIRCT_E": "Kwai Chung"
             },
             "geometry": {
                 "type": "Polygon",
@@ -39330,12 +38976,10 @@ export default {
                 "CACODE": "R18",
                 "ENAME": "Chui Ka",
                 "CNAME": "翠嘉",
-                "E00_CENTRO": 836592.410979,
-                "E00_CENT_1": 825898.271381,
                 "DISTRICT_T": "沙田區",
                 "DISTRICT_E": "Sha Tin",
-                "SHAPE_AREA": 222003.666916,
-                "SHAPE_LEN": 2269.099897
+                "SUBDISTIRCT_T": "大圍",
+                "SUBDISTIRCT_E": "Tai Wai"
             },
             "geometry": {
                 "type": "Polygon",
@@ -39429,12 +39073,10 @@ export default {
                 "CACODE": "K11",
                 "ENAME": "Tsuen Wan West",
                 "CNAME": "荃灣西",
-                "E00_CENTRO": 825589.217766,
-                "E00_CENT_1": 826396.541405,
                 "DISTRICT_T": "荃灣區",
                 "DISTRICT_E": "Tsuen Wan",
-                "SHAPE_AREA": 1475940.97601,
-                "SHAPE_LEN": 7271.602002
+                "SUBDISTIRCT_T": "荃灣",
+                "SUBDISTIRCT_E": "Tsuen Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -39620,12 +39262,10 @@ export default {
                 "CACODE": "R07",
                 "ENAME": "Sha Kok",
                 "CNAME": "沙角",
-                "E00_CENTRO": 838073.667778,
-                "E00_CENT_1": 826606.781771,
                 "DISTRICT_T": "沙田區",
                 "DISTRICT_E": "Sha Tin",
-                "SHAPE_AREA": 124531.850156,
-                "SHAPE_LEN": 1407.248249
+                "SUBDISTIRCT_T": "沙田",
+                "SUBDISTIRCT_E": "Sha Tin"
             },
             "geometry": {
                 "type": "Polygon",
@@ -39679,12 +39319,10 @@ export default {
                 "CACODE": "G12",
                 "ENAME": "Kai Tak North",
                 "CNAME": "啟德北",
-                "E00_CENTRO": 839029.133716,
-                "E00_CENT_1": 819779.201054,
                 "DISTRICT_T": "九龍城區",
                 "DISTRICT_E": "Kowloon City",
-                "SHAPE_AREA": 267393.324276,
-                "SHAPE_LEN": 2207.314513
+                "SUBDISTIRCT_T": "啟德",
+                "SUBDISTIRCT_E": "Kai Tak"
             },
             "geometry": {
                 "type": "Polygon",
@@ -39762,12 +39400,10 @@ export default {
                 "CACODE": "F16",
                 "ENAME": "Lai Chi Kok Central",
                 "CNAME": "荔枝角中",
-                "E00_CENTRO": 833297.391486,
-                "E00_CENT_1": 822062.848907,
                 "DISTRICT_T": "深水埗區",
                 "DISTRICT_E": "Sham Shui Po",
-                "SHAPE_AREA": 91004.767999,
-                "SHAPE_LEN": 1623.8056
+                "SUBDISTIRCT_T": "荔枝角",
+                "SUBDISTIRCT_E": "Lai Chi Kok"
             },
             "geometry": {
                 "type": "Polygon",
@@ -39861,12 +39497,10 @@ export default {
                 "CACODE": "H08",
                 "ENAME": "Tung Tau",
                 "CNAME": "東頭",
-                "E00_CENTRO": 838020.31315,
-                "E00_CENT_1": 821551.440361,
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SHAPE_AREA": 245713.477928,
-                "SHAPE_LEN": 2664.073633
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -39996,12 +39630,10 @@ export default {
                 "CACODE": "F22",
                 "ENAME": "Nam Shan, Tai Hang Tung & Tai Hang Sai",
                 "CNAME": "南山、大坑東及大坑西",
-                "E00_CENTRO": 835554.347949,
-                "E00_CENT_1": 821343.368022,
                 "DISTRICT_T": "深水埗區",
                 "DISTRICT_E": "Sham Shui Po",
-                "SHAPE_AREA": 426447.782577,
-                "SHAPE_LEN": 3735.036968
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -40171,12 +39803,10 @@ export default {
                 "CACODE": "F14",
                 "ENAME": "Mei Foo Central",
                 "CNAME": "美孚中",
-                "E00_CENTRO": 832226.49056,
-                "E00_CENT_1": 821931.185675,
                 "DISTRICT_T": "深水埗區",
                 "DISTRICT_E": "Sham Shui Po",
-                "SHAPE_AREA": 173220.790366,
-                "SHAPE_LEN": 2327.482917
+                "SUBDISTIRCT_T": "美孚",
+                "SUBDISTIRCT_E": "Mei Foo"
             },
             "geometry": {
                 "type": "Polygon",
@@ -40274,12 +39904,10 @@ export default {
                 "CACODE": "H09",
                 "ENAME": "Tung Mei",
                 "CNAME": "東美",
-                "E00_CENTRO": 837738.902023,
-                "E00_CENT_1": 821808.041412,
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SHAPE_AREA": 243879.294902,
-                "SHAPE_LEN": 3098.207074
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -40417,12 +40045,10 @@ export default {
                 "CACODE": "J11",
                 "ENAME": "Po Tat",
                 "CNAME": "寶達",
-                "E00_CENTRO": 842179.916225,
-                "E00_CENT_1": 820400.401642,
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SHAPE_AREA": 864603.697066,
-                "SHAPE_LEN": 7293.949315
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -40788,12 +40414,10 @@ export default {
                 "CACODE": "F10",
                 "ENAME": "Lai Kok",
                 "CNAME": "麗閣",
-                "E00_CENTRO": 834349.116622,
-                "E00_CENT_1": 821452.167513,
                 "DISTRICT_T": "深水埗區",
                 "DISTRICT_E": "Sham Shui Po",
-                "SHAPE_AREA": 145847.369536,
-                "SHAPE_LEN": 1570.598723
+                "SUBDISTIRCT_T": "雙麗",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -40839,12 +40463,10 @@ export default {
                 "CACODE": "J19",
                 "ENAME": "Ping Tin",
                 "CNAME": "平田",
-                "E00_CENTRO": 842353.53987,
-                "E00_CENT_1": 818622.32694,
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SHAPE_AREA": 111931.052578,
-                "SHAPE_LEN": 1522.660381
+                "SUBDISTIRCT_T": "藍田",
+                "SUBDISTIRCT_E": "Lam Tin"
             },
             "geometry": {
                 "type": "Polygon",
@@ -40950,12 +40572,10 @@ export default {
                 "CACODE": "A12",
                 "ENAME": "Sheung Wan",
                 "CNAME": "上環",
-                "E00_CENTRO": 833344.081733,
-                "E00_CENT_1": 816987.135978,
                 "DISTRICT_T": "中西區",
                 "DISTRICT_E": "Central & Western",
-                "SHAPE_AREA": 934523.63227,
-                "SHAPE_LEN": 4225.199024
+                "SUBDISTIRCT_T": "上環",
+                "SUBDISTIRCT_E": "Sheung Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -41049,12 +40669,10 @@ export default {
                 "CACODE": "A11",
                 "ENAME": "Sai Ying Pun",
                 "CNAME": "西營盤",
-                "E00_CENTRO": 832665.729013,
-                "E00_CENT_1": 817020.585601,
                 "DISTRICT_T": "中西區",
                 "DISTRICT_E": "Central & Western",
-                "SHAPE_AREA": 683408.778991,
-                "SHAPE_LEN": 4113.99516
+                "SUBDISTIRCT_T": "西營盤",
+                "SUBDISTIRCT_E": "Sai Ying Pun"
             },
             "geometry": {
                 "type": "Polygon",
@@ -41152,12 +40770,10 @@ export default {
                 "CACODE": "A08",
                 "ENAME": "Sai Wan",
                 "CNAME": "西環",
-                "E00_CENTRO": 831353.855071,
-                "E00_CENT_1": 816678.133591,
                 "DISTRICT_T": "中西區",
                 "DISTRICT_E": "Central & Western",
-                "SHAPE_AREA": 511207.915922,
-                "SHAPE_LEN": 4621.635139
+                "SUBDISTIRCT_T": "堅尼地城",
+                "SUBDISTIRCT_E": "Kennedy Town"
             },
             "geometry": {
                 "type": "Polygon",
@@ -41247,12 +40863,10 @@ export default {
                 "CACODE": "G04",
                 "ENAME": "Lok Man",
                 "CNAME": "樂民",
-                "E00_CENTRO": 837213.246828,
-                "E00_CENT_1": 819779.553297,
                 "DISTRICT_T": "九龍城區",
                 "DISTRICT_E": "Kowloon City",
-                "SHAPE_AREA": 151061.415769,
-                "SHAPE_LEN": 2607.57921
+                "SUBDISTIRCT_T": "馬頭圍",
+                "SUBDISTIRCT_E": "Ma Tau Wai"
             },
             "geometry": {
                 "type": "Polygon",
@@ -41354,12 +40968,10 @@ export default {
                 "CACODE": "J33",
                 "ENAME": "Upper Ngau Tau Kok Estate",
                 "CNAME": "牛頭角上邨",
-                "E00_CENTRO": 840280.664946,
-                "E00_CENT_1": 820250.583586,
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SHAPE_AREA": 79428.020576,
-                "SHAPE_LEN": 1197.049441
+                "SUBDISTIRCT_T": "牛頭角",
+                "SUBDISTIRCT_E": "Ngau Tau Kok"
             },
             "geometry": {
                 "type": "Polygon",
@@ -41441,12 +41053,10 @@ export default {
                 "CACODE": "E10",
                 "ENAME": "Tai Kok Tsui South",
                 "CNAME": "大角咀南",
-                "E00_CENTRO": 834796.443215,
-                "E00_CENT_1": 820256.314997,
                 "DISTRICT_T": "油尖旺區",
                 "DISTRICT_E": "Yau Tsim Mong",
-                "SHAPE_AREA": 117001.295641,
-                "SHAPE_LEN": 1952.194955
+                "SUBDISTIRCT_T": "大角咀",
+                "SUBDISTIRCT_E": "Tai Kok Tsui"
             },
             "geometry": {
                 "type": "Polygon",
@@ -41524,12 +41134,10 @@ export default {
                 "CACODE": "Q19",
                 "ENAME": "Wan Hang",
                 "CNAME": "運亨",
-                "E00_CENTRO": 844627.302219,
-                "E00_CENT_1": 820086.682254,
                 "DISTRICT_T": "西貢區",
                 "DISTRICT_E": "Sai Kung",
-                "SHAPE_AREA": 253094.994519,
-                "SHAPE_LEN": 2337.171085
+                "SUBDISTIRCT_T": "寶琳",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -41607,12 +41215,10 @@ export default {
                 "CACODE": "J34",
                 "ENAME": "Lower Ngau Tau Kok Estate",
                 "CNAME": "牛頭角下邨",
-                "E00_CENTRO": 840280.664946,
-                "E00_CENT_1": 820250.583586,
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SHAPE_AREA": 220200.841252,
-                "SHAPE_LEN": 3183.811952
+                "SUBDISTIRCT_T": "牛頭角",
+                "SUBDISTIRCT_E": "Ngau Tau Kok"
             },
             "geometry": {
                 "type": "Polygon",
@@ -41754,12 +41360,10 @@ export default {
                 "CACODE": "J26",
                 "ENAME": "King Tin",
                 "CNAME": "景田",
-                "E00_CENTRO": 842059.129426,
-                "E00_CENT_1": 818856.600122,
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SHAPE_AREA": 168400.296772,
-                "SHAPE_LEN": 2392.629208
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -41889,12 +41493,10 @@ export default {
                 "CACODE": "G24",
                 "ENAME": "Oi Chun",
                 "CNAME": "愛俊",
-                "E00_CENTRO": 836481.249622,
-                "E00_CENT_1": 819377.709572,
                 "DISTRICT_T": "九龍城區",
                 "DISTRICT_E": "Kowloon City",
-                "SHAPE_AREA": 92207.256619,
-                "SHAPE_LEN": 1462.893913
+                "SUBDISTIRCT_T": "何文田",
+                "SUBDISTIRCT_E": "Ho Man Tin"
             },
             "geometry": {
                 "type": "Polygon",
@@ -41988,12 +41590,10 @@ export default {
                 "CACODE": "J14",
                 "ENAME": "Sau Mau Ping South",
                 "CNAME": "秀茂坪南",
-                "E00_CENTRO": 842197.910373,
-                "E00_CENT_1": 819817.752716,
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SHAPE_AREA": 79770.997167,
-                "SHAPE_LEN": 1475.009834
+                "SUBDISTIRCT_T": "秀茂坪",
+                "SUBDISTIRCT_E": "Sau Mau Ping"
             },
             "geometry": {
                 "type": "Polygon",
@@ -42099,12 +41699,10 @@ export default {
                 "CACODE": "E07",
                 "ENAME": "Fu Pak",
                 "CNAME": "富柏",
-                "E00_CENTRO": 834863.613362,
-                "E00_CENT_1": 819725.928351,
                 "DISTRICT_T": "油尖旺區",
                 "DISTRICT_E": "Yau Tsim Mong",
-                "SHAPE_AREA": 225229.798419,
-                "SHAPE_LEN": 2249.005287
+                "SUBDISTIRCT_T": "海富",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -42190,12 +41788,10 @@ export default {
                 "CACODE": "D03",
                 "ENAME": "Ap Lei Chau North",
                 "CNAME": "鴨脷洲北",
-                "E00_CENTRO": 834144.337809,
-                "E00_CENT_1": 811715.324127,
                 "DISTRICT_T": "南區",
                 "DISTRICT_E": "Southern",
-                "SHAPE_AREA": 153252.523181,
-                "SHAPE_LEN": 2066.207558
+                "SUBDISTIRCT_T": "鴨脷洲",
+                "SUBDISTIRCT_E": "Ap Lei Chau"
             },
             "geometry": {
                 "type": "Polygon",
@@ -42289,12 +41885,10 @@ export default {
                 "CACODE": "H07",
                 "ENAME": "San Po Kong",
                 "CNAME": "新蒲崗",
-                "E00_CENTRO": 838532.63745,
-                "E00_CENT_1": 821931.11539,
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SHAPE_AREA": 416018.075307,
-                "SHAPE_LEN": 2865.139983
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -42428,12 +42022,10 @@ export default {
                 "CACODE": "H23",
                 "ENAME": "Choi Wan West",
                 "CNAME": "彩雲西",
-                "E00_CENTRO": 840020.335136,
-                "E00_CENT_1": 821882.583,
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SHAPE_AREA": 178972.045276,
-                "SHAPE_LEN": 2172.886238
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -42559,12 +42151,10 @@ export default {
                 "CACODE": "H10",
                 "ENAME": "Lok Fu",
                 "CNAME": "樂富",
-                "E00_CENTRO": 837390.693628,
-                "E00_CENT_1": 822022.684265,
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SHAPE_AREA": 175553.498221,
-                "SHAPE_LEN": 2008.749958
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -42678,12 +42268,10 @@ export default {
                 "CACODE": "F15",
                 "ENAME": "Mei Foo North",
                 "CNAME": "美孚北",
-                "E00_CENTRO": 832312.738725,
-                "E00_CENT_1": 822184.72681,
                 "DISTRICT_T": "深水埗區",
                 "DISTRICT_E": "Sham Shui Po",
-                "SHAPE_AREA": 439579.056748,
-                "SHAPE_LEN": 3864.043441
+                "SUBDISTIRCT_T": "美孚",
+                "SUBDISTIRCT_E": "Mei Foo"
             },
             "geometry": {
                 "type": "Polygon",
@@ -42869,12 +42457,10 @@ export default {
                 "CACODE": "F19",
                 "ENAME": "Lei Cheng Uk",
                 "CNAME": "李鄭屋",
-                "E00_CENTRO": 834536.823745,
-                "E00_CENT_1": 822274.435833,
                 "DISTRICT_T": "深水埗區",
                 "DISTRICT_E": "Sham Shui Po",
-                "SHAPE_AREA": 211597.03093,
-                "SHAPE_LEN": 2052.766441
+                "SUBDISTIRCT_T": "長沙灣",
+                "SUBDISTIRCT_E": "Cheung Sha Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -42968,12 +42554,10 @@ export default {
                 "CACODE": "R10",
                 "ENAME": "Chun Fung",
                 "CNAME": "秦豐",
-                "E00_CENTRO": 837330.011934,
-                "E00_CENT_1": 826048.645451,
                 "DISTRICT_T": "沙田區",
                 "DISTRICT_E": "Sha Tin",
-                "SHAPE_AREA": 230137.115165,
-                "SHAPE_LEN": 2418.123377
+                "SUBDISTIRCT_T": "大圍",
+                "SUBDISTIRCT_E": "Tai Wai"
             },
             "geometry": {
                 "type": "Polygon",
@@ -43083,12 +42667,10 @@ export default {
                 "CACODE": "S07",
                 "ENAME": "Shek Yam",
                 "CNAME": "石蔭",
-                "E00_CENTRO": 832208.673316,
-                "E00_CENT_1": 825826.906586,
                 "DISTRICT_T": "葵青區",
                 "DISTRICT_E": "Kwai Tsing",
-                "SHAPE_AREA": 293592.652344,
-                "SHAPE_LEN": 3838.518331
+                "SUBDISTIRCT_T": "葵涌",
+                "SUBDISTIRCT_E": "Kwai Chung"
             },
             "geometry": {
                 "type": "Polygon",
@@ -43278,12 +42860,10 @@ export default {
                 "CACODE": "L16",
                 "ENAME": "Siu Hei",
                 "CNAME": "兆禧",
-                "E00_CENTRO": 814841.597924,
-                "E00_CENT_1": 825985.194052,
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SHAPE_AREA": 152220.281712,
-                "SHAPE_LEN": 2714.023907
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -43377,12 +42957,10 @@ export default {
                 "CACODE": "L15",
                 "ENAME": "Yuet Wu",
                 "CNAME": "悅湖",
-                "E00_CENTRO": 814795.372417,
-                "E00_CENT_1": 826299.503986,
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SHAPE_AREA": 157439.053013,
-                "SHAPE_LEN": 1986.765434
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -43452,12 +43030,10 @@ export default {
                 "CACODE": "K07",
                 "ENAME": "Tsuen Wan Centre",
                 "CNAME": "荃灣中心",
-                "E00_CENTRO": 829182.542744,
-                "E00_CENT_1": 826436.541895,
                 "DISTRICT_T": "荃灣區",
                 "DISTRICT_E": "Tsuen Wan",
-                "SHAPE_AREA": 141495.619852,
-                "SHAPE_LEN": 1873.033202
+                "SUBDISTIRCT_T": "荃灣",
+                "SUBDISTIRCT_E": "Tsuen Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -43559,12 +43135,10 @@ export default {
                 "CACODE": "R19",
                 "ENAME": "Tai Wai",
                 "CNAME": "大圍",
-                "E00_CENTRO": 836263.989247,
-                "E00_CENT_1": 826459.727839,
                 "DISTRICT_T": "沙田區",
                 "DISTRICT_E": "Sha Tin",
-                "SHAPE_AREA": 275314.181402,
-                "SHAPE_LEN": 2252.360219
+                "SUBDISTIRCT_T": "大圍",
+                "SUBDISTIRCT_E": "Tai Wai"
             },
             "geometry": {
                 "type": "Polygon",
@@ -43666,12 +43240,10 @@ export default {
                 "CACODE": "K15",
                 "ENAME": "Lei Muk Shue East",
                 "CNAME": "梨木樹東",
-                "E00_CENTRO": 831628.327603,
-                "E00_CENT_1": 826067.594813,
                 "DISTRICT_T": "荃灣區",
                 "DISTRICT_E": "Tsuen Wan",
-                "SHAPE_AREA": 680855.513413,
-                "SHAPE_LEN": 5852.414321
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -43933,12 +43505,10 @@ export default {
                 "CACODE": "R38",
                 "ENAME": "Kwong Yuen",
                 "CNAME": "廣源",
-                "E00_CENTRO": 840187.012153,
-                "E00_CENT_1": 826881.245688,
                 "DISTRICT_T": "沙田區",
                 "DISTRICT_E": "Sha Tin",
-                "SHAPE_AREA": 89493.999191,
-                "SHAPE_LEN": 1661.774873
+                "SUBDISTIRCT_T": "沙田",
+                "SUBDISTIRCT_E": "Sha Tin"
             },
             "geometry": {
                 "type": "Polygon",
@@ -44048,12 +43618,10 @@ export default {
                 "CACODE": "L04",
                 "ENAME": "On Ting",
                 "CNAME": "安定",
-                "E00_CENTRO": 815701.842253,
-                "E00_CENT_1": 827485.121462,
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SHAPE_AREA": 166502.328282,
-                "SHAPE_LEN": 2307.811131
+                "SUBDISTIRCT_T": "屯門",
+                "SUBDISTIRCT_E": "Tuen Mun"
             },
             "geometry": {
                 "type": "Polygon",
@@ -44163,12 +43731,10 @@ export default {
                 "CACODE": "R36",
                 "ENAME": "Bik Woo",
                 "CNAME": "碧湖",
-                "E00_CENTRO": 839506.225727,
-                "E00_CENT_1": 827858.579934,
                 "DISTRICT_T": "沙田區",
                 "DISTRICT_E": "Sha Tin",
-                "SHAPE_AREA": 660077.016567,
-                "SHAPE_LEN": 3746.380075
+                "SUBDISTIRCT_T": "沙田",
+                "SUBDISTIRCT_E": "Sha Tin"
             },
             "geometry": {
                 "type": "Polygon",
@@ -44270,12 +43836,10 @@ export default {
                 "CACODE": "R21",
                 "ENAME": "Sui Wo",
                 "CNAME": "穗禾",
-                "E00_CENTRO": 836795.73695,
-                "E00_CENT_1": 828308.40108,
                 "DISTRICT_T": "沙田區",
                 "DISTRICT_E": "Sha Tin",
-                "SHAPE_AREA": 2208973.70985,
-                "SHAPE_LEN": 10920.75053
+                "SUBDISTIRCT_T": "火炭",
+                "SUBDISTIRCT_E": "Fo Tan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -44841,12 +44405,10 @@ export default {
                 "CACODE": "K10",
                 "ENAME": "Ting Sham",
                 "CNAME": "汀深",
-                "E00_CENTRO": 825589.217766,
-                "E00_CENT_1": 826396.541405,
                 "DISTRICT_T": "荃灣區",
                 "DISTRICT_E": "Tsuen Wan",
-                "SHAPE_AREA": 9879764.69421,
-                "SHAPE_LEN": 24808.104649
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -45884,12 +45446,10 @@ export default {
                 "CACODE": "R35",
                 "ENAME": "Yu Yan",
                 "CNAME": "愉欣",
-                "E00_CENTRO": 840976.913475,
-                "E00_CENT_1": 826671.56425,
                 "DISTRICT_T": "沙田區",
                 "DISTRICT_E": "Sha Tin",
-                "SHAPE_AREA": 11063717.066,
-                "SHAPE_LEN": 25498.21805
+                "SUBDISTIRCT_T": "沙田",
+                "SUBDISTIRCT_E": "Sha Tin"
             },
             "geometry": {
                 "type": "Polygon",
@@ -46971,12 +46531,10 @@ export default {
                 "CACODE": "L12",
                 "ENAME": "Sam Shing",
                 "CNAME": "三聖",
-                "E00_CENTRO": 818596.332541,
-                "E00_CENT_1": 825035.534737,
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SHAPE_AREA": 48419877.3562,
-                "SHAPE_LEN": 52904.551091
+                "SUBDISTIRCT_T": "屯門",
+                "SUBDISTIRCT_E": "Tuen Mun"
             },
             "geometry": {
                 "type": "Polygon",
@@ -48394,12 +47952,10 @@ export default {
                 "CACODE": "K08",
                 "ENAME": "Allway",
                 "CNAME": "荃威",
-                "E00_CENTRO": 830072.817104,
-                "E00_CENT_1": 828254.20745,
                 "DISTRICT_T": "荃灣區",
                 "DISTRICT_E": "Tsuen Wan",
-                "SHAPE_AREA": 8185228.59319,
-                "SHAPE_LEN": 20882.275807
+                "SUBDISTIRCT_T": "荃灣",
+                "SUBDISTIRCT_E": "Tsuen Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -49585,12 +49141,10 @@ export default {
                 "CACODE": "L27",
                 "ENAME": "Prime View",
                 "CNAME": "景峰",
-                "E00_CENTRO": 816113.654301,
-                "E00_CENT_1": 829905.414976,
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SHAPE_AREA": 643668.259182,
-                "SHAPE_LEN": 5166.569276
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -49820,12 +49374,10 @@ export default {
                 "CACODE": "K17",
                 "ENAME": "Shek Wai Kok",
                 "CNAME": "石圍角",
-                "E00_CENTRO": 833046.9621,
-                "E00_CENT_1": 828806.499451,
                 "DISTRICT_T": "荃灣區",
                 "DISTRICT_E": "Tsuen Wan",
-                "SHAPE_AREA": 14047556.3579,
-                "SHAPE_LEN": 24301.484525
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -51043,12 +50595,10 @@ export default {
                 "CACODE": "L11",
                 "ENAME": "San Hui",
                 "CNAME": "新墟",
-                "E00_CENTRO": 817842.199035,
-                "E00_CENT_1": 828976.793928,
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SHAPE_AREA": 10734843.7194,
-                "SHAPE_LEN": 22818.448276
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -51690,12 +51240,10 @@ export default {
                 "CACODE": "R22",
                 "ENAME": "Fo Tan",
                 "CNAME": "火炭",
-                "E00_CENTRO": 837509.138149,
-                "E00_CENT_1": 829601.916251,
                 "DISTRICT_T": "沙田區",
                 "DISTRICT_E": "Sha Tin",
-                "SHAPE_AREA": 9084241.18694,
-                "SHAPE_LEN": 19916.821013
+                "SUBDISTIRCT_T": "火炭",
+                "SUBDISTIRCT_E": "Fo Tan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -52357,12 +51905,10 @@ export default {
                 "CACODE": "R31",
                 "ENAME": "Yiu On",
                 "CNAME": "耀安",
-                "E00_CENTRO": 841843.38577,
-                "E00_CENT_1": 831138.769945,
                 "DISTRICT_T": "沙田區",
                 "DISTRICT_E": "Sha Tin",
-                "SHAPE_AREA": 110530.272208,
-                "SHAPE_LEN": 1312.57063
+                "SUBDISTIRCT_T": "馬鞍山",
+                "SUBDISTIRCT_E": "Ma On Shan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -52424,12 +51970,10 @@ export default {
                 "CACODE": "R34",
                 "ENAME": "Tai Shui Hang",
                 "CNAME": "大水坑",
-                "E00_CENTRO": 842768.694161,
-                "E00_CENT_1": 829467.447455,
                 "DISTRICT_T": "沙田區",
                 "DISTRICT_E": "Sha Tin",
-                "SHAPE_AREA": 9290230.46318,
-                "SHAPE_LEN": 13889.653434
+                "SUBDISTIRCT_T": "馬鞍山",
+                "SUBDISTIRCT_E": "Ma On Shan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -52943,12 +52487,10 @@ export default {
                 "CACODE": "L19",
                 "ENAME": "Lok Tsui",
                 "CNAME": "樂翠",
-                "E00_CENTRO": 809065.646802,
-                "E00_CENT_1": 826024.297425,
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SHAPE_AREA": 102015413.069,
-                "SHAPE_LEN": 46209.41783
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -53422,12 +52964,10 @@ export default {
                 "CACODE": "L29",
                 "ENAME": "Tuen Mun Rural",
                 "CNAME": "屯門鄉郊",
-                "E00_CENTRO": 816890.515242,
-                "E00_CENT_1": 831327.697648,
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SHAPE_AREA": 4040759.74323,
-                "SHAPE_LEN": 14304.149603
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -54045,12 +53585,10 @@ export default {
                 "CACODE": "L24",
                 "ENAME": "Po Tin",
                 "CNAME": "寶田",
-                "E00_CENTRO": 813496.002445,
-                "E00_CENT_1": 831205.604193,
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SHAPE_AREA": 9875148.45081,
-                "SHAPE_LEN": 18625.688855
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -54716,12 +54254,10 @@ export default {
                 "CACODE": "M10",
                 "ENAME": "Shap Pat Heung West",
                 "CNAME": "十八鄉西",
-                "E00_CENTRO": 821478.308051,
-                "E00_CENT_1": 830987.32109,
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SHAPE_AREA": 7655040.37512,
-                "SHAPE_LEN": 13453.964485
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -55067,12 +54603,10 @@ export default {
                 "CACODE": "R23",
                 "ENAME": "Chun Ma",
                 "CNAME": "駿馬",
-                "E00_CENTRO": 839980.033317,
-                "E00_CENT_1": 831064.657357,
                 "DISTRICT_T": "沙田區",
                 "DISTRICT_E": "Sha Tin",
-                "SHAPE_AREA": 5950855.89895,
-                "SHAPE_LEN": 15380.914405
+                "SUBDISTIRCT_T": "火炭",
+                "SUBDISTIRCT_E": "Fo Tan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -55526,12 +55060,10 @@ export default {
                 "CACODE": "M09",
                 "ENAME": "Shap Pat Heung Central",
                 "CNAME": "十八鄉中",
-                "E00_CENTRO": 821478.308051,
-                "E00_CENT_1": 830987.32109,
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SHAPE_AREA": 927369.694205,
-                "SHAPE_LEN": 5798.22475
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -55745,12 +55277,10 @@ export default {
                 "CACODE": "M11",
                 "ENAME": "Ping Shan South",
                 "CNAME": "屏山南",
-                "E00_CENTRO": 818979.710441,
-                "E00_CENT_1": 832415.010333,
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SHAPE_AREA": 5073034.21944,
-                "SHAPE_LEN": 11193.734913
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -56272,12 +55802,10 @@ export default {
                 "CACODE": "P10",
                 "ENAME": "Tai Po Kau",
                 "CNAME": "大埔滘",
-                "E00_CENTRO": 836167.74646,
-                "E00_CENT_1": 832262.422661,
                 "DISTRICT_T": "大埔區",
                 "DISTRICT_E": "Tai Po",
-                "SHAPE_AREA": 20481636.9917,
-                "SHAPE_LEN": 27168.586255
+                "SUBDISTIRCT_T": "大埔滘",
+                "SUBDISTIRCT_E": "Tai Po Kau"
             },
             "geometry": {
                 "type": "Polygon",
@@ -57155,12 +56683,10 @@ export default {
                 "CACODE": "P09",
                 "ENAME": "Wang Fuk",
                 "CNAME": "宏福",
-                "E00_CENTRO": 836496.028802,
-                "E00_CENT_1": 833861.578952,
                 "DISTRICT_T": "大埔區",
                 "DISTRICT_E": "Tai Po",
-                "SHAPE_AREA": 355787.404975,
-                "SHAPE_LEN": 4609.763541
+                "SUBDISTIRCT_T": "大埔",
+                "SUBDISTIRCT_E": "Tai Po"
             },
             "geometry": {
                 "type": "Polygon",
@@ -57390,12 +56916,10 @@ export default {
                 "CACODE": "M28",
                 "ENAME": "Tin Yiu",
                 "CNAME": "天耀",
-                "E00_CENTRO": 818463.732707,
-                "E00_CENT_1": 834593.460025,
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SHAPE_AREA": 97623.268735,
-                "SHAPE_LEN": 1275.314881
+                "SUBDISTIRCT_T": "天水圍",
+                "SUBDISTIRCT_E": "Tin Shui Wai"
             },
             "geometry": {
                 "type": "Polygon",
@@ -57449,12 +56973,10 @@ export default {
                 "CACODE": "M26",
                 "ENAME": "Tsz Yau",
                 "CNAME": "慈祐",
-                "E00_CENTRO": 818463.732707,
-                "E00_CENT_1": 834593.460025,
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SHAPE_AREA": 154111.323016,
-                "SHAPE_LEN": 2127.376462
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -57540,12 +57062,10 @@ export default {
                 "CACODE": "M08",
                 "ENAME": "Shap Pat Heung East",
                 "CNAME": "十八鄉東",
-                "E00_CENTRO": 821478.308051,
-                "E00_CENT_1": 830987.32109,
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SHAPE_AREA": 9081266.50036,
-                "SHAPE_LEN": 19710.61872
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -58331,12 +57851,10 @@ export default {
                 "CACODE": "M12",
                 "ENAME": "Ping Shan Central",
                 "CNAME": "屏山中",
-                "E00_CENTRO": 818979.710441,
-                "E00_CENT_1": 832415.010333,
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SHAPE_AREA": 4398182.9879,
-                "SHAPE_LEN": 12535.49143
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -58826,12 +58344,10 @@ export default {
                 "CACODE": "M33",
                 "ENAME": "Kam Tin",
                 "CNAME": "錦田",
-                "E00_CENTRO": 824305.050341,
-                "E00_CENT_1": 834173.94328,
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SHAPE_AREA": 9011781.69531,
-                "SHAPE_LEN": 16422.241658
+                "SUBDISTIRCT_T": "錦田",
+                "SUBDISTIRCT_E": "Kam Tin"
             },
             "geometry": {
                 "type": "Polygon",
@@ -59645,12 +59161,10 @@ export default {
                 "CACODE": "F20",
                 "ENAME": "Ha Pak Tin",
                 "CNAME": "下白田",
-                "E00_CENTRO": 835251.746159,
-                "E00_CENT_1": 821886.391356,
                 "DISTRICT_T": "深水埗區",
                 "DISTRICT_E": "Sham Shui Po",
-                "SHAPE_AREA": 151616.141065,
-                "SHAPE_LEN": 1676.260154
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -59744,12 +59258,10 @@ export default {
                 "CACODE": "F01",
                 "ENAME": "Po Lai",
                 "CNAME": "寶麗",
-                "E00_CENTRO": 834347.311556,
-                "E00_CENT_1": 821949.762008,
                 "DISTRICT_T": "深水埗區",
                 "DISTRICT_E": "Sham Shui Po",
-                "SHAPE_AREA": 150715.946292,
-                "SHAPE_LEN": 1874.610059
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -59811,12 +59323,10 @@ export default {
                 "CACODE": "H02",
                 "ENAME": "Lung Ha",
                 "CNAME": "龍下",
-                "E00_CENTRO": 838116.29032,
-                "E00_CENT_1": 822217.700077,
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SHAPE_AREA": 64570.123503,
-                "SHAPE_LEN": 1158.946893
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -59886,12 +59396,10 @@ export default {
                 "CACODE": "F21",
                 "ENAME": "Yau Yat Tsuen",
                 "CNAME": "又一村",
-                "E00_CENTRO": 835798.890687,
-                "E00_CENT_1": 821882.120117,
                 "DISTRICT_T": "深水埗區",
                 "DISTRICT_E": "Sham Shui Po",
-                "SHAPE_AREA": 965801.854879,
-                "SHAPE_LEN": 5775.120863
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -60137,12 +59645,10 @@ export default {
                 "CACODE": "Q05",
                 "ENAME": "Hang Hau West",
                 "CNAME": "坑口西",
-                "E00_CENTRO": 843420.942143,
-                "E00_CENT_1": 821089.978703,
                 "DISTRICT_T": "西貢區",
                 "DISTRICT_E": "Sai Kung",
-                "SHAPE_AREA": 9879649.95392,
-                "SHAPE_LEN": 24303.643022
+                "SUBDISTIRCT_T": "將軍澳",
+                "SUBDISTIRCT_E": "Tseung Kwan O"
             },
             "geometry": {
                 "type": "Polygon",
@@ -61288,12 +60794,10 @@ export default {
                 "CACODE": "F23",
                 "ENAME": "Lung Ping & Sheung Pak Tin",
                 "CNAME": "龍坪及上白田",
-                "E00_CENTRO": 834624.227948,
-                "E00_CENT_1": 822687.944693,
                 "DISTRICT_T": "深水埗區",
                 "DISTRICT_E": "Sham Shui Po",
-                "SHAPE_AREA": 1593046.89856,
-                "SHAPE_LEN": 9733.081492
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -61763,12 +61267,10 @@ export default {
                 "CACODE": "Q04",
                 "ENAME": "Hang Hau East",
                 "CNAME": "坑口東",
-                "E00_CENTRO": 857770.852317,
-                "E00_CENT_1": 810340.177665,
                 "DISTRICT_T": "西貢區",
                 "DISTRICT_E": "Sai Kung",
-                "SHAPE_AREA": 388916238.602,
-                "SHAPE_LEN": 93152.076193
+                "SUBDISTIRCT_T": "清水灣",
+                "SUBDISTIRCT_E": "Clear Water Bay"
             },
             "geometry": {
                 "type": "Polygon",
@@ -62342,12 +61844,10 @@ export default {
                 "CACODE": "S14",
                 "ENAME": "Lai Wah",
                 "CNAME": "荔華",
-                "E00_CENTRO": 832511.600998,
-                "E00_CENT_1": 823085.156562,
                 "DISTRICT_T": "葵青區",
                 "DISTRICT_E": "Kwai Tsing",
-                "SHAPE_AREA": 1463492.12846,
-                "SHAPE_LEN": 8495.322885
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -62797,12 +62297,10 @@ export default {
                 "CACODE": "S26",
                 "ENAME": "Tsing Yi South",
                 "CNAME": "青衣南",
-                "E00_CENTRO": 828848.249313,
-                "E00_CENT_1": 820625.321878,
                 "DISTRICT_T": "葵青區",
                 "DISTRICT_E": "Kwai Tsing",
-                "SHAPE_AREA": 28868366.8646,
-                "SHAPE_LEN": 31511.482861
+                "SUBDISTIRCT_T": "青衣",
+                "SUBDISTIRCT_E": "Tsing Yi"
             },
             "geometry": {
                 "type": "Polygon",
@@ -63312,12 +62810,10 @@ export default {
                 "CACODE": "T02",
                 "ENAME": "Yat Tung Estate North",
                 "CNAME": "逸東邨北",
-                "E00_CENTRO": 811546.271454,
-                "E00_CENT_1": 815937.230908,
                 "DISTRICT_T": "離島區",
                 "DISTRICT_E": "Islands",
-                "SHAPE_AREA": 80358.561933,
-                "SHAPE_LEN": 1559.195912
+                "SUBDISTIRCT_T": "東涌",
+                "SUBDISTIRCT_E": "Tung Chung"
             },
             "geometry": {
                 "type": "Polygon",
@@ -63399,12 +62895,10 @@ export default {
                 "CACODE": "B01",
                 "ENAME": "Hennessy",
                 "CNAME": "軒尼詩",
-                "E00_CENTRO": 836083.162386,
-                "E00_CENT_1": 815652.556531,
                 "DISTRICT_T": "灣仔區",
                 "DISTRICT_E": "Wan Chai",
-                "SHAPE_AREA": 326322.29005,
-                "SHAPE_LEN": 4511.51494
+                "SUBDISTIRCT_T": "灣仔",
+                "SUBDISTIRCT_E": "Wan Chai"
             },
             "geometry": {
                 "type": "Polygon",
@@ -63582,12 +63076,10 @@ export default {
                 "CACODE": "C19",
                 "ENAME": "Fort Street",
                 "CNAME": "堡壘",
-                "E00_CENTRO": 838427.006428,
-                "E00_CENT_1": 816764.579324,
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SHAPE_AREA": 113507.864125,
-                "SHAPE_LEN": 1577.106938
+                "SUBDISTIRCT_T": "北角",
+                "SUBDISTIRCT_E": "North Point"
             },
             "geometry": {
                 "type": "Polygon",
@@ -63669,12 +63161,10 @@ export default {
                 "CACODE": "T04",
                 "ENAME": "Tung Chung North",
                 "CNAME": "東涌北",
-                "E00_CENTRO": 812544.918407,
-                "E00_CENT_1": 817028.598559,
                 "DISTRICT_T": "離島區",
                 "DISTRICT_E": "Islands",
-                "SHAPE_AREA": 639007.669466,
-                "SHAPE_LEN": 3661.757874
+                "SUBDISTIRCT_T": "東涌",
+                "SUBDISTIRCT_E": "Tung Chung"
             },
             "geometry": {
                 "type": "Polygon",
@@ -63788,12 +63278,10 @@ export default {
                 "CACODE": "H12",
                 "ENAME": "Tin Keung",
                 "CNAME": "天強",
-                "E00_CENTRO": 837170.185421,
-                "E00_CENT_1": 822547.756453,
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SHAPE_AREA": 146427.54516,
-                "SHAPE_LEN": 2143.792834
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -63907,12 +63395,10 @@ export default {
                 "CACODE": "H19",
                 "ENAME": "Tsz Wan East",
                 "CNAME": "慈雲東",
-                "E00_CENTRO": 839050.479656,
-                "E00_CENT_1": 823139.175832,
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SHAPE_AREA": 138788.627772,
-                "SHAPE_LEN": 1789.918657
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -64014,12 +63500,10 @@ export default {
                 "CACODE": "S21",
                 "ENAME": "Tsing Yi Estate",
                 "CNAME": "青衣邨",
-                "E00_CENTRO": 828789.714066,
-                "E00_CENT_1": 823896.105347,
                 "DISTRICT_T": "葵青區",
                 "DISTRICT_E": "Kwai Tsing",
-                "SHAPE_AREA": 143690.990984,
-                "SHAPE_LEN": 2196.032731
+                "SUBDISTIRCT_T": "青衣",
+                "SUBDISTIRCT_E": "Tsing Yi"
             },
             "geometry": {
                 "type": "Polygon",
@@ -64161,12 +63645,10 @@ export default {
                 "CACODE": "C27",
                 "ENAME": "Hing Tung",
                 "CNAME": "興東",
-                "E00_CENTRO": 840619.064668,
-                "E00_CENT_1": 815797.276575,
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SHAPE_AREA": 229820.789694,
-                "SHAPE_LEN": 2335.968871
+                "SUBDISTIRCT_T": "西灣河",
+                "SUBDISTIRCT_E": "Sai Wan Ho"
             },
             "geometry": {
                 "type": "Polygon",
@@ -64308,12 +63790,10 @@ export default {
                 "CACODE": "L10",
                 "ENAME": "Hing Tsak",
                 "CNAME": "興澤",
-                "E00_CENTRO": 815301.359392,
-                "E00_CENT_1": 829420.692514,
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SHAPE_AREA": 170117.536033,
-                "SHAPE_LEN": 1957.853912
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -64395,12 +63875,10 @@ export default {
                 "CACODE": "R33",
                 "ENAME": "On Tai",
                 "CNAME": "鞍泰",
-                "E00_CENTRO": 840927.141388,
-                "E00_CENT_1": 830345.084913,
                 "DISTRICT_T": "沙田區",
                 "DISTRICT_E": "Sha Tin",
-                "SHAPE_AREA": 408691.075258,
-                "SHAPE_LEN": 2804.280917
+                "SUBDISTIRCT_T": "馬鞍山",
+                "SUBDISTIRCT_E": "Ma On Shan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -64494,12 +63972,10 @@ export default {
                 "CACODE": "R25",
                 "ENAME": "Kam To",
                 "CNAME": "錦濤",
-                "E00_CENTRO": 841288.664925,
-                "E00_CENT_1": 831677.857972,
                 "DISTRICT_T": "沙田區",
                 "DISTRICT_E": "Sha Tin",
-                "SHAPE_AREA": 361089.242639,
-                "SHAPE_LEN": 3476.935386
+                "SUBDISTIRCT_T": "馬鞍山",
+                "SUBDISTIRCT_E": "Ma On Shan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -64609,12 +64085,10 @@ export default {
                 "CACODE": "M06",
                 "ENAME": "Yuen Lung",
                 "CNAME": "元龍",
-                "E00_CENTRO": 821709.261798,
-                "E00_CENT_1": 833625.020298,
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SHAPE_AREA": 287611.244095,
-                "SHAPE_LEN": 2780.575015
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -64724,12 +64198,10 @@ export default {
                 "CACODE": "M15",
                 "ENAME": "Tin Shing",
                 "CNAME": "天盛",
-                "E00_CENTRO": 818160.902598,
-                "E00_CENT_1": 834315.653454,
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SHAPE_AREA": 203476.842901,
-                "SHAPE_LEN": 1822.600894
+                "SUBDISTIRCT_T": "天水圍",
+                "SUBDISTIRCT_E": "Tin Shui Wai"
             },
             "geometry": {
                 "type": "Polygon",
@@ -64799,12 +64271,10 @@ export default {
                 "CACODE": "P14",
                 "ENAME": "Po Nga",
                 "CNAME": "寶雅",
-                "E00_CENTRO": 834536.157815,
-                "E00_CENT_1": 834580.386931,
                 "DISTRICT_T": "大埔區",
                 "DISTRICT_E": "Tai Po",
-                "SHAPE_AREA": 102262.459858,
-                "SHAPE_LEN": 1347.89685
+                "SUBDISTIRCT_T": "大埔",
+                "SUBDISTIRCT_E": "Tai Po"
             },
             "geometry": {
                 "type": "Polygon",
@@ -64870,12 +64340,10 @@ export default {
                 "CACODE": "M27",
                 "ENAME": "Yiu Yau",
                 "CNAME": "耀祐",
-                "E00_CENTRO": 818463.732707,
-                "E00_CENT_1": 834593.460025,
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SHAPE_AREA": 87547.000131,
-                "SHAPE_LEN": 1451.209734
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -64945,12 +64413,10 @@ export default {
                 "CACODE": "M17",
                 "ENAME": "Shui Wah",
                 "CNAME": "瑞華",
-                "E00_CENTRO": 817623.933046,
-                "E00_CENT_1": 835476.677517,
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SHAPE_AREA": 186005.585209,
-                "SHAPE_LEN": 1864.142622
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -65032,12 +64498,10 @@ export default {
                 "CACODE": "E18",
                 "ENAME": "Tsim Sha Tsui Central",
                 "CNAME": "尖沙咀中",
-                "E00_CENTRO": 835609.428812,
-                "E00_CENT_1": 818067.644324,
                 "DISTRICT_T": "油尖旺區",
                 "DISTRICT_E": "Yau Tsim Mong",
-                "SHAPE_AREA": 553244.110295,
-                "SHAPE_LEN": 3616.004947
+                "SUBDISTIRCT_T": "尖沙咀",
+                "SUBDISTIRCT_E": "Tsim Sha Tsui"
             },
             "geometry": {
                 "type": "Polygon",
@@ -65135,12 +64599,10 @@ export default {
                 "CACODE": "F12",
                 "ENAME": "Lai Chi Kok South",
                 "CNAME": "荔枝角南",
-                "E00_CENTRO": 832646.720084,
-                "E00_CENT_1": 820311.999005,
                 "DISTRICT_T": "深水埗區",
                 "DISTRICT_E": "Sham Shui Po",
-                "SHAPE_AREA": 3012428.83354,
-                "SHAPE_LEN": 8616.65804
+                "SUBDISTIRCT_T": "荔枝角",
+                "SUBDISTIRCT_E": "Lai Chi Kok"
             },
             "geometry": {
                 "type": "Polygon",
@@ -65326,12 +64788,10 @@ export default {
                 "CACODE": "H25",
                 "ENAME": "Choi Hung",
                 "CNAME": "彩虹",
-                "E00_CENTRO": 839235.70115,
-                "E00_CENT_1": 821857.623352,
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SHAPE_AREA": 92467.515036,
-                "SHAPE_LEN": 1335.373413
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -65401,12 +64861,10 @@ export default {
                 "CACODE": "H11",
                 "ENAME": "Wang Tau Hom",
                 "CNAME": "橫頭磡",
-                "E00_CENTRO": 837375.860415,
-                "E00_CENT_1": 822427.810955,
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SHAPE_AREA": 133385.35517,
-                "SHAPE_LEN": 1589.677794
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -65476,12 +64934,10 @@ export default {
                 "CACODE": "F18",
                 "ENAME": "Un Chau & So Uk",
                 "CNAME": "元州及蘇屋",
-                "E00_CENTRO": 834067.308875,
-                "E00_CENT_1": 822328.644971,
                 "DISTRICT_T": "深水埗區",
                 "DISTRICT_E": "Sham Shui Po",
-                "SHAPE_AREA": 263080.952146,
-                "SHAPE_LEN": 3235.500398
+                "SUBDISTIRCT_T": "長沙灣",
+                "SUBDISTIRCT_E": "Cheung Sha Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -65571,12 +65027,10 @@ export default {
                 "CACODE": "H05",
                 "ENAME": "Fung Tak",
                 "CNAME": "鳳德",
-                "E00_CENTRO": 838750.541639,
-                "E00_CENT_1": 822813.295243,
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SHAPE_AREA": 111076.972847,
-                "SHAPE_LEN": 1420.566822
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -65670,12 +65124,10 @@ export default {
                 "CACODE": "H15",
                 "ENAME": "Chuk Yuen North",
                 "CNAME": "竹園北",
-                "E00_CENTRO": 837894.41179,
-                "E00_CENT_1": 823164.935015,
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SHAPE_AREA": 261514.828809,
-                "SHAPE_LEN": 2426.399275
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -65789,12 +65241,10 @@ export default {
                 "CACODE": "S25",
                 "ENAME": "Shing Hong",
                 "CNAME": "盛康",
-                "E00_CENTRO": 828365.223793,
-                "E00_CENT_1": 823438.197249,
                 "DISTRICT_T": "葵青區",
                 "DISTRICT_E": "Kwai Tsing",
-                "SHAPE_AREA": 90384.297462,
-                "SHAPE_LEN": 1884.710381
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -65892,12 +65342,10 @@ export default {
                 "CACODE": "S20",
                 "ENAME": "Wai Ying",
                 "CNAME": "偉盈",
-                "E00_CENTRO": 829016.807617,
-                "E00_CENT_1": 824216.917919,
                 "DISTRICT_T": "葵青區",
                 "DISTRICT_E": "Kwai Tsing",
-                "SHAPE_AREA": 426003.272364,
-                "SHAPE_LEN": 3053.721214
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -66043,12 +65491,10 @@ export default {
                 "CACODE": "C25",
                 "ENAME": "Kornhill",
                 "CNAME": "康怡",
-                "E00_CENTRO": 840267.545213,
-                "E00_CENT_1": 815868.292435,
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SHAPE_AREA": 105741.958655,
-                "SHAPE_LEN": 1813.401856
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -66150,12 +65596,10 @@ export default {
                 "CACODE": "C28",
                 "ENAME": "Sai Wan Ho",
                 "CNAME": "西灣河",
-                "E00_CENTRO": 841046.532721,
-                "E00_CENT_1": 815871.005801,
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SHAPE_AREA": 190375.35234,
-                "SHAPE_LEN": 2826.905619
+                "SUBDISTIRCT_T": "西灣河",
+                "SUBDISTIRCT_E": "Sai Wan Ho"
             },
             "geometry": {
                 "type": "Polygon",
@@ -66293,12 +65737,10 @@ export default {
                 "CACODE": "C24",
                 "ENAME": "Nam Fung",
                 "CNAME": "南豐",
-                "E00_CENTRO": 840062.314901,
-                "E00_CENT_1": 815950.372165,
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SHAPE_AREA": 65750.886535,
-                "SHAPE_LEN": 1483.470554
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -66400,12 +65842,10 @@ export default {
                 "CACODE": "C26",
                 "ENAME": "Kornhill Garden",
                 "CNAME": "康山",
-                "E00_CENTRO": 840319.738861,
-                "E00_CENT_1": 816166.007821,
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SHAPE_AREA": 110404.737258,
-                "SHAPE_LEN": 1794.784697
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -66523,12 +65963,10 @@ export default {
                 "CACODE": "B05",
                 "ENAME": "Tin Hau",
                 "CNAME": "天后",
-                "E00_CENTRO": 838027.598072,
-                "E00_CENT_1": 815900.715052,
                 "DISTRICT_T": "灣仔區",
                 "DISTRICT_E": "Wan Chai",
-                "SHAPE_AREA": 160171.593372,
-                "SHAPE_LEN": 3176.298816
+                "SUBDISTIRCT_T": "天后",
+                "SUBDISTIRCT_E": "Tin Hau"
             },
             "geometry": {
                 "type": "Polygon",
@@ -66726,12 +66164,10 @@ export default {
                 "CACODE": "A15",
                 "ENAME": "Water Street",
                 "CNAME": "水街",
-                "E00_CENTRO": 832251.26467,
-                "E00_CENT_1": 816263.391178,
                 "DISTRICT_T": "中西區",
                 "DISTRICT_E": "Central & Western",
-                "SHAPE_AREA": 150016.540671,
-                "SHAPE_LEN": 2035.284086
+                "SUBDISTIRCT_T": "西營盤",
+                "SUBDISTIRCT_E": "Sai Ying Pun"
             },
             "geometry": {
                 "type": "Polygon",
@@ -66841,12 +66277,10 @@ export default {
                 "CACODE": "B12",
                 "ENAME": "Southorn",
                 "CNAME": "修頓",
-                "E00_CENTRO": 835622.228986,
-                "E00_CENT_1": 815169.441548,
                 "DISTRICT_T": "灣仔區",
                 "DISTRICT_E": "Wan Chai",
-                "SHAPE_AREA": 912627.844432,
-                "SHAPE_LEN": 7063.013262
+                "SUBDISTIRCT_T": "灣仔",
+                "SUBDISTIRCT_E": "Wan Chai"
             },
             "geometry": {
                 "type": "Polygon",
@@ -67128,12 +66562,10 @@ export default {
                 "CACODE": "B02",
                 "ENAME": "Oi Kwan",
                 "CNAME": "愛群",
-                "E00_CENTRO": 836344.099803,
-                "E00_CENT_1": 815603.843636,
                 "DISTRICT_T": "灣仔區",
                 "DISTRICT_E": "Wan Chai",
-                "SHAPE_AREA": 367454.009609,
-                "SHAPE_LEN": 4472.897591
+                "SUBDISTIRCT_T": "灣仔",
+                "SUBDISTIRCT_E": "Wan Chai"
             },
             "geometry": {
                 "type": "Polygon",
@@ -67311,12 +66743,10 @@ export default {
                 "CACODE": "B13",
                 "ENAME": "Tai Fat Hau",
                 "CNAME": "大佛口",
-                "E00_CENTRO": 835518.164716,
-                "E00_CENT_1": 816002.982899,
                 "DISTRICT_T": "灣仔區",
                 "DISTRICT_E": "Wan Chai",
-                "SHAPE_AREA": 728656.03769,
-                "SHAPE_LEN": 5003.814473
+                "SUBDISTIRCT_T": "灣仔",
+                "SUBDISTIRCT_E": "Wan Chai"
             },
             "geometry": {
                 "type": "Polygon",
@@ -67450,12 +66880,10 @@ export default {
                 "CACODE": "B03",
                 "ENAME": "Canal Road",
                 "CNAME": "鵝頸",
-                "E00_CENTRO": 836568.00652,
-                "E00_CENT_1": 816148.186454,
                 "DISTRICT_T": "灣仔區",
                 "DISTRICT_E": "Wan Chai",
-                "SHAPE_AREA": 677411.13049,
-                "SHAPE_LEN": 4641.229824
+                "SUBDISTIRCT_T": "灣仔",
+                "SUBDISTIRCT_E": "Wan Chai"
             },
             "geometry": {
                 "type": "Polygon",
@@ -67581,12 +67009,10 @@ export default {
                 "CACODE": "C21",
                 "ENAME": "Tanner",
                 "CNAME": "丹拿",
-                "E00_CENTRO": 838985.430538,
-                "E00_CENT_1": 816749.316822,
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SHAPE_AREA": 140330.993811,
-                "SHAPE_LEN": 1926.57301
+                "SUBDISTIRCT_T": "北角",
+                "SUBDISTIRCT_E": "North Point"
             },
             "geometry": {
                 "type": "Polygon",
@@ -67684,12 +67110,10 @@ export default {
                 "CACODE": "B04",
                 "ENAME": "Victoria Park",
                 "CNAME": "維園",
-                "E00_CENTRO": 837260.459115,
-                "E00_CENT_1": 816401.753181,
                 "DISTRICT_T": "灣仔區",
                 "DISTRICT_E": "Wan Chai",
-                "SHAPE_AREA": 1148827.61531,
-                "SHAPE_LEN": 4895.181196
+                "SUBDISTIRCT_T": "銅鑼灣",
+                "SUBDISTIRCT_E": "Causeway Bay"
             },
             "geometry": {
                 "type": "Polygon",
@@ -67815,12 +67239,10 @@ export default {
                 "CACODE": "T07",
                 "ENAME": "Peng Chau & Hei Ling Chau",
                 "CNAME": "坪洲及喜靈洲",
-                "E00_CENTRO": 824108.003707,
-                "E00_CENT_1": 814139.429953,
                 "DISTRICT_T": "離島區",
                 "DISTRICT_E": "Islands",
-                "SHAPE_AREA": 45457070.7868,
-                "SHAPE_LEN": 37540.087884
+                "SUBDISTIRCT_T": "坪洲",
+                "SUBDISTIRCT_E": "Peng Chau"
             },
             "geometry": {
                 "type": "Polygon",
@@ -68062,12 +67484,10 @@ export default {
                 "CACODE": "J08",
                 "ENAME": "Shun Tin",
                 "CNAME": "順天",
-                "E00_CENTRO": 841027.417156,
-                "E00_CENT_1": 820870.52869,
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SHAPE_AREA": 661007.611591,
-                "SHAPE_LEN": 4417.475558
+                "SUBDISTIRCT_T": "順利邨",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -68261,12 +67681,10 @@ export default {
                 "CACODE": "J10",
                 "ENAME": "On Lee",
                 "CNAME": "安利",
-                "E00_CENTRO": 841340.416668,
-                "E00_CENT_1": 821148.520825,
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SHAPE_AREA": 93638.195684,
-                "SHAPE_LEN": 1600.214286
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -68340,12 +67758,10 @@ export default {
                 "CACODE": "F05",
                 "ENAME": "Nam Cheong East",
                 "CNAME": "南昌東",
-                "E00_CENTRO": 835185.732466,
-                "E00_CENT_1": 821470.371788,
                 "DISTRICT_T": "深水埗區",
                 "DISTRICT_E": "Sham Shui Po",
-                "SHAPE_AREA": 144068.293967,
-                "SHAPE_LEN": 1976.614717
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -68439,12 +67855,10 @@ export default {
                 "CACODE": "J03",
                 "ENAME": "Kai Yip",
                 "CNAME": "啟業",
-                "E00_CENTRO": 839607.567571,
-                "E00_CENT_1": 820998.267319,
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SHAPE_AREA": 414130.521068,
-                "SHAPE_LEN": 3765.873631
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -68582,12 +67996,10 @@ export default {
                 "CACODE": "J06",
                 "ENAME": "Sheung Choi",
                 "CNAME": "雙彩",
-                "E00_CENTRO": 840253.381062,
-                "E00_CENT_1": 821270.924273,
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SHAPE_AREA": 295982.675014,
-                "SHAPE_LEN": 3281.298604
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -68749,12 +68161,10 @@ export default {
                 "CACODE": "H03",
                 "ENAME": "Lung Sheung",
                 "CNAME": "龍上",
-                "E00_CENTRO": 837803.207023,
-                "E00_CENT_1": 822447.989584,
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SHAPE_AREA": 321483.693519,
-                "SHAPE_LEN": 3415.960957
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -68908,12 +68318,10 @@ export default {
                 "CACODE": "H14",
                 "ENAME": "Chuk Yuen South",
                 "CNAME": "竹園南",
-                "E00_CENTRO": 837782.248133,
-                "E00_CENT_1": 822809.162389,
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SHAPE_AREA": 134684.609007,
-                "SHAPE_LEN": 2203.993379
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -69019,12 +68427,10 @@ export default {
                 "CACODE": "H06",
                 "ENAME": "Lung Sing",
                 "CNAME": "龍星",
-                "E00_CENTRO": 838995.682381,
-                "E00_CENT_1": 822504.148957,
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SHAPE_AREA": 662138.639295,
-                "SHAPE_LEN": 4449.458596
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -69194,12 +68600,10 @@ export default {
                 "CACODE": "H04",
                 "ENAME": "Fung Wong",
                 "CNAME": "鳳凰",
-                "E00_CENTRO": 838379.307317,
-                "E00_CENT_1": 822821.164837,
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SHAPE_AREA": 182455.898683,
-                "SHAPE_LEN": 1950.070514
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -69297,12 +68701,10 @@ export default {
                 "CACODE": "G09",
                 "ENAME": "Kowloon Tong",
                 "CNAME": "九龍塘",
-                "E00_CENTRO": 836564.872621,
-                "E00_CENT_1": 822224.016955,
                 "DISTRICT_T": "九龍城區",
                 "DISTRICT_E": "Kowloon City",
-                "SHAPE_AREA": 2037595.26844,
-                "SHAPE_LEN": 7292.097499
+                "SUBDISTIRCT_T": "九龍塘",
+                "SUBDISTIRCT_E": "Kowloon Tong"
             },
             "geometry": {
                 "type": "Polygon",
@@ -69608,12 +69010,10 @@ export default {
                 "CACODE": "H20",
                 "ENAME": "King Fu",
                 "CNAME": "瓊富",
-                "E00_CENTRO": 840163.789862,
-                "E00_CENT_1": 822868.756389,
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SHAPE_AREA": 1622865.75289,
-                "SHAPE_LEN": 5829.000915
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -69739,12 +69139,10 @@ export default {
                 "CACODE": "H16",
                 "ENAME": "Tsz Wan West",
                 "CNAME": "慈雲西",
-                "E00_CENTRO": 838441.458891,
-                "E00_CENT_1": 823215.868588,
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SHAPE_AREA": 174563.745054,
-                "SHAPE_LEN": 2010.668415
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -69850,12 +69248,10 @@ export default {
                 "CACODE": "H13",
                 "ENAME": "Tsui Chuk & Pang Ching",
                 "CNAME": "翠竹及鵬程",
-                "E00_CENTRO": 837163.685535,
-                "E00_CENT_1": 823112.425004,
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SHAPE_AREA": 602882.955836,
-                "SHAPE_LEN": 4129.795116
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -70053,12 +69449,10 @@ export default {
                 "CACODE": "S23",
                 "ENAME": "Cheung Ching",
                 "CNAME": "長青",
-                "E00_CENTRO": 829205.136707,
-                "E00_CENT_1": 823106.188843,
                 "DISTRICT_T": "葵青區",
                 "DISTRICT_E": "Kwai Tsing",
-                "SHAPE_AREA": 227200.694683,
-                "SHAPE_LEN": 2620.733994
+                "SUBDISTIRCT_T": "青衣",
+                "SUBDISTIRCT_E": "Tsing Yi"
             },
             "geometry": {
                 "type": "Polygon",
@@ -70176,12 +69570,10 @@ export default {
                 "CACODE": "S24",
                 "ENAME": "Cheung Hong",
                 "CNAME": "長康",
-                "E00_CENTRO": 828567.88562,
-                "E00_CENT_1": 823347.877057,
                 "DISTRICT_T": "葵青區",
                 "DISTRICT_E": "Kwai Tsing",
-                "SHAPE_AREA": 166664.659887,
-                "SHAPE_LEN": 2785.576396
+                "SUBDISTIRCT_T": "青衣",
+                "SUBDISTIRCT_E": "Tsing Yi"
             },
             "geometry": {
                 "type": "Polygon",
@@ -70327,12 +69719,10 @@ export default {
                 "CACODE": "S15",
                 "ENAME": "Cho Yiu",
                 "CNAME": "祖堯",
-                "E00_CENTRO": 831556.108891,
-                "E00_CENT_1": 822948.732783,
                 "DISTRICT_T": "葵青區",
                 "DISTRICT_E": "Kwai Tsing",
-                "SHAPE_AREA": 774758.408674,
-                "SHAPE_LEN": 4308.40425
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -70550,12 +69940,10 @@ export default {
                 "CACODE": "H17",
                 "ENAME": "Ching Oi",
                 "CNAME": "正愛",
-                "E00_CENTRO": 838317.946696,
-                "E00_CENT_1": 823638.674273,
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SHAPE_AREA": 467829.207904,
-                "SHAPE_LEN": 4098.387468
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -70801,12 +70189,10 @@ export default {
                 "CACODE": "S17",
                 "ENAME": "Lai King",
                 "CNAME": "荔景",
-                "E00_CENTRO": 831085.990742,
-                "E00_CENT_1": 821935.577533,
                 "DISTRICT_T": "葵青區",
                 "DISTRICT_E": "Kwai Tsing",
-                "SHAPE_AREA": 5413832.46908,
-                "SHAPE_LEN": 12476.327102
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -71148,12 +70534,10 @@ export default {
                 "CACODE": "A03",
                 "ENAME": "Castle Road",
                 "CNAME": "衛城",
-                "E00_CENTRO": 833324.755807,
-                "E00_CENT_1": 815780.333844,
                 "DISTRICT_T": "中西區",
                 "DISTRICT_E": "Central & Western",
-                "SHAPE_AREA": 274595.164619,
-                "SHAPE_LEN": 3358.388198
+                "SUBDISTIRCT_T": "中環",
+                "SUBDISTIRCT_E": "Central"
             },
             "geometry": {
                 "type": "Polygon",
@@ -71363,12 +70747,10 @@ export default {
                 "CACODE": "A06",
                 "ENAME": "Kennedy Town & Mount Davis",
                 "CNAME": "堅摩",
-                "E00_CENTRO": 830283.023598,
-                "E00_CENT_1": 816284.273776,
                 "DISTRICT_T": "中西區",
                 "DISTRICT_E": "Central & Western",
-                "SHAPE_AREA": 4906932.06425,
-                "SHAPE_LEN": 9709.042684
+                "SUBDISTIRCT_T": "堅尼地城",
+                "SUBDISTIRCT_E": "Kennedy Town"
             },
             "geometry": {
                 "type": "Polygon",
@@ -71522,12 +70904,10 @@ export default {
                 "CACODE": "C18",
                 "ENAME": "Provident",
                 "CNAME": "和富",
-                "E00_CENTRO": 838393.592458,
-                "E00_CENT_1": 817364.802271,
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SHAPE_AREA": 668927.787098,
-                "SHAPE_LEN": 3884.64862
+                "SUBDISTIRCT_T": "北角",
+                "SUBDISTIRCT_E": "North Point"
             },
             "geometry": {
                 "type": "Polygon",
@@ -71609,12 +70989,10 @@ export default {
                 "CACODE": "C22",
                 "ENAME": "Healthy Village",
                 "CNAME": "健康村",
-                "E00_CENTRO": 839280.28449,
-                "E00_CENT_1": 817224.898966,
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SHAPE_AREA": 1224218.58028,
-                "SHAPE_LEN": 6004.316122
+                "SUBDISTIRCT_T": "鰂魚涌",
+                "SUBDISTIRCT_E": "Quarry Bay"
             },
             "geometry": {
                 "type": "Polygon",
@@ -71764,12 +71142,10 @@ export default {
                 "CACODE": "C23",
                 "ENAME": "Quarry Bay",
                 "CNAME": "鰂魚涌",
-                "E00_CENTRO": 839951.465546,
-                "E00_CENT_1": 817144.98937,
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SHAPE_AREA": 793082.522652,
-                "SHAPE_LEN": 4305.46005
+                "SUBDISTIRCT_T": "鰂魚涌",
+                "SUBDISTIRCT_E": "Quarry Bay"
             },
             "geometry": {
                 "type": "Polygon",
@@ -71883,12 +71259,10 @@ export default {
                 "CACODE": "J21",
                 "ENAME": "Yau Tong East",
                 "CNAME": "油塘東",
-                "E00_CENTRO": 842967.829845,
-                "E00_CENT_1": 817611.189804,
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SHAPE_AREA": 433023.438018,
-                "SHAPE_LEN": 4262.528779
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -72118,12 +71492,10 @@ export default {
                 "CACODE": "Q27",
                 "ENAME": "Wan Po South",
                 "CNAME": "環保南",
-                "E00_CENTRO": 845075.590381,
-                "E00_CENT_1": 816925.737234,
                 "DISTRICT_T": "西貢區",
                 "DISTRICT_E": "Sai Kung",
-                "SHAPE_AREA": 5724369.32921,
-                "SHAPE_LEN": 15009.863672
+                "SUBDISTIRCT_T": "康城",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -72673,12 +72045,10 @@ export default {
                 "CACODE": "Q11",
                 "ENAME": "O Tong",
                 "CNAME": "澳唐",
-                "E00_CENTRO": 844506.597202,
-                "E00_CENT_1": 818758.250724,
                 "DISTRICT_T": "西貢區",
                 "DISTRICT_E": "Sai Kung",
-                "SHAPE_AREA": 102711.837108,
-                "SHAPE_LEN": 1328.381732
+                "SUBDISTIRCT_T": "將軍澳",
+                "SUBDISTIRCT_E": "Tseung Kwan O"
             },
             "geometry": {
                 "type": "Polygon",
@@ -72740,12 +72110,10 @@ export default {
                 "CACODE": "Q26",
                 "ENAME": "Wan Po North",
                 "CNAME": "環保北",
-                "E00_CENTRO": 845075.590381,
-                "E00_CENT_1": 816925.737234,
                 "DISTRICT_T": "西貢區",
                 "DISTRICT_E": "Sai Kung",
-                "SHAPE_AREA": 1086402.93952,
-                "SHAPE_LEN": 6322.161536
+                "SUBDISTIRCT_T": "康城",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -73031,12 +72399,10 @@ export default {
                 "CACODE": "T06",
                 "ENAME": "Discovery Bay",
                 "CNAME": "愉景灣",
-                "E00_CENTRO": 823195.752653,
-                "E00_CENT_1": 818113.822593,
                 "DISTRICT_T": "離島區",
                 "DISTRICT_E": "Islands",
-                "SHAPE_AREA": 25638204.8368,
-                "SHAPE_LEN": 30557.098099
+                "SUBDISTIRCT_T": "愉景灣",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -73362,12 +72728,10 @@ export default {
                 "CACODE": "G16",
                 "ENAME": "To Kwa Wan South",
                 "CNAME": "土瓜灣南",
-                "E00_CENTRO": 837369.888209,
-                "E00_CENT_1": 819354.39016,
                 "DISTRICT_T": "九龍城區",
                 "DISTRICT_E": "Kowloon City",
-                "SHAPE_AREA": 99658.0425,
-                "SHAPE_LEN": 1590.981418
+                "SUBDISTIRCT_T": "土瓜灣",
+                "SUBDISTIRCT_E": "To Kwa Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -73449,12 +72813,10 @@ export default {
                 "CACODE": "J18",
                 "ENAME": "Kwong Tak",
                 "CNAME": "廣德",
-                "E00_CENTRO": 842868.997332,
-                "E00_CENT_1": 818933.179289,
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SHAPE_AREA": 546368.689724,
-                "SHAPE_LEN": 5327.818442
+                "SUBDISTIRCT_T": "藍田",
+                "SUBDISTIRCT_E": "Lam Tin"
             },
             "geometry": {
                 "type": "Polygon",
@@ -73768,12 +73130,10 @@ export default {
                 "CACODE": "J28",
                 "ENAME": "Po Lok",
                 "CNAME": "寶樂",
-                "E00_CENTRO": 841543.12806,
-                "E00_CENT_1": 819727.676549,
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SHAPE_AREA": 80566.264747,
-                "SHAPE_LEN": 1239.577313
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -73847,12 +73207,10 @@ export default {
                 "CACODE": "E15",
                 "ENAME": "Mong Kok South",
                 "CNAME": "旺角南",
-                "E00_CENTRO": 835672.674022,
-                "E00_CENT_1": 819975.619121,
                 "DISTRICT_T": "油尖旺區",
                 "DISTRICT_E": "Yau Tsim Mong",
-                "SHAPE_AREA": 200240.594684,
-                "SHAPE_LEN": 2339.174116
+                "SUBDISTIRCT_T": "旺角",
+                "SUBDISTIRCT_E": "Mong Kok"
             },
             "geometry": {
                 "type": "Polygon",
@@ -73922,12 +73280,10 @@ export default {
                 "CACODE": "Q20",
                 "ENAME": "King Lam",
                 "CNAME": "景林",
-                "E00_CENTRO": 844915.423583,
-                "E00_CENT_1": 820166.810811,
                 "DISTRICT_T": "西貢區",
                 "DISTRICT_E": "Sai Kung",
-                "SHAPE_AREA": 134893.442139,
-                "SHAPE_LEN": 1503.7351
+                "SUBDISTIRCT_T": "寶琳",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -73985,12 +73341,10 @@ export default {
                 "CACODE": "T01",
                 "ENAME": "Lantau",
                 "CNAME": "大嶼山",
-                "E00_CENTRO": 810656.502557,
-                "E00_CENT_1": 809849.861787,
                 "DISTRICT_T": "離島區",
                 "DISTRICT_E": "Islands",
-                "SHAPE_AREA": 313620531.781,
-                "SHAPE_LEN": 84232.806403
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -74586,12 +73940,10 @@ export default {
                 "CACODE": "J35",
                 "ENAME": "To Tai",
                 "CNAME": "淘大",
-                "E00_CENTRO": 840308.801235,
-                "E00_CENT_1": 820665.658135,
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SHAPE_AREA": 58120.463308,
-                "SHAPE_LEN": 1056.668772
+                "SUBDISTIRCT_T": "九龍灣",
+                "SUBDISTIRCT_E": "Kowloon Bay"
             },
             "geometry": {
                 "type": "Polygon",
@@ -74649,12 +74001,10 @@ export default {
                 "CACODE": "F06",
                 "ENAME": "Nam Cheong South",
                 "CNAME": "南昌南",
-                "E00_CENTRO": 834962.365558,
-                "E00_CENT_1": 820926.335318,
                 "DISTRICT_T": "深水埗區",
                 "DISTRICT_E": "Sham Shui Po",
-                "SHAPE_AREA": 158537.644856,
-                "SHAPE_LEN": 2046.675207
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -74716,12 +74066,10 @@ export default {
                 "CACODE": "F03",
                 "ENAME": "Nam Cheong North",
                 "CNAME": "南昌北",
-                "E00_CENTRO": 834903.840706,
-                "E00_CENT_1": 821373.576009,
                 "DISTRICT_T": "深水埗區",
                 "DISTRICT_E": "Sham Shui Po",
-                "SHAPE_AREA": 113005.469884,
-                "SHAPE_LEN": 1372.115868
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -74771,12 +74119,10 @@ export default {
                 "CACODE": "R05",
                 "ENAME": "Yue Shing",
                 "CNAME": "愉城",
-                "E00_CENTRO": 839024.395899,
-                "E00_CENT_1": 827265.763111,
                 "DISTRICT_T": "沙田區",
                 "DISTRICT_E": "Sha Tin",
-                "SHAPE_AREA": 166346.060476,
-                "SHAPE_LEN": 1852.599771
+                "SUBDISTIRCT_T": "沙田",
+                "SUBDISTIRCT_E": "Sha Tin"
             },
             "geometry": {
                 "type": "Polygon",
@@ -74850,12 +74196,10 @@ export default {
                 "CACODE": "R03",
                 "ENAME": "Wo Che Estate",
                 "CNAME": "禾輋邨",
-                "E00_CENTRO": 838259.104928,
-                "E00_CENT_1": 827596.796408,
                 "DISTRICT_T": "沙田區",
                 "DISTRICT_E": "Sha Tin",
-                "SHAPE_AREA": 300919.956306,
-                "SHAPE_LEN": 2451.468614
+                "SUBDISTIRCT_T": "沙田",
+                "SUBDISTIRCT_E": "Sha Tin"
             },
             "geometry": {
                 "type": "Polygon",
@@ -74925,12 +74269,10 @@ export default {
                 "CACODE": "L08",
                 "ENAME": "Shan King",
                 "CNAME": "山景",
-                "E00_CENTRO": 814466.840564,
-                "E00_CENT_1": 828656.478608,
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SHAPE_AREA": 139058.897594,
-                "SHAPE_LEN": 1882.579178
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -75028,12 +74370,10 @@ export default {
                 "CACODE": "L09",
                 "ENAME": "King Hing",
                 "CNAME": "景興",
-                "E00_CENTRO": 814837.979856,
-                "E00_CENT_1": 829242.565251,
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SHAPE_AREA": 269818.325043,
-                "SHAPE_LEN": 2471.925005
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -75131,12 +74471,10 @@ export default {
                 "CACODE": "R32",
                 "ENAME": "Heng On",
                 "CNAME": "恒安",
-                "E00_CENTRO": 841590.234932,
-                "E00_CENT_1": 830822.26703,
                 "DISTRICT_T": "沙田區",
                 "DISTRICT_E": "Sha Tin",
-                "SHAPE_AREA": 204184.396275,
-                "SHAPE_LEN": 2028.501963
+                "SUBDISTIRCT_T": "馬鞍山",
+                "SUBDISTIRCT_E": "Ma On Shan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -75230,12 +74568,10 @@ export default {
                 "CACODE": "R26",
                 "ENAME": "Ma On Shan Town Centre",
                 "CNAME": "馬鞍山市中心",
-                "E00_CENTRO": 841705.153383,
-                "E00_CENT_1": 832255.946123,
                 "DISTRICT_T": "沙田區",
                 "DISTRICT_E": "Sha Tin",
-                "SHAPE_AREA": 805745.96645,
-                "SHAPE_LEN": 4508.684388
+                "SUBDISTIRCT_T": "馬鞍山",
+                "SUBDISTIRCT_E": "Ma On Shan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -75337,12 +74673,10 @@ export default {
                 "CACODE": "S29",
                 "ENAME": "Cheung On",
                 "CNAME": "長安",
-                "E00_CENTRO": 828508.315659,
-                "E00_CENT_1": 824662.067401,
                 "DISTRICT_T": "葵青區",
                 "DISTRICT_E": "Kwai Tsing",
-                "SHAPE_AREA": 88782.760126,
-                "SHAPE_LEN": 1460.49124
+                "SUBDISTIRCT_T": "青衣",
+                "SUBDISTIRCT_E": "Tsing Yi"
             },
             "geometry": {
                 "type": "Polygon",
@@ -75444,12 +74778,10 @@ export default {
                 "CACODE": "S19",
                 "ENAME": "On Ho",
                 "CNAME": "安灝",
-                "E00_CENTRO": 829080.279944,
-                "E00_CENT_1": 824757.444474,
                 "DISTRICT_T": "葵青區",
                 "DISTRICT_E": "Kwai Tsing",
-                "SHAPE_AREA": 340183.583878,
-                "SHAPE_LEN": 2581.618221
+                "SUBDISTIRCT_T": "青衣",
+                "SUBDISTIRCT_E": "Tsing Yi"
             },
             "geometry": {
                 "type": "Polygon",
@@ -75531,12 +74863,10 @@ export default {
                 "CACODE": "S06",
                 "ENAME": "Kwai Chung Estate South",
                 "CNAME": "葵涌邨南",
-                "E00_CENTRO": 831197.312545,
-                "E00_CENT_1": 825380.178898,
                 "DISTRICT_T": "葵青區",
                 "DISTRICT_E": "Kwai Tsing",
-                "SHAPE_AREA": 173962.899443,
-                "SHAPE_LEN": 2190.926563
+                "SUBDISTIRCT_T": "葵涌",
+                "SUBDISTIRCT_E": "Kwai Chung"
             },
             "geometry": {
                 "type": "Polygon",
@@ -75662,12 +74992,10 @@ export default {
                 "CACODE": "S05",
                 "ENAME": "Kwai Chung Estate North",
                 "CNAME": "葵涌邨北",
-                "E00_CENTRO": 831352.628671,
-                "E00_CENT_1": 825579.576721,
                 "DISTRICT_T": "葵青區",
                 "DISTRICT_E": "Kwai Tsing",
-                "SHAPE_AREA": 201106.835325,
-                "SHAPE_LEN": 2138.685574
+                "SUBDISTIRCT_T": "葵涌",
+                "SUBDISTIRCT_E": "Kwai Chung"
             },
             "geometry": {
                 "type": "Polygon",
@@ -75773,12 +75101,10 @@ export default {
                 "CACODE": "K05",
                 "ENAME": "Fuk Loi",
                 "CNAME": "福來",
-                "E00_CENTRO": 829836.523433,
-                "E00_CENT_1": 826007.883682,
                 "DISTRICT_T": "荃灣區",
                 "DISTRICT_E": "Tsuen Wan",
-                "SHAPE_AREA": 162077.035557,
-                "SHAPE_LEN": 2001.38189
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -75872,12 +75198,10 @@ export default {
                 "CACODE": "S13",
                 "ENAME": "Wah Lai",
                 "CNAME": "華麗",
-                "E00_CENTRO": 831994.042596,
-                "E00_CENT_1": 823893.016948,
                 "DISTRICT_T": "葵青區",
                 "DISTRICT_E": "Kwai Tsing",
-                "SHAPE_AREA": 844677.023714,
-                "SHAPE_LEN": 6512.949609
+                "SUBDISTIRCT_T": "葵涌",
+                "SUBDISTIRCT_E": "Kwai Chung"
             },
             "geometry": {
                 "type": "Polygon",
@@ -76243,12 +75567,10 @@ export default {
                 "CACODE": "S16",
                 "ENAME": "Hing Fong",
                 "CNAME": "興芳",
-                "E00_CENTRO": 831275.694814,
-                "E00_CENT_1": 824396.914007,
                 "DISTRICT_T": "葵青區",
                 "DISTRICT_E": "Kwai Tsing",
-                "SHAPE_AREA": 678184.988226,
-                "SHAPE_LEN": 6444.905065
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -76542,12 +75864,10 @@ export default {
                 "CACODE": "K13",
                 "ENAME": "Ma Wan",
                 "CNAME": "馬灣",
-                "E00_CENTRO": 822197.324042,
-                "E00_CENT_1": 822011.052543,
                 "DISTRICT_T": "荃灣區",
                 "DISTRICT_E": "Tsuen Wan",
-                "SHAPE_AREA": 33363372.7251,
-                "SHAPE_LEN": 25927.978713
+                "SUBDISTIRCT_T": "馬灣",
+                "SUBDISTIRCT_E": "Ma Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -76825,12 +76145,10 @@ export default {
                 "CACODE": "R12",
                 "ENAME": "Chui Tin",
                 "CNAME": "翠田",
-                "E00_CENTRO": 836521.607286,
-                "E00_CENT_1": 824360.421798,
                 "DISTRICT_T": "沙田區",
                 "DISTRICT_E": "Sha Tin",
-                "SHAPE_AREA": 1374272.86971,
-                "SHAPE_LEN": 8106.358669
+                "SUBDISTIRCT_T": "大圍",
+                "SUBDISTIRCT_E": "Tai Wai"
             },
             "geometry": {
                 "type": "Polygon",
@@ -77232,12 +76550,10 @@ export default {
                 "CACODE": "K04",
                 "ENAME": "Clague Garden",
                 "CNAME": "祈德尊",
-                "E00_CENTRO": 829522.933995,
-                "E00_CENT_1": 825751.3651,
                 "DISTRICT_T": "荃灣區",
                 "DISTRICT_E": "Tsuen Wan",
-                "SHAPE_AREA": 181187.496872,
-                "SHAPE_LEN": 1998.554861
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -77311,12 +76627,10 @@ export default {
                 "CACODE": "R11",
                 "ENAME": "Sun Tin Wai",
                 "CNAME": "新田圍",
-                "E00_CENTRO": 837266.952013,
-                "E00_CENT_1": 824702.753006,
                 "DISTRICT_T": "沙田區",
                 "DISTRICT_E": "Sha Tin",
-                "SHAPE_AREA": 2194313.81727,
-                "SHAPE_LEN": 10883.574313
+                "SUBDISTIRCT_T": "大圍",
+                "SUBDISTIRCT_E": "Tai Wai"
             },
             "geometry": {
                 "type": "Polygon",
@@ -77958,12 +77272,10 @@ export default {
                 "CACODE": "R08",
                 "ENAME": "Pok Hong",
                 "CNAME": "博康",
-                "E00_CENTRO": 838043.567723,
-                "E00_CENT_1": 826253.640383,
                 "DISTRICT_T": "沙田區",
                 "DISTRICT_E": "Sha Tin",
-                "SHAPE_AREA": 129166.272225,
-                "SHAPE_LEN": 1573.696019
+                "SUBDISTIRCT_T": "沙田",
+                "SUBDISTIRCT_E": "Sha Tin"
             },
             "geometry": {
                 "type": "Polygon",
@@ -78033,12 +77345,10 @@ export default {
                 "CACODE": "L18",
                 "ENAME": "Butterfly",
                 "CNAME": "蝴蝶",
-                "E00_CENTRO": 814237.395882,
-                "E00_CENT_1": 826371.291291,
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SHAPE_AREA": 182779.04571,
-                "SHAPE_LEN": 1722.317461
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -78100,12 +77410,10 @@ export default {
                 "CACODE": "R14",
                 "ENAME": "Lower Shing Mun",
                 "CNAME": "下城門",
-                "E00_CENTRO": 834346.670271,
-                "E00_CENT_1": 824631.632894,
                 "DISTRICT_T": "沙田區",
                 "DISTRICT_E": "Sha Tin",
-                "SHAPE_AREA": 9238408.57103,
-                "SHAPE_LEN": 16791.443543
+                "SUBDISTIRCT_T": "大圍",
+                "SUBDISTIRCT_E": "Tai Wai"
             },
             "geometry": {
                 "type": "Polygon",
@@ -78899,12 +78207,10 @@ export default {
                 "CACODE": "K12",
                 "ENAME": "Tsuen Wan Rural",
                 "CNAME": "荃灣郊區",
-                "E00_CENTRO": 822197.324042,
-                "E00_CENT_1": 822011.052543,
                 "DISTRICT_T": "荃灣區",
                 "DISTRICT_E": "Tsuen Wan",
-                "SHAPE_AREA": 4229034.19057,
-                "SHAPE_LEN": 14575.449971
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -79586,12 +78892,10 @@ export default {
                 "CACODE": "R09",
                 "ENAME": "Jat Min",
                 "CNAME": "乙明",
-                "E00_CENTRO": 838549.694991,
-                "E00_CENT_1": 825236.453749,
                 "DISTRICT_T": "沙田區",
                 "DISTRICT_E": "Sha Tin",
-                "SHAPE_AREA": 4609077.74363,
-                "SHAPE_LEN": 13476.835449
+                "SUBDISTIRCT_T": "沙田",
+                "SUBDISTIRCT_E": "Sha Tin"
             },
             "geometry": {
                 "type": "Polygon",
@@ -80209,12 +79513,10 @@ export default {
                 "CACODE": "F13",
                 "ENAME": "Mei Foo South",
                 "CNAME": "美孚南",
-                "E00_CENTRO": 832640.171123,
-                "E00_CENT_1": 821687.709232,
                 "DISTRICT_T": "深水埗區",
                 "DISTRICT_E": "Sham Shui Po",
-                "SHAPE_AREA": 320550.91391,
-                "SHAPE_LEN": 2605.348926
+                "SUBDISTIRCT_T": "美孚",
+                "SUBDISTIRCT_E": "Mei Foo"
             },
             "geometry": {
                 "type": "Polygon",
@@ -80300,12 +79602,10 @@ export default {
                 "CACODE": "F02",
                 "ENAME": "Cheung Sha Wan",
                 "CNAME": "長沙灣",
-                "E00_CENTRO": 834644.694023,
-                "E00_CENT_1": 821722.663976,
                 "DISTRICT_T": "深水埗區",
                 "DISTRICT_E": "Sham Shui Po",
-                "SHAPE_AREA": 179786.663789,
-                "SHAPE_LEN": 2020.995493
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -80391,12 +79691,10 @@ export default {
                 "CACODE": "L13",
                 "ENAME": "Hanford",
                 "CNAME": "恆福",
-                "E00_CENTRO": 818082.019518,
-                "E00_CENT_1": 826349.013931,
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SHAPE_AREA": 3449076.28119,
-                "SHAPE_LEN": 17024.927937
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -81214,12 +80512,10 @@ export default {
                 "CACODE": "S08",
                 "ENAME": "On Yam",
                 "CNAME": "安蔭",
-                "E00_CENTRO": 832700.534835,
-                "E00_CENT_1": 826383.899505,
                 "DISTRICT_T": "葵青區",
                 "DISTRICT_E": "Kwai Tsing",
-                "SHAPE_AREA": 1254775.87543,
-                "SHAPE_LEN": 7367.73659
+                "SUBDISTIRCT_T": "葵涌",
+                "SUBDISTIRCT_E": "Kwai Chung"
             },
             "geometry": {
                 "type": "Polygon",
@@ -81617,12 +80913,10 @@ export default {
                 "CACODE": "H21",
                 "ENAME": "Choi Wan East",
                 "CNAME": "彩雲東",
-                "E00_CENTRO": 840613.390113,
-                "E00_CENT_1": 822015.804996,
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SHAPE_AREA": 649717.107335,
-                "SHAPE_LEN": 3399.131647
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -81724,12 +81018,10 @@ export default {
                 "CACODE": "F17",
                 "ENAME": "Lai Chi Kok North",
                 "CNAME": "荔枝角北",
-                "E00_CENTRO": 833297.391486,
-                "E00_CENT_1": 822062.848907,
                 "DISTRICT_T": "深水埗區",
                 "DISTRICT_E": "Sham Shui Po",
-                "SHAPE_AREA": 531711.047591,
-                "SHAPE_LEN": 4440.545151
+                "SUBDISTIRCT_T": "長沙灣",
+                "SUBDISTIRCT_E": "Cheung Sha Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -81915,12 +81207,10 @@ export default {
                 "CACODE": "H01",
                 "ENAME": "Lung Tsui",
                 "CNAME": "龍趣",
-                "E00_CENTRO": 838163.483691,
-                "E00_CENT_1": 822385.202261,
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SHAPE_AREA": 153658.122491,
-                "SHAPE_LEN": 2027.415993
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -82018,12 +81308,10 @@ export default {
                 "CACODE": "L17",
                 "ENAME": "Wu King",
                 "CNAME": "湖景",
-                "E00_CENTRO": 814474.236444,
-                "E00_CENT_1": 826283.715318,
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SHAPE_AREA": 80518.55886,
-                "SHAPE_LEN": 1370.854384
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -82073,12 +81361,10 @@ export default {
                 "CACODE": "K06",
                 "ENAME": "Discovery Park",
                 "CNAME": "愉景",
-                "E00_CENTRO": 829656.560746,
-                "E00_CENT_1": 826337.81751,
                 "DISTRICT_T": "荃灣區",
                 "DISTRICT_E": "Tsuen Wan",
-                "SHAPE_AREA": 168713.508916,
-                "SHAPE_LEN": 2691.326183
+                "SUBDISTIRCT_T": "荃灣",
+                "SUBDISTIRCT_E": "Tsuen Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -82220,12 +81506,10 @@ export default {
                 "CACODE": "K14",
                 "ENAME": "Luk Yeung",
                 "CNAME": "綠楊",
-                "E00_CENTRO": 830589.496549,
-                "E00_CENT_1": 826680.019642,
                 "DISTRICT_T": "荃灣區",
                 "DISTRICT_E": "Tsuen Wan",
-                "SHAPE_AREA": 768539.515526,
-                "SHAPE_LEN": 6435.269849
+                "SUBDISTIRCT_T": "荃灣",
+                "SUBDISTIRCT_E": "Tsuen Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -82603,12 +81887,10 @@ export default {
                 "CACODE": "L05",
                 "ENAME": "Yau Oi South",
                 "CNAME": "友愛南",
-                "E00_CENTRO": 815372.683049,
-                "E00_CENT_1": 827546.049256,
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SHAPE_AREA": 86292.069077,
-                "SHAPE_LEN": 1255.140065
+                "SUBDISTIRCT_T": "屯門",
+                "SUBDISTIRCT_E": "Tuen Mun"
             },
             "geometry": {
                 "type": "Polygon",
@@ -82674,12 +81956,10 @@ export default {
                 "CACODE": "R04",
                 "ENAME": "City One",
                 "CNAME": "第一城",
-                "E00_CENTRO": 838990.784228,
-                "E00_CENT_1": 827642.059469,
                 "DISTRICT_T": "沙田區",
                 "DISTRICT_E": "Sha Tin",
-                "SHAPE_AREA": 231242.170777,
-                "SHAPE_LEN": 2517.768901
+                "SUBDISTIRCT_T": "第一城",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -82769,12 +82049,10 @@ export default {
                 "CACODE": "R20",
                 "ENAME": "Chung Tin",
                 "CNAME": "松田",
-                "E00_CENTRO": 835141.048933,
-                "E00_CENT_1": 827071.583999,
                 "DISTRICT_T": "沙田區",
                 "DISTRICT_E": "Sha Tin",
-                "SHAPE_AREA": 4491560.32739,
-                "SHAPE_LEN": 12273.481343
+                "SUBDISTIRCT_T": "大圍",
+                "SUBDISTIRCT_E": "Tai Wai"
             },
             "geometry": {
                 "type": "Polygon",
@@ -83408,12 +82686,10 @@ export default {
                 "CACODE": "R01",
                 "ENAME": "Sha Tin Town Centre",
                 "CNAME": "沙田市中心",
-                "E00_CENTRO": 837050.548657,
-                "E00_CENT_1": 826708.867357,
                 "DISTRICT_T": "沙田區",
                 "DISTRICT_E": "Sha Tin",
-                "SHAPE_AREA": 794740.82041,
-                "SHAPE_LEN": 5209.959744
+                "SUBDISTIRCT_T": "沙田",
+                "SUBDISTIRCT_E": "Sha Tin"
             },
             "geometry": {
                 "type": "Polygon",
@@ -83611,12 +82887,10 @@ export default {
                 "CACODE": "L14",
                 "ENAME": "Fu Sun",
                 "CNAME": "富新",
-                "E00_CENTRO": 814503.226411,
-                "E00_CENT_1": 826825.746922,
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SHAPE_AREA": 274794.066068,
-                "SHAPE_LEN": 2170.991535
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -83698,12 +82972,10 @@ export default {
                 "CACODE": "L03",
                 "ENAME": "Siu Tsui",
                 "CNAME": "兆翠",
-                "E00_CENTRO": 815401.673504,
-                "E00_CENT_1": 827132.103746,
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SHAPE_AREA": 239619.310245,
-                "SHAPE_LEN": 3118.346893
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -83837,12 +83109,10 @@ export default {
                 "CACODE": "K18",
                 "ENAME": "Cheung Shek",
                 "CNAME": "象石",
-                "E00_CENTRO": 831153.836317,
-                "E00_CENT_1": 826857.529376,
                 "DISTRICT_T": "荃灣區",
                 "DISTRICT_E": "Tsuen Wan",
-                "SHAPE_AREA": 603668.788736,
-                "SHAPE_LEN": 4407.304655
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -84120,12 +83390,10 @@ export default {
                 "CACODE": "Q02",
                 "ENAME": "Pak Sha Wan",
                 "CNAME": "白沙灣",
-                "E00_CENTRO": 844141.59195,
-                "E00_CENT_1": 824746.323317,
                 "DISTRICT_T": "西貢區",
                 "DISTRICT_E": "Sai Kung",
-                "SHAPE_AREA": 24484266.9048,
-                "SHAPE_LEN": 27457.173551
+                "SUBDISTIRCT_T": "西貢",
+                "SUBDISTIRCT_E": "Sai Kung"
             },
             "geometry": {
                 "type": "Polygon",
@@ -84971,12 +84239,10 @@ export default {
                 "CACODE": "R37",
                 "ENAME": "Kwong Hong",
                 "CNAME": "廣康",
-                "E00_CENTRO": 840364.09492,
-                "E00_CENT_1": 827830.173451,
                 "DISTRICT_T": "沙田區",
                 "DISTRICT_E": "Sha Tin",
-                "SHAPE_AREA": 2174021.09771,
-                "SHAPE_LEN": 8171.756011
+                "SUBDISTIRCT_T": "沙田",
+                "SUBDISTIRCT_E": "Sha Tin"
             },
             "geometry": {
                 "type": "Polygon",
@@ -85382,12 +84648,10 @@ export default {
                 "CACODE": "Q01",
                 "ENAME": "Sai Kung Central",
                 "CNAME": "西貢市中心",
-                "E00_CENTRO": 846138.827117,
-                "E00_CENT_1": 826730.455343,
                 "DISTRICT_T": "西貢區",
                 "DISTRICT_E": "Sai Kung",
-                "SHAPE_AREA": 1556688.18101,
-                "SHAPE_LEN": 6546.180148
+                "SUBDISTIRCT_T": "西貢",
+                "SUBDISTIRCT_E": "Sai Kung"
             },
             "geometry": {
                 "type": "Polygon",
@@ -85649,12 +84913,10 @@ export default {
                 "CACODE": "L02",
                 "ENAME": "Siu Chi",
                 "CNAME": "兆置",
-                "E00_CENTRO": 815986.633117,
-                "E00_CENT_1": 827570.635269,
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SHAPE_AREA": 304659.797078,
-                "SHAPE_LEN": 2964.569964
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -85772,12 +85034,10 @@ export default {
                 "CACODE": "R02",
                 "ENAME": "Lek Yuen",
                 "CNAME": "瀝源",
-                "E00_CENTRO": 837378.30286,
-                "E00_CENT_1": 827455.854738,
                 "DISTRICT_T": "沙田區",
                 "DISTRICT_E": "Sha Tin",
-                "SHAPE_AREA": 1299361.72421,
-                "SHAPE_LEN": 8598.799586
+                "SUBDISTIRCT_T": "沙田",
+                "SUBDISTIRCT_E": "Sha Tin"
             },
             "geometry": {
                 "type": "Polygon",
@@ -86191,12 +85451,10 @@ export default {
                 "CACODE": "L06",
                 "ENAME": "Yau Oi North",
                 "CNAME": "友愛北",
-                "E00_CENTRO": 815120.156001,
-                "E00_CENT_1": 827506.726444,
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SHAPE_AREA": 520808.457334,
-                "SHAPE_LEN": 4567.986065
+                "SUBDISTIRCT_T": "屯門",
+                "SUBDISTIRCT_E": "Tuen Mun"
             },
             "geometry": {
                 "type": "Polygon",
@@ -86374,12 +85632,10 @@ export default {
                 "CACODE": "L20",
                 "ENAME": "Lung Mun",
                 "CNAME": "龍門",
-                "E00_CENTRO": 814337.95026,
-                "E00_CENT_1": 827936.120412,
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SHAPE_AREA": 1663028.89459,
-                "SHAPE_LEN": 6613.246646
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -86605,12 +85861,10 @@ export default {
                 "CACODE": "L01",
                 "ENAME": "Tuen Mun Town Centre",
                 "CNAME": "屯門市中心",
-                "E00_CENTRO": 815620.293347,
-                "E00_CENT_1": 828275.077424,
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SHAPE_AREA": 310006.327326,
-                "SHAPE_LEN": 3146.476582
+                "SUBDISTIRCT_T": "屯門",
+                "SUBDISTIRCT_E": "Tuen Mun"
             },
             "geometry": {
                 "type": "Polygon",
@@ -86732,12 +85986,10 @@ export default {
                 "CACODE": "L07",
                 "ENAME": "Tsui Hing",
                 "CNAME": "翠興",
-                "E00_CENTRO": 815092.814332,
-                "E00_CENT_1": 828818.324824,
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SHAPE_AREA": 501665.660827,
-                "SHAPE_LEN": 3166.778421
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -86831,12 +86083,10 @@ export default {
                 "CACODE": "L23",
                 "ENAME": "Tin King",
                 "CNAME": "田景",
-                "E00_CENTRO": 814517.355748,
-                "E00_CENT_1": 829676.145136,
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SHAPE_AREA": 86606.215317,
-                "SHAPE_LEN": 1393.049373
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -86930,12 +86180,10 @@ export default {
                 "CACODE": "L22",
                 "ENAME": "Leung King",
                 "CNAME": "良景",
-                "E00_CENTRO": 814222.037208,
-                "E00_CENT_1": 829775.049615,
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SHAPE_AREA": 118660.755473,
-                "SHAPE_LEN": 1742.29139
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -87049,12 +86297,10 @@ export default {
                 "CACODE": "L25",
                 "ENAME": "Kin Sang",
                 "CNAME": "建生",
-                "E00_CENTRO": 814862.572862,
-                "E00_CENT_1": 829745.008513,
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SHAPE_AREA": 175599.98425,
-                "SHAPE_LEN": 1901.153542
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -87144,12 +86390,10 @@ export default {
                 "CACODE": "L21",
                 "ENAME": "San King",
                 "CNAME": "新景",
-                "E00_CENTRO": 813782.791885,
-                "E00_CENT_1": 829241.68614,
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SHAPE_AREA": 2146702.84028,
-                "SHAPE_LEN": 7725.287252
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -87507,12 +86751,10 @@ export default {
                 "CACODE": "L26",
                 "ENAME": "Siu Hong",
                 "CNAME": "兆康",
-                "E00_CENTRO": 815458.661205,
-                "E00_CENT_1": 830010.831014,
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SHAPE_AREA": 660716.297357,
-                "SHAPE_LEN": 5058.593194
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -87730,12 +86972,10 @@ export default {
                 "CACODE": "R24",
                 "ENAME": "Chung On",
                 "CNAME": "頌安",
-                "E00_CENTRO": 841386.801628,
-                "E00_CENT_1": 831255.994424,
                 "DISTRICT_T": "沙田區",
                 "DISTRICT_E": "Sha Tin",
-                "SHAPE_AREA": 500956.794787,
-                "SHAPE_LEN": 4310.586891
+                "SUBDISTIRCT_T": "馬鞍山",
+                "SUBDISTIRCT_E": "Ma On Shan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -87865,12 +87105,10 @@ export default {
                 "CACODE": "R30",
                 "ENAME": "Kam Ying",
                 "CNAME": "錦英",
-                "E00_CENTRO": 842174.263857,
-                "E00_CENT_1": 831362.242406,
                 "DISTRICT_T": "沙田區",
                 "DISTRICT_E": "Sha Tin",
-                "SHAPE_AREA": 314678.524748,
-                "SHAPE_LEN": 4168.45118
+                "SUBDISTIRCT_T": "馬鞍山",
+                "SUBDISTIRCT_E": "Ma On Shan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -88040,12 +87278,10 @@ export default {
                 "CACODE": "R28",
                 "ENAME": "Fu Lung",
                 "CNAME": "富龍",
-                "E00_CENTRO": 842678.490198,
-                "E00_CENT_1": 832628.731078,
                 "DISTRICT_T": "沙田區",
                 "DISTRICT_E": "Sha Tin",
-                "SHAPE_AREA": 210659.102307,
-                "SHAPE_LEN": 2466.343133
+                "SUBDISTIRCT_T": "馬鞍山",
+                "SUBDISTIRCT_E": "Ma On Shan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -88171,12 +87407,10 @@ export default {
                 "CACODE": "R27",
                 "ENAME": "Lee On",
                 "CNAME": "利安",
-                "E00_CENTRO": 843260.227579,
-                "E00_CENT_1": 831870.757525,
                 "DISTRICT_T": "沙田區",
                 "DISTRICT_E": "Sha Tin",
-                "SHAPE_AREA": 410420.290359,
-                "SHAPE_LEN": 4103.601239
+                "SUBDISTIRCT_T": "馬鞍山",
+                "SUBDISTIRCT_E": "Ma On Shan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -88342,12 +87576,10 @@ export default {
                 "CACODE": "R29",
                 "ENAME": "Wu Kai Sha",
                 "CNAME": "烏溪沙",
-                "E00_CENTRO": 842678.490198,
-                "E00_CENT_1": 832628.731078,
                 "DISTRICT_T": "沙田區",
                 "DISTRICT_E": "Sha Tin",
-                "SHAPE_AREA": 2508165.8838,
-                "SHAPE_LEN": 7012.963075
+                "SUBDISTIRCT_T": "馬鞍山",
+                "SUBDISTIRCT_E": "Ma On Shan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -88489,12 +87721,10 @@ export default {
                 "CACODE": "R15",
                 "ENAME": "Wan Shing",
                 "CNAME": "雲城",
-                "E00_CENTRO": 834346.670271,
-                "E00_CENT_1": 824631.632894,
                 "DISTRICT_T": "沙田區",
                 "DISTRICT_E": "Sha Tin",
-                "SHAPE_AREA": 256897.524998,
-                "SHAPE_LEN": 2417.755005
+                "SUBDISTIRCT_T": "大圍",
+                "SUBDISTIRCT_E": "Tai Wai"
             },
             "geometry": {
                 "type": "Polygon",
@@ -88572,12 +87802,10 @@ export default {
                 "CACODE": "S22",
                 "ENAME": "Greenfield",
                 "CNAME": "翠怡",
-                "E00_CENTRO": 828933.647617,
-                "E00_CENT_1": 823676.574554,
                 "DISTRICT_T": "葵青區",
                 "DISTRICT_E": "Kwai Tsing",
-                "SHAPE_AREA": 643849.268369,
-                "SHAPE_LEN": 5235.435513
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -88771,12 +87999,10 @@ export default {
                 "CACODE": "H18",
                 "ENAME": "Ching On",
                 "CNAME": "正安",
-                "E00_CENTRO": 839889.568708,
-                "E00_CENT_1": 823737.078885,
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SHAPE_AREA": 1628960.00489,
-                "SHAPE_LEN": 7439.320521
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -89066,12 +88292,10 @@ export default {
                 "CACODE": "R13",
                 "ENAME": "Hin Ka",
                 "CNAME": "顯嘉",
-                "E00_CENTRO": 835895.660377,
-                "E00_CENT_1": 823954.010788,
                 "DISTRICT_T": "沙田區",
                 "DISTRICT_E": "Sha Tin",
-                "SHAPE_AREA": 637277.631974,
-                "SHAPE_LEN": 5503.159892
+                "SUBDISTIRCT_T": "大圍",
+                "SUBDISTIRCT_E": "Tai Wai"
             },
             "geometry": {
                 "type": "Polygon",
@@ -89269,12 +88493,10 @@ export default {
                 "CACODE": "S28",
                 "ENAME": "Ching Fat",
                 "CNAME": "青發",
-                "E00_CENTRO": 827911.628215,
-                "E00_CENT_1": 824850.740818,
                 "DISTRICT_T": "葵青區",
                 "DISTRICT_E": "Kwai Tsing",
-                "SHAPE_AREA": 751822.640166,
-                "SHAPE_LEN": 4617.522807
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -89392,12 +88614,10 @@ export default {
                 "CACODE": "S27",
                 "ENAME": "Cheung Hang",
                 "CNAME": "長亨",
-                "E00_CENTRO": 826657.288179,
-                "E00_CENT_1": 824340.752129,
                 "DISTRICT_T": "葵青區",
                 "DISTRICT_E": "Kwai Tsing",
-                "SHAPE_AREA": 2687525.40644,
-                "SHAPE_LEN": 10864.652813
+                "SUBDISTIRCT_T": "青衣",
+                "SUBDISTIRCT_E": "Tsing Yi"
             },
             "geometry": {
                 "type": "Polygon",
@@ -89767,12 +88987,10 @@ export default {
                 "CACODE": "P05",
                 "ENAME": "Fu Heng",
                 "CNAME": "富亨",
-                "E00_CENTRO": 835948.415883,
-                "E00_CENT_1": 835483.794941,
                 "DISTRICT_T": "大埔區",
                 "DISTRICT_E": "Tai Po",
-                "SHAPE_AREA": 400723.762419,
-                "SHAPE_LEN": 2990.426053
+                "SUBDISTIRCT_T": "大埔",
+                "SUBDISTIRCT_E": "Tai Po"
             },
             "geometry": {
                 "type": "Polygon",
@@ -89930,12 +89148,10 @@ export default {
                 "CACODE": "N07",
                 "ENAME": "Shing Fuk",
                 "CNAME": "盛褔",
-                "E00_CENTRO": 831879.113839,
-                "E00_CENT_1": 839361.361256,
                 "DISTRICT_T": "北區",
                 "DISTRICT_E": "North",
-                "SHAPE_AREA": 142999.692778,
-                "SHAPE_LEN": 1738.895356
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -90029,12 +89245,10 @@ export default {
                 "CACODE": "N12",
                 "ENAME": "Choi Yuen",
                 "CNAME": "彩園",
-                "E00_CENTRO": 830968.827369,
-                "E00_CENT_1": 840147.855066,
                 "DISTRICT_T": "北區",
                 "DISTRICT_E": "North",
-                "SHAPE_AREA": 126477.606307,
-                "SHAPE_LEN": 1612.577855
+                "SUBDISTIRCT_T": "上水",
+                "SUBDISTIRCT_E": "Sheung Shui"
             },
             "geometry": {
                 "type": "Polygon",
@@ -90128,12 +89342,10 @@ export default {
                 "CACODE": "M20",
                 "ENAME": "Fu Yan",
                 "CNAME": "富恩",
-                "E00_CENTRO": 817871.349575,
-                "E00_CENT_1": 836160.015778,
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SHAPE_AREA": 162682.763637,
-                "SHAPE_LEN": 2004.731545
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -90203,12 +89415,10 @@ export default {
                 "CACODE": "M24",
                 "ENAME": "Ching King",
                 "CNAME": "晴景",
-                "E00_CENTRO": 818561.133075,
-                "E00_CENT_1": 836071.172989,
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SHAPE_AREA": 290155.734773,
-                "SHAPE_LEN": 2248.234022
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -90310,12 +89520,10 @@ export default {
                 "CACODE": "M23",
                 "ENAME": "Wang Yat",
                 "CNAME": "宏逸",
-                "E00_CENTRO": 818608.619234,
-                "E00_CENT_1": 836505.908852,
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SHAPE_AREA": 684999.266639,
-                "SHAPE_LEN": 4931.096146
+                "SUBDISTIRCT_T": "天水圍",
+                "SUBDISTIRCT_E": "Tin Shui Wai"
             },
             "geometry": {
                 "type": "Polygon",
@@ -90505,12 +89713,10 @@ export default {
                 "CACODE": "N05",
                 "ENAME": "Wah Ming",
                 "CNAME": "華明",
-                "E00_CENTRO": 832560.12595,
-                "E00_CENT_1": 838246.157493,
                 "DISTRICT_T": "北區",
                 "DISTRICT_E": "North",
-                "SHAPE_AREA": 98465.517262,
-                "SHAPE_LEN": 1334.07034
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -90580,12 +89786,10 @@ export default {
                 "CACODE": "N03",
                 "ENAME": "Cheung Wah",
                 "CNAME": "祥華",
-                "E00_CENTRO": 832608.032505,
-                "E00_CENT_1": 839219.76421,
                 "DISTRICT_T": "北區",
                 "DISTRICT_E": "North",
-                "SHAPE_AREA": 181161.970537,
-                "SHAPE_LEN": 2025.985939
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -90679,12 +89883,10 @@ export default {
                 "CACODE": "N09",
                 "ENAME": "Ching Ho",
                 "CNAME": "清河",
-                "E00_CENTRO": 831341.041424,
-                "E00_CENT_1": 839359.89476,
                 "DISTRICT_T": "北區",
                 "DISTRICT_E": "North",
-                "SHAPE_AREA": 92754.355446,
-                "SHAPE_LEN": 1664.085548
+                "SUBDISTIRCT_T": "上水",
+                "SUBDISTIRCT_E": "Sheung Shui"
             },
             "geometry": {
                 "type": "Polygon",
@@ -90778,12 +89980,10 @@ export default {
                 "CACODE": "C29",
                 "ENAME": "Lower Yiu Tung",
                 "CNAME": "下耀東",
-                "E00_CENTRO": 841272.777303,
-                "E00_CENT_1": 815449.945105,
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SHAPE_AREA": 190873.733072,
-                "SHAPE_LEN": 2411.634156
+                "SUBDISTIRCT_T": "西灣河",
+                "SUBDISTIRCT_E": "Sai Wan Ho"
             },
             "geometry": {
                 "type": "Polygon",
@@ -90925,12 +90125,10 @@ export default {
                 "CACODE": "R06",
                 "ENAME": "Wong Uk",
                 "CNAME": "王屋",
-                "E00_CENTRO": 838561.685026,
-                "E00_CENT_1": 826992.584616,
                 "DISTRICT_T": "沙田區",
                 "DISTRICT_E": "Sha Tin",
-                "SHAPE_AREA": 691955.849783,
-                "SHAPE_LEN": 3526.225159
+                "SUBDISTIRCT_T": "沙田",
+                "SUBDISTIRCT_E": "Sha Tin"
             },
             "geometry": {
                 "type": "Polygon",
@@ -91028,12 +90226,10 @@ export default {
                 "CACODE": "K09",
                 "ENAME": "Lai To",
                 "CNAME": "麗濤",
-                "E00_CENTRO": 827469.946557,
-                "E00_CENT_1": 827286.988358,
                 "DISTRICT_T": "荃灣區",
                 "DISTRICT_E": "Tsuen Wan",
-                "SHAPE_AREA": 9403744.71553,
-                "SHAPE_LEN": 18345.53835
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -92007,12 +91203,10 @@ export default {
                 "CACODE": "L28",
                 "ENAME": "Fu Tai",
                 "CNAME": "富泰",
-                "E00_CENTRO": 816410.096867,
-                "E00_CENT_1": 830464.793989,
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SHAPE_AREA": 944842.83534,
-                "SHAPE_LEN": 7286.086426
+                "SUBDISTIRCT_T": "藍地",
+                "SUBDISTIRCT_E": "Lam Tei"
             },
             "geometry": {
                 "type": "Polygon",
@@ -92366,12 +91560,10 @@ export default {
                 "CACODE": "M35",
                 "ENAME": "Pat Heung South",
                 "CNAME": "八鄉南",
-                "E00_CENTRO": 827055.286125,
-                "E00_CENT_1": 830863.834844,
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SHAPE_AREA": 24088773.2891,
-                "SHAPE_LEN": 29580.529933
+                "SUBDISTIRCT_T": "八鄉",
+                "SUBDISTIRCT_E": "Pat Heung"
             },
             "geometry": {
                 "type": "Polygon",
@@ -93741,12 +92933,10 @@ export default {
                 "CACODE": "N16",
                 "ENAME": "Sha Ta",
                 "CNAME": "沙打",
-                "E00_CENTRO": 843217.602241,
-                "E00_CENT_1": 843310.012266,
                 "DISTRICT_T": "北區",
                 "DISTRICT_E": "North",
-                "SHAPE_AREA": 133061576.905,
-                "SHAPE_LEN": 70892.76246
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -96160,12 +95350,10 @@ export default {
                 "CACODE": "E12",
                 "ENAME": "Tai Nan",
                 "CNAME": "大南",
-                "E00_CENTRO": 835025.64594,
-                "E00_CENT_1": 820634.578272,
                 "DISTRICT_T": "油尖旺區",
                 "DISTRICT_E": "Yau Tsim Mong",
-                "SHAPE_AREA": 208263.111066,
-                "SHAPE_LEN": 2844.881229
+                "SUBDISTIRCT_T": "太子",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -96247,12 +95435,10 @@ export default {
                 "CACODE": "P11",
                 "ENAME": "Wan Tau Tong",
                 "CNAME": "運頭塘",
-                "E00_CENTRO": 835287.159105,
-                "E00_CENT_1": 833620.595149,
                 "DISTRICT_T": "大埔區",
                 "DISTRICT_E": "Tai Po",
-                "SHAPE_AREA": 123267.311528,
-                "SHAPE_LEN": 1737.092474
+                "SUBDISTIRCT_T": "大埔",
+                "SUBDISTIRCT_E": "Tai Po"
             },
             "geometry": {
                 "type": "Polygon",
@@ -96346,12 +95532,10 @@ export default {
                 "CACODE": "N14",
                 "ENAME": "Tin Ping West",
                 "CNAME": "天平西",
-                "E00_CENTRO": 831643.633711,
-                "E00_CENT_1": 840640.909554,
                 "DISTRICT_T": "北區",
                 "DISTRICT_E": "North",
-                "SHAPE_AREA": 212714.633797,
-                "SHAPE_LEN": 2791.278461
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -96473,12 +95657,10 @@ export default {
                 "CACODE": "N04",
                 "ENAME": "Wah Do",
                 "CNAME": "華都",
-                "E00_CENTRO": 832655.195088,
-                "E00_CENT_1": 838586.260429,
                 "DISTRICT_T": "北區",
                 "DISTRICT_E": "North",
-                "SHAPE_AREA": 131819.312837,
-                "SHAPE_LEN": 1578.097621
+                "SUBDISTIRCT_T": "粉嶺",
+                "SUBDISTIRCT_E": "Fanling"
             },
             "geometry": {
                 "type": "Polygon",
@@ -96568,12 +95750,10 @@ export default {
                 "CACODE": "N01",
                 "ENAME": "Luen Wo Hui",
                 "CNAME": "聯和墟",
-                "E00_CENTRO": 832484.091988,
-                "E00_CENT_1": 840048.811804,
                 "DISTRICT_T": "北區",
                 "DISTRICT_E": "North",
-                "SHAPE_AREA": 237537.998711,
-                "SHAPE_LEN": 2060.022878
+                "SUBDISTIRCT_T": "粉嶺",
+                "SUBDISTIRCT_E": "Fanling"
             },
             "geometry": {
                 "type": "Polygon",
@@ -96655,12 +95835,10 @@ export default {
                 "CACODE": "B08",
                 "ENAME": "Jardine's Lookout",
                 "CNAME": "渣甸山",
-                "E00_CENTRO": 838308.043873,
-                "E00_CENT_1": 814408.249783,
                 "DISTRICT_T": "灣仔區",
                 "DISTRICT_E": "Wan Chai",
-                "SHAPE_AREA": 2193578.53986,
-                "SHAPE_LEN": 9307.37819
+                "SUBDISTIRCT_T": "渣甸山",
+                "SUBDISTIRCT_E": "Jardine's Lookout"
             },
             "geometry": {
                 "type": "Polygon",
@@ -97006,12 +96184,10 @@ export default {
                 "CACODE": "C30",
                 "ENAME": "Upper Yiu Tung",
                 "CNAME": "上耀東",
-                "E00_CENTRO": 840909.292386,
-                "E00_CENT_1": 815299.481031,
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SHAPE_AREA": 358499.32281,
-                "SHAPE_LEN": 4112.291387
+                "SUBDISTIRCT_T": "西灣河",
+                "SUBDISTIRCT_E": "Sai Wan Ho"
             },
             "geometry": {
                 "type": "Polygon",
@@ -97269,12 +96445,10 @@ export default {
                 "CACODE": "C08",
                 "ENAME": "Tsui Wan",
                 "CNAME": "翠灣",
-                "E00_CENTRO": 843341.493227,
-                "E00_CENT_1": 814838.54416,
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SHAPE_AREA": 1405710.30153,
-                "SHAPE_LEN": 6101.789235
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -97448,12 +96622,10 @@ export default {
                 "CACODE": "B07",
                 "ENAME": "Tai Hang",
                 "CNAME": "大坑",
-                "E00_CENTRO": 837644.324162,
-                "E00_CENT_1": 815441.145556,
                 "DISTRICT_T": "灣仔區",
                 "DISTRICT_E": "Wan Chai",
-                "SHAPE_AREA": 410417.913982,
-                "SHAPE_LEN": 3906.91608
+                "SUBDISTIRCT_T": "大坑",
+                "SUBDISTIRCT_E": "Tai Hang"
             },
             "geometry": {
                 "type": "Polygon",
@@ -97647,12 +96819,10 @@ export default {
                 "CACODE": "A02",
                 "ENAME": "Mid Levels East",
                 "CNAME": "半山東",
-                "E00_CENTRO": 833917.923184,
-                "E00_CENT_1": 815579.701969,
                 "DISTRICT_T": "中西區",
                 "DISTRICT_E": "Central & Western",
-                "SHAPE_AREA": 341694.022583,
-                "SHAPE_LEN": 3834.740151
+                "SUBDISTIRCT_T": "中環",
+                "SUBDISTIRCT_E": "Central"
             },
             "geometry": {
                 "type": "Polygon",
@@ -97886,12 +97056,10 @@ export default {
                 "CACODE": "B06",
                 "ENAME": "Causeway Bay",
                 "CNAME": "銅鑼灣",
-                "E00_CENTRO": 837094.953363,
-                "E00_CENT_1": 815732.139824,
                 "DISTRICT_T": "灣仔區",
                 "DISTRICT_E": "Wan Chai",
-                "SHAPE_AREA": 231394.390264,
-                "SHAPE_LEN": 2297.003441
+                "SUBDISTIRCT_T": "銅鑼灣",
+                "SUBDISTIRCT_E": "Causeway Bay"
             },
             "geometry": {
                 "type": "Polygon",
@@ -98005,12 +97173,10 @@ export default {
                 "CACODE": "K16",
                 "ENAME": "Lei Muk Shue West",
                 "CNAME": "梨木樹西",
-                "E00_CENTRO": 831903.221284,
-                "E00_CENT_1": 826600.497599,
                 "DISTRICT_T": "荃灣區",
                 "DISTRICT_E": "Tsuen Wan",
-                "SHAPE_AREA": 91415.75206,
-                "SHAPE_LEN": 1457.824021
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -98128,12 +97294,10 @@ export default {
                 "CACODE": "M30",
                 "ENAME": "Chung Pak",
                 "CNAME": "頌柏",
-                "E00_CENTRO": 818177.189388,
-                "E00_CENT_1": 835631.009137,
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SHAPE_AREA": 119228.802556,
-                "SHAPE_LEN": 1520.126291
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -98203,12 +97367,10 @@ export default {
                 "CACODE": "F11",
                 "ENAME": "Fortune",
                 "CNAME": "幸福",
-                "E00_CENTRO": 833788.350818,
-                "E00_CENT_1": 821746.138424,
                 "DISTRICT_T": "深水埗區",
                 "DISTRICT_E": "Sham Shui Po",
-                "SHAPE_AREA": 495302.911613,
-                "SHAPE_LEN": 3959.813755
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -98326,12 +97488,10 @@ export default {
                 "CACODE": "H24",
                 "ENAME": "Chi Choi",
                 "CNAME": "池彩",
-                "E00_CENTRO": 839601.803309,
-                "E00_CENT_1": 822046.050564,
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SHAPE_AREA": 412228.817094,
-                "SHAPE_LEN": 3111.636545
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -98473,12 +97633,10 @@ export default {
                 "CACODE": "C15",
                 "ENAME": "Braemar Hill",
                 "CNAME": "寶馬山",
-                "E00_CENTRO": 838678.36054,
-                "E00_CENT_1": 815885.673363,
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SHAPE_AREA": 1597291.07247,
-                "SHAPE_LEN": 6009.204451
+                "SUBDISTIRCT_T": "寶馬山",
+                "SUBDISTIRCT_E": "Braemar Hill"
             },
             "geometry": {
                 "type": "Polygon",
@@ -98752,12 +97910,10 @@ export default {
                 "CACODE": "G06",
                 "ENAME": "Ho Man Tin",
                 "CNAME": "何文田",
-                "E00_CENTRO": 836531.161117,
-                "E00_CENT_1": 820027.166464,
                 "DISTRICT_T": "九龍城區",
                 "DISTRICT_E": "Kowloon City",
-                "SHAPE_AREA": 511314.959087,
-                "SHAPE_LEN": 3975.124293
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -98907,12 +98063,10 @@ export default {
                 "CACODE": "A13",
                 "ENAME": "Tung Wah",
                 "CNAME": "東華",
-                "E00_CENTRO": 833225.611157,
-                "E00_CENT_1": 816200.158645,
                 "DISTRICT_T": "中西區",
                 "DISTRICT_E": "Central & Western",
-                "SHAPE_AREA": 184593.825055,
-                "SHAPE_LEN": 2438.579487
+                "SUBDISTIRCT_T": "上環",
+                "SUBDISTIRCT_E": "Sheung Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -99042,12 +98196,10 @@ export default {
                 "CACODE": "T03",
                 "ENAME": "Yat Tung Estate South",
                 "CNAME": "逸東邨南",
-                "E00_CENTRO": 811473.098783,
-                "E00_CENT_1": 815737.205196,
                 "DISTRICT_T": "離島區",
                 "DISTRICT_E": "Islands",
-                "SHAPE_AREA": 196019.285762,
-                "SHAPE_LEN": 2190.569465
+                "SUBDISTIRCT_T": "東涌",
+                "SUBDISTIRCT_E": "Tung Chung"
             },
             "geometry": {
                 "type": "Polygon",
@@ -99145,12 +98297,10 @@ export default {
                 "CACODE": "M07",
                 "ENAME": "Fung Cheung",
                 "CNAME": "鳳翔",
-                "E00_CENTRO": 821709.261798,
-                "E00_CENT_1": 833625.020298,
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SHAPE_AREA": 251216.460408,
-                "SHAPE_LEN": 2722.308256
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -99256,12 +98406,10 @@ export default {
                 "CACODE": "M01",
                 "ENAME": "Fung Nin",
                 "CNAME": "豐年",
-                "E00_CENTRO": 820807.739806,
-                "E00_CENT_1": 833420.598433,
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SHAPE_AREA": 430463.154985,
-                "SHAPE_LEN": 3254.430278
+                "SUBDISTIRCT_T": "元朗",
+                "SUBDISTIRCT_E": "Yuen Long"
             },
             "geometry": {
                 "type": "Polygon",
@@ -99359,12 +98507,10 @@ export default {
                 "CACODE": "M02",
                 "ENAME": "Shui Pin",
                 "CNAME": "水邊",
-                "E00_CENTRO": 820160.038145,
-                "E00_CENT_1": 833728.720345,
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SHAPE_AREA": 436058.373143,
-                "SHAPE_LEN": 4342.041129
+                "SUBDISTIRCT_T": "元朗",
+                "SUBDISTIRCT_E": "Yuen Long"
             },
             "geometry": {
                 "type": "Polygon",
@@ -99506,12 +98652,10 @@ export default {
                 "CACODE": "N02",
                 "ENAME": "Fanling Town",
                 "CNAME": "粉嶺市",
-                "E00_CENTRO": 832557.368972,
-                "E00_CENT_1": 839454.071427,
                 "DISTRICT_T": "北區",
                 "DISTRICT_E": "North",
-                "SHAPE_AREA": 1365883.62761,
-                "SHAPE_LEN": 8735.709293
+                "SUBDISTIRCT_T": "粉嶺",
+                "SUBDISTIRCT_E": "Fanling"
             },
             "geometry": {
                 "type": "Polygon",
@@ -99825,12 +98969,10 @@ export default {
                 "CACODE": "N17",
                 "ENAME": "Tin Ping East",
                 "CNAME": "天平東",
-                "E00_CENTRO": 832526.086585,
-                "E00_CENT_1": 840519.364662,
                 "DISTRICT_T": "北區",
                 "DISTRICT_E": "North",
-                "SHAPE_AREA": 786280.522979,
-                "SHAPE_LEN": 5286.275195
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -100056,12 +99198,10 @@ export default {
                 "CACODE": "N13",
                 "ENAME": "Shek Wu Hui",
                 "CNAME": "石湖墟",
-                "E00_CENTRO": 831066.942634,
-                "E00_CENT_1": 840468.348184,
                 "DISTRICT_T": "北區",
                 "DISTRICT_E": "North",
-                "SHAPE_AREA": 735841.557009,
-                "SHAPE_LEN": 5348.131908
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",
@@ -100271,12 +99411,10 @@ export default {
                 "CACODE": "N15",
                 "ENAME": "Fung Tsui",
                 "CNAME": "鳳翠",
-                "E00_CENTRO": 831148.645581,
-                "E00_CENT_1": 841615.927673,
                 "DISTRICT_T": "北區",
                 "DISTRICT_E": "North",
-                "SHAPE_AREA": 3068693.3271,
-                "SHAPE_LEN": 7507.03584
+                "SUBDISTIRCT_T": "",
+                "SUBDISTIRCT_E": ""
             },
             "geometry": {
                 "type": "Polygon",

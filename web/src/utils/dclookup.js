@@ -5,7 +5,7 @@ const dcArea = turf.featureCollection(dcdata.features);
 
 export default {
   /**
-   * Return the district name
+   * Return the district and subdistrict name
    */
   dcNameFromCoordinates: (lat, lng) => {
     const point = turf.point([lng, lat]);
@@ -18,6 +18,8 @@ export default {
           cname: feature.properties.CNAME,
           ename: feature.properties.ENAME,
           district: feature.properties.DISTRICT_T,
+          csubdistrict: feature.properties.SUBDISTIRCT_T,
+          esubdistrict: feature.properties.SUBDISTIRCT_E,
         }
       };
     }
@@ -26,6 +28,8 @@ export default {
       cname: 'unknown',
       ename: 'unknown',
       district: 'unknown',
+      csubdistrict: 'unknown',
+      esubdistrict: 'unknown',
     }
 
   }

@@ -19,6 +19,11 @@
       <v-card class="ma-4 pa-3">
         <v-list dense subheader>
           <v-list-tile>
+            <v-list-tile-content>Sub District<br>地區</v-list-tile-content>
+            <v-list-tile-content class="align-end">{{ district.esubdistrict }}<br>{{ district.csubdistrict }}</v-list-tile-content>
+          </v-list-tile>
+          <v-divider></v-divider>
+          <v-list-tile>
             <v-list-tile-content>District Council Constituency Area<br>區議會選區</v-list-tile-content>
             <v-list-tile-content class="align-end">{{ district.ename }}<br>{{ district.cname }}</v-list-tile-content>
           </v-list-tile>
