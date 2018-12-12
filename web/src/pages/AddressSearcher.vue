@@ -46,7 +46,7 @@
     <v-layout justify-center row>
       <v-flex xs10 lg6>
         <div v-for="(result, index) in results" :key="index" class="expansion-wrapper">
-          <SingleMatch :result="result" :rank="index" :filterOptions="filterOptions" :expanded="[index === 0]"/>
+          <SingleMatch :result="result" :rank="index" :filterOptions="filterOptions"/>
         </div>
       </v-flex>
     </v-layout>
