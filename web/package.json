@@ -21,6 +21,7 @@
     "stylus-loader": "^3.0.1",
     "vue": "^2.5.17",
     "vue-analytics": "^5.16.1",
+    "vue-awesome": "^3.2.0",
     "vue-cli-plugin-vuetify": "^0.4.5",
     "vue-json-excel": "^0.2.96",
     "vue-router": "^3.0.1",
