@@ -1,15 +1,19 @@
 <template>
   <v-expansion-panel focusable expand :value="expanded">
     <v-expansion-panel-content :disabled="disableContent">
+
       <div slot="header">
+        <div v-if="isBestMatch" class="btn-container">
+          <ButtonTick :enabled="!commented" :onClick="onTickClicked"/>
+          <ButtonCross :enabled="!commented" :onClick="onCrossClicked"/>
+        </div>
         <v-chip
           text-color="black"
           disabled
           small
-        >{{ `Rank ${rank + 1}` }} {{ (rank === 0)? ' - Best Match!' : ''}}
+        >{{ `Rank ${rank + 1}` }} {{ isBestMatch? ' - Best Match!' : ''}}
         </v-chip>
-        <CommentButton />
-        <CommentButton />
+
         <h2>
           <p>{{ fullChineseAddressFromResult(result.chi) }}</p>
           <p>{{ fullEnglishAddressFromResult(result.eng) }}</p>
@@ -72,13 +76,17 @@
 <script>
 import dclookup from "./../utils/dclookup.js";
 import ogcioHelper from "./../utils/ogcio-helper.js";
-import CommentButton from './CommentButton';
-
+import ButtonTick from './ButtonTick';
+import ButtonCross from './ButtonCross';
+import {
+  trackSingleSearchSatisfied
+} from "./../utils/ga-helper";
 export default {
   components: {
-    CommentButton,
+    ButtonTick, ButtonCross
   },
   props: {
+    searchAddress: String,
     rank: Number,
     result: {
       status: Object,
@@ -90,6 +98,7 @@ export default {
     filterOptions: Array
   },
   data: () => ({
+    commented: false,
     disableContent: false,
     filteredKeys: [],
     localFilterOptions: [],
@@ -104,7 +113,7 @@ export default {
       this.filteredKeys = this.getFilteredKeys();
       this.$forceUpdate();
     });
-    this.expanded = [this.rank === 0];
+    this.expanded = [this.isBestMatch];
   },
   computed: {
     district: function() {
@@ -112,6 +121,9 @@ export default {
         this.result.geo[0].Latitude,
         this.result.geo[0].Longitude
       );
+    },
+    isBestMatch: function () {
+      return this.rank === 0;
     }
   },
   methods: {
@@ -145,7 +157,15 @@ export default {
       if (Object.keys(opts).every(key => !opts[key].enabled)) {
         this.disableContent = true;
       }
-    }
+    },
+    onTickClicked: function() {
+      this.commented = true;
+      trackSingleSearchSatisfied(this, this.searchAddress, true);
+    },
+    onCrossClicked: function() {
+      this.commented = true;
+      trackSingleSearchSatisfied(this, this.searchAddress, false);
+    },
   }
 };
 </script>
@@ -172,6 +192,11 @@ export default {
 .align-end {
   text-align: right;
   white-space: pre;
+}
+
+.btn-container {
+  position: absolute;
+  right: 10px;
 }
 
 p {
