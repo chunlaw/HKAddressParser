@@ -37,9 +37,9 @@
       </v-flex>
     </v-layout>
 
-    <v-layout justify-center row>
+    <v-layout justify-center row v-if="toggleMap">
       <v-flex xs10 lg6>
-        <VueLayerMap :bestMatch="results[0]" ref="topMap"/>
+        <ArcGISMap ref="topMap"/>
       </v-flex>
     </v-layout>
 
@@ -94,7 +94,7 @@
 <script>
 import AddressParser from "./../lib/address-parser";
 import SingleMatch from "./../components/SingleMatch";
-import VueLayerMap from "./../components/VueLayerMap";
+import ArcGISMap from "./../components/ArcGISMap";
 import SearchFilter from "./../components/SearchFilter";
 import ogcioHelper from "./../utils/ogcio-helper";
 import {
@@ -105,14 +105,15 @@ import {
 export default {
   components: {
     SingleMatch,
-    VueLayerMap,
+    ArcGISMap,
     SearchFilter
   },
   data: () => ({
     address: "",
     count: 200,
     results: [],
-    filterOptions: {}
+    filterOptions: {},
+    toggleMap: false
   }),
   created: function() {
     this.filterOptions = ogcioHelper.topLevelKeys();
@@ -134,11 +135,17 @@ export default {
         }
       });
       const data = await res.json();
+      this.toggleMap = true;
       this.results = await AddressParser.searchResult(this.address, data);
       if (this.results && this.results.length > 0) {
         const result = this.results[0];
         trackSingleSearchResult(this, this.address, result.score | 0);
       }
+
+      await this.$refs.topMap.gotoLatLng(
+        Number(this.results[0].geo[0].Latitude),
+        Number(this.results[0].geo[0].Longitude)
+      );
     }
   }
 };

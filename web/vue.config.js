@@ -3,5 +3,8 @@ module.exports = {
   baseUrl: process.env.BASE_URL === undefined ? '/' : process.env.BASE_URL,
   chainWebpack: (config) => {
     config.module.rules.delete('eslint')
-  }
+  },
+  transpileDependencies: [
+    /\bvue-awesome\b/
+  ]
 }

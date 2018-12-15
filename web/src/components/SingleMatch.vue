@@ -1,20 +1,29 @@
 <template>
-  <v-expansion-panel focusable expand v-model="expanded">
+  <v-expansion-panel focusable expand :value="expanded">
     <v-expansion-panel-content :disabled="disableContent">
+
       <div slot="header">
+        <div v-if="isBestMatch" class="btn-container">
+          <ButtonTick :enabled="!commented" :onClick="onTickClicked"/>
+          <ButtonCross :enabled="!commented" :onClick="onCrossClicked"/>
+        </div>
         <v-chip
           text-color="black"
           disabled
           small
-        >{{ `Rank ${rank + 1}` }} {{ (rank === 0)? ' - Best Match!' : ''}}</v-chip>
+        >{{ `Rank ${rank + 1}` }} {{ isBestMatch? ' - Best Match!' : ''}}
+        </v-chip>
+
         <h2>
-          {{ fullChineseAddressFromResult(result.chi) }}
-          <br>
-          {{ fullEnglishAddressFromResult(result.eng) }}
+          <p>{{ fullChineseAddressFromResult(result.chi) }}</p>
+          <p>{{ fullEnglishAddressFromResult(result.eng) }}</p>
         </h2>
         <span
           class="text-xs-right grey--text"
         >{{ result.geo[0].Latitude + ", " + result.geo[0].Longitude }}</span>
+
+
+
       </div>
       <v-card class="ma-4 pa-3">
         <v-list dense subheader>
@@ -23,9 +32,8 @@
               <br>地區
             </v-list-tile-content>
             <v-list-tile-content class="align-end">
-              {{ district.esubdistrict }}
-              <br>
-              {{ district.csubdistrict }}
+              <p>{{ district.esubdistrict }}</p>
+              <p>{{ district.csubdistrict }}</p>
             </v-list-tile-content>
           </v-list-tile>
           <v-divider></v-divider>
@@ -34,9 +42,8 @@
               <br>區議會選區
             </v-list-tile-content>
             <v-list-tile-content class="align-end">
-              {{ district.ename }}
-              <br>
-              {{ district.cname }}
+              <p>{{ district.ename }}</p>
+              <p>{{ district.cname }}</p>
             </v-list-tile-content>
           </v-list-tile>
           <v-divider></v-divider>
@@ -51,14 +58,12 @@
         >
           <v-list-tile>
             <v-list-tile-content>
-              {{ textForKey(key, 'eng') }}
-              <br>
-              {{ textForKey(key, 'chi') }}
+              <p>{{ textForKey(key, 'eng') }}</p>
+              <p>{{ textForKey(key, 'chi') }}</p>
             </v-list-tile-content>
             <v-list-tile-content class="align-end">
-              {{ textForValue(result, key, 'eng') }}
-              <br>
-              {{ textForValue(result, key, 'chi') }}
+              <p>{{ textForValue(result, key, 'eng') }}</p>
+              <p>{{ textForValue(result, key, 'chi') }}</p>
             </v-list-tile-content>
           </v-list-tile>
           <v-divider></v-divider>
@@ -71,9 +76,17 @@
 <script>
 import dclookup from "./../utils/dclookup.js";
 import ogcioHelper from "./../utils/ogcio-helper.js";
+import ButtonTick from './ButtonTick';
+import ButtonCross from './ButtonCross';
+import {
+  trackSingleSearchSatisfied
+} from "./../utils/ga-helper";
 export default {
+  components: {
+    ButtonTick, ButtonCross
+  },
   props: {
-    expanded: Array,
+    searchAddress: String,
     rank: Number,
     result: {
       status: Object,
@@ -85,9 +98,11 @@ export default {
     filterOptions: Array
   },
   data: () => ({
+    commented: false,
     disableContent: false,
     filteredKeys: [],
-    localFilterOptions: []
+    localFilterOptions: [],
+    expanded: [false] // set the default value by the rank. first object should be expanded
   }),
   mounted: function() {
     this.localFilterOptions = this.filterOptions;
@@ -98,6 +113,7 @@ export default {
       this.filteredKeys = this.getFilteredKeys();
       this.$forceUpdate();
     });
+    this.expanded = [this.isBestMatch];
   },
   computed: {
     district: function() {
@@ -105,9 +121,16 @@ export default {
         this.result.geo[0].Latitude,
         this.result.geo[0].Longitude
       );
+    },
+    isBestMatch: function () {
+      return this.rank === 0;
     }
   },
   methods: {
+    tick: function (e) {
+      e.stopPropagation();
+      console.log('tick');
+    },
     textForKey: ogcioHelper.textForKey,
     textForValue: ogcioHelper.textForValue,
     fullChineseAddressFromResult: ogcioHelper.fullChineseAddressFromResult,
@@ -134,7 +157,15 @@ export default {
       if (Object.keys(opts).every(key => !opts[key].enabled)) {
         this.disableContent = true;
       }
-    }
+    },
+    onTickClicked: function() {
+      this.commented = true;
+      trackSingleSearchSatisfied(this, this.searchAddress, true);
+    },
+    onCrossClicked: function() {
+      this.commented = true;
+      trackSingleSearchSatisfied(this, this.searchAddress, false);
+    },
   }
 };
 </script>
@@ -161,5 +192,14 @@ export default {
 .align-end {
   text-align: right;
   white-space: pre;
+}
+
+.btn-container {
+  position: absolute;
+  right: 10px;
+}
+
+p {
+  margin: 0px;
 }
 </style>
