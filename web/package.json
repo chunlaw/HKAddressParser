@@ -26,10 +26,12 @@
     "vue-json-excel": "^0.2.96",
     "vue-router": "^3.0.1",
     "vue-template-compiler": "^2.5.17",
+    "vuelayers": "^0.11.1",
     "vuetify": "^1.3.0",
     "vuetify-loader": "^1.0.5"
   },
   "devDependencies": {
+    "css-loader": "^2.0.1",
     "eslint": "^5.9.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",
