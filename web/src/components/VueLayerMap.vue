@@ -3,7 +3,7 @@
       :load-tiles-while-animating="true"
       :load-tiles-while-interacting="true"
       data-projection="EPSG:4326"
-      style="height: 400px"
+
     >
       <vl-view :zoom.sync="zoom" :center.sync="center" :rotation.sync="rotation"></vl-view>
 
@@ -19,7 +19,7 @@
             <vl-style-icon
               :src="images.pin"
               :scale="0.5"
-              :anchor="[0.1, 0.95]"
+              :anchor="[0.1, 0.5]"
               :size="[128, 128]"
             ></vl-style-icon>
           </vl-style-box>
@@ -55,7 +55,7 @@ export default {
     },
     zoom: {
       get: function() {
-        return this.bestMatch != null ? 16 : 10;
+        return this.bestMatch != null ? 16 : 11;
       },
       set: function() {
         // do nothing

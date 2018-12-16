@@ -1,4 +1,5 @@
 <template>
+<v-content>
   <v-container>
     <v-alert
       v-model="hasError"
@@ -52,14 +53,9 @@
           </template>
         </v-data-table>
       </template>
-
-
-      <!-- <div v-for="(result, index) in results" :key="index">
-        <SingleMatch :result="result" :rank="index"/>
-      </div> -->
-
     </v-form>
   </v-container>
+  </v-content>
 </template>
 
 <script>
