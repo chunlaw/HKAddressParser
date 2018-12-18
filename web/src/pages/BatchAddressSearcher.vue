@@ -209,7 +209,7 @@ async function searchSingleResult(address, key) {
   const URL = `https://www.als.ogcio.gov.hk/lookup?q=${address}&n=${SEARCH_LIMIT}`;
   const res = await fetch(URL, {
     headers: {
-      Accept: "application/json",
+      "Accept": "application/json",
       "Accept-Language": "en,zh-Hant",
       "Accept-Encoding": "gzip"
     }
@@ -227,9 +227,3 @@ async function searchSingleResult(address, key) {
   return records;
 }
 </script>
-
-<style>
-.form {
-  width: 100%;
-}
-</style>
