@@ -106,11 +106,11 @@ export default {
           value: "dc_name"
         },
         {
-          text: "Latitude",
+          text: "緯度",
           value: "lat"
         },
         {
-          text: "Longitude",
+          text: "經度",
           value: "lng"
         },
         // the union headers
