@@ -16,6 +16,7 @@
           label="請輸入地址（每行一個地址）"
           value=""
           v-model="addressString"
+          auto-grow
         ></v-textarea>
 
       <v-btn @click="submit">
