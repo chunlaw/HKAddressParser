@@ -16,6 +16,7 @@
           label="請輸入地址（每行一個地址）"
           value=""
           v-model="addressString"
+          auto-grow
         ></v-textarea>
 
       <v-btn @click="submit">
@@ -105,11 +106,11 @@ export default {
           value: "dc_name"
         },
         {
-          text: "Latitude",
+          text: "緯度",
           value: "lat"
         },
         {
-          text: "Longitude",
+          text: "經度",
           value: "lng"
         },
         // the union headers
@@ -208,7 +209,7 @@ async function searchSingleResult(address, key) {
   const URL = `https://www.als.ogcio.gov.hk/lookup?q=${address}&n=${SEARCH_LIMIT}`;
   const res = await fetch(URL, {
     headers: {
-      Accept: "application/json",
+      "Accept": "application/json",
       "Accept-Language": "en,zh-Hant",
       "Accept-Encoding": "gzip"
     }
@@ -226,9 +227,3 @@ async function searchSingleResult(address, key) {
   return records;
 }
 </script>
-
-<style>
-.form {
-  width: 100%;
-}
-</style>

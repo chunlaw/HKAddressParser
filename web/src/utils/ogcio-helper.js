@@ -28,7 +28,7 @@ const keys = {
     [OGCIO_KEY_BLOCK]: '座數',
     [OGCIO_KEY_PHASE]: '期數',
     [OGCIO_KEY_ESTATE]: '屋邨',
-    [OGCIO_KEY_VILLAGE]: '村',
+    [OGCIO_KEY_VILLAGE]: '鄉村',
     [OGCIO_KEY_REGION]: '區域',
     [OGCIO_KEY_DISTRICT]: '地區',
     [OGCIO_KEY_STREET]: '街道',
