@@ -22,6 +22,11 @@ const keys = {
     [OGCIO_KEY_BUILDING_NAME]: 'Building Name',
     // level 2 keys
     [`${OGCIO_KEY_DISTRICT}.DcDistrict`]: '區議會分區',
+    [`${OGCIO_KEY_STREET}.StreetName`]: 'Street Name',
+    [`${OGCIO_KEY_STREET}.BuildingNoFrom`]: 'Street No. From',
+    [`${OGCIO_KEY_STREET}.BuildingNoTo`]: 'Street No. To',
+    [`${OGCIO_KEY_ESTATE}.EstateName`]: 'Estate Name',
+
   },
   chi: {
     // level 1 keys
@@ -35,6 +40,10 @@ const keys = {
     [OGCIO_KEY_BUILDING_NAME]: '大廈名稱',
     // level 2 keys
     [`${OGCIO_KEY_DISTRICT}.DcDistrict`]: '區議會分區',
+    [`${OGCIO_KEY_STREET}.StreetName`]: '街道',
+    [`${OGCIO_KEY_STREET}.BuildingNoFrom`]: '街號',
+    [`${OGCIO_KEY_STREET}.BuildingNoTo`]: '街號',
+    [`${OGCIO_KEY_ESTATE}.EstateName`]: '屋邨',
   }
 }
 
@@ -42,12 +51,12 @@ function textForKey(key, lang) {
   return keys[lang]
     ? (keys[lang][key]
       ? keys[lang][key]
-      : '')
-    : '';
+      : key)
+    : key;
 }
 
 function textForValue(record, key, lang) {
-  
+
   if (!record[lang]) {
     return '';
   }
@@ -126,4 +135,4 @@ export default {
   textForValue,
   fullEnglishAddressFromResult,
   fullChineseAddressFromResult
-} 
+}
