@@ -1,7 +1,7 @@
 <template>
     <v-container>
         <v-layout row wrap>
-            <v-flex xs6 sm4 md4
+            <v-flex xs3
               v-bind:key="item.key"
               v-for="item in filterOptions">
               <v-checkbox
