@@ -20,7 +20,7 @@
             <v-expansion-panel popout>
               <v-expansion-panel-content>
                 <div slot="header">進階選項</div>
-                <SearchFilter :filterOptions.sync="filterOptions"/>
+                <SearchFilter :filterOptions.sync="filterOptions" :xs3="true" />
               </v-expansion-panel-content>
             </v-expansion-panel>
 

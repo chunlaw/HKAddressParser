@@ -5,12 +5,8 @@
 
       <v-form ref="form" class="form" @submit.prevent="submit">
         <v-textarea outline name="input-7-1" label="請輸入地址（每行一個地址）" value v-model="addressString"></v-textarea>
-        <v-expansion-panel popout>
-          <v-expansion-panel-content>
             <div slot="header">進階選項</div>
-            <SearchFilter :filterOptions.sync="filterOptions"/>
-          </v-expansion-panel-content>
-        </v-expansion-panel>
+            <SearchFilter :filterOptions.sync="filterOptions" />
         <v-container>
           <v-layout row wrap>
             <v-btn @click="submit" dark class="teal">拆地址</v-btn>
