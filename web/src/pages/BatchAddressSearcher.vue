@@ -1,61 +1,50 @@
 <template>
-<v-content>
-  <v-container>
-    <v-alert
-      v-model="hasError"
-      type="error"
-    >
-      {{ this.errorMessage }}
-    </v-alert>
+  <v-content>
+    <v-container>
+      <v-alert v-model="hasError" type="error">{{ this.errorMessage }}</v-alert>
 
       <v-form ref="form" class="form" @submit.prevent="submit">
+        <v-textarea outline name="input-7-1" label="請輸入地址（每行一個地址）" value v-model="addressString"></v-textarea>
+        <v-expansion-panel popout>
+          <v-expansion-panel-content>
+            <div slot="header">進階選項</div>
+            <SearchFilter :filterOptions.sync="filterOptions"/>
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+        <v-container>
+          <v-layout row wrap>
+            <v-btn @click="submit" dark class="teal">拆地址</v-btn>
+            <download-excel
+              v-if="results.length > 0 && results.length === addressesToSearch.length"
+              :data="normalizedResults"
+              type="csv"
+            >
+              <v-btn dark class="teal">下載 CSV</v-btn>
+            </download-excel>
+          </v-layout>
+        </v-container>
 
-        <v-textarea
-          outline
-          name="input-7-1"
-          label="請輸入地址（每行一個地址）"
-          value=""
-          v-model="addressString"
-          auto-grow
-        ></v-textarea>
+        <template v-if="addressesToSearch.length > 0">
+          <v-progress-linear
+            background-color="lime"
+            color="success"
+            :value="(results.length * 100 / addressesToSearch.length)"
+          ></v-progress-linear>
 
-      <v-btn @click="submit">
-        拆地址
-      </v-btn>
-      <download-excel
-          v-if="results.length > 0 && results.length === addressesToSearch.length"
-          :data="normalizedResults"
-          type="csv"
+          <!-- When to show the datatable? Now showing it when ever there is data -->
+          <v-data-table
+            :headers="normalizedHeaders"
+            :items="normalizedResults"
+            :rows-per-page-items="[ 50, 100, 500, { 'text': '$vuetify.dataIterator.rowsPerPageAll', 'value': -1 } ]"
+            class="elevation-1"
           >
-          <v-btn>下載 CSV</v-btn>
-          <!-- <img src="download_icon.png"> -->
-      </download-excel>
-
-      <template v-if="addressesToSearch.length > 0">
-        <v-progress-linear
-        background-color="lime"
-        color="success"
-        :value="(results.length * 100 / addressesToSearch.length)"
-      ></v-progress-linear>
-
-      <!-- When to show the datatable? Now showing it when ever there is data -->
-        <v-data-table
-          :headers="normalizedHeaders"
-          :items="normalizedResults"
-          :rows-per-page-items='[ 50, 100, 500, { "text": "$vuetify.dataIterator.rowsPerPageAll", "value": -1 } ]'
-
-          class="elevation-1"
-        >
-          <template slot="items" slot-scope="props">
-            <td v-for="(field, index) in props.item" :key="index" >
-              {{ field }}
-            </td>
-
-          </template>
-        </v-data-table>
-      </template>
-    </v-form>
-  </v-container>
+            <template slot="items" slot-scope="props">
+              <td v-for="(field, index) in props.item" :key="index">{{ field }}</td>
+            </template>
+          </v-data-table>
+        </template>
+      </v-form>
+    </v-container>
   </v-content>
 </template>
 
@@ -65,6 +54,7 @@ import SingleMatch from "./../components/SingleMatch";
 import asyncLib from "async";
 import dclookup from "./../utils/dclookup";
 import ogcioHelper from "./../utils/ogcio-helper";
+import SearchFilter from "./../components/SearchFilter";
 import asyncify from 'async/asyncify';
 import {
   trackBatchSearch,
@@ -73,12 +63,16 @@ import {
 const SEARCH_LIMIT = 200;
 
 export default {
+  components: {
+    SearchFilter
+  },
   data: () => ({
     addressString: "",
     addressesToSearch: [],
     errorMessage: null,
     count: 200,
-    results: []
+    results: [],
+    filterOptions: [],
   }),
   computed: {
     hasError: function() {
@@ -95,7 +89,7 @@ export default {
         },
         {
           text: "結果",
-          value: "full_result"
+          value: "full_address"
         },
         {
           text: "地區",
@@ -116,10 +110,14 @@ export default {
         // the union headers
         ...headers.map(header => ({
           // TODO: change the "Region/DcDistrict" keywords to some meaningful text
-          text: header,
+          text: ogcioHelper.textForKey(header, 'chi'),
           value: header
         }))
-      ];
+      ].filter(header => { // Filter only enabled header
+        // note: if header option not found, it is default enabled
+        const option = this.filterOptions.find(option => option.key === header.value);
+        return option === undefined || option.enabled;
+      });
     },
     normalizedResults: function() {
       // get the keys of the headers
@@ -139,19 +137,25 @@ export default {
             result[0].geo[0].Longitude
           ).cname,
           lat: result[0].geo[0].Latitude,
-          long: result[0].geo[0].Longitude
+          lng: result[0].geo[0].Longitude
         };
-
+        // Add the remaining fields from ogcio result
         headers.forEach(field => {
           if (field.includes('.')) {
-            const [mainField,subField] = field.split('.');
-            json[field] = result[0].chi[mainField] && result[0].chi[mainField][subField]  ? result[0].chi[mainField][subField] : "";
+          const [mainField,subField] = field.split('.');
+          json[field] = result[0].chi[mainField] && result[0].chi[mainField][subField]  ? result[0].chi[mainField][subField] : "";
           } else {
             json[field] = result[0].chi[field] ? result[0].chi[field] : "";
           }
-
         });
 
+        for (const key of Object.keys(json)) {
+          const option = this.filterOptions.find(option => option.key === key);
+
+          if (option !== undefined && !option.enabled) {
+            delete json[key];
+          };
+        }
         return json;
       });
       return results;
@@ -190,14 +194,26 @@ export default {
       }
       this.addressesToSearch = this.addressString.split("\n");
       trackBatchSearch(this, this.addressesToSearch);
+      const self = this;
       asyncLib.eachOfLimit(
         this.addressesToSearch,
         10,
         // binding this for setting the results during the process
         asyncify(searchSingleResult.bind(this)),
-        err => {
-          // All query finished
-          console.error(err);
+        function(err) {
+          // Merge the filter options rather than reset it coz we want to keep the previous settings
+          const options = self.filterOptions;
+          self.normalizedHeaders.forEach(header => {
+            if (options.find(opt => opt.key === header.value) === undefined) {
+              options.push({
+                value: header.text,
+                key: header.value,
+                enabled: true
+              });
+            }
+          });
+          self.filterOptions = options;
+
         }
       );
     }
