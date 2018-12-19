@@ -114,7 +114,7 @@ export default {
       trackSingleSearch(this, this.address);
       const res = await fetch(URL, {
         headers: {
-          Accept: "application/json",
+          "Accept": "application/json",
           "Accept-Language": "en,zh-Hant",
           "Accept-Encoding": "gzip"
         }

@@ -1,8 +1,7 @@
 <template>
     <v-container>
         <v-layout row wrap>
-            <v-flex 
-              :xs1="xs1"
+            <v-flex
               :xs3="xs3"
               :key="item.key"
               v-for="item in filterOptions">
