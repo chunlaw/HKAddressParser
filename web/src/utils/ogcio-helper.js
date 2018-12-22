@@ -69,7 +69,6 @@ function textForValue(record, key, lang) {
   let val = obj[0] || '';
 
   if(obj[1]) {
-    console.log(obj)
     if(obj[1].PhaseName) {
       val = val + (val == '' ? '' : ', ') + obj[1].PhaseName;
     } else {
