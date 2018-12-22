@@ -64,8 +64,20 @@ function textForValue(record, key, lang) {
   if (typeof(record[lang][key]) === 'string') {
     return record[lang][key];
   }
+  
+  const obj = Object.values(record[lang][key]);
+  let val = obj[0] || '';
 
-  return Object.values(record[lang][key]).join();
+  if(obj[1]) {
+    console.log(obj)
+    if(obj[1].PhaseName) {
+      val = val + (val == '' ? '' : ', ') + obj[1].PhaseName;
+    } else {
+      val = val + (val == '' ? '' : ', ') + obj[1];
+    }
+  }
+
+  return val;
 }
 
 
