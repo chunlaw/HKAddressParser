@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import AddressParser from "./../lib/address-parser";
+import AddressParser from "./../lib/ogcio-parser";
 import SingleMatch from "./../components/SingleMatch";
 import asyncLib from "async";
 import dclookup from "./../utils/dclookup";
