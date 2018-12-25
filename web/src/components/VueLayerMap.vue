@@ -11,10 +11,8 @@
         <vl-source-osm></vl-source-osm>
       </vl-layer-tile>
 
-      <!-- overlay marker with animation -->
-      <vl-feature id="marker" ref="marker" :properties="{ start: Date.now(), duration: 2500 }">
-        <template slot-scope="feature">
-          <vl-geom-point :coordinates="center"></vl-geom-point>
+      <vl-feature v-for="marker in markers">
+          <vl-geom-point :coordinates="[Number(marker.lng), Number(marker.lat)]"></vl-geom-point>
           <vl-style-box>
             <vl-style-icon
               :src="images.pin"
@@ -23,15 +21,15 @@
               :size="[128, 128]"
             ></vl-style-icon>
           </vl-style-box>
-        </template>
       </vl-feature>
+
     </vl-map>
 </template>
 
 <script>
 export default {
   props: {
-    bestMatch: {
+    markers: {
       status: Object,
       geo: Array,
       chi: Object,
@@ -42,12 +40,7 @@ export default {
   computed: {
     center: {
       get: function() {
-        return this.bestMatch != null
-          ? [
-              Number(this.bestMatch["geo"][0]["Longitude"]),
-              Number(this.bestMatch["geo"][0]["Latitude"])
-            ]
-          : [114.160147, 22.35201];
+        return [114.160147, 22.35201];
       },
       set: function() {
         // do nothing
@@ -55,7 +48,7 @@ export default {
     },
     zoom: {
       get: function() {
-        return this.bestMatch != null ? 16 : 11;
+        return 11;
       },
       set: function() {
         // do nothing
