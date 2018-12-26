@@ -5,8 +5,8 @@
 
       <v-form ref="form" class="form" @submit.prevent="submit">
         <v-textarea outline name="input-7-1" label="請輸入地址（每行一個地址）" value v-model="addressString"></v-textarea>
-            <div slot="header">進階選項</div>
-            <SearchFilter :filterOptions.sync="filterOptions" />
+        <div slot="header">進階選項</div>
+        <SearchFilter :filterOptions.sync="filterOptions"/>
         <v-container>
           <v-layout row wrap>
             <v-btn @click="submit" dark class="teal">拆地址</v-btn>
@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import AddressParser from "./../lib/address-parser";
+import AddressResolver from "./../lib/address-resolver";
 import SingleMatch from "./../components/SingleMatch";
 import asyncLib from "async";
 import dclookup from "./../utils/dclookup";
@@ -76,7 +76,7 @@ export default {
     },
     // Return the unioned field list of all the results
     normalizedHeaders: function() {
-      const headers = this.getUnionedHeaders();
+      const headers = this.getDistinctHeaders();
       return [
         // the raw search
         {
@@ -106,8 +106,8 @@ export default {
         // the union headers
         ...headers.map(header => ({
           // TODO: change the "Region/DcDistrict" keywords to some meaningful text
-          text: ogcioHelper.textForKey(header, 'chi'),
-          value: header
+          text: header.label,
+          value: header.key
         }))
       ].filter(header => { // Filter only enabled header
         // note: if header option not found, it is default enabled
@@ -117,32 +117,28 @@ export default {
     },
     normalizedResults: function() {
       // get the keys of the headers
-      const headers = this.getUnionedHeaders();
+      const headers = this.getDistinctHeaders();
       // We map the results to get the first match and with all the fields (including fields that other records have)
       // TODO: english address
-      const results = this.results.map((result, index) => {
+      const results = this.results.map((searchResults, index) => {
+        const result = searchResults[0];
         let json = {
           address: this.addressesToSearch[index],
-          full_address: ogcioHelper.fullChineseAddressFromResult(result[0].chi),
+          full_address: result.fullAddress('chi'),
           subdistrict_name: dclookup.dcNameFromCoordinates(
-            result[0].geo[0].Latitude,
-            result[0].geo[0].Longitude
+            result.coordinate().lat,
+            result.coordinate().lng
           ).csubdistrict,
           dc_name: dclookup.dcNameFromCoordinates(
-            result[0].geo[0].Latitude,
-            result[0].geo[0].Longitude
+            result.coordinate().lat,
+            result.coordinate().lng
           ).cname,
-          lat: result[0].geo[0].Latitude,
-          lng: result[0].geo[0].Longitude
+          lat: result.coordinate().lat,
+          lng: result.coordinate().lng
         };
         // Add the remaining fields from ogcio result
-        headers.forEach(field => {
-          if (field.includes('.')) {
-          const [mainField,subField] = field.split('.');
-          json[field] = result[0].chi[mainField] && result[0].chi[mainField][subField]  ? result[0].chi[mainField][subField] : "";
-          } else {
-            json[field] = result[0].chi[field] ? result[0].chi[field] : "";
-          }
+        headers.forEach(({key}) => {
+          json[key] = result.componentValueForKey(key);
         });
 
         for (const key of Object.keys(json)) {
@@ -158,25 +154,23 @@ export default {
     }
   },
   methods: {
-    getUnionedHeaders: function() {
+    /**
+     * Return an array of distinct headers from all of the ogcio results
+     */
+    getDistinctHeaders: function() {
       let headers = [];
       this.results.forEach(result => {
-        // result is an array
-        // TODO: eng address
-        const chineseResult = result[0].chi;
-        const keys = Object.keys(chineseResult);
-        let flattenedKeys = [];
-        for (const key of keys) {
-          if (typeof(chineseResult[key]) === 'object') {
-            for (const subkey of Object.keys(chineseResult[key])) {
-              flattenedKeys.push(`${key}.${subkey}`);
-            }
-          } else {
-            flattenedKeys.push(key);
+        const address = result[0];
+        const components = address.components();
+
+        components.forEach(component => {
+          if (headers.find(header => header.key === component.key) === undefined) {
+            headers.push({
+              key: component.key,
+              label: component.translatedLabel
+            });
           }
-        }
-        // Get the union of headers
-        headers = [...new Set([...headers, ...flattenedKeys])];
+        });
       });
       return headers;
     },
@@ -218,16 +212,8 @@ export default {
 
 async function searchSingleResult(address, key) {
   // //const res = await fetch('http://localhost:8081/search/' + this.address);
-  const URL = `https://www.als.ogcio.gov.hk/lookup?q=${address}&n=${SEARCH_LIMIT}`;
-  const res = await fetch(URL, {
-    headers: {
-      "Accept": "application/json",
-      "Accept-Language": "en,zh-Hant",
-      "Accept-Encoding": "gzip"
-    }
-  });
-  const data = await res.json();
-  const records = await AddressParser.searchResult(address, data);
+
+  const records = await AddressResolver.queryAddress(address);
 
   this.$set(this.results, key, records);
   if (records && records.length > 0) {

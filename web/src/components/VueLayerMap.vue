@@ -29,23 +29,18 @@
 </template>
 
 <script>
+import Address from './../lib/models/address';
 export default {
   props: {
-    bestMatch: {
-      status: Object,
-      geo: Array,
-      chi: Object,
-      eng: Object,
-      matches: Array
-    }
+    bestMatch: Address
   },
   computed: {
     center: {
       get: function() {
         return this.bestMatch != null
           ? [
-              Number(this.bestMatch["geo"][0]["Longitude"]),
-              Number(this.bestMatch["geo"][0]["Latitude"])
+              Number(this.bestMatch.coordinate().lng),
+              Number(this.bestMatch.coordinate().lat)
             ]
           : [114.160147, 22.35201];
       },

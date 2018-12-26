@@ -77,8 +77,7 @@
 </template>
 
 <script>
-import AddressParser from "./../lib/address-parser";
-import ResultSelector from "./../lib/result-selector";
+import AddressResolver from "./../lib/address-resolver";
 import SingleMatch from "./../components/SingleMatch";
 import VueLayerMap from "./../components/VueLayerMap";
 import SearchFilter from "./../components/SearchFilter";
@@ -109,54 +108,9 @@ export default {
     submit: async function submit() {
       trackSingleSearch(this, this.address);
 
-      this.results = [];
+      this.results = await AddressResolver.queryAddress(this.address);
 
-      // Fetch result from OGCIO
-      const ogcioURL = `https://www.als.ogcio.gov.hk/lookup?q=${this.address}&n=${this.count}`;
 
-      const ogcioRes = await fetch(ogcioURL, {
-        headers: {
-          "Accept": "application/json",
-          "Accept-Language": "en,zh-Hant",
-          "Accept-Encoding": "gzip"
-        }
-      });
-      const ogcioData = await ogcioRes.json();
-
-      // Fetch result from GeoData Portal of Land Department
-      const landsURL = `https://geodata.gov.hk/gs/api/v1.0.0/locationSearch?q=${this.address}`;
-      const landsRes = await fetch(landsURL);
-      const landsData = await landsRes.json();
-
-      const landResult = await landsData.map(async r => {
-        let wgsURL = `http://www.geodetic.gov.hk/transform/v2/?inSys=hkgrid&outSys=wgsgeog&e=${r.x}&n=${r.y}`;
-        let wgsRes = await fetch(wgsURL);
-        let wgsData = await wgsRes.json();
-        return Object.assign(r, wgsData)
-      })
-      
-      // TODO: 
-      // in ResultSelector, compare the distance between ogcioData Bestmatch and first result of landResult,
-      // Assumption: landResult is more accurate, and cover more location of HK
-
-      // tried and got correct result from landResult : 
-      // 政府總部
-      // 立法會綜合大樓
-      // 寶鄉邨
-      // 九龍啟德承啟道28號
-
-      // If the distance is larger than certain value (i.e. 0.1km), which means there are discrepancies between 2 APIs
-      // ResultSelector will return landResult, coz we assumpe that landResult is more accurate
-
-      // Then the SingleMatch will return one landResult only, instead of 200 results
-      // For that particular landResult, only coord, addressZH and nameZH would be shown at this moment 
-      // (Logic of retriving extra address component (Region, Sub District, DCCA etc) would be implmeneted later)
-
-      this.results = ResultSelector.chooseSource(await AddressParser.searchResult(this.address, ogcioData), await landResult);
-      
-      // P.S. Result source (OGCIO/Land Department) should be displayed to user
-      // this.results['source'] = ...
-      
       if (this.results && this.results.length > 0) {
         const result = this.results[0];
         trackSingleSearchResult(this, this.address, result.score | 0);
