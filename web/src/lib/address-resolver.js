@@ -1,6 +1,6 @@
 
 import ogcioParser from './ogcio-parser';
-import Address from './../models/address';
+import * as AddressFactory from './models/address-factory';
 
 const OGCIO_RECORD_COUNT = 200;
 
@@ -51,6 +51,6 @@ export default {
 
   // P.S. Result source (OGCIO/Land Department) should be displayed to user
   // this.results['source'] = ...
-    return sortedOgcioRecords.map(record => Address.createFromOgcioRecord(record));
+    return sortedOgcioRecords.map(record => AddressFactory.createAddress(record));
   }
 }

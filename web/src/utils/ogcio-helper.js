@@ -1,3 +1,9 @@
+/**
+ * Some helper functions for showing OGCIO address result
+ * definations:
+ * https://www.als.ogcio.gov.hk/docs/Data_Dictionary_for_ALS_EN.pdf
+ */
+
 const OGCIO_KEY_BLOCK = 'Block';
 const OGCIO_KEY_PHASE = 'Phase';
 const OGCIO_KEY_ESTATE = 'Estate';
@@ -47,6 +53,11 @@ const keys = {
   }
 }
 
+
+function safeFieldValue(obj, key) {
+  return obj && obj[key] ? obj[key]: '';
+}
+
 function textForKey(key, lang) {
   return keys[lang]
     ? (keys[lang][key]
@@ -55,24 +66,6 @@ function textForKey(key, lang) {
     : key;
 }
 
-function textForValue(record, key, lang) {
-
-  if (!record[lang]) {
-    return '';
-  }
-
-  if (typeof(record[lang][key]) === 'string') {
-    return record[lang][key];
-  }
-
-  return Object.values(record[lang][key]).join();
-}
-
-
-
-function safeFieldValue(obj, key) {
-  return obj && obj[key] ? obj[key]: '';
-}
 
 function engBuildingNumberFromField(field) {
   if (!field || (!field.BuildingNoFrom && !field.BuildingNoTo)) {
@@ -96,6 +89,63 @@ function chineseBuildingNumberFromField(field) {
     return `${field.BuildingNoTo ? field.BuildingNoTo : field.BuildingNoFrom}號`;
   }
 }
+
+function prettyPrintBlock(blockObj, lang) {
+  if (lang === 'chi') {
+    return `${blockObj.BlockNo}${blockObj.BlockDescriptor}`;
+  } else if (lang === 'eng') {
+    return `${blockObj.BlockDescriptor}${blockObj.BlockNo}`;
+  }
+}
+
+function prettyPrintEstate(estateObj, lang) {
+  let estateName = estateObj.EstateName;
+  const phase = estateObj[OGCIO_KEY_PHASE];
+  if (lang === 'chi') {
+    if (phase) {
+      estateName = `${estateName}${safeFieldValue(estateObj[OGCIO_KEY_PHASE], 'PhaseNo')}${safeFieldValue(estateObj[OGCIO_KEY_PHASE], 'PhaseName')}`;
+    }
+
+  } else if (lang === 'eng') {
+    if (phase) {
+      estateName = `${safeFieldValue(estateObj[OGCIO_KEY_PHASE], 'PhaseName')}${safeFieldValue(estateObj[OGCIO_KEY_PHASE], 'PhaseNo')},${estateName}`;
+    }
+  }
+  return estateName;
+}
+
+function prettyPrintStreet(streetObj, lang) {
+  if (lang === 'chi') {
+    return `${safeFieldValue(streetObj, 'StreetName')}${chineseBuildingNumberFromField(streetObj)}`;
+  } else if (lang === 'eng') {
+    return `${engBuildingNumberFromField(streetObj)} ${safeFieldValue(streetObj, 'StreetName')}`;
+  }
+}
+
+function textForValue(record, key, lang) {
+
+  if (!record[lang]) {
+    return '';
+  }
+
+  if (typeof(record[lang][key]) === 'string') {
+    return record[lang][key];
+  }
+
+  if (key === OGCIO_KEY_ESTATE) {
+    return prettyPrintEstate(record[lang][key], lang);
+  } else if (key === OGCIO_KEY_BLOCK) {
+    return prettyPrintBlock(record[lang][key], lang);
+  } else if (key === OGCIO_KEY_STREET) {
+    return prettyPrintStreet(record[lang][key], lang);
+  }
+
+  return Object.values(record[lang][key]).join();
+}
+
+
+
+
 /**
  * Format the chinese address from the given result set
  * @param {*} result
