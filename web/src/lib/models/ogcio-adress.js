@@ -19,16 +19,6 @@ export default class OGCIOAddress extends Address {
     }
   }
 
-  componentLabelForKey(key, lang) {
-    const component = this.components(lang).find(component => component.key === key);
-    return component === undefined ? '' : component.translatedLabel;
-  }
-
-  componentValueForKey(key, lang) {
-    const component = this.components(lang).find(component => component.key === key);
-    return component === undefined ? '' : component.translatedValue;
-  }
-
   flattenComponents() {
     const flattenedComponents = {
       [Address.LANG_EN]: [],
