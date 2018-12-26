@@ -15,11 +15,11 @@ export default class Address {
     return [];
   }
 
-  componentLabelFromKey(key, lang) {
+  componentLabelForKey(key, lang) {
     return '';
   }
 
-  componentValueFromKey(key, lang) {
+  componentValueForKey(key, lang) {
     return '';
   }
 

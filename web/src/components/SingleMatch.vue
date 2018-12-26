@@ -57,12 +57,12 @@
         >
           <v-list-tile>
             <v-list-tile-content>
-              <p>{{ result.componentLabelFromKey(key, 'eng') }}</p>
-              <p>{{ result.componentLabelFromKey(key, 'chi') }}</p>
+              <p>{{ result.componentLabelForKey(key, 'eng') }}</p>
+              <p>{{ result.componentLabelForKey(key, 'chi') }}</p>
             </v-list-tile-content>
             <v-list-tile-content class="align-end">
-              <p>{{ result.componentValueFromKey(key, 'eng') }}</p>
-              <p>{{ result.componentValueFromKey(key, 'chi') }}</p>
+              <p>{{ result.componentValueForKey(key, 'eng') }}</p>
+              <p>{{ result.componentValueForKey(key, 'chi') }}</p>
             </v-list-tile-content>
           </v-list-tile>
           <v-divider></v-divider>
@@ -126,7 +126,7 @@ export default {
     },
     getFilteredKeys: function() {
       return (this.filteredKeys = this.localFilterOptions
-        .filter(opt => opt.enabled && this.result.componentLabelFromKey(opt.key, 'chi') !== '')
+        .filter(opt => opt.enabled && this.result.componentLabelForKey(opt.key, 'chi') !== '')
         .map(opt => opt.key));
     },
     disableExpansionPanelContent: function() {
