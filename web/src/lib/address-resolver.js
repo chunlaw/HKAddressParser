@@ -3,7 +3,7 @@ import ogcioParser from './ogcio-parser';
 import * as AddressFactory from './models/address-factory';
 
 const OGCIO_RECORD_COUNT = 200;
-const NEAR_THRESHOLD = 0.5; // 500M
+const NEAR_THRESHOLD = 0.1; // 100M
 
 export default {
   queryAddress: async (address) => {
