@@ -40,7 +40,7 @@ export default {
     const sortedOgcioRecords = (await ogcioParser.searchResult(address, ogcioData)).map(record => AddressFactory.createAddress('ogcio', record));
     // P.S. Result source (OGCIO/Land Department) should be displayed to user
     // this.results['source'] = ...
-
+    console.log('OGCIO:' + sortedOgcioRecords[0].fullAddress('chi'));
     console.log(sortedOgcioRecords[0].distanceTo(landResult[0]));
 
     // 1. Best Case: Land result and ogcio return the same address
