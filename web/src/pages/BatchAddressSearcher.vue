@@ -1,9 +1,22 @@
 <template>
   <v-content>
-    <v-container>
-      <v-alert v-model="hasError" type="error">{{ this.errorMessage }}</v-alert>
-
-      <v-form ref="form" class="form" @submit.prevent="submit">
+    <v-navigation-drawer clipped fixed v-model="drawer" width="600" permanent app>
+      
+      <v-card class="pa-2">
+        <v-card-title>
+          <h1 class="teal--text">我哋幫你解決難搞地址</h1>
+        </v-card-title>
+        <v-card-text>
+          <h3>
+            輸入中英文香港地址，我們幫你解析成
+            <span class="amber lighten-4 red--text px-1">地區</span>、
+            <span class="amber lighten-4 red--text px-1">街道門牌</span>、
+            <span class="amber lighten-4 red--text px-1">大廈</span>、
+            <span class="amber lighten-4 red--text px-1">坐標</span>，連
+            <span class="amber lighten-4 red--text px-1">區議會選區</span>都有
+          </h3>
+          
+         <v-form ref="form" class="form" @submit.prevent="submit">
         <v-textarea outline name="input-7-1" label="請輸入地址（每行一個地址）" value v-model="addressString"></v-textarea>
         <div slot="header">進階選項</div>
         <SearchFilter :filterOptions.sync="filterOptions"/>
@@ -19,6 +32,8 @@
             </download-excel>
           </v-layout>
         </v-container>
+
+        
 
         <template v-if="addressesToSearch.length > 0">
           <v-progress-linear
@@ -40,8 +55,20 @@
           </v-data-table>
         </template>
       </v-form>
-    </v-container>
+          
+        </v-card-text>
+      </v-card>
+
+<v-alert v-model="hasError" type="error">{{ this.errorMessage }}</v-alert>
+
+
+    </v-navigation-drawer>
+    <VueLayerMap :markers="normalizedResults" />
   </v-content>
+
+
+
+
 </template>
 
 <script>
@@ -51,6 +78,7 @@ import asyncLib from "async";
 import dclookup from "./../utils/dclookup";
 import ogcioHelper from "./../utils/ogcio-helper";
 import SearchFilter from "./../components/SearchFilter";
+import VueLayerMap from "./../components/VueLayerMap";
 import asyncify from 'async/asyncify';
 import {
   trackBatchSearch,
@@ -60,9 +88,11 @@ const SEARCH_LIMIT = 200;
 
 export default {
   components: {
-    SearchFilter
+    SearchFilter,
+    VueLayerMap
   },
   data: () => ({
+    drawer: true,
     addressString: "",
     addressesToSearch: [],
     errorMessage: null,
@@ -152,6 +182,13 @@ export default {
       });
       return results;
     }
+    // markers: function() {
+    //   const latlng = this.normalizedResults.reduce((accumulator, currentValue) => {
+    //     console.log(currentValue)
+    //     // return accumulator.push(currentValue.lat)
+    //   }, []);
+    //   return latlng;
+    // }
   },
   methods: {
     /**

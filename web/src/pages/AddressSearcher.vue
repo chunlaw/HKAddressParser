@@ -1,6 +1,7 @@
 <template>
   <v-content>
     <v-navigation-drawer clipped fixed v-model="drawer" width="600" permanent app>
+      
       <v-card class="pa-2">
         <v-card-title>
           <h1 class="teal--text">我哋幫你解決難搞地址</h1>
@@ -14,6 +15,7 @@
             <span class="amber lighten-4 red--text px-1">坐標</span>，連
             <span class="amber lighten-4 red--text px-1">區議會選區</span>都有
           </h3>
+          
           <v-form ref="form" class="form" @submit.prevent="submit">
             <v-text-field v-model="address" placeholder="九龍佐敦彌敦道380號" append-icon="search" required></v-text-field>
 
@@ -26,12 +28,14 @@
 
             <v-btn @click="submit" dark class="teal">拆地址</v-btn>
           </v-form>
+          
         </v-card-text>
       </v-card>
 
       <v-flex v-for="(result, index) in results" :key="index" class="expansion-wrapper">
         <SingleMatch :result="result" :rank="index" :filterOptions="filterOptions"/>
       </v-flex>
+
       <v-container fluid grid-list-md>
         <v-layout row wrap>
           <v-flex d-flex xs6>
@@ -72,7 +76,7 @@
         </v-layout>
       </v-container>
     </v-navigation-drawer>
-    <VueLayerMap :bestMatch="results[0]"/>
+    <VueLayerMap :markers="results[0]" />
   </v-content>
 </template>
 
