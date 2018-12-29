@@ -33,7 +33,9 @@
           </v-layout>
         </v-container>
 
-        
+      <v-flex v-for="(result, index) in this.results" :key="index" class="expansion-wrapper">
+         <ResultCard :result="result[0]"  :rank="index" :filterOptions="filterOptions"/>
+      </v-flex>        
 
         <template v-if="addressesToSearch.length > 0">
           <v-progress-linear
@@ -88,6 +90,7 @@ const SEARCH_LIMIT = 200;
 
 export default {
   components: {
+    ResultCard,
     SearchFilter,
     VueLayerMap
   },
