@@ -33,7 +33,7 @@
       </v-card>
 
       <v-flex v-for="(result, index) in results" :key="index" class="expansion-wrapper">
-        <SingleMatch :result="result" :rank="index" :filterOptions="filterOptions"/>
+        <ResultCard :result="result" :rank="index" :filterOptions="filterOptions"/>
       </v-flex>
 
       <v-container fluid grid-list-md>
@@ -82,7 +82,7 @@
 
 <script>
 import AddressResolver from "./../lib/address-resolver";
-import SingleMatch from "./../components/SingleMatch";
+import ResultCard from "./../components/ResultCard";
 import VueLayerMap from "./../components/VueLayerMap";
 import SearchFilter from "./../components/SearchFilter";
 import ogcioHelper from "./../utils/ogcio-helper";
@@ -93,7 +93,7 @@ import {
 
 export default {
   components: {
-    SingleMatch,
+    ResultCard,
     VueLayerMap,
     SearchFilter
   },

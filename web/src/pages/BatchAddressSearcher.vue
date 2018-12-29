@@ -73,7 +73,7 @@
 
 <script>
 import AddressResolver from "./../lib/address-resolver";
-import SingleMatch from "./../components/SingleMatch";
+import ResultCard from "./../components/ResultCard";
 import asyncLib from "async";
 import dclookup from "./../utils/dclookup";
 import ogcioHelper from "./../utils/ogcio-helper";
