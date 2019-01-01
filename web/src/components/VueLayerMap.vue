@@ -12,7 +12,7 @@
       </vl-layer-tile>
 
       <!-- interactions -->
-      <vl-interaction-select 
+      <vl-interaction-select
       :features.sync="selectedFeature"
       >
       <template slot-scope="select">
@@ -28,8 +28,8 @@
       </vl-interaction-select>
       <!--// interactions -->
 
-      <vl-feature v-for="marker in markers" :properties="marker" >
-          <vl-geom-point :coordinates="[Number(marker.lng), Number(marker.lat)]"></vl-geom-point>
+      <vl-feature v-for="marker in markers" :properties="marker" :key="marker.id" v-if="marker">
+          <vl-geom-point :coordinates="[Number(marker.coordinate().lng), Number(marker.coordinate().lat)]"></vl-geom-point>
           <vl-style-box>
             <vl-style-icon
               :src="images.pin"
@@ -50,16 +50,10 @@ export default {
   props: {
     markers: Array
   },
-  computed: {
-    center: function() {
-        return [114.160147, 22.35201];
-    },
-    zoom: function() {
-        return 11;
-    }
-  },
   data() {
     return {
+      center: [114.160147, 22.35201],
+      zoom: 11,
       rotation: 0,
       selectedFeature: [],
       images: {
