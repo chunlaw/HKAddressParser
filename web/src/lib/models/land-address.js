@@ -1,7 +1,8 @@
 import Address from './address';
 
-export default class LandAddress {
+export default class LandAddress extends Address{
   constructor(landRecord) {
+    super();
     this.record = landRecord;
   }
 
@@ -17,13 +18,13 @@ export default class LandAddress {
   components(lang) {
     if (lang === Address.LANG_EN) {
       return [{
-        translatedValue: landRecord.nameEN,
+        translatedValue: this.record.nameEN,
         key: name,
         translatedLabel: "Name"
       }];
     } else if (lang === Address.LANG_ZH) {
       return [{
-        translatedValue: landRecord.nameZH,
+        translatedValue: this.record.nameZH,
         key: name,
         translatedLabel: "Name"
       }];
@@ -32,9 +33,9 @@ export default class LandAddress {
 
   fullAddress(lang) {
     if (lang === Address.LANG_EN) {
-      return landRecord.addressEN;
+      return this.record.addressEN;
     } else if (lang === Address.LANG_ZH) {
-      return landRecord.addressZH;
+      return this.record.addressZH;
     }
   }
 
