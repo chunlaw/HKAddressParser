@@ -1,7 +1,7 @@
 <template>
   <v-content>
     <v-navigation-drawer clipped fixed v-model="drawer" width="600" permanent app>
-      
+
       <v-card class="pa-2">
         <v-card-title>
           <h1 class="teal--text">我哋幫你解決難搞地址</h1>
@@ -15,7 +15,7 @@
             <span class="amber lighten-4 red--text px-1">坐標</span>，連
             <span class="amber lighten-4 red--text px-1">區議會選區</span>都有
           </h3>
-          
+
          <v-form ref="form" class="form" @submit.prevent="submit">
         <v-textarea outline name="input-7-1" label="請輸入地址（每行一個地址）" value v-model="addressString"></v-textarea>
         <div slot="header">進階選項</div>
@@ -35,7 +35,7 @@
 
       <v-flex v-for="(result, index) in this.results" :key="index" class="expansion-wrapper">
          <ResultCard :result="result[0]"  :rank="index" :filterOptions="filterOptions"/>
-      </v-flex>        
+      </v-flex>
 
         <template v-if="addressesToSearch.length > 0">
           <v-progress-linear
@@ -57,7 +57,7 @@
           </v-data-table>
         </template>
       </v-form>
-          
+
         </v-card-text>
       </v-card>
 
@@ -171,7 +171,7 @@ export default {
         };
         // Add the remaining fields from ogcio result
         headers.forEach(({key}) => {
-          json[key] = result.componentValueForKey(key);
+          json[key] = result.componentValueForKey(key, 'chi');
         });
 
         for (const key of Object.keys(json)) {
@@ -201,7 +201,7 @@ export default {
       let headers = [];
       this.results.forEach(result => {
         const address = result[0];
-        const components = address.components();
+        const components = address.components('chi');
 
         components.forEach(component => {
           if (headers.find(header => header.key === component.key) === undefined) {
@@ -254,7 +254,6 @@ async function searchSingleResult(address, key) {
   // //const res = await fetch('http://localhost:8081/search/' + this.address);
 
   const records = await AddressResolver.queryAddress(address);
-
   this.$set(this.results, key, records);
   if (records && records.length > 0) {
     const result = records[0];

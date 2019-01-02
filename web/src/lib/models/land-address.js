@@ -47,6 +47,7 @@ export default class LandAddress extends Address{
   }
 
   coordinates() {
+
     return [{
       lat: this.record.lat,
       lng: this.record.lng,
