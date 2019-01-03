@@ -1,22 +1,8 @@
 <template>
   <v-content>
-    <v-navigation-drawer clipped fixed v-model="drawer" width="600" permanent app>
-
-      <v-card class="pa-2">
-        <v-card-title>
-          <h1 class="teal--text">我哋幫你解決難搞地址</h1>
-        </v-card-title>
-        <v-card-text>
-          <h3>
-            輸入中英文香港地址，我們幫你解析成
-            <span class="amber lighten-4 red--text px-1">地區</span>、
-            <span class="amber lighten-4 red--text px-1">街道門牌</span>、
-            <span class="amber lighten-4 red--text px-1">大廈</span>、
-            <span class="amber lighten-4 red--text px-1">坐標</span>，連
-            <span class="amber lighten-4 red--text px-1">區議會選區</span>都有
-          </h3>
-
-         <v-form ref="form" class="form" @submit.prevent="submit">
+    <v-container>
+      <v-form ref="form" class="form" @submit.prevent="submit">
+      <v-alert v-model="hasError" type="error">{{ this.errorMessage }}</v-alert>
         <v-textarea outline name="input-7-1" label="請輸入地址（每行一個地址）" value v-model="addressString"></v-textarea>
         <div slot="header">進階選項</div>
         <SearchFilter :filterOptions.sync="filterOptions"/>
@@ -32,10 +18,6 @@
             </download-excel>
           </v-layout>
         </v-container>
-
-      <v-flex v-for="(result, index) in this.results" :key="index" class="expansion-wrapper">
-         <ResultCard :result="result[0]"  :rank="index" :filterOptions="filterOptions"/>
-      </v-flex>
 
         <template v-if="addressesToSearch.length > 0">
           <v-progress-linear
@@ -57,42 +39,23 @@
           </v-data-table>
         </template>
       </v-form>
-
-        </v-card-text>
-      </v-card>
-
-<v-alert v-model="hasError" type="error">{{ this.errorMessage }}</v-alert>
-
-
-    </v-navigation-drawer>
-    <VueLayerMap :markers="normalizedResults" />
+    </v-container>
   </v-content>
-
-
-
-
 </template>
 
 <script>
 import AddressResolver from "./../lib/address-resolver";
-import ResultCard from "./../components/ResultCard";
 import asyncLib from "async";
 import dclookup from "./../utils/dclookup";
 import ogcioHelper from "./../utils/ogcio-helper";
 import SearchFilter from "./../components/SearchFilter";
-import VueLayerMap from "./../components/VueLayerMap";
-import asyncify from 'async/asyncify';
-import {
-  trackBatchSearch,
-  trackBatchSearchResult
-} from "./../utils/ga-helper";
+import asyncify from "async/asyncify";
+import { trackBatchSearch, trackBatchSearchResult } from "./../utils/ga-helper";
 const SEARCH_LIMIT = 200;
 
 export default {
   components: {
-    ResultCard,
-    SearchFilter,
-    VueLayerMap
+    SearchFilter
   },
   data: () => ({
     drawer: true,
@@ -101,7 +64,7 @@ export default {
     errorMessage: null,
     count: 200,
     results: [],
-    filterOptions: [],
+    filterOptions: []
   }),
   computed: {
     hasError: function() {
@@ -142,9 +105,12 @@ export default {
           text: header.label,
           value: header.key
         }))
-      ].filter(header => { // Filter only enabled header
+      ].filter(header => {
+        // Filter only enabled header
         // note: if header option not found, it is default enabled
-        const option = this.filterOptions.find(option => option.key === header.value);
+        const option = this.filterOptions.find(
+          option => option.key === header.value
+        );
         return option === undefined || option.enabled;
       });
     },
@@ -157,7 +123,7 @@ export default {
         const result = searchResults[0];
         let json = {
           address: this.addressesToSearch[index],
-          full_address: result.fullAddress('chi'),
+          full_address: result.fullAddress("chi"),
           subdistrict_name: dclookup.dcNameFromCoordinates(
             result.coordinate().lat,
             result.coordinate().lng
@@ -170,8 +136,8 @@ export default {
           lng: result.coordinate().lng
         };
         // Add the remaining fields from ogcio result
-        headers.forEach(({key}) => {
-          json[key] = result.componentValueForKey(key, 'chi');
+        headers.forEach(({ key }) => {
+          json[key] = result.componentValueForKey(key, "chi");
         });
 
         for (const key of Object.keys(json)) {
@@ -179,19 +145,12 @@ export default {
 
           if (option !== undefined && !option.enabled) {
             delete json[key];
-          };
+          }
         }
         return json;
       });
       return results;
     }
-    // markers: function() {
-    //   const latlng = this.normalizedResults.reduce((accumulator, currentValue) => {
-    //     console.log(currentValue)
-    //     // return accumulator.push(currentValue.lat)
-    //   }, []);
-    //   return latlng;
-    // }
   },
   methods: {
     /**
@@ -201,10 +160,12 @@ export default {
       let headers = [];
       this.results.forEach(result => {
         const address = result[0];
-        const components = address.components('chi');
+        const components = address.components("chi");
 
         components.forEach(component => {
-          if (headers.find(header => header.key === component.key) === undefined) {
+          if (
+            headers.find(header => header.key === component.key) === undefined
+          ) {
             headers.push({
               key: component.key,
               label: component.translatedLabel
@@ -243,7 +204,6 @@ export default {
             }
           });
           self.filterOptions = options;
-
         }
       );
     }
