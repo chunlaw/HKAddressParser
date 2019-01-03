@@ -1,5 +1,15 @@
 # Road map and release
 
+## 2019-01-02
+
+### Updates
+
+#### Release 0.5
+
+1. Add source for each result (ogcio/land, or both) (use v-chip)
+2. Add more address component for land result (use the name component of land result to query ogcio again)
+3. i18n website ???
+
 ## 2018-12-05
 
 ### Updates
