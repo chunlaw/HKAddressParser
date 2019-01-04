@@ -1,9 +1,11 @@
 
 import ogcioParser from './ogcio-parser';
 import * as AddressFactory from './models/address-factory';
+import proj4 from 'proj4';
+import ProjConvertor from '../utils/proj-convertor';
 
 const OGCIO_RECORD_COUNT = 200;
-const NEAR_THRESHOLD = 0.1; // 100M
+const NEAR_THRESHOLD = 0.03; // 30 metre
 
 export default {
   queryAddress: async (address) => {
@@ -26,31 +28,32 @@ export default {
 
     const landRecords = [];
     for (const data of landsData) {
-      const wgsURL = `http://www.geodetic.gov.hk/transform/v2/?inSys=hkgrid&outSys=wgsgeog&e=${data.x}&n=${data.y}`;
-      const wgsRes = await fetch(wgsURL);
-      const wgsData = await wgsRes.json();
-      data.lat = wgsData.wgsLat;
-      data.lng = wgsData.wgsLong
+      let wgsLng, wgslat;
+      [wgsLng, wgslat] = ProjConvertor.projTransform('EPSG:2326', 'EPSG:4326', [data.x, data.y]);
+      data.lat = wgslat
+      data.lng = wgsLng
       landRecords.push(AddressFactory.createAddress('land', data));
     }
     const sortedResults = [];
     const sortedOgcioRecords = (await ogcioParser.searchResult(address, ogcioData)).map(record => AddressFactory.createAddress('ogcio', record));
     // P.S. Result source (OGCIO/Land Department) should be displayed to user
     // this.results['source'] = ...
-    console.log('OGCIO:' + sortedOgcioRecords[0].fullAddress('chi'));
-    console.log(sortedOgcioRecords[0].distanceTo(landRecords[0]));
+    console.log('OGCIO Best match: ' + sortedOgcioRecords[0].fullAddress('chi'));
 
     // 1. Best Case: Land result and ogcio return the same address
     if (sortedOgcioRecords[0].distanceTo(landRecords[0]) < NEAR_THRESHOLD) {
+      console.log('1. Best Case: Land result and ogcio return the same address');
       return sortedOgcioRecords;
     }
 
     // 2. best result from OGCIO is not the land result but somehow within the 200 records and we would find it out
     // Do 200 * n coordinates calculation
-
+    console.log('2. best result from OGCIO is not the land result but somehow within the 200 records and we would find it out');
+    console.log('Distance shorter than ' + NEAR_THRESHOLD + ' km');
     sortedOgcioRecords.forEach(ogcioRecord => {
       if (ogcioRecord.distanceTo(landRecords[0]) < NEAR_THRESHOLD) {
         sortedResults.push(ogcioRecord);
+        console.log(ogcioRecord.distanceTo(landRecords[0]) + ' | ' + ogcioRecord.fullAddress('chi'))
       }
     });
 
@@ -60,6 +63,7 @@ export default {
 
 
     // 3. ogcio not found but there is land result. We use the record then.
+    console.log('3. ogcio not found but there is land result.');
     return landRecords;
     // TODO:
     // in ResultSelector, compare the distance between ogcioData Bestmatch and first result of landResult,
