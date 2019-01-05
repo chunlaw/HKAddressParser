@@ -30,7 +30,7 @@
 
       <vl-feature v-for="marker in markers" :properties="marker" :key="marker.id">
         <div v-if="marker">
-          <vl-geom-point :coordinates="center"></vl-geom-point>
+          <vl-geom-point :coordinates="marker.latlng"></vl-geom-point>
           <vl-style-box>
             <vl-style-icon
               :src="images.pin"
@@ -70,8 +70,8 @@ export default {
   watch: { 
     markers: function(newVal, oldVal) {
       if(newVal[0]) {
-        this.center = [Number(newVal[0].lng), Number(newVal[0].lat)];
-        this.zoom = 18;
+        this.center = newVal[0].latlng;
+        this.zoom = 16;
       }
     }
   }
