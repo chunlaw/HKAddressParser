@@ -28,14 +28,10 @@ export default {
         normalizedHeaders: Array,
         normalizedResults: Array
     },
-    data: {
-        filterOptions: [],
-    },
     computed: {
         hasError: function() {
             return this.errorMessage !== null;
         },
-        
-    }
+    }, 
 }
 </script>
