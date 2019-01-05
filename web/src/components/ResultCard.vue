@@ -95,7 +95,7 @@ export default {
     disableContent: false,
     filteredKeys: [],
     localFilterOptions: [],
-    expanded: [false] // set the default value by the rank. first object should be expanded
+    expanded: [true] // set the default value by the rank. first object should be expanded
   }),
   mounted: function() {
     this.localFilterOptions = this.filterOptions;
@@ -106,7 +106,7 @@ export default {
       this.filteredKeys = this.getFilteredKeys();
       this.$forceUpdate();
     });
-    this.expanded = [this.isBestMatch];
+    //this.expanded = [this.isBestMatch];
   },
   computed: {
     district: function() {
