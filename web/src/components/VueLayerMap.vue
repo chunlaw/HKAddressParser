@@ -28,8 +28,9 @@
       </vl-interaction-select>
       <!--// interactions -->
 
-      <vl-feature v-for="marker in markers" :properties="marker" :key="marker.id" v-if="marker">
-          <vl-geom-point :coordinates="[Number(marker.coordinate().lng), Number(marker.coordinate().lat)]"></vl-geom-point>
+      <vl-feature v-for="marker in markers" :properties="marker" :key="marker.id">
+        <div v-if="marker">
+          <vl-geom-point :coordinates="center"></vl-geom-point>
           <vl-style-box>
             <vl-style-icon
               :src="images.pin"
@@ -38,6 +39,7 @@
               :size="[128, 128]"
             ></vl-style-icon>
           </vl-style-box>
+        </div>
       </vl-feature>
 
     </vl-map>
@@ -64,6 +66,14 @@ export default {
   },
   methods: {
     pointOnSurface: findPointOnSurface
+  },
+  watch: { 
+    markers: function(newVal, oldVal) {
+      if(newVal[0]) {
+        this.center = [Number(newVal[0].lng), Number(newVal[0].lat)];
+        this.zoom = 18;
+      }
+    }
   }
 };
 </script>
