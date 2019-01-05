@@ -11,7 +11,7 @@
         <vl-source-osm></vl-source-osm>
       </vl-layer-tile>
 
-      <vl-feature v-for="marker in markers">
+      <vl-feature v-for="marker in markers" >
           <vl-geom-point :coordinates="[Number(marker.lng), Number(marker.lat)]"></vl-geom-point>
           <vl-style-box>
             <vl-style-icon
@@ -37,31 +37,23 @@ export default {
       matches: Array
     }
   },
-  computed: {
-    center: {
-      get: function() {
-        return [114.160147, 22.35201];
-      },
-      set: function() {
-        // do nothing
-      }
-    },
-    zoom: {
-      get: function() {
-        return 11;
-      },
-      set: function() {
-        // do nothing
-      }
-    }
-  },
   data() {
     return {
       rotation: 0,
       images: {
         pin: require('../assets/pin.png')
-      }
+      },
+      center: [114.160147, 22.35201],
+      zoom: 11
     };
+  },
+  watch: { 
+    markers: function(newVal, oldVal) {
+      if(newVal[0]) {
+        this.center = [Number(newVal[0].lng), Number(newVal[0].lat)];
+        this.zoom = 18;
+      }
+    }
   }
 };
 </script>
