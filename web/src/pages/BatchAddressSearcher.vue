@@ -65,7 +65,7 @@
 
 
     </v-navigation-drawer>
-    <VueLayerMap :markers="markers" />
+    <VueLayerMap :markers="normalizedResults" />
   </v-content>
 
 
@@ -191,15 +191,15 @@ export default {
         return results;
       }
     },
-    markers: function() {
-      const latlng = this.normalizedResultsArr.reduce((accumulator, currentValue) => {
-        accumulator.push({
-          latlng: [Number(currentValue.lng), Number(currentValue.lat)]
-        });
-        return accumulator;
-      }, []);
-      return latlng;
-    }
+    // markers: function() {
+    //   const latlng = this.normalizedResultsArr.reduce((accumulator, currentValue) => {
+    //     accumulator.push({
+    //       latlng: [Number(currentValue.lng), Number(currentValue.lat)]
+    //     });
+    //     return accumulator;
+    //   }, []);
+    //   return latlng;
+    // }
   },
   methods: {
     /**
