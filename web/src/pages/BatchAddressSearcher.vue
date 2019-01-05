@@ -170,7 +170,6 @@ export default {
         return json;
         });
         
-        results.length = 1;
         return results;
     }
   },
