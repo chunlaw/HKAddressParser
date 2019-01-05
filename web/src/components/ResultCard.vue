@@ -15,12 +15,12 @@
         </v-chip>
 
         <h2>
-          <p>{{ fullChineseAddressFromResult(result.chi) }}</p>
-          <p>{{ fullEnglishAddressFromResult(result.eng) }}</p>
+          <p>{{ result.fullAddress('chi') }}</p>
+          <p>{{ result.fullAddress('eng') }}</p>
         </h2>
         <span
           class="text-xs-right grey--text"
-        >{{ result.geo[0].Latitude + ", " + result.geo[0].Longitude }}</span>
+        >{{ result.coordinate().lat + ", " + result.coordinate().lng }}</span>
 
 
 
@@ -54,16 +54,15 @@
           subheader
           v-for="key in filteredKeys"
           :key="key"
-          :class="`match_level_${getConfidentLevel(key)}`"
         >
           <v-list-tile>
             <v-list-tile-content>
-              <p>{{ textForKey(key, 'eng') }}</p>
-              <p>{{ textForKey(key, 'chi') }}</p>
+              <p>{{ result.componentLabelForKey(key, 'eng') }}</p>
+              <p>{{ result.componentLabelForKey(key, 'chi') }}</p>
             </v-list-tile-content>
             <v-list-tile-content class="align-end">
-              <p>{{ textForValue(result, key, 'eng') }}</p>
-              <p>{{ textForValue(result, key, 'chi') }}</p>
+              <p>{{ result.componentValueForKey(key, 'eng') }}</p>
+              <p>{{ result.componentValueForKey(key, 'chi') }}</p>
             </v-list-tile-content>
           </v-list-tile>
           <v-divider></v-divider>
@@ -74,8 +73,8 @@
 </template>
 
 <script>
-import dclookup from "./../utils/dclookup.js";
-import ogcioHelper from "./../utils/ogcio-helper.js";
+import Address from './../lib/models/address';
+import dclookup from "./../utils/dclookup";
 import ButtonTick from './ButtonTick';
 import ButtonCross from './ButtonCross';
 import {
@@ -88,13 +87,7 @@ export default {
   props: {
     searchAddress: String,
     rank: Number,
-    result: {
-      status: Object,
-      geo: Array,
-      chi: Object,
-      eng: Object,
-      matches: Array
-    },
+    result: Address,
     filterOptions: Array
   },
   data: () => ({
@@ -118,8 +111,8 @@ export default {
   computed: {
     district: function() {
       return dclookup.dcNameFromCoordinates(
-        this.result.geo[0].Latitude,
-        this.result.geo[0].Longitude
+        this.result.coordinate().lat,
+        this.result.coordinate().lng
       );
     },
     isBestMatch: function () {
@@ -131,25 +124,9 @@ export default {
       e.stopPropagation();
       console.log('tick');
     },
-    textForKey: ogcioHelper.textForKey,
-    textForValue: ogcioHelper.textForValue,
-    fullChineseAddressFromResult: ogcioHelper.fullChineseAddressFromResult,
-    fullEnglishAddressFromResult: ogcioHelper.fullEnglishAddressFromResult,
-    // To a confident level of 0-4
-    getConfidentLevel: function(key) {
-      return Math.min(
-        4,
-        (this.result.matches
-          .filter(match => match.matchedKey === key)
-          .map(match => match.confident)
-          .reduce((p, c) => c, 0) *
-          5) |
-          0
-      );
-    },
     getFilteredKeys: function() {
       return (this.filteredKeys = this.localFilterOptions
-        .filter(opt => opt.enabled && this.result.chi[opt.key] !== undefined)
+        .filter(opt => opt.enabled && this.result.componentLabelForKey(opt.key, 'chi') !== '')
         .map(opt => opt.key));
     },
     disableExpansionPanelContent: function() {
@@ -171,23 +148,6 @@ export default {
 </script>
 
 <style>
-.match_level_1 {
-  color: rgb(255, 144, 144) !important;
-  font-weight: bolder;
-}
-
-.match_level_2 {
-  color: rgb(231, 141, 141) !important;
-}
-
-.match_level_3 {
-  color: rgb(248, 87, 87) !important;
-}
-
-.match_level_4 {
-  color: red !important;
-  font-weight: bolder;
-}
 
 .align-end {
   text-align: right;
