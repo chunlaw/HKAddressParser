@@ -1,8 +1,8 @@
 <template>
   <v-content>
-     <v-layout row>
-       <v-flex xs12 md4>
-      <v-container>
+    <v-navigation-drawer clipped fixed v-model="drawer" width="600" permanent app>
+      
+      <v-card class="pa-2">
         <v-card-title>
           <h1 class="teal--text">我哋幫你解決難搞地址</h1>
         </v-card-title>
@@ -15,56 +15,72 @@
             <span class="amber lighten-4 red--text px-1">坐標</span>，連
             <span class="amber lighten-4 red--text px-1">區議會選區</span>都有
           </h3>
-          <br/>
-          <v-alert v-model="hasError" type="error">{{ this.errorMessage }}</v-alert>
-          <v-form ref="form" class="form" @submit.prevent="submit">
-            <v-textarea outline name="input-7-1" label="請輸入地址（每行一個地址)" value v-model="addressString"></v-textarea>
-            <v-container>
-              <v-layout row wrap>
-                <v-btn @click="submit" dark class="teal">拆地址</v-btn>
-                <download-excel
-                  v-if="results.length > 0 && results.length === addressesToSearch.length"
-                  :data="normalizedResults"
-                  type="csv"
-                >
-                  <v-btn dark class="teal">下載 CSV</v-btn>
-                </download-excel>
-              </v-layout>
-            </v-container>
-          </v-form>
-        </v-card-text>
-      </v-container>
-      </v-flex>
-      <v-flex xs12 md8> 
+          
+         <v-form ref="form" class="form" @submit.prevent="submit">
+        <v-textarea outline name="input-7-1" label="請輸入地址（每行一個地址）" value v-model="addressString"></v-textarea>
+        <div slot="header">進階選項</div>
+        <SearchFilter :filterOptions.sync="filterOptions"/>
         <v-container>
-        <VueLayerMap :markers="normalizedResults" />
+          <v-layout row wrap>
+            <v-btn @click="submit" dark class="teal">拆地址</v-btn>
+            <download-excel
+              v-if="results.length > 0 && results.length === addressesToSearch.length"
+              :data="normalizedResults"
+              type="csv"
+            >
+              <v-btn dark class="teal">下載 CSV</v-btn>
+            </download-excel>
+          </v-layout>
         </v-container>
-      </v-flex>
-    </v-layout>
-    <v-layout row><v-flex xs12>
-        <v-container>
-           <template v-if="addressesToSearch.length > 0">
-              <v-progress-linear
-                background-color="lime"
-                color="success"
-                :value="(results.length * 100 / addressesToSearch.length)"
-              ></v-progress-linear>
-              <ResultTable :filterOptions="filterOptions" :normalizedHeaders="normalizedHeaders" :normalizedResults="normalizedResults"/>
+
+      <v-flex v-for="(result, index) in this.results" :key="index" class="expansion-wrapper">
+         <ResultCard :result="result[0]"  :rank="index" :filterOptions="filterOptions"/>
+      </v-flex>        
+
+        <template v-if="addressesToSearch.length > 0">
+          <v-progress-linear
+            background-color="lime"
+            color="success"
+            :value="(results.length * 100 / addressesToSearch.length)"
+          ></v-progress-linear>
+
+          <!-- When to show the datatable? Now showing it when ever there is data -->
+          <v-data-table
+            :headers="normalizedHeaders"
+            :items="normalizedResults"
+            :rows-per-page-items="[ 50, 100, 500, { 'text': '$vuetify.dataIterator.rowsPerPageAll', 'value': -1 } ]"
+            class="elevation-1"
+          >
+            <template slot="items" slot-scope="props">
+              <td v-for="(field, index) in props.item" :key="index">{{ field }}</td>
             </template>
-        </v-container>
-      </v-flex>
-    </v-layout>
+          </v-data-table>
+        </template>
+      </v-form>
+          
+        </v-card-text>
+      </v-card>
+
+<v-alert v-model="hasError" type="error">{{ this.errorMessage }}</v-alert>
+
+
+    </v-navigation-drawer>
+    <VueLayerMap :markers="markers" />
   </v-content>
+
+
+
+
 </template>
 
 <script>
-import AddressParser from "./../lib/address-parser";
-import SingleMatch from "./../components/SingleMatch";
+import AddressResolver from "./../lib/address-resolver";
+import ResultCard from "./../components/ResultCard";
 import asyncLib from "async";
 import dclookup from "./../utils/dclookup";
 import ogcioHelper from "./../utils/ogcio-helper";
+import SearchFilter from "./../components/SearchFilter";
 import VueLayerMap from "./../components/VueLayerMap";
-import ResultTable from "./ResultTable";
 import asyncify from 'async/asyncify';
 import {
   trackBatchSearch,
@@ -74,16 +90,19 @@ const SEARCH_LIMIT = 200;
 
 export default {
   components: {
-    VueLayerMap,
-    ResultTable
+    ResultCard,
+    SearchFilter,
+    VueLayerMap
   },
   data: () => ({
+    drawer: true,
     addressString: "",
     addressesToSearch: [],
     errorMessage: null,
     count: 200,
     results: [],
-    filterOptions: []
+    filterOptions: [],
+    normalizedResultsArr: [],
   }),
   computed: {
     hasError: function() {
@@ -91,110 +110,117 @@ export default {
     },
     // Return the unioned field list of all the results
     normalizedHeaders: function() {
-        const headers = this.getUnionedHeaders();
-        return [
+      const headers = this.getDistinctHeaders();
+      return [
         // the raw search
         {
-            text: "地址",
-            value: "address"
+          text: "地址",
+          value: "address"
         },
         {
-            text: "結果",
-            value: "full_address"
+          text: "結果",
+          value: "full_address"
         },
         {
-            text: "地區",
-            value: "subdistrict_name"
+          text: "地區",
+          value: "subdistrict_name"
         },
         {
-            text: "區議會選區",
-            value: "dc_name"
+          text: "區議會選區",
+          value: "dc_name"
         },
         {
-            text: "緯度",
-            value: "lat"
+          text: "緯度",
+          value: "lat"
         },
         {
-            text: "經度",
-            value: "lng"
+          text: "經度",
+          value: "lng"
         },
         // the union headers
         ...headers.map(header => ({
-            // TODO: change the "Region/DcDistrict" keywords to some meaningful text
-            text: ogcioHelper.textForKey(header, 'chi'),
-            value: header
+          // TODO: change the "Region/DcDistrict" keywords to some meaningful text
+          text: header.label,
+          value: header.key
         }))
-        ].filter(header => { // Filter only enabled header
+      ].filter(header => { // Filter only enabled header
         // note: if header option not found, it is default enabled
         const option = this.filterOptions.find(option => option.key === header.value);
         return option === undefined || option.enabled;
-        });
+      });
     },
     normalizedResults: function() {
-        // get the keys of the headers
-        const headers = this.getUnionedHeaders();
-        // We map the results to get the first match and with all the fields (including fields that other records have)
-        // TODO: english address
-        const results = this.results.map((result, index) => {
-        let json = {
+      // get the keys of the headers
+      const headers = this.getDistinctHeaders();
+      // We map the results to get the first match and with all the fields (including fields that other records have)
+      // TODO: english address
+
+
+      if(this.results[0] != undefined) {
+          const results = this.results[0].map((searchResults, index) => {
+          const result = searchResults;
+          let json = {
             address: this.addressesToSearch[index],
-            full_address: ogcioHelper.fullChineseAddressFromResult(result[0].chi),
+            full_address: result.fullAddress('chi'),
             subdistrict_name: dclookup.dcNameFromCoordinates(
-            result[0].geo[0].Latitude,
-            result[0].geo[0].Longitude
+              result.coordinate().lat,
+              result.coordinate().lng
             ).csubdistrict,
             dc_name: dclookup.dcNameFromCoordinates(
-            result[0].geo[0].Latitude,
-            result[0].geo[0].Longitude
+              result.coordinate().lat,
+              result.coordinate().lng
             ).cname,
-            lat: result[0].geo[0].Latitude,
-            lng: result[0].geo[0].Longitude
-        };
-        // Add the remaining fields from ogcio result
-        headers.forEach(field => {
-            if (field.includes('.')) {
-            const [mainField,subField] = field.split('.');
-            json[field] = result[0].chi[mainField] && result[0].chi[mainField][subField]  ? result[0].chi[mainField][subField] : "";
-            } else {
-            json[field] = result[0].chi[field] ? result[0].chi[field] : "";
-            }
-        });
+            lat: result.coordinate().lat,
+            lng: result.coordinate().lng
+          };
+          // Add the remaining fields from ogcio result
+          headers.forEach(({key}) => {
+            json[key] = result.componentValueForKey(key);
+          });
 
-        for (const key of Object.keys(json)) {
+          for (const key of Object.keys(json)) {
             const option = this.filterOptions.find(option => option.key === key);
 
             if (option !== undefined && !option.enabled) {
-            delete json[key];
+              delete json[key];
             };
-        }
-        return json;
+          }
+          return json;
         });
-        
+        this.normalizedResultsArr = results;
         return results;
+      }
+    },
+    markers: function() {
+      const latlng = this.normalizedResultsArr.reduce((accumulator, currentValue) => {
+        accumulator.push({
+          latlng: [Number(currentValue.lng), Number(currentValue.lat)]
+        });
+        return accumulator;
+      }, []);
+      return latlng;
     }
   },
   methods: {
-    getUnionedHeaders: function() {
-        let headers = [];
-        this.results.forEach(result => {
-        // result is an array
-        // TODO: eng address
-        const chineseResult = result[0].chi;
-        const keys = Object.keys(chineseResult);
-        let flattenedKeys = [];
-        for (const key of keys) {
-            if (typeof(chineseResult[key]) === 'object') {
-            for (const subkey of Object.keys(chineseResult[key])) {
-                flattenedKeys.push(`${key}.${subkey}`);
-            }
-            } else {
-            flattenedKeys.push(key);
-            }
-        }
-        // Get the union of headers
-        headers = [...new Set([...headers, ...flattenedKeys])];
+    /**
+     * Return an array of distinct headers from all of the ogcio results
+     */
+    getDistinctHeaders: function() {
+      let headers = [];
+      this.results.forEach(result => {
+        const address = result[0];
+        const components = address.components();
+
+        components.forEach(component => {
+          if (headers.find(header => header.key === component.key) === undefined) {
+            headers.push({
+              key: component.key,
+              label: component.translatedLabel
+            });
+          }
         });
-        return headers;
+      });
+      return headers;
     },
     submit: async function submit() {
       // Clear up the alert box first
@@ -234,16 +260,8 @@ export default {
 
 async function searchSingleResult(address, key) {
   // //const res = await fetch('http://localhost:8081/search/' + this.address);
-  const URL = `https://www.als.ogcio.gov.hk/lookup?q=${address}&n=${SEARCH_LIMIT}`;
-  const res = await fetch(URL, {
-    headers: {
-      "Accept": "application/json",
-      "Accept-Language": "en,zh-Hant",
-      "Accept-Encoding": "gzip"
-    }
-  });
-  const data = await res.json();
-  const records = await AddressParser.searchResult(address, data);
+
+  const records = await AddressResolver.queryAddress(address);
 
   this.$set(this.results, key, records);
   if (records && records.length > 0) {
