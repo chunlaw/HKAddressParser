@@ -33,10 +33,6 @@
           </v-layout>
         </v-container>
 
-      <v-flex v-for="(result, index) in this.results" :key="index" class="expansion-wrapper">
-         <ResultCard :result="result[0]"  :rank="index" :filterOptions="filterOptions"/>
-      </v-flex>        
-
         <template v-if="addressesToSearch.length > 0">
           <v-progress-linear
             background-color="lime"
@@ -52,7 +48,7 @@
             class="elevation-1"
           >
             <template slot="items" slot-scope="props">
-              <td v-for="(field, index) in props.item" :key="index">{{ field }}</td>
+              <td v-for="(field, index) in props.item.afterNormalizedResult" :key="index">{{ field }}</td>
             </template>
           </v-data-table>
         </template>
@@ -65,7 +61,7 @@
 
 
     </v-navigation-drawer>
-    <VueLayerMap :markers="normalizedResults" />
+    <VueLayerMap :markers="normalizedResults" :filterOptions="filterOptions"/>
   </v-content>
 
 
@@ -75,7 +71,6 @@
 
 <script>
 import AddressResolver from "./../lib/address-resolver";
-import ResultCard from "./../components/ResultCard";
 import asyncLib from "async";
 import dclookup from "./../utils/dclookup";
 import ogcioHelper from "./../utils/ogcio-helper";
@@ -90,7 +85,6 @@ const SEARCH_LIMIT = 200;
 
 export default {
   components: {
-    ResultCard,
     SearchFilter,
     VueLayerMap
   },
@@ -102,7 +96,7 @@ export default {
     count: 200,
     results: [],
     filterOptions: [],
-    normalizedResultsArr: [],
+    //normalizedResultsArr: [],
   }),
   computed: {
     hasError: function() {
@@ -157,37 +151,40 @@ export default {
 
 
       if(this.results[0] != undefined) {
-          const results = this.results[0].map((searchResults, index) => {
-          const result = searchResults;
+          const results = this.results[0].map((result, index) => {
           let json = {
-            address: this.addressesToSearch[index],
-            full_address: result.fullAddress('chi'),
-            subdistrict_name: dclookup.dcNameFromCoordinates(
-              result.coordinate().lat,
-              result.coordinate().lng
-            ).csubdistrict,
-            dc_name: dclookup.dcNameFromCoordinates(
-              result.coordinate().lat,
-              result.coordinate().lng
-            ).cname,
-            lat: result.coordinate().lat,
-            lng: result.coordinate().lng
+            afterNormalizedResult: {
+              address: this.addressesToSearch[index],
+              full_address: result.fullAddress('chi'),
+              subdistrict_name: dclookup.dcNameFromCoordinates(
+                result.coordinate().lat,
+                result.coordinate().lng
+              ).csubdistrict,
+              dc_name: dclookup.dcNameFromCoordinates(
+                result.coordinate().lat,
+                result.coordinate().lng
+              ).cname,
+              lat: result.coordinate().lat,
+              lng: result.coordinate().lng,
+            },
+            beforeNormalizedResult: result,
+            rank: Number(index)
           };
           // Add the remaining fields from ogcio result
           headers.forEach(({key}) => {
-            json[key] = result.componentValueForKey(key);
+            json.afterNormalizedResult[key] = result.componentValueForKey(key);
           });
 
-          for (const key of Object.keys(json)) {
+          for (const key of Object.keys(json.afterNormalizedResult)) {
             const option = this.filterOptions.find(option => option.key === key);
 
             if (option !== undefined && !option.enabled) {
-              delete json[key];
+              delete json.afterNormalizedResult[key];
             };
           }
           return json;
         });
-        this.normalizedResultsArr = results;
+        //this.normalizedResultsArr = results;
         return results;
       }
     },
