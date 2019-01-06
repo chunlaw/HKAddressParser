@@ -1,4 +1,4 @@
-const addressParser = require('./../web/src/lib/ogcio-parser');
+const addressParser = require('./../web/src/lib/address-parser');
 const Promise = require('bluebird');
 const request = Promise.promisifyAll(require('request'));
 
