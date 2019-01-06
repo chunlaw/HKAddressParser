@@ -1,7 +1,6 @@
 <template>
   <v-expansion-panel focusable expand :value="expanded">
     <v-expansion-panel-content :disabled="disableContent">
-
       <div slot="header">
         <div v-if="isBestMatch" class="btn-container">
           <ButtonTick :enabled="!commented" :onClick="onTickClicked"/>
@@ -13,7 +12,6 @@
           small
         >{{ `Rank ${rank + 1}` }} {{ isBestMatch? ' - Best Match!' : ''}}
         </v-chip>
-
         <h2>
           <p>{{ result.fullAddress('chi') }}</p>
           <p>{{ result.fullAddress('eng') }}</p>
@@ -21,9 +19,6 @@
         <span
           class="text-xs-right grey--text"
         >{{ result.coordinate().lat + ", " + result.coordinate().lng }}</span>
-
-
-
       </div>
       <v-card class="ma-4 pa-3">
         <v-list dense subheader>
@@ -48,7 +43,6 @@
           </v-list-tile>
           <v-divider></v-divider>
         </v-list>
-
         <v-list
           dense
           subheader
