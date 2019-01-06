@@ -1,6 +1,6 @@
 <template>
   <v-content>
-    <v-navigation-drawer clipped fixed v-model="drawer" width="600" permanent app>
+    <v-flex xs12>
       <v-card class="pa-2">
         <v-card-title>
           <h1 class="teal--text">我哋幫你解決難搞地址</h1>
@@ -19,29 +19,30 @@
             <v-textarea outline name="input-7-1" label="請輸入地址（每行一個地址）" value v-model="addressString"></v-textarea>
             <div slot="header">進階選項</div>
             <SearchFilter :filterOptions.sync="filterOptions" />
-            <v-container>
+            <v-flex xs12>
               <v-layout row wrap>
                 <v-btn @click="submit" dark class="teal">拆地址</v-btn>
                 <download-excel v-if="results.length > 0 && results.length === addressesToSearch.length" :data="normalizedResults" type="csv">
                   <v-btn dark class="teal">下載 CSV</v-btn>
                 </download-excel>
               </v-layout>
-            </v-container>
+            </v-flex>
             <template v-if="addressesToSearch.length > 0">
               <v-progress-linear
                 background-color="lime"
                 color="success"
                 :value="(results.length * 100 / addressesToSearch.length)"
               ></v-progress-linear>
-              
               <!-- <ResultTable :filterOptions="filterOptions" :normalizedHeaders="normalizedHeaders" :normalizedResults="normalizedResults"/> -->
             </template>
           </v-form>
         </v-card-text>
       </v-card>
       <v-alert v-model="hasError" type="error">{{ this.errorMessage }}</v-alert>
-    </v-navigation-drawer>
-    <VueLayerMap :markers="normalizedResults" :filterOptions="filterOptions"/>
+    </v-flex>
+    <v-flex xs12>
+      <VueLayerMap :markers="normalizedResults" :filterOptions="filterOptions"/>
+    </v-flex>
   </v-content>  
 </template>
 
@@ -226,7 +227,6 @@
               }
             });
             self.filterOptions = options;
-  
           }
         );
       }

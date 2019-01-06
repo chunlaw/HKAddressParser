@@ -17,14 +17,12 @@
                 :size="[128, 128]"
               ></vl-style-icon>
             </vl-style-box>
-  
              <vl-overlay class="feature-popup" v-for="feature in select.features" :key="feature.id" :id="feature.id"
                         :position="pointOnSurface(feature.geometry)" :auto-pan="true" :auto-pan-animation="{ duration: 300 }">
               <template slot-scope="popup">
                 <ResultCard :result="feature.properties.beforeNormalizedResult" :rank="feature.properties.rank" :searchAddress="feature.properties.address" :filterOptions="filterOptions"/>
-</template>
+              </template>
           </vl-overlay>
-
         </template>
       </vl-interaction-select>
       <!--// interactions -->
@@ -79,6 +77,8 @@
         if (newVal[0]) {
           this.center = [Number(newVal[0].afterNormalizedResult.lng), Number(newVal[0].afterNormalizedResult.lat)];
           this.zoom = 16;
+          
+          window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
         }
       }
     }
