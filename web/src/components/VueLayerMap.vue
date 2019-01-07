@@ -11,8 +11,25 @@
         <vl-source-osm></vl-source-osm>
       </vl-layer-tile>
 
-      <vl-feature v-for="marker in markers">
-          <vl-geom-point :coordinates="[Number(marker.lng), Number(marker.lat)]"></vl-geom-point>
+      <!-- interactions -->
+      <vl-interaction-select
+      :features.sync="selectedFeature"
+      >
+      <template slot-scope="select">
+        <vl-style-box>
+            <vl-style-icon
+              :src="images.selectedPin"
+              :scale="0.5"
+              :anchor="[0.1, 0.5]"
+              :size="[128, 128]"
+            ></vl-style-icon>
+          </vl-style-box>
+        </template>
+      </vl-interaction-select>
+      <!--// interactions -->
+
+      <vl-feature v-for="marker in markers" :properties="marker" :key="marker.id" v-if="marker">
+          <vl-geom-point :coordinates="[Number(marker.coordinate().lng), Number(marker.coordinate().lat)]"></vl-geom-point>
           <vl-style-box>
             <vl-style-icon
               :src="images.pin"
@@ -27,41 +44,26 @@
 </template>
 
 <script>
+import { findPointOnSurface } from 'vuelayers/lib/ol-ext'
+import Address from './../lib/models/address';
 export default {
   props: {
-    markers: {
-      status: Object,
-      geo: Array,
-      chi: Object,
-      eng: Object,
-      matches: Array
-    }
-  },
-  computed: {
-    center: {
-      get: function() {
-        return [114.160147, 22.35201];
-      },
-      set: function() {
-        // do nothing
-      }
-    },
-    zoom: {
-      get: function() {
-        return 11;
-      },
-      set: function() {
-        // do nothing
-      }
-    }
+    markers: Array
   },
   data() {
     return {
+      center: [114.160147, 22.35201],
+      zoom: 11,
       rotation: 0,
+      selectedFeature: [],
       images: {
-        pin: require('../assets/pin.png')
+        pin: require('../assets/pin.png'),
+        selectedPin: require('../assets/pin-selected.png')
       }
     };
+  },
+  methods: {
+    pointOnSurface: findPointOnSurface
   }
 };
 </script>
