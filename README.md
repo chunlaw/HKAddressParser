@@ -1,11 +1,20 @@
 # 香港地址解析器 Hong Kong Address Parser
 
+## 簡介 Overview
+你試過分析大量文字地址嗎？你要將大量地址放在地圖嗎？想像你大量面對格式不統一、中英混雜的文字地址，然後你要短時間作空間分析（spatial analysis），歸納地址集中在哪一區、哪條街，如果你懂Google Geocoding API，也許可以免費處理千多個地址，但如果你連Excel也不懂用可怎麼辦？  
+
 Hong Kong Address Parser converts unformatted Hong Kong address into standardize tagged address parts with corresponding coordinates. All results are verified by string matching.
 
-Current Release - 0.2 (2018-11-25) : [addressparser.g0vhk.io](https://addressparser.g0vhk.io)
-Release 0.1 (2018-11-07)
+[Collaction 項目頁](https://www.collaction.hk/s/hkaddressparser/)
 
-## We need your help!
+## 版本 Versions 
+[Release 0.3 (2018-12-22)](https://g0vhk-io.github.io/HKAddressParser/)  
+Release 0.2 (2018-11-25)  
+Release 0.1 (2018-11-07)  
+
+## 等你幫手 We need your help!
+- Any comments are welcomed. ([form](https://goo.gl/forms/r6bdJHG228IZTgIZ2))
+
 - Mapping sub-districts into district council constituency area, please refer to this [spreadsheet](
 https://docs.google.com/spreadsheets/d/1mNui-FsnnEiIXAGA-UBalqjywyBGhKMly2T9dLDhY7U/edit#gid=415942179)
 
@@ -41,7 +50,7 @@ npm install
 npm run serve
 ```
 
-## Production
+### Production
 
 ```
 # Go to the web folder and install the required libraries (ignore all the dev dependencies)

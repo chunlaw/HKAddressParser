@@ -1,5 +1,5 @@
 <template>
-    <v-container>
+    <v-flex>
         <v-layout row wrap>
             <v-flex
               :xs3="xs3"
@@ -13,7 +13,7 @@
                 ></v-checkbox>
            </v-flex>
         </v-layout>
-    </v-container>
+    </v-flex>
 </template>
 
 <script>
