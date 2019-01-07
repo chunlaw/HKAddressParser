@@ -126,12 +126,10 @@
         const headers = this.getDistinctHeaders();
         // We map the results to get the first match and with all the fields (including fields that other records have)
         // TODO: english address
-  
-  
-        if (this.results[0] != undefined) {
-          const results = this.results[0].map((result, index) => {
-            let json = {
-              afterNormalizedResult: {
+        const results = this.results.map((searchResults, index) => {
+          const result = searchResults[0];
+          let json = {
+            afterNormalizedResult: {
                 address: this.addressesToSearch[index],
                 full_address: result.fullAddress('chi'),
                 subdistrict_name: dclookup.dcNameFromCoordinates(
@@ -146,9 +144,9 @@
                 lng: result.coordinate().lng,
               },
               beforeNormalizedResult: result,
-              rank: Number(index)
-            };
-            // Add the remaining fields from ogcio result
+              rank: 0 // best match always returns 0
+          };
+          // Add the remaining fields from ogcio result
             headers.forEach(({
               key
             }) => {
@@ -163,10 +161,9 @@
               };
             }
             return json;
-          });
-          return results;
-        }
-      },
+        });
+        return results;
+      }
       // markers: function() {
       //   const latlng = this.results.reduce((accumulator, currentValue) => {
       //     accumulator.push({
