@@ -82,7 +82,7 @@ export default {
   props: {
     searchAddress: String,
     rank: Number,
-    result: Address,
+    result: Object,
     filterOptions: Array
   },
   data: () => ({
