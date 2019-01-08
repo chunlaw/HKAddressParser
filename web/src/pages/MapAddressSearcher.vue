@@ -38,19 +38,20 @@
                 </download-excel>
               </v-layout>
             </v-flex>
-            <!-- <template v-if="addressesToSearch.length > 0">
+            <template v-if="addressesToSearch.length > 0">
               <v-progress-linear
                 background-color="lime"
                 color="success"
                 :value="(results.length * 100 / addressesToSearch.length)"
               ></v-progress-linear>
-            </template>-->
+              <ResultCard v-if="selectedFeature != null" :result="selectedFeature.properties.beforeNormalizedResult" :rank="rank" :searchAddress="selectedFeature.properties.address" :filterOptions="filterOptions"/>
+            </template>
           </v-form>
         </v-card-text>
       </v-card>
     </v-flex>
     <v-flex xs12 md8>
-      <VueLayerMap :markers="normalizedResults" :filterOptions="filterOptions"/>
+      <VueLayerMap :markers="normalizedResults" :filterOptions="filterOptions" @getSelectedFeature="onSelectedFeature" />
     </v-flex>
   </v-layout>
 </template>
@@ -63,13 +64,15 @@ import dclookup from "./../utils/dclookup";
 import ogcioHelper from "./../utils/ogcio-helper";
 import SearchFilter from "./../components/SearchFilter";
 import VueLayerMap from "./../components/VueLayerMap";
+import ResultCard from "./../components/ResultCard";
 import { trackBatchSearch, trackBatchSearchResult } from "./../utils/ga-helper";
 const SEARCH_LIMIT = 200;
 
 export default {
   components: {
     SearchFilter,
-    VueLayerMap
+    VueLayerMap,
+    ResultCard
   },
   data: () => ({
     drawer: true,
@@ -78,7 +81,9 @@ export default {
     errorMessage: null,
     count: 200,
     results: [],
-    filterOptions: []
+    filterOptions: [],
+    selectedFeature: null,
+    rank: 0 // best match always returns 0
   }),
   computed: {
     hasError: function() {
@@ -150,8 +155,7 @@ export default {
             lat: result.coordinate().lat,
             lng: result.coordinate().lng
           },
-          beforeNormalizedResult: result,
-          rank: 0 // best match always returns 0
+          beforeNormalizedResult: result
         };
         // Add the remaining fields from ogcio result
         headers.forEach(({ key }) => {
@@ -233,6 +237,9 @@ export default {
           self.filterOptions = options;
         }
       );
+    },
+    onSelectedFeature: function(feature) {
+      this.selectedFeature = feature;
     }
   }
 };
@@ -252,3 +259,19 @@ async function searchSingleResult(address, key) {
   return records;
 }
 </script>
+
+<style>
+  /* 
+    When the ResultCard is expanded, the height of the map will be changed and getSelectedFeature would fail for unknown reasons. 
+    TEMP FIX: Make .pa-2 like the aside tag
+  */
+  .pa-2 {
+      height: 100%;
+      max-height: calc(100% - 64px); /* the height of header is 64px*/
+      transform: translateX(0px);
+      width: 600px;
+      overflow-y: auto;
+      position: fixed;
+      overflow-x: hidden;
+  }
+</style>
