@@ -259,3 +259,19 @@ async function searchSingleResult(address, key) {
   return records;
 }
 </script>
+
+<style>
+  /* 
+    When the ResultCard is expanded, the height of the map will be changed and getSelectedFeature would fail for unknown reasons. 
+    TEMP FIX: Make .pa-2 like the aside tag
+  */
+  .pa-2 {
+      height: 100%;
+      max-height: calc(100% - 64px); /* the height of header is 64px*/
+      transform: translateX(0px);
+      width: 600px;
+      overflow-y: auto;
+      position: fixed;
+      overflow-x: hidden;
+  }
+</style>
