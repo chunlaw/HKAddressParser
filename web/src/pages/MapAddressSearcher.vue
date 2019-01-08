@@ -25,17 +25,9 @@
               v-model="addressString"
             ></v-textarea>
             <div slot="header">進階選項</div>
-            <SearchFilter :filterOptions.sync="filterOptions"/>
             <v-flex xs12>
               <v-layout row wrap>
                 <v-btn @click="submit" dark class="teal">拆地址</v-btn>
-                <download-excel
-                  v-if="results.length > 0 && results.length === addressesToSearch.length"
-                  :data="normalizedResults"
-                  type="csv"
-                >
-                  <v-btn dark class="teal">下載 CSV</v-btn>
-                </download-excel>
               </v-layout>
             </v-flex>
             <template v-if="addressesToSearch.length > 0">
@@ -44,14 +36,14 @@
                 color="success"
                 :value="(results.length * 100 / addressesToSearch.length)"
               ></v-progress-linear>
-              <ResultCard v-if="selectedFeature != null" :result="selectedFeature.properties.beforeNormalizedResult" :rank="rank" :searchAddress="selectedFeature.properties.address" :filterOptions="filterOptions"/>
+              <ResultCard v-if="selectedFeature !== null" :result="selectedFeature" :rank="rank" :searchAddress="selectedFeature.searchAddress" :filterOptions="filterOptions"/>
             </template>
           </v-form>
         </v-card-text>
       </v-card>
     </v-flex>
     <v-flex xs12 md8>
-      <VueLayerMap :markers="normalizedResults" :filterOptions="filterOptions" @getSelectedFeature="onSelectedFeature" />
+      <VueLayerMap :markers="markers" v-on:featureSelected="onFeatureSelected" :filterOptions="filterOptions" />
     </v-flex>
   </v-layout>
 </template>
@@ -89,123 +81,17 @@ export default {
     hasError: function() {
       return this.errorMessage !== null;
     },
-    // Return the unioned field list of all the results
-    normalizedHeaders: function() {
-      const headers = this.getDistinctHeaders();
-      return [
-        // the raw search
-        {
-          text: "地址",
-          value: "address"
-        },
-        {
-          text: "結果",
-          value: "full_address"
-        },
-        {
-          text: "地區",
-          value: "subdistrict_name"
-        },
-        {
-          text: "區議會選區",
-          value: "dc_name"
-        },
-        {
-          text: "緯度",
-          value: "lat"
-        },
-        {
-          text: "經度",
-          value: "lng"
-        },
-        // the union headers
-        ...headers.map(header => ({
-          // TODO: change the "Region/DcDistrict" keywords to some meaningful text
-          text: header.label,
-          value: header.key
-        }))
-      ].filter(header => {
-        // Filter only enabled header
-        // note: if header option not found, it is default enabled
-        const option = this.filterOptions.find(
-          option => option.key === header.value
-        );
-        return option === undefined || option.enabled;
+    // Get the markers from every single result
+    // add the index to prevent the vuelayer clone the address and type cast it to an object
+    markers: function() {
+      return this.results.map((records, index) => {
+        const address = records[0];
+        address.index = index;
+        return address;
       });
-    },
-    normalizedResults: function() {
-      // get the keys of the headers
-      const headers = this.getDistinctHeaders();
-      // We map the results to get the first match and with all the fields (including fields that other records have)
-      // TODO: english address
-      const results = this.results.map((searchResults, index) => {
-        const result = searchResults[0];
-        let json = {
-          afterNormalizedResult: {
-            address: this.addressesToSearch[index],
-            full_address: result.fullAddress("chi"),
-            subdistrict_name: dclookup.dcNameFromCoordinates(
-              result.coordinate().lat,
-              result.coordinate().lng
-            ).csubdistrict,
-            dc_name: dclookup.dcNameFromCoordinates(
-              result.coordinate().lat,
-              result.coordinate().lng
-            ).cname,
-            lat: result.coordinate().lat,
-            lng: result.coordinate().lng
-          },
-          beforeNormalizedResult: result
-        };
-        // Add the remaining fields from ogcio result
-        headers.forEach(({ key }) => {
-          json.afterNormalizedResult[key] = result.componentValueForKey(key);
-        });
-
-        for (const key of Object.keys(json.afterNormalizedResult)) {
-          const option = this.filterOptions.find(option => option.key === key);
-
-          if (option !== undefined && !option.enabled) {
-            delete json.afterNormalizedResult[key];
-          }
-        }
-        return json;
-      });
-      return results;
     }
-    // markers: function() {
-    //   const latlng = this.results.reduce((accumulator, currentValue) => {
-    //     accumulator.push({
-    //       latlng: [Number(currentValue.lng), Number(currentValue.lat)]
-    //     });
-    //     return accumulator;
-    //   }, []);
-    //   return latlng;
-    // }
   },
   methods: {
-    /**
-     * Return an array of distinct headers from all of the ogcio results
-     */
-    getDistinctHeaders: function() {
-      let headers = [];
-      this.results.forEach(result => {
-        const address = result[0];
-        const components = address.components();
-
-        components.forEach(component => {
-          if (
-            headers.find(header => header.key === component.key) === undefined
-          ) {
-            headers.push({
-              key: component.key,
-              label: component.translatedLabel
-            });
-          }
-        });
-      });
-      return headers;
-    },
     submit: async function submit() {
       // Clear up the alert box first
       this.errorMessage = null;
@@ -223,23 +109,20 @@ export default {
         // binding this for setting the results during the process
         asyncify(searchSingleResult.bind(this)),
         function(err) {
-          // Merge the filter options rather than reset it coz we want to keep the previous settings
-          const options = self.filterOptions;
-          self.normalizedHeaders.forEach(header => {
-            if (options.find(opt => opt.key === header.value) === undefined) {
-              options.push({
-                value: header.text,
-                key: header.value,
-                enabled: true
-              });
-            }
-          });
-          self.filterOptions = options;
+          // reset the selected markers
+          // self.selectedMarkers = [];
         }
       );
     },
-    onSelectedFeature: function(feature) {
-      this.selectedFeature = feature;
+    onFeatureSelected: function(feature) {
+      if (feature !== null) {
+        const index = feature.properties.index;
+        this.selectedFeature = this.results[index][0];
+        this.selectedFeature.searchAddress = this.addressesToSearch[index];
+      } else {
+        this.selectedFeature = null;
+      }
+
     }
   }
 };
@@ -261,8 +144,8 @@ async function searchSingleResult(address, key) {
 </script>
 
 <style>
-  /* 
-    When the ResultCard is expanded, the height of the map will be changed and getSelectedFeature would fail for unknown reasons. 
+  /*
+    When the ResultCard is expanded, the height of the map will be changed and getSelectedFeature would fail for unknown reasons.
     TEMP FIX: Make .pa-2 like the aside tag
   */
   .pa-2 {

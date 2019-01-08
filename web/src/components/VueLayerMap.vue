@@ -7,7 +7,7 @@
     </vl-layer-tile>
 
     <!-- interactions -->
-    <vl-interaction-select :features.sync="selectedFeature">
+    <vl-interaction-select :features="selectedFeatures" v-on:update:features="featureUpdated">
       <template slot-scope="select">
           <vl-style-box>
               <vl-style-icon
@@ -19,9 +19,6 @@
             </vl-style-box>
              <vl-overlay class="feature-popup" v-for="feature in select.features" :key="feature.id" :id="feature.id"
                         :position="pointOnSurface(feature.geometry)" :auto-pan="true" :auto-pan-animation="{ duration: 300 }">
-              <template>
-                {{ emitFeature(feature) }}
-              </template>
           </vl-overlay>
         </template>
       </vl-interaction-select>
@@ -29,7 +26,7 @@
 
       <vl-feature v-for="marker in markers" :properties="marker" :key="marker.id">
         <div v-if="marker">
-          <vl-geom-point :coordinates="[Number(marker.afterNormalizedResult.lng), Number(marker.afterNormalizedResult.lat)]"></vl-geom-point>
+          <vl-geom-point :coordinates="[Number(marker.coordinate().lng), Number(marker.coordinate().lat)]"></vl-geom-point>
           <vl-style-box>
             <vl-style-icon
               :src="images.pin"
@@ -59,10 +56,10 @@
     },
     data() {
       return {
+        selectedFeatures: [],
         center: [114.160147, 22.35201],
         zoom: 11,
         rotation: 0,
-        selectedFeature: ["position-feature"],
         images: {
           pin: require('../assets/pin.png'),
           selectedPin: require('../assets/pin-selected.png')
@@ -71,18 +68,18 @@
     },
     methods: {
       pointOnSurface: findPointOnSurface,
-      emitFeature: function(feature) {
-        this.$emit('getSelectedFeature', feature);
+      featureUpdated: function(features) {
+        this.$emit('featureSelected', features.length > 0 ? features[0] : null);
       }
     },
-    watch: {
-      markers: function(newVal, oldVal) {
-        if (newVal[0]) {
-          this.center = [Number(newVal[0].afterNormalizedResult.lng), Number(newVal[0].afterNormalizedResult.lat)];
-          this.zoom = 16;
-        }
-      }
-    }
+    // watch: {
+    //   markers: function(newVal, oldVal) {
+    //     if (newVal[0]) {
+    //       this.center = [Number(newVal[0].afterNormalizedResult.lng), Number(newVal[0].afterNormalizedResult.lat)];
+    //       this.zoom = 16;
+    //     }
+    //   }
+    // }
   };
 </script>
 
