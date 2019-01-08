@@ -20,7 +20,7 @@
              <vl-overlay class="feature-popup" v-for="feature in select.features" :key="feature.id" :id="feature.id"
                         :position="pointOnSurface(feature.geometry)" :auto-pan="true" :auto-pan-animation="{ duration: 300 }">
               <template slot-scope="popup">
-                <ResultCard :result="feature.properties.beforeNormalizedResult" :rank="feature.properties.rank" :searchAddress="feature.properties.address" :filterOptions="filterOptions"/>
+                {{ emitFeature(feature) }}
               </template>
           </vl-overlay>
         </template>
@@ -71,14 +71,15 @@
     },
     methods: {
       pointOnSurface: findPointOnSurface,
+      emitFeature: function(feature) {
+        this.$emit('getSelectedFeature', feature);
+      }
     },
     watch: {
       markers: function(newVal, oldVal) {
         if (newVal[0]) {
           this.center = [Number(newVal[0].afterNormalizedResult.lng), Number(newVal[0].afterNormalizedResult.lat)];
           this.zoom = 16;
-          
-          window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
         }
       }
     }
