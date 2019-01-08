@@ -63,7 +63,7 @@ export default {
         // add the distance for sorting the array
         ogcioRecord.distance = distance;
         sortedResults.push(ogcioRecord);
-        console.log(ogcioRecord.distanceTo(landRecords[0]) + ' | ' + ogcioRecord.fullAddress('chi'))
+        // console.log(ogcioRecord.distanceTo(landRecords[0]) + ' | ' + ogcioRecord.fullAddress('chi'))
       }
     });
 
@@ -74,7 +74,6 @@ export default {
 
 
     // 3. ogcio not found but there is land result. We use the record then.
-    console.log('3. ogcio not found but there is land result.');
     return landRecords;
     // TODO:
     // in ResultSelector, compare the distance between ogcioData Bestmatch and first result of landResult,
