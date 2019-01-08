@@ -6,12 +6,13 @@
       <v-toolbar-items>
         <v-btn flat to="/">地圖模式</v-btn>
         <v-btn flat to="/table">表格模式</v-btn>
+        <v-btn flat href="https://github.com/g0vhk-io/HKAddressParser" target="_blank">GitHub</v-btn>
         <v-btn flat href="https://goo.gl/forms/r6bdJHG228IZTgIZ2" target="_blank">反映意見</v-btn>
       </v-toolbar-items>
     </v-toolbar>
-    <v-content>
+    <!-- <v-content> -->
       <router-view/>
-    </v-content>
+    <!-- </v-content> -->
   </v-app>
 </template>
 
