@@ -61,6 +61,7 @@
           </v-list-tile>
           <v-divider></v-divider>
         </v-list>
+      <p>{{ '資料來源： ' + result.dataSource() }}</p>
       </v-card>
     </v-expansion-panel-content>
   </v-expansion-panel>

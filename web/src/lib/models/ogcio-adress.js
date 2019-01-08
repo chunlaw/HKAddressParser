@@ -62,6 +62,11 @@ export default class OGCIOAddress extends Address {
     return [];
   }
 
+  // In the future it can be multiple source
+  dataSource() {
+    return '資科辦';
+  }
+
   confidence() {
     return Math.min(
       4,
