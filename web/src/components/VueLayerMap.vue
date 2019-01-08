@@ -1,11 +1,11 @@
 <template>
   <vl-map :load-tiles-while-animating="true" :load-tiles-while-interacting="true" data-projection="EPSG:4326">
     <vl-view :zoom.sync="zoom" :center.sync="center" :rotation.sync="rotation"></vl-view>
-  
+
     <vl-layer-tile id="osm">
       <vl-source-osm></vl-source-osm>
     </vl-layer-tile>
-  
+
     <!-- interactions -->
     <vl-interaction-select :features.sync="selectedFeature">
       <template slot-scope="select">
@@ -19,7 +19,7 @@
             </vl-style-box>
              <vl-overlay class="feature-popup" v-for="feature in select.features" :key="feature.id" :id="feature.id"
                         :position="pointOnSurface(feature.geometry)" :auto-pan="true" :auto-pan-animation="{ duration: 300 }">
-              <template slot-scope="popup">
+              <template>
                 {{ emitFeature(feature) }}
               </template>
           </vl-overlay>
