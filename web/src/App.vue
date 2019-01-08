@@ -9,9 +9,7 @@
         <v-btn flat href="https://goo.gl/forms/r6bdJHG228IZTgIZ2" target="_blank">反映意見</v-btn>
       </v-toolbar-items>
     </v-toolbar>
-    <v-content>
       <router-view/>
-    </v-content>
   </v-app>
 </template>
 

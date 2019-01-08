@@ -1,6 +1,6 @@
 <template>
-  <v-layout row wrap fill-height>
-    <v-flex xs12 md4>
+<v-content>
+  <v-navigation-drawer clipped fixed v-model="drawer" width="600" permanent app>
       <v-alert v-model="hasError" type="error">{{ this.errorMessage }}</v-alert>
       <v-card class="pa-2">
         <v-card-title>
@@ -41,11 +41,9 @@
           </v-form>
         </v-card-text>
       </v-card>
-    </v-flex>
-    <v-flex xs12 md8>
+</v-navigation-drawer>
       <VueLayerMap :markers="markers" v-on:featureSelected="onFeatureSelected" :filterOptions="filterOptions" />
-    </v-flex>
-  </v-layout>
+</v-content>
 </template>
 
 <script>
