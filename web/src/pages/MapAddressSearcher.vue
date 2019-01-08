@@ -1,8 +1,8 @@
 <template>
-  <v-content>
-    <v-navigation-drawer clipped fixed v-model="drawer" width="600" permanent app>
+  <v-layout row wrap fill-height>
+    <v-flex xs12 md4>
       <v-alert v-model="hasError" type="error">{{ this.errorMessage }}</v-alert>
-      <v-card>
+      <v-card class="pa-2">
         <v-card-title>
           <h1 class="teal--text">我哋幫你解決難搞地址</h1>
         </v-card-title>
@@ -26,40 +26,34 @@
             ></v-textarea>
             <div slot="header">進階選項</div>
             <SearchFilter :filterOptions.sync="filterOptions"/>
-            <v-layout row wrap>
-              <v-btn @click="submit" dark class="teal">拆地址</v-btn>
-              <download-excel
-                v-if="results.length > 0 && results.length === addressesToSearch.length"
-                :data="normalizedResults"
-                type="csv"
-              >
-                <v-btn dark class="teal">下載 CSV</v-btn>
-              </download-excel>
-            </v-layout>
+            <v-flex xs12>
+              <v-layout row wrap>
+                <v-btn @click="submit" dark class="teal">拆地址</v-btn>
+                <download-excel
+                  v-if="results.length > 0 && results.length === addressesToSearch.length"
+                  :data="normalizedResults"
+                  type="csv"
+                >
+                  <v-btn dark class="teal">下載 CSV</v-btn>
+                </download-excel>
+              </v-layout>
+            </v-flex>
             <template v-if="addressesToSearch.length > 0">
               <v-progress-linear
                 background-color="lime"
                 color="success"
                 :value="(results.length * 100 / addressesToSearch.length)"
               ></v-progress-linear>
-              <ResultCard
-                v-if="selectedFeature != null"
-                :result="selectedFeature.properties.beforeNormalizedResult"
-                :rank="rank"
-                :searchAddress="selectedFeature.properties.address"
-                :filterOptions="filterOptions"
-              />
+              <ResultCard v-if="selectedFeature != null" :result="selectedFeature.properties.beforeNormalizedResult" :rank="rank" :searchAddress="selectedFeature.properties.address" :filterOptions="filterOptions"/>
             </template>
           </v-form>
         </v-card-text>
       </v-card>
-    </v-navigation-drawer>
-    <VueLayerMap
-      :markers="normalizedResults"
-      :filterOptions="filterOptions"
-      @getSelectedFeature="onSelectedFeature"
-    />
-  </v-content>
+    </v-flex>
+    <v-flex xs12 md8>
+      <VueLayerMap :markers="normalizedResults" :filterOptions="filterOptions" @getSelectedFeature="onSelectedFeature" />
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>
@@ -265,3 +259,19 @@ async function searchSingleResult(address, key) {
   return records;
 }
 </script>
+
+<style>
+  /* 
+    When the ResultCard is expanded, the height of the map will be changed and getSelectedFeature would fail for unknown reasons. 
+    TEMP FIX: Make .pa-2 like the aside tag
+  */
+  .pa-2 {
+      height: 100%;
+      max-height: calc(100% - 64px); /* the height of header is 64px*/
+      transform: translateX(0px);
+      width: 600px;
+      overflow-y: auto;
+      position: fixed;
+      overflow-x: hidden;
+  }
+</style>

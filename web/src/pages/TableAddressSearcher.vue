@@ -1,66 +1,58 @@
 <template>
-  <v-content>
-    <v-container>
-      <v-layout row wrap>
-        <v-flex>
-          <v-alert v-model="hasError" type="error">{{ this.errorMessage }}</v-alert>
-          <h1 class="teal--text">我哋幫你解決難搞地址</h1>
+  <v-container>
+    <v-layout row wrap>
+      <v-flex>
+        <v-alert v-model="hasError" type="error">{{ this.errorMessage }}</v-alert>
+        <h1 class="teal--text">我哋幫你解決難搞地址</h1>
 
-          <h3>
-            輸入中英文香港地址，我們幫你解析成
-            <span class="amber lighten-4 red--text px-1">地區</span>、
-            <span class="amber lighten-4 red--text px-1">街道門牌</span>、
-            <span class="amber lighten-4 red--text px-1">大廈</span>、
-            <span class="amber lighten-4 red--text px-1">坐標</span>，連
-            <span class="amber lighten-4 red--text px-1">區議會選區</span>都有
-          </h3>
-          <br>
-          <v-form ref="form" class="form" @submit.prevent="submit">
-            <v-textarea
-              outline
-              name="input-7-1"
-              label="請輸入地址（每行一個地址）"
-              value
-              v-model="addressString"
-            ></v-textarea>
-            <div slot="header">進階選項</div>
-            <SearchFilter :filterOptions.sync="filterOptions"/>
-            <v-flex xs12>
-              <v-layout row wrap>
-                <v-btn @click="submit" dark class="teal">拆地址</v-btn>
-                <download-excel
-                  v-if="results.length > 0 && results.length === addressesToSearch.length"
-                  :data="normalizedResults"
-                  type="csv"
-                >
-                  <v-btn dark class="teal">下載 CSV</v-btn>
-                </download-excel>
-              </v-layout>
-            </v-flex>
-            <template v-if="addressesToSearch.length > 0">
-              <v-progress-linear
-                background-color="lime"
-                color="success"
-                :value="(results.length * 100 / addressesToSearch.length)"
-              ></v-progress-linear>
-
-              <!-- When to show the datatable? Now showing it when ever there is data -->
-              <v-data-table
-                :headers="normalizedHeaders"
-                :items="normalizedResults"
-                :rows-per-page-items="[ 50, 100, 500, { 'text': '$vuetify.dataIterator.rowsPerPageAll', 'value': -1 } ]"
-                class="elevation-1"
+        <h3>
+          輸入中英文香港地址，我們幫你解析成
+          <span class="amber lighten-4 red--text px-1">地區</span>、
+          <span class="amber lighten-4 red--text px-1">街道門牌</span>、
+          <span class="amber lighten-4 red--text px-1">大廈</span>、
+          <span class="amber lighten-4 red--text px-1">坐標</span>，連
+          <span class="amber lighten-4 red--text px-1">區議會選區</span>都有
+        </h3>
+        <br>
+        <v-form ref="form" class="form" @submit.prevent="submit">
+          <v-textarea outline name="input-7-1" label="請輸入地址（每行一個地址）" value v-model="addressString"></v-textarea>
+          <div slot="header">進階選項</div>
+          <SearchFilter :filterOptions.sync="filterOptions"/>
+          <v-flex xs12>
+            <v-layout row wrap>
+              <v-btn @click="submit" dark class="teal">拆地址</v-btn>
+              <download-excel
+                v-if="results.length > 0 && results.length === addressesToSearch.length"
+                :data="normalizedResults"
+                type="csv"
               >
-                <template slot="items" slot-scope="props">
-                  <td v-for="(field, index) in props.item" :key="index">{{ field }}</td>
-                </template>
-              </v-data-table>
-            </template>
-          </v-form>
-        </v-flex>
-      </v-layout>
-    </v-container>
-  </v-content>
+                <v-btn dark class="teal">下載 CSV</v-btn>
+              </download-excel>
+            </v-layout>
+          </v-flex>
+          <template v-if="addressesToSearch.length > 0">
+            <v-progress-linear
+              background-color="lime"
+              color="success"
+              :value="(results.length * 100 / addressesToSearch.length)"
+            ></v-progress-linear>
+
+            <!-- When to show the datatable? Now showing it when ever there is data -->
+            <v-data-table
+              :headers="normalizedHeaders"
+              :items="normalizedResults"
+              :rows-per-page-items="[ 50, 100, 500, { 'text': '$vuetify.dataIterator.rowsPerPageAll', 'value': -1 } ]"
+              class="elevation-1"
+            >
+              <template slot="items" slot-scope="props">
+                <td v-for="(field, index) in props.item" :key="index">{{ field }}</td>
+              </template>
+            </v-data-table>
+          </template>
+        </v-form>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>
