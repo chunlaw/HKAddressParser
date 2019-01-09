@@ -40,7 +40,7 @@ export default class OGCIOAddress extends Address {
 
   fullAddress(lang) {
     if (lang === Address.LANG_EN) {
-      return ogcioHelper.fullChineseAddressFromResult(this.record['eng']);
+      return ogcioHelper.fullEnglishAddressFromResult(this.record['eng']);
     } else {
       return ogcioHelper.fullChineseAddressFromResult(this.record['chi']);
     }
