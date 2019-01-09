@@ -1,49 +1,58 @@
 <template>
-<v-content>
-  <v-navigation-drawer clipped fixed v-model="drawer" width="600" permanent app>
+  <v-content>
+    <v-navigation-drawer clipped fixed v-model="drawer" width="600" permanent app>
       <v-alert v-model="hasError" type="error">{{ this.errorMessage }}</v-alert>
-      <v-card class="pa-2">
-        <v-card-title>
-          <h1 class="teal--text">我哋幫你解決難搞地址</h1>
-        </v-card-title>
-        <v-card-text>
-          <h3>
-            輸入中英文香港地址，我們幫你解析成
-            <span class="amber lighten-4 red--text px-1">地區</span>、
-            <span class="amber lighten-4 red--text px-1">街道門牌</span>、
-            <span class="amber lighten-4 red--text px-1">大廈</span>、
-            <span class="amber lighten-4 red--text px-1">坐標</span>，連
-            <span class="amber lighten-4 red--text px-1">區議會選區</span>都有
-          </h3>
-          <br>
-          <v-form ref="form" class="form" @submit.prevent="submit">
-            <v-textarea
-              outline
-              name="input-7-1"
-              label="請輸入地址（每行一個地址）"
-              value
-              v-model="addressString"
-            ></v-textarea>
-            <div slot="header">進階選項</div>
-            <v-flex xs12>
-              <v-layout row wrap>
-                <v-btn @click="submit" dark class="teal">拆地址</v-btn>
-              </v-layout>
-            </v-flex>
-            <template v-if="addressesToSearch.length > 0">
-              <v-progress-linear
-                background-color="lime"
-                color="success"
-                :value="(results.length * 100 / addressesToSearch.length)"
-              ></v-progress-linear>
-              <ResultCard v-if="selectedFeature !== null" :result="selectedFeature" :rank="rank" :searchAddress="selectedFeature.searchAddress" :filterOptions="filterOptions"/>
-            </template>
-          </v-form>
-        </v-card-text>
-      </v-card>
-</v-navigation-drawer>
-      <VueLayerMap :markers="markers" v-on:featureSelected="onFeatureSelected" :filterOptions="filterOptions" />
-</v-content>
+      <v-container fluid>
+        <v-layout row>
+          <v-flex pa-0>
+            <h1 class="teal--text">我哋幫你解決難搞地址</h1>
+            <h3>
+              輸入中英文香港地址，我們幫你解析成
+              <span class="amber lighten-4 red--text px-1">地區</span>、
+              <span class="amber lighten-4 red--text px-1">街道門牌</span>、
+              <span class="amber lighten-4 red--text px-1">大廈</span>、
+              <span class="amber lighten-4 red--text px-1">坐標</span>，連
+              <span class="amber lighten-4 red--text px-1">區議會選區</span>都有
+            </h3>
+            <br>
+          </v-flex>
+        </v-layout>
+        <v-layout row>
+          <v-flex pa-0>
+            <v-form ref="form" class="form" @submit.prevent="submit">
+              <v-textarea
+                outline
+                name="input-7-1"
+                label="請輸入地址（每行一個地址）"
+                value
+                v-model="addressString"
+              ></v-textarea>
+              <v-btn @click="submit" dark class="teal">拆地址</v-btn>
+              <template v-if="addressesToSearch.length > 0">
+                <v-progress-linear
+                  background-color="lime"
+                  color="success"
+                  :value="(results.length * 100 / addressesToSearch.length)"
+                ></v-progress-linear>
+                <ResultCard
+                  v-if="selectedFeature !== null"
+                  :result="selectedFeature"
+                  :rank="rank"
+                  :searchAddress="selectedFeature.searchAddress"
+                  :filterOptions="filterOptions"
+                />
+              </template>
+            </v-form>
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </v-navigation-drawer>
+    <VueLayerMap
+      :markers="markers"
+      v-on:featureSelected="onFeatureSelected"
+      :filterOptions="filterOptions"
+    />
+  </v-content>
 </template>
 
 <script>
@@ -120,7 +129,6 @@ export default {
       } else {
         this.selectedFeature = null;
       }
-
     }
   }
 };
@@ -142,17 +150,17 @@ async function searchSingleResult(address, key) {
 </script>
 
 <style>
-  /*
+/*
     When the ResultCard is expanded, the height of the map will be changed and getSelectedFeature would fail for unknown reasons.
     TEMP FIX: Make .pa-2 like the aside tag
   */
-  .pa-2 {
-      height: 100%;
-      max-height: calc(100% - 64px); /* the height of header is 64px*/
-      transform: translateX(0px);
-      width: 600px;
-      overflow-y: auto;
-      position: fixed;
-      overflow-x: hidden;
-  }
+.pa-2 {
+  height: 100%;
+  max-height: calc(100% - 64px); /* the height of header is 64px*/
+  transform: translateX(0px);
+  width: 600px;
+  overflow-y: auto;
+  position: fixed;
+  overflow-x: hidden;
+}
 </style>
