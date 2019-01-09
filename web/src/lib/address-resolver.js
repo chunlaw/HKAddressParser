@@ -30,8 +30,8 @@ export default {
     for (const data of landsData) {
       let wgsLng, wgslat;
       [wgsLng, wgslat] = ProjConvertor.projTransform('EPSG:2326', 'EPSG:4326', [data.x, data.y]);
-      data.lat = wgslat
-      data.lng = wgsLng
+      data.lat = Number.parseFloat(wgslat).toFixed(4)
+      data.lng = Number.parseFloat(wgsLng).toFixed(4)
       landRecords.push(AddressFactory.createAddress('land', data));
     }
     const sortedResults = [];
