@@ -1,83 +1,91 @@
 <template>
-  <v-expansion-panel focusable expand :value="expanded">
-    <v-expansion-panel-content :disabled="disableContent">
-      <div slot="header">
-        <div v-if="isBestMatch" class="btn-container">
-          <ButtonTick :enabled="!commented" :onClick="onTickClicked"/>
-          <ButtonCross :enabled="!commented" :onClick="onCrossClicked"/>
-        </div>
-        <v-chip
-          text-color="black"
-          disabled
-          small
-        >{{ `Rank ${rank + 1}` }} {{ isBestMatch? ' - Best Match!' : ''}}
-        </v-chip>
-        <h2>
-          <p>{{ result.fullAddress('chi') }}</p>
-          <p>{{ result.fullAddress('eng') }}</p>
-        </h2>
-        <span
-          class="text-xs-right grey--text"
-        >{{ result.coordinate().lat + ", " + result.coordinate().lng }}</span>
-      </div>
-      <v-card class="ma-4 pa-3">
-        <v-list dense subheader>
-          <v-list-tile>
-            <v-list-tile-content>Sub District
-              <br>地區
-            </v-list-tile-content>
-            <v-list-tile-content class="align-end">
-              <p>{{ district.esubdistrict }}</p>
-              <p>{{ district.csubdistrict }}</p>
-            </v-list-tile-content>
-          </v-list-tile>
-          <v-divider></v-divider>
-          <v-list-tile>
-            <v-list-tile-content>District Council Constituency Area
-              <br>區議會選區
-            </v-list-tile-content>
-            <v-list-tile-content class="align-end">
-              <p>{{ district.ename }}</p>
-              <p>{{ district.cname }}</p>
-            </v-list-tile-content>
-          </v-list-tile>
-          <v-divider></v-divider>
-        </v-list>
-        <v-list
-          dense
-          subheader
-          v-for="key in filteredKeys"
-          :key="key"
-        >
-          <v-list-tile>
-            <v-list-tile-content>
-              <p>{{ result.componentLabelForKey(key, 'eng') }}</p>
-              <p>{{ result.componentLabelForKey(key, 'chi') }}</p>
-            </v-list-tile-content>
-            <v-list-tile-content class="align-end">
-              <p>{{ result.componentValueForKey(key, 'eng') }}</p>
-              <p>{{ result.componentValueForKey(key, 'chi') }}</p>
-            </v-list-tile-content>
-          </v-list-tile>
-          <v-divider></v-divider>
-        </v-list>
-      <p>{{ '資料來源： ' + result.dataSource() }}</p>
-      </v-card>
-    </v-expansion-panel-content>
-  </v-expansion-panel>
+  <v-container fluid>
+    <v-layout row>
+      <v-flex pa-0>
+        <v-card flat>
+          <v-card-text>
+            <h2>{{ result.fullAddress('chi') }}</h2>
+            <h3>{{ result.fullAddress('eng') }}</h3>
+              <a 
+              class="grey--text no-underline" 
+              target='_blank' 
+              :href='"https://www.google.com/maps/search/?api=1&query=" + result.coordinate().lat + "," + result.coordinate().lng'>{{ result.coordinate().lat + ", " + result.coordinate().lng }}</a>
+
+          </v-card-text>
+        </v-card>
+      </v-flex>
+      <v-flex shrink pa-0>
+        <v-card flat>
+          <v-card-text>
+            <v-layout row>
+            <ButtonTick :enabled="!commented" :onClick="onTickClicked"/>
+            <ButtonCross :enabled="!commented" :onClick="onCrossClicked"/>
+            </v-layout>
+          </v-card-text>
+        </v-card>
+      </v-flex>
+    </v-layout>
+    <v-layout row>
+      <v-flex pa-0>
+        <v-card flat>
+          <v-list dense subheader>
+            <v-list-tile>
+              <v-list-tile-content>Sub District
+                <br>地區
+              </v-list-tile-content>
+              <v-list-tile-content class="align-end">
+                <p>{{ district.esubdistrict }}</p>
+                <p>{{ district.csubdistrict }}</p>
+              </v-list-tile-content>
+            </v-list-tile>
+            <v-divider></v-divider>
+            <v-list-tile>
+              <v-list-tile-content>District Council Constituency Area
+                <br>區議會選區
+              </v-list-tile-content>
+              <v-list-tile-content class="align-end">
+                <p>{{ district.ename }}</p>
+                <p>{{ district.cname }}</p>
+              </v-list-tile-content>
+            </v-list-tile>
+            <v-divider></v-divider>
+          </v-list>
+          <v-list dense subheader v-for="key in filteredKeys" :key="key">
+            <v-list-tile>
+              <v-list-tile-content>
+                <p>{{ result.componentLabelForKey(key, 'eng') }}</p>
+                <p>{{ result.componentLabelForKey(key, 'chi') }}</p>
+              </v-list-tile-content>
+              <v-list-tile-content class="align-end">
+                <p>{{ result.componentValueForKey(key, 'eng') }}</p>
+                <p>{{ result.componentValueForKey(key, 'chi') }}</p>
+              </v-list-tile-content>
+            </v-list-tile>
+            <v-divider></v-divider>
+          </v-list>
+        </v-card>
+      </v-flex>
+    </v-layout>
+    <v-layout row>
+      <v-flex pa-0>
+        <v-card>
+          <v-card-text>{{ '資料來源： ' + result.dataSource() }}</v-card-text>
+        </v-card>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>
-import Address from './../lib/models/address';
+import Address from "./../lib/models/address";
 import dclookup from "./../utils/dclookup";
-import ButtonTick from './ButtonTick';
-import ButtonCross from './ButtonCross';
-import {
-  trackSingleSearchSatisfied
-} from "./../utils/ga-helper";
+import ButtonTick from "./ButtonTick";
+import ButtonCross from "./ButtonCross";
+import { trackSingleSearchSatisfied } from "./../utils/ga-helper";
 export default {
   components: {
-    ButtonTick, ButtonCross
+    ButtonTick,
+    ButtonCross
   },
   props: {
     searchAddress: String,
@@ -95,7 +103,6 @@ export default {
   mounted: function() {
     this.localFilterOptions = this.filterOptions;
     this.filteredKeys = this.getFilteredKeys();
-    this.disableExpansionPanelContent();
     this.$root.$on("filterUpdate", options => {
       this.localFilterOptions = options;
       this.filteredKeys = this.getFilteredKeys();
@@ -110,25 +117,23 @@ export default {
         this.result.coordinate().lng
       );
     },
-    isBestMatch: function () {
+    isBestMatch: function() {
       return this.rank === 0;
     }
   },
   methods: {
-    tick: function (e) {
+    tick: function(e) {
       e.stopPropagation();
-      console.log('tick');
+      console.log("tick");
     },
     getFilteredKeys: function() {
       return (this.filteredKeys = this.localFilterOptions
-        .filter(opt => opt.enabled && this.result.componentLabelForKey(opt.key, 'chi') !== '')
+        .filter(
+          opt =>
+            opt.enabled &&
+            this.result.componentLabelForKey(opt.key, "chi") !== ""
+        )
         .map(opt => opt.key));
-    },
-    disableExpansionPanelContent: function() {
-      const opts = this.localFilterOptions;
-      if (Object.keys(opts).every(key => !opts[key].enabled)) {
-        this.disableContent = true;
-      }
     },
     onTickClicked: function() {
       this.commented = true;
@@ -137,21 +142,22 @@ export default {
     onCrossClicked: function() {
       this.commented = true;
       trackSingleSearchSatisfied(this, this.searchAddress, false);
-    },
+    }
   }
 };
 </script>
 
 <style>
+.no-underline {
+  text-decoration: none;
+}
 
+a:hover {
+  text-decoration: underline;
+}
 .align-end {
   text-align: right;
   white-space: pre;
-}
-
-.btn-container {
-  position: absolute;
-  right: 10px;
 }
 
 p {
