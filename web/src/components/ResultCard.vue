@@ -152,7 +152,7 @@ export default {
   text-decoration: none;
 }
 
-a:hover {
+.no-underline:hover {
   text-decoration: underline;
 }
 .align-end {
