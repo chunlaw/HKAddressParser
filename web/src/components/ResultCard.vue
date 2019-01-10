@@ -4,6 +4,7 @@
       <v-flex pa-0>
         <v-card flat>
           <v-card-text>
+            <p class="grey--text">搜尋地址：{{searchAddress}}</p>
             <h2>{{ result.fullAddress('chi') }}</h2>
             <h3>{{ result.fullAddress('eng') }}</h3>
               <a 
