@@ -5,7 +5,7 @@ import proj4 from 'proj4';
 import ProjConvertor from '../utils/proj-convertor';
 
 const OGCIO_RECORD_COUNT = 200;
-const NEAR_THRESHOLD = 0.03; // 30 metre
+const NEAR_THRESHOLD = 0.05; // 50 metre
 
 export default {
   queryAddress: async (address) => {
