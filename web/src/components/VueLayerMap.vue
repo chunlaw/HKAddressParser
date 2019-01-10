@@ -8,26 +8,26 @@
 
     <!-- interactions -->
     <vl-interaction-select :features="selectedFeatures" v-on:update:features="featureUpdated">
-      <template slot-scope="select">
-          <vl-style-box>
-              <vl-style-icon
-                :src="images.selectedPin"
-                :scale="0.5"
-                :anchor="[0.1, 0.5]"
-                :size="[128, 128]"
-              ></vl-style-icon>
-            </vl-style-box>
-             <vl-overlay class="feature-popup" v-for="feature in select.features" :key="feature.id" :id="feature.id"
+      <!-- <template slot-scope="select">
+          <vl-overlay class="feature-popup" v-for="feature in select.features" :key="feature.id" :id="feature.id"
                         :position="pointOnSurface(feature.geometry)" :auto-pan="true" :auto-pan-animation="{ duration: 300 }">
           </vl-overlay>
-        </template>
+        </template> -->
       </vl-interaction-select>
       <!--// interactions -->
 
-      <vl-feature v-for="marker in markers" :properties="marker" :key="marker.id">
+      <vl-feature v-for="(marker, index) in markers" :properties="marker" :key="index">
         <div v-if="marker">
           <vl-geom-point :coordinates="[Number(marker.coordinate().lng), Number(marker.coordinate().lat)]"></vl-geom-point>
-          <vl-style-box>
+          <vl-style-box v-if="isMarkerSelected(marker)">
+            <vl-style-icon
+              :src="images.selectedPin"
+              :scale="0.5"
+              :anchor="[0.1, 0.5]"
+              :size="[128, 128]"
+            ></vl-style-icon>
+          </vl-style-box>
+          <vl-style-box v-else>
             <vl-style-icon
               :src="images.pin"
               :scale="0.5"
@@ -68,8 +68,15 @@
     },
     methods: {
       pointOnSurface: findPointOnSurface,
+      isMarkerSelected: function(marker) {
+        if (this.selectedFeatures.length === 0) {
+          return false;
+        }
+        return this.selectedFeatures[0].properties.index === marker.index;
+      },
       featureUpdated: function(features) {
         this.$emit('featureSelected', features.length > 0 ? features[0] : null);
+        this.selectedFeatures = features;
       }
     },
     // watch: {

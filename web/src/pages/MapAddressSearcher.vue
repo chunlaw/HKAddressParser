@@ -118,17 +118,28 @@ export default {
         function(err) {
           // reset the selected markers
           // self.selectedMarkers = [];
+          self.setSelectedFeature(0);
         }
       );
     },
     onFeatureSelected: function(feature) {
       if (feature !== null) {
         const index = feature.properties.index;
-        this.selectedFeature = this.results[index][0];
-        this.selectedFeature.searchAddress = this.addressesToSearch[index];
+        this.setSelectedFeature(index);
       } else {
         this.selectedFeature = null;
       }
+    },
+    setSelectedFeature: function(index) {
+        const address = this.results[index][0];
+        this.selectedFeature = address;
+        this.selectedFeature.searchAddress = this.addressesToSearch[index];
+        // HACK: create a filter option that all fields are enabled
+        this.filterOptions = this.selectedFeature.components("chi").map(component => ({
+          key: component.key,
+          value: component.translatedLabel,
+          enabled: true,
+        }));
     }
   }
 };
