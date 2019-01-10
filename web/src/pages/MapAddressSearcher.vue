@@ -126,6 +126,12 @@ export default {
         const index = feature.properties.index;
         this.selectedFeature = this.results[index][0];
         this.selectedFeature.searchAddress = this.addressesToSearch[index];
+        // HACK: create a filter option that all fields are enabled
+        this.filterOptions = this.selectedFeature.components("chi").map(component => ({
+          key: component.key,
+          value: component.translatedLabel,
+          enabled: true,
+        }));
       } else {
         this.selectedFeature = null;
       }
