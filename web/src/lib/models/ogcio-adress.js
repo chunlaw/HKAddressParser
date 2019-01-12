@@ -59,6 +59,12 @@ export default class OGCIOAddress extends Address {
   }
 
   coordinates() {
+    if (this.record.geo !== undefined && this.record.geo.length > 0) {
+      return this.record.geo.map(geo => ({
+        lat: geo.Latitude,
+        lng: geo.Longitude
+      }));
+    }
     return [];
   }
 
