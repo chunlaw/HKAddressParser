@@ -10,7 +10,7 @@ if (process.argv.length < 2) {
   console.log('{}');
 }
 
-const address = encodeURI(process.argv[2]);
+const address = process.argv[2];
 const n = 100;
 const URL = 'https://www.als.ogcio.gov.hk/lookup';
 
@@ -18,7 +18,11 @@ const URL = 'https://www.als.ogcio.gov.hk/lookup';
 
 addressResolver.default.queryAddress(address).then(results => {
   const result = results[0];
-  const obj = { geo: result.coordinates().map(coord => ({Latitude: coord.lat + '', Longitude: coord.lng + ''})) };
+  const obj = {
+    eng: result.fullAddress('eng'),
+    chi: result.fullAddress('chi'),
+    geo: result.coordinates().map(coord => ({Latitude: coord.lat + '', Longitude: coord.lng + ''}))
+  };
   console.log(JSON.stringify(obj));
 }).catch(error => {
    console.log(error.stack);

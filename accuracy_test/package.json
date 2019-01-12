@@ -18,6 +18,7 @@
     "es6-promise": "^4.2.5",
     "fast-csv": "^2.4.1",
     "isomorphic-fetch": "^2.2.1",
+    "moment": "^2.23.0",
     "proj4": "^2.5.0",
     "request": "^2.88.0"
   },
