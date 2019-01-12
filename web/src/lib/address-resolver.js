@@ -39,26 +39,37 @@ export default {
     // P.S. Result source (OGCIO/Land Department) should be displayed to user
     // this.results['source'] = ...
     console.log('OGCIO Best match: ' + sortedOgcioRecords[0].fullAddress('chi'));
+    console.log(`Distance from the first result : ${sortedOgcioRecords[0].distanceTo(landRecords[0])}`)
 
-    // 1. Best Case: Land result and ogcio return the same address
-    if (sortedOgcioRecords[0].distanceTo(landRecords[0]) < NEAR_THRESHOLD) {
-      console.log('1. Best Case: Land result and ogcio return the same address');
-      return sortedOgcioRecords;
+
+    // 1. Best Case: Top OGCIO result appears in land result(s)
+    // We compared with the first in land result but some cases that sometime the most accurate result does not appear at top
+    // so we should search among the whole list
+    for (const landResult of landRecords) {
+      if (sortedOgcioRecords[0].distanceTo(landResult) < NEAR_THRESHOLD) {
+        console.log('1. Best Case: Land result and ogcio return the same address');
+        return sortedOgcioRecords;
+      }
     }
 
-    // 2. best result from OGCIO is not the land result but somehow within the 200 records and we would find it out
-    // Do 200 * n coordinates calculation
-    console.log('2. best result from OGCIO is not the land result but somehow within the 200 records and we would find it out');
-    console.log('Distance shorter than ' + NEAR_THRESHOLD + ' km');
+
+    // 2. best result from OGCIO does not appears in the land results
+    // so we pick the first land result as our destination and search all the OGCIO results and see if some result is within the NEAR_DISTANCE
+    // and sort them with distance to the first land result
+
     sortedOgcioRecords.forEach(ogcioRecord => {
+      const distance = ogcioRecord.distanceTo(landRecords[0]);
       if (ogcioRecord.distanceTo(landRecords[0]) < NEAR_THRESHOLD) {
+        // add the distance for sorting the array
+        ogcioRecord.distance = distance;
         sortedResults.push(ogcioRecord);
         console.log(ogcioRecord.distanceTo(landRecords[0]) + ' | ' + ogcioRecord.fullAddress('chi'))
       }
     });
 
+    // Return the sorted array by distnace to first land result
     if (sortedResults.length > 0) {
-      return sortedResults;
+      return sortedResults.sort((a, b) => a.distance - b.distance);;
     }
 
 
