@@ -121,6 +121,8 @@ export default {
           self.setSelectedFeature(0);
         }
       );
+      // Auto open first result, TODO: Turn first result's marker to selectedPin
+      this.setSelectedFeature(index)
     },
     onFeatureSelected: function(feature) {
       if (feature !== null) {
