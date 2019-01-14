@@ -31,22 +31,24 @@
         <v-card flat>
           <v-list dense subheader>
             <v-list-tile>
-              <v-list-tile-content>Sub District
-                <br>地區
+              <v-list-tile-content>
+                <span>Sub District</span>
+                <span>地區</span>
               </v-list-tile-content>
               <v-list-tile-content class="align-end">
-                <p>{{ district.esubdistrict }}</p>
-                <p>{{ district.csubdistrict }}</p>
+                <span>{{ district.esubdistrict }}</span>
+                <span>{{ district.csubdistrict }}</span>
               </v-list-tile-content>
             </v-list-tile>
             <v-divider></v-divider>
             <v-list-tile>
-              <v-list-tile-content>District Council Constituency Area
-                <br>區議會選區
+              <v-list-tile-content>
+                <span>District Council Constituency Area</span>
+                <span>區議會選區</span>
               </v-list-tile-content>
               <v-list-tile-content class="align-end">
-                <p>{{ district.ename }}</p>
-                <p>{{ district.cname }}</p>
+                <span>{{ district.ename }}</span>
+                <span>{{ district.cname }}</span>
               </v-list-tile-content>
             </v-list-tile>
             <v-divider></v-divider>
@@ -54,12 +56,12 @@
           <v-list dense subheader v-for="key in filteredKeys" :key="key">
             <v-list-tile>
               <v-list-tile-content>
-                <p>{{ result.componentLabelForKey(key, 'eng') }}</p>
-                <p>{{ result.componentLabelForKey(key, 'chi') }}</p>
+                <span>{{ result.componentLabelForKey(key, 'eng') }}</span>
+                <span>{{ result.componentLabelForKey(key, 'chi') }}</span>
               </v-list-tile-content>
               <v-list-tile-content class="align-end">
-                <p>{{ result.componentValueForKey(key, 'eng') }}</p>
-                <p>{{ result.componentValueForKey(key, 'chi') }}</p>
+                <span>{{ result.componentValueForKey(key, 'eng') }}</span>
+                <span>{{ result.componentValueForKey(key, 'chi') }}</span>
               </v-list-tile-content>
             </v-list-tile>
             <v-divider></v-divider>
@@ -161,7 +163,4 @@ export default {
   white-space: pre;
 }
 
-p {
-  margin: 0px;
-}
 </style>
