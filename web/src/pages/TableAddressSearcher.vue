@@ -1,20 +1,146 @@
 <template>
   <v-content>
-    <v-container>
+    <v-container grid-list-sm>
       <v-layout row wrap>
-        <v-flex>
-          <v-alert v-model="hasError" type="error">{{ this.errorMessage }}</v-alert>
-          <h1 class="teal--text">我哋幫你解決難搞地址</h1>
+        <v-flex d-flex xs12 sm8>
+          <v-layout row wrap>
+            <v-flex mr-5>
+              <h1 class="teal--text">我哋幫你拆解難搞地址</h1>
+              <h3>
+                <p>
+                  為何要拆解地址？假設你在找尋
+                  <span class="amber lighten-4 red--text px-1">灣仔富德樓</span> 的位置，你會用Google地圖搜尋，然後得出地址全名、座標等資料。但如果你分析過千，甚至過萬個文字地址，又要顯示在地圖上，當中格式不統一、中英混雜，難道你要逐一搜尋？
+                </p>
+                <p>
+                  香港地址解析器（Hong Kong Address Parser, HKAP）運用政府部門開放數據，比較輸入地址與搜尋結果的相似度，將香港文字地址拆解成地區、街道、門牌、大廈、座標、甚至區議會選區，方便港人分析地址資料，製作地圖。
+                </p>
+              </h3>
+              <h2 class="teal--text">三大功能</h2>
+              <br>
+              <v-flex d-flex>
+                <v-layout row>
+                  <v-flex d-flex xs4>
+                    <v-card color="rgba(255, 255, 255, 0)">
+                      <v-card-title primary-title>
+                        <h2>地址轉座標</h2>
+                      </v-card-title>
+                      <v-card-text>
+                        <p>如果你要將一批地址資料顯示在地圖上，首先要將地址轉換成座標，但Google Maps API開始向用家收費，而且你要先有編程底子才可方便使用，HKAP可以將大量中英文地址轉換成經緯度，方便製作互動地圖。</p>
+                      </v-card-text>
+                    </v-card>
+                  </v-flex>
+                  <v-flex d-flex xs4>
+                    <v-card color="rgba(255, 255, 255, 0)">
+                      <v-card-title>
+                        <h2>中英翻譯地址</h2>
+                      </v-card-title>
+                      <v-card-text>香港人習慣雙語並用，有時你手上有一批中英夾雜的地址，HKAP可以大量翻譯成中文，方便整理。</v-card-text>
+                    </v-card>
+                  </v-flex>
+                  <v-flex d-flex xs4>
+                    <v-card color="rgba(255, 255, 255, 0)">
+                      <v-card-title>
+                        <h2>統一地址格式</h2>
+                      </v-card-title>
+                      <v-card-text>HKAP可以將大量不同格式的中英地址解析成地區、街道、門牌、大廈、區議會選區等地址資料，用家下載CSV格式檔案後，可進一步作樞紐分析空間數據，歸納地址集中在哪一地區、哪條街道，從凌亂資料中提煉找出有價值的資訊。</v-card-text>
+                    </v-card>
+                  </v-flex>
+                </v-layout>
+              </v-flex>
+            </v-flex>
+          </v-layout>
+        </v-flex>
 
-          <h3>
-            輸入中英文香港地址，我們幫你解析成
-            <span class="amber lighten-4 red--text px-1">地區</span>、
-            <span class="amber lighten-4 red--text px-1">街道門牌</span>、
-            <span class="amber lighten-4 red--text px-1">大廈</span>、
-            <span class="amber lighten-4 red--text px-1">坐標</span>，連
-            <span class="amber lighten-4 red--text px-1">區議會選區</span>都有
-          </h3>
-          <br>
+        <v-flex xs12 sm4>
+          <v-layout>
+            <v-flex pa-0>
+              <v-card flat>
+                <v-card-text>
+                  <p class="grey--text">搜尋地址：富德樓</p>
+                  <h2>香港軒尼詩道365號富德樓</h2>
+                  <h3>FOO TAK BUILDING, 365 HENNESSY ROAD, HK</h3>
+                  <a
+                    class="grey--text no-underline"
+                    target="_blank"
+                    href="https://www.google.com/maps/search/?api=1&query=22.2789,114.1794"
+                  >22.2789, 114.1794</a>
+                </v-card-text>
+                <v-list dense subheader>
+                  <v-list-tile>
+                    <v-list-tile-content>
+                      <span>Sub District</span>
+                      <span>地區</span>
+                    </v-list-tile-content>
+                    <v-list-tile-content class="align-end">
+                      <span>Wan Chai</span>
+                      <span>灣仔</span>
+                    </v-list-tile-content>
+                  </v-list-tile>
+                  <v-divider></v-divider>
+                  <v-list-tile>
+                    <v-list-tile-content>District Council Constituency Area
+                      <br>區議會選區
+                    </v-list-tile-content>
+                    <v-list-tile-content class="align-end">
+                      <span>Oi Kwan</span>
+                      <span>愛群</span>
+                    </v-list-tile-content>
+                  </v-list-tile>
+                  <v-divider></v-divider>
+                </v-list>
+                <v-list dense subheader>
+                  <v-list-tile>
+                    <v-list-tile-content>
+                      <span>Region</span>
+                      <span>區域</span>
+                    </v-list-tile-content>
+                    <v-list-tile-content class="align-end">
+                      <span>HK</span>
+                      <span>香港</span>
+                    </v-list-tile-content>
+                  </v-list-tile>
+                  <v-divider></v-divider>
+                  <v-list-tile>
+                    <v-list-tile-content>
+                      <span>District</span>
+                      <span>地區</span>
+                    </v-list-tile-content>
+                    <v-list-tile-content class="align-end">
+                      <span>Wan Chai District</span>
+                      <span>灣仔區</span>
+                    </v-list-tile-content>
+                  </v-list-tile>
+                  <v-divider></v-divider>
+                  <v-list-tile>
+                    <v-list-tile-content>
+                      <span>Street</span>
+                      <span>街道</span>
+                    </v-list-tile-content>
+                    <v-list-tile-content class="align-end">
+                      <span>365 HENNESSY ROAD</span>
+                      <span>軒尼詩道365號</span>
+                    </v-list-tile-content>
+                  </v-list-tile>
+                  <v-divider></v-divider>
+                  <v-list-tile>
+                    <v-list-tile-content>
+                      <span>Building Name</span>
+                      <span>大廈名稱</span>
+                    </v-list-tile-content>
+                    <v-list-tile-content class="align-end">
+                      <span>FOO TAK BUILDING</span>
+                      <span>富德樓</span>
+                    </v-list-tile-content>
+                  </v-list-tile>
+                  <v-divider></v-divider>
+                </v-list>
+              </v-card>
+            </v-flex>
+          </v-layout>
+        </v-flex>
+
+        <v-flex xs12 pa-0 mt-5>
+          <h2 class="teal--text">請於下方請輸入地址（每行一個地址）</h2>
           <v-form ref="form" class="form" @submit.prevent="submit">
             <v-textarea
               outline
@@ -25,7 +151,7 @@
             ></v-textarea>
             <div slot="header">進階選項</div>
             <SearchFilter :filterOptions.sync="filterOptions"/>
-            <v-flex xs12>
+            <v-flex>
               <v-layout row wrap>
                 <v-btn @click="submit" dark class="teal">拆地址</v-btn>
                 <download-excel

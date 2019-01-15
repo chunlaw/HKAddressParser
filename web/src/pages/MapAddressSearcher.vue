@@ -5,14 +5,10 @@
       <v-container fluid>
         <v-layout row>
           <v-flex pa-0>
-            <h1 class="teal--text">我哋幫你解決難搞地址</h1>
+            <h1 class="teal--text">我哋幫你拆解難搞地址</h1>
+            
             <h3>
-              輸入中英文香港地址，我們幫你解析成
-              <span class="amber lighten-4 red--text px-1">地區</span>、
-              <span class="amber lighten-4 red--text px-1">街道門牌</span>、
-              <span class="amber lighten-4 red--text px-1">大廈</span>、
-              <span class="amber lighten-4 red--text px-1">坐標</span>，連
-              <span class="amber lighten-4 red--text px-1">區議會選區</span>都有
+              輸入香港地址，我們幫你 <span class="amber lighten-4 red--text px-1">地址轉座標</span> 、 <span class="amber lighten-4 red--text px-1">中英翻譯地址</span> 、 <span class="amber lighten-4 red--text px-1">統一地址格式</span>
             </h3>
             <br>
           </v-flex>
