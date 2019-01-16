@@ -47,11 +47,15 @@ export default class LandAddress extends Address{
   }
 
   coordinates() {
-
     return [{
       lat: this.record.lat,
       lng: this.record.lng,
     }];
+  }
+
+  // In the future it can be multiple source
+  dataSource() {
+    return '地政總署';
   }
 
   /**
@@ -64,4 +68,3 @@ export default class LandAddress extends Address{
 
 Address.LANG_EN = 'eng';
 Address.LANG_ZH = 'chi';
-

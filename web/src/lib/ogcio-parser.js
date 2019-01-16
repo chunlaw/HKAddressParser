@@ -415,7 +415,7 @@ function parseAddress(address, normalizedOGCIOResult) {
  * @param {*} address
  * @param {*} responseFromOGCIO Raw json response from ogcio
  */
-async function searchResult(address, responseFromOGCIO) {
+function searchResult(address, responseFromOGCIO) {
   const normalizedAddress = removeFloor(address).toUpperCase();
   const normalizedOGCIOResult = normalizeResponse(responseFromOGCIO);
   return parseAddress(normalizedAddress, normalizedOGCIOResult);

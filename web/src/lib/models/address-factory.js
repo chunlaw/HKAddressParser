@@ -1,5 +1,5 @@
-import OGCIOAddress from './ogcio-adress';
 import Address from './address';
+import OGCIOAddress from './ogcio-address';
 import LandAddress from './land-address';
 
 export const createAddress = function (type, record) {
