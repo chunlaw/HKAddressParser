@@ -107,13 +107,7 @@ function eliminateLangKeys(data) {
   const result = {};
   for (const key of Object.keys(data)) {
     const refinedKey = key.replace(/(^Chi|^Eng)/,'');
-    // eliminate with recursion
-    if (typeof(data[key]) === 'object') {
-      result[refinedKey] = eliminateLangKeys(data[key]);
-    } else {
-      result[refinedKey] = data[key];
-    }
-
+    result[refinedKey] = data[key];
   }
   return result;
 }

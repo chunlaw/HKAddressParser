@@ -47,15 +47,11 @@ export default class LandAddress extends Address{
   }
 
   coordinates() {
+
     return [{
       lat: this.record.lat,
       lng: this.record.lng,
     }];
-  }
-
-  // In the future it can be multiple source
-  dataSource() {
-    return '地政總署';
   }
 
   /**
