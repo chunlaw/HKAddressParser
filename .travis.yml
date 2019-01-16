@@ -38,8 +38,8 @@ jobs:
       script:
         - echo "VUE_APP_GA_TRACKING_ID=$GA_TRACKING_ID" >> .env
         # if this is build from tag, just update the tag name, otherise use the previous tag name
-        - if [[ -z "$TRAVIS_TAG"]]; then echo "VUE_APP_REV_NAME=$(git describe --abbrev=0 --tags `git rev-list --tags  --max-count=1`)" >> .env
-        - if [[ ! -z "$TRAVIS_TAG"]]; then echo "VUE_APP_REV_NAME=$TRAVIS_TAG" >> .env
+        - if [[ -z "$TRAVIS_TAG" ]]; then echo "VUE_APP_REV_NAME=$(git describe --abbrev=0 --tags `git rev-list --tags  --max-count=1`)" >> .env; fi
+        - if [[ ! -z "$TRAVIS_TAG" ]]; then echo "VUE_APP_REV_NAME=$TRAVIS_TAG" >> .env; fi
         - npm run build
         - if [[ ! -z "$DOMAIN" ]]; then echo $DOMAIN >> dist/CNAME; fi
 
