@@ -1,20 +1,20 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import AddressSearcher from './pages/AddressSearcher'
-import BatchAddressSearcher from './pages/BatchAddressSearcher'
+import MapAddressSearcher from './pages/MapAddressSearcher'
+import TableAddressSearcher from './pages/TableAddressSearcher'
 
 Vue.use(Router)
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'search',
-      component: AddressSearcher
+      name: 'search_map',
+      component: MapAddressSearcher
     },
     {
-      path: '/batch',
-      name: 'search_batch',
-      component: BatchAddressSearcher
+      path: '/table',
+      name: 'search_table',
+      component: TableAddressSearcher
     }
   ]
 })

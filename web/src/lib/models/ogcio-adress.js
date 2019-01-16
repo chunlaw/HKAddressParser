@@ -40,7 +40,7 @@ export default class OGCIOAddress extends Address {
 
   fullAddress(lang) {
     if (lang === Address.LANG_EN) {
-      return ogcioHelper.fullChineseAddressFromResult(this.record['eng']);
+      return ogcioHelper.fullEnglishAddressFromResult(this.record['eng']);
     } else {
       return ogcioHelper.fullChineseAddressFromResult(this.record['chi']);
     }
@@ -59,7 +59,18 @@ export default class OGCIOAddress extends Address {
   }
 
   coordinates() {
+    if (this.record.geo !== undefined && this.record.geo.length > 0) {
+      return this.record.geo.map(geo => ({
+        lat: geo.Latitude,
+        lng: geo.Longitude
+      }));
+    }
     return [];
+  }
+
+  // In the future it can be multiple source
+  dataSource() {
+    return '資科辦';
   }
 
   confidence() {

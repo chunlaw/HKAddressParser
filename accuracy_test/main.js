@@ -8,7 +8,7 @@ const csv = require('fast-csv');
 const fs = require('fs');
 const { spawn } = require('child_process');
 const async = require('async');
-
+const moment = require('moment');
 
 
 // default logger
@@ -114,13 +114,18 @@ async function runTest(program, file, address) {
 }
 
 
-async function main({ mode = 3, limit = Infinity, outputFile = './result.json' }) {
+async function main({ mode = 3, limit = Infinity, outputFile = './result.json', tag}) {
   return new Promise(async (resolve, reject) => {
     const allTestData = await readTestCases('./data/testcases_ogcio_searchable.csv');
     const result = {
       total: 0
     }
 
+
+    result.date = moment().format('YYYY-MM-DD hh:mm:ss');
+    if (typeof(tag) === 'string' && tag.length > 0) {
+      result.tag = tag;
+    }
     if (mode & 2) {
       result.py_success = 0;
       result.py_failed = [];
@@ -166,7 +171,8 @@ async function main({ mode = 3, limit = Infinity, outputFile = './result.json' }
         if (mode & 1) {
           result.js_success_rate = `${result.js_success / result.total}`;
         }
-        fs.writeFileSync(outputFile, JSON.stringify(result, null, 4));
+
+        fs.appendFileSync(outputFile, JSON.stringify(result) + '\n');
         log(result);
         resolve();
       })
@@ -196,14 +202,17 @@ program
 program
   .description('Run the test cases')
   .option('-o, --output [file]', 'Output the test result to the file')
-  .option('-c, --ci [file]', 'Running in CI mode, will append the percentage to the file')
   .option('-l, --limit [n]', 'Limit the number of test cases to run')
   .option('-p, --python', 'Running only the python test')
   .option('-j, --js', 'Running only the javascript test')
+  .option('-t, --tag [tag]', 'Save the tag with the result')
   .parse(process.argv);
 
 
 const outputFile = program.output || './results.json';
+const ciOutputFile = program.ci || null;
+const tag = program.tag;
+
 // bitwise flag: | python | node |
 const mode = !program.python | !program.js << 1;
 const limit = program.limit || Infinity;
@@ -214,7 +223,7 @@ if (mode === 0) {
   end();
 }
 
-main({ mode, limit, outputFile })
+main({ mode, limit, outputFile, ciOutputFile, tag })
   .then((end) => {
     log('Done');
   })

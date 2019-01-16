@@ -42,6 +42,11 @@ export default class Address {
     return [];
   }
 
+  // In the future it can be multiple source
+  dataSource() {
+    return null;
+  }
+
   /**
    * Return a normalized confident level from 0 - 10
    */

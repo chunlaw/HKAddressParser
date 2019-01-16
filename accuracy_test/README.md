@@ -10,6 +10,9 @@ The main test program written in node.js.
 # Simply install the required packages
 npm install
 
+# Transpile the javascript from ./../web to dist to run with nodejs
+npm run build
+
 # And run the program
 node main.js
 
