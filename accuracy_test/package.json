@@ -4,15 +4,27 @@
   "description": "To test the python script and also the js script accuracy",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel ../web/src -d dist  --presets=@babel/preset-env"
   },
   "author": "Nandi Wong",
   "license": "ISC",
   "dependencies": {
+    "@babel/polyfill": "^7.2.5",
+    "@turf/turf": "^5.1.6",
     "async": "^2.6.1",
     "bluebird": "^3.5.3",
     "commander": "^2.19.0",
+    "es6-promise": "^4.2.5",
     "fast-csv": "^2.4.1",
+    "isomorphic-fetch": "^2.2.1",
+    "moment": "^2.23.0",
+    "proj4": "^2.5.0",
     "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3"
   }
 }
