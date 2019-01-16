@@ -6,7 +6,7 @@
         <v-layout row>
           <v-flex pa-0>
             <h1 class="teal--text">我哋幫你拆解難搞地址</h1>
-            
+
             <h3>
               輸入香港地址，我們幫你 <span class="amber lighten-4 red--text px-1">地址轉座標</span> 、 <span class="amber lighten-4 red--text px-1">中英翻譯地址</span> 、 <span class="amber lighten-4 red--text px-1">統一地址格式</span>
             </h3>
@@ -118,7 +118,7 @@ export default {
         }
       );
       // Auto open first result, TODO: Turn first result's marker to selectedPin
-      this.setSelectedFeature(index)
+      // this.setSelectedFeature(index)
     },
     onFeatureSelected: function(feature) {
       if (feature !== null) {

@@ -35,32 +35,25 @@
               :size="[128, 128]"
             ></vl-style-icon>
           </vl-style-box>
+        </div>
       </vl-feature>
-
     </vl-map>
 </template>
 
 <script>
-export default {
-  props: {
-    markers: {
-      status: Object,
-      geo: Array,
-      chi: Object,
-      eng: Object,
-      matches: Array
-    }
-  },
-  computed: {
-    center: {
-      get: function() {
-        return [114.160147, 22.35201];
-      },
-      set: function() {
-        // do nothing
-      }
+  import {
+    findPointOnSurface
+  } from 'vuelayers/lib/ol-ext'
+  import Address from './../lib/models/address';
+  import ResultCard from "./ResultCard";
+  export default {
+    components: {
+      ResultCard,
     },
-  },
+    props: {
+      markers: Array,
+      filterOptions: Array
+    },
     data() {
       return {
         selectedFeatures: [],
@@ -101,5 +94,4 @@ export default {
   .ol-overlay-container {
     width: 100%;
   }
-};
-</script>
+</style>
