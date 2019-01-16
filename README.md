@@ -1,14 +1,28 @@
 # 香港地址解析器 Hong Kong Address Parser
 
-## 簡介 Overview
-你試過分析大量文字地址嗎？你要將大量地址放在地圖嗎？想像你大量面對格式不統一、中英混雜的文字地址，然後你要短時間作空間分析（spatial analysis），歸納地址集中在哪一區、哪條街，如果你懂Google Geocoding API，也許可以免費處理千多個地址，但如果你連Excel也不懂用可怎麼辦？  
+網站：[bit.ly/hkaddressparser](http://bit.ly/hkaddressparser)  
 
-Hong Kong Address Parser converts unformatted Hong Kong address into standardize tagged address parts with corresponding coordinates. All results are verified by string matching.
+## 簡介 Overview
+為何要拆解地址？假設你在找尋灣仔富德樓的位置，你會用Google地圖搜尋，然後得出地址全名、座標等資料。但如果你分析過千，甚至過萬個文字地址，又要顯示在地圖上，當中格式不統一、中英混雜，難道你要逐一搜尋？
+
+香港地址解析器（Hong Kong Address Parser, HKAP）運用政府部門開放數據，比較輸入地址與搜尋結果的相似度，將香港文字地址拆解成地區、街道、門牌、大廈、座標、甚至區議會選區，方便港人分析地址資料，製作地圖。
+
+## 三大功能 Features
+
+### 地址轉座標  
+如果你要將一批地址資料顯示在地圖上，首先要將地址轉換成座標，但Google Maps API開始向用家收費，而且你要先有編程底子才可方便使用，HKAP可以將大量中英文地址轉換成經緯度，方便製作互動地圖。
+
+### 中英翻譯地址  
+香港人習慣雙語並用，有時你手上有一批中英夾雜的地址，HKAP可以大量翻譯成中文，方便整理。
+
+### 統一地址格式  
+HKAP可以將大量不同格式的中英地址解析成地區、街道、門牌、大廈、區議會選區等地址資料，用家下載CSV格式檔案後，可進一步作樞紐分析空間數據，歸納地址集中在哪一地區、哪條街道，從凌亂資料中提煉找出有價值的資訊。
 
 [Collaction 項目頁](https://www.collaction.hk/s/hkaddressparser/)
 
 ## 版本 Versions 
-[Release 0.3 (2018-12-22)](https://g0vhk-io.github.io/HKAddressParser/)  
+[Release 1.0 (2019-01-16)](https://g0vhk-io.github.io/HKAddressParser/)  
+Release 0.3 (2018-12-22)  
 Release 0.2 (2018-11-25)  
 Release 0.1 (2018-11-07)  
 
@@ -18,6 +32,9 @@ Release 0.1 (2018-11-07)
 - Mapping sub-districts into district council constituency area, please refer to this [spreadsheet](
 https://docs.google.com/spreadsheets/d/1mNui-FsnnEiIXAGA-UBalqjywyBGhKMly2T9dLDhY7U/edit#gid=415942179)
 
+
+## 貢獻者 Contributors 
+- 
 
 ## File structure
 ```
