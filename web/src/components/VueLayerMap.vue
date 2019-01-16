@@ -60,10 +60,7 @@ export default {
         // do nothing
       }
     },
-    props: {
-      markers: Array,
-      filterOptions: Array
-    },
+  },
     data() {
       return {
         selectedFeatures: [],
