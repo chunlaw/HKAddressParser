@@ -57,15 +57,13 @@ import asyncLib from "async";
 import asyncify from "async/asyncify";
 import dclookup from "./../utils/dclookup";
 import ogcioHelper from "./../utils/ogcio-helper";
-import SearchFilter from "./../components/SearchFilter";
 import VueLayerMap from "./../components/VueLayerMap";
 import ResultCard from "./../components/ResultCard";
-import { trackBatchSearch, trackBatchSearchResult } from "./../utils/ga-helper";
+import { trackMapSearch, trackPinSelected } from "./../utils/ga-helper";
 const SEARCH_LIMIT = 200;
 
 export default {
   components: {
-    SearchFilter,
     VueLayerMap,
     ResultCard
   },
@@ -103,8 +101,8 @@ export default {
         this.errorMessage = "請輸入地址";
         return;
       }
-      this.addressesToSearch = this.addressString.split("\n");
-      trackBatchSearch(this, this.addressesToSearch);
+      this.addressesToSearch = this.addressString.split("\n").filter(address => address !== undefined && address.length > 0);
+      trackMapSearch(this, this.addressesToSearch.length);
       const self = this;
       asyncLib.eachOfLimit(
         this.addressesToSearch,
@@ -124,6 +122,7 @@ export default {
       if (feature !== null) {
         const index = feature.properties.index;
         this.setSelectedFeature(index);
+        trackPinSelected(this, this.results[index][0]);
       } else {
         this.selectedFeature = null;
       }
