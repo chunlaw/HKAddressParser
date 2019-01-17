@@ -11,9 +11,7 @@
                   為何要拆解地址？假設你在找尋
                   <span class="amber lighten-4 red--text px-1">灣仔富德樓</span> 的位置，你會用Google地圖搜尋，然後得出地址全名、座標等資料。但如果你分析過千，甚至過萬個文字地址，又要顯示在地圖上，當中格式不統一、中英混雜，難道你要逐一搜尋？
                 </p>
-                <p>
-                  香港地址解析器（Hong Kong Address Parser, HKAP）運用政府部門開放數據，比較輸入地址與搜尋結果的相似度，將香港文字地址拆解成地區、街道、門牌、大廈、座標、甚至區議會選區，方便港人分析地址資料，製作地圖。
-                </p>
+                <p>香港地址解析器（Hong Kong Address Parser, HKAP）運用政府部門開放數據，比較輸入地址與搜尋結果的相似度，將香港文字地址拆解成地區、街道、門牌、大廈、座標、甚至區議會選區，方便港人分析地址資料，製作地圖。</p>
               </h3>
               <h2 class="teal--text">三大功能</h2>
               <br>
@@ -156,7 +154,7 @@
                 <v-btn @click="submit" dark class="teal">拆地址</v-btn>
                 <download-excel
                   v-if="results.length > 0 && results.length === addressesToSearch.length"
-                  :data="normalizedResults"
+                  :fetch="prepareDownloadCSV"
                   type="csv"
                 >
                   <v-btn dark class="teal">下載 CSV</v-btn>
@@ -196,8 +194,9 @@ import dclookup from "./../utils/dclookup";
 import ogcioHelper from "./../utils/ogcio-helper";
 import SearchFilter from "./../components/SearchFilter";
 import asyncify from "async/asyncify";
-import { trackBatchSearch, trackBatchSearchResult } from "./../utils/ga-helper";
+import { trackTableSearch, trackDownloadCSV } from "./../utils/ga-helper";
 const SEARCH_LIMIT = 200;
+var asde = 200;
 
 export default {
   components: {
@@ -306,6 +305,10 @@ export default {
     // }
   },
   methods: {
+    prepareDownloadCSV: function() {
+      trackDownloadCSV(this, this.normalizedResults.length);
+      return this.normalizedResults;
+    },
     /**
      * Return an array of distinct headers from all of the ogcio results
      */
@@ -336,8 +339,10 @@ export default {
         this.errorMessage = "請輸入地址";
         return;
       }
-      this.addressesToSearch = this.addressString.split("\n");
-      trackBatchSearch(this, this.addressesToSearch);
+      this.addressesToSearch = this.addressString
+        .split("\n")
+        .filter(address => address !== undefined && address.length > 0);
+      trackTableSearch(this, this.addressesToSearch.length);
       const self = this;
       asyncLib.eachOfLimit(
         this.addressesToSearch,
@@ -372,7 +377,6 @@ async function searchSingleResult(address, key) {
     const result = records[0];
     // ! cant do the batch result here as it will exceeds the rate of GA
     // https://developers.google.com/analytics/devguides/collection/analyticsjs/limits-quotas
-    // trackBatchSearchResult(this, address, result.score | 0);
   }
   return records;
 }

@@ -47,9 +47,6 @@
   import Address from './../lib/models/address';
   import ResultCard from "./ResultCard";
   export default {
-    components: {
-      ResultCard,
-    },
     props: {
       markers: Array,
       filterOptions: Array

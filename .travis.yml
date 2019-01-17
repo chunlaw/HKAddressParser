@@ -50,4 +50,4 @@ jobs:
         keep-history: true
         local-dir: web/dist # the local dir is relative to root and ignoring the one set with before_install
         on:
-          branch: master
+          tags: true
