@@ -1338,8 +1338,8 @@ export default {
                 "CNAME": "定安",
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "牛頭角",
+                "SUBDISTIRCT_E": "Ngau Tau Kok"
             },
             "geometry": {
                 "type": "Polygon",
@@ -1798,8 +1798,8 @@ export default {
                 "CNAME": "石漁",
                 "DISTRICT_T": "南區",
                 "DISTRICT_E": "Southern",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "香港仔",
+                "SUBDISTIRCT_E": "Aberdeen"
             },
             "geometry": {
                 "type": "Polygon",
@@ -1883,8 +1883,8 @@ export default {
                 "CNAME": "翠德",
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "柴灣",
+                "SUBDISTIRCT_E": "Chai Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -1996,8 +1996,8 @@ export default {
                 "CNAME": "欣藍",
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "小西灣",
+                "SUBDISTIRCT_E": "Siu Sai Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -2174,8 +2174,8 @@ export default {
                 "CNAME": "嘉道理",
                 "DISTRICT_T": "九龍城區",
                 "DISTRICT_E": "Kowloon City",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "何文田",
+                "SUBDISTIRCT_E": "Ho Man Tin"
             },
             "geometry": {
                 "type": "Polygon",
@@ -2279,8 +2279,8 @@ export default {
                 "CNAME": "佐敦谷",
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "佐敦谷",
+                "SUBDISTIRCT_E": "Jordan Valley"
             },
             "geometry": {
                 "type": "Polygon",
@@ -6854,8 +6854,8 @@ export default {
                 "CNAME": "愛秩序灣",
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "筲箕灣",
+                "SUBDISTIRCT_E": "Shau Kei Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -7954,8 +7954,8 @@ export default {
                 "CNAME": "阿公岩",
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "筲箕灣",
+                "SUBDISTIRCT_E": "Shau Kei Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -8251,8 +8251,8 @@ export default {
                 "CNAME": "錦屏",
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "北角",
+                "SUBDISTIRCT_E": "North Point"
             },
             "geometry": {
                 "type": "Polygon",
@@ -8324,8 +8324,8 @@ export default {
                 "CNAME": "樂康",
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "柴灣",
+                "SUBDISTIRCT_E": "Chai Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -9230,8 +9230,8 @@ export default {
                 "CNAME": "南昌西",
                 "DISTRICT_T": "深水埗區",
                 "DISTRICT_E": "Sham Shui Po",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "深水埗",
+                "SUBDISTIRCT_E": "Sham Shui Po"
             },
             "geometry": {
                 "type": "Polygon",
@@ -9666,8 +9666,8 @@ export default {
                 "CNAME": "佳曉",
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "小西灣",
+                "SUBDISTIRCT_E": "Siu Sai Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -11729,8 +11729,8 @@ export default {
                 "CNAME": "北朗",
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "元朗",
+                "SUBDISTIRCT_E": "Yuen Long"
             },
             "geometry": {
                 "type": "Polygon",
@@ -12233,8 +12233,8 @@ export default {
                 "CNAME": "瑞愛",
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "天水圍",
+                "SUBDISTIRCT_E": "Tin Shui Wai"
             },
             "geometry": {
                 "type": "Polygon",
@@ -12749,8 +12749,8 @@ export default {
                 "CNAME": "鯉景灣",
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "西灣河",
+                "SUBDISTIRCT_E": "Sai Wan Ho"
             },
             "geometry": {
                 "type": "Polygon",
@@ -13425,8 +13425,8 @@ export default {
                 "CNAME": "紅磡灣",
                 "DISTRICT_T": "九龍城區",
                 "DISTRICT_E": "Kowloon City",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "紅磡",
+                "SUBDISTIRCT_E": "Hung Hom"
             },
             "geometry": {
                 "type": "Polygon",
@@ -13542,8 +13542,8 @@ export default {
                 "CNAME": "油塘西",
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "油塘",
+                "SUBDISTIRCT_E": "Yau Tong"
             },
             "geometry": {
                 "type": "Polygon",
@@ -13847,8 +13847,8 @@ export default {
                 "CNAME": "南屏",
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "元朗",
+                "SUBDISTIRCT_E": "Yuen Long"
             },
             "geometry": {
                 "type": "Polygon",
@@ -14227,8 +14227,8 @@ export default {
                 "CNAME": "頌華",
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "天水圍",
+                "SUBDISTIRCT_E": "Tin Shui Wai"
             },
             "geometry": {
                 "type": "Polygon",
@@ -15433,8 +15433,8 @@ export default {
                 "CNAME": "逸澤",
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "天水圍",
+                "SUBDISTIRCT_E": "Tin Shui Wai"
             },
             "geometry": {
                 "type": "Polygon",
@@ -17977,8 +17977,8 @@ export default {
                 "CNAME": "欣盛",
                 "DISTRICT_T": "北區",
                 "DISTRICT_E": "North",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "粉嶺",
+                "SUBDISTIRCT_E": "Fanling"
             },
             "geometry": {
                 "type": "Polygon",
@@ -19627,8 +19627,8 @@ export default {
                 "CNAME": "粉嶺南",
                 "DISTRICT_T": "北區",
                 "DISTRICT_E": "North",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "粉嶺",
+                "SUBDISTIRCT_E": "Fanling"
             },
             "geometry": {
                 "type": "Polygon",
@@ -20729,8 +20729,8 @@ export default {
                 "CNAME": "錦綉花園",
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "元朗",
+                "SUBDISTIRCT_E": "Yuen Long"
             },
             "geometry": {
                 "type": "Polygon",
@@ -23228,8 +23228,8 @@ export default {
                 "CNAME": "皇后山",
                 "DISTRICT_T": "北區",
                 "DISTRICT_E": "North",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "粉嶺",
+                "SUBDISTIRCT_E": "Fanling"
             },
             "geometry": {
                 "type": "Polygon",
@@ -28196,8 +28196,8 @@ export default {
                 "CNAME": "悅恩",
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "天水圍",
+                "SUBDISTIRCT_E": "Tin Shui Wai"
             },
             "geometry": {
                 "type": "Polygon",
@@ -28378,8 +28378,8 @@ export default {
                 "CNAME": "華貴",
                 "DISTRICT_T": "南區",
                 "DISTRICT_E": "Southern",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "香港仔",
+                "SUBDISTIRCT_E": "Aberdeen"
             },
             "geometry": {
                 "type": "Polygon",
@@ -28624,8 +28624,8 @@ export default {
                 "CNAME": "田灣",
                 "DISTRICT_T": "南區",
                 "DISTRICT_E": "Southern",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "香港仔",
+                "SUBDISTIRCT_E": "Aberdeen"
             },
             "geometry": {
                 "type": "Polygon",
@@ -29440,8 +29440,8 @@ export default {
                 "CNAME": "漁灣",
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "柴灣",
+                "SUBDISTIRCT_E": "Chai Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -29569,8 +29569,8 @@ export default {
                 "CNAME": "翡翠",
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "柴灣",
+                "SUBDISTIRCT_E": "Chai Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -29870,8 +29870,8 @@ export default {
                 "CNAME": "景怡",
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "小西灣",
+                "SUBDISTIRCT_E": "Siu Sai Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -30003,8 +30003,8 @@ export default {
                 "CNAME": "興民",
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "柴灣",
+                "SUBDISTIRCT_E": "Chai Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -30272,8 +30272,8 @@ export default {
                 "CNAME": "翠翔",
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "油塘",
+                "SUBDISTIRCT_E": "Yau Tong"
             },
             "geometry": {
                 "type": "Polygon",
@@ -30619,8 +30619,8 @@ export default {
                 "CNAME": "栢雅",
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "油塘",
+                "SUBDISTIRCT_E": "Yau Tong"
             },
             "geometry": {
                 "type": "Polygon",
@@ -31472,8 +31472,8 @@ export default {
                 "CNAME": "馬頭角",
                 "DISTRICT_T": "九龍城區",
                 "DISTRICT_E": "Kowloon City",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "馬頭圍",
+                "SUBDISTIRCT_E": "Ma Tau Wai"
             },
             "geometry": {
                 "type": "Polygon",
@@ -31650,8 +31650,8 @@ export default {
                 "CNAME": "馬坑涌",
                 "DISTRICT_T": "九龍城區",
                 "DISTRICT_E": "Kowloon City",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "馬頭圍",
+                "SUBDISTIRCT_E": "Ma Tau Wai"
             },
             "geometry": {
                 "type": "Polygon",
@@ -31957,8 +31957,8 @@ export default {
                 "CNAME": "南昌中",
                 "DISTRICT_T": "深水埗區",
                 "DISTRICT_E": "Sham Shui Po",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "深水埗",
+                "SUBDISTIRCT_E": "Sham Shui Po"
             },
             "geometry": {
                 "type": "Polygon",
@@ -32079,8 +32079,8 @@ export default {
                 "CNAME": "龍城",
                 "DISTRICT_T": "九龍城區",
                 "DISTRICT_E": "Kowloon City",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "九龍塘",
+                "SUBDISTIRCT_E": "Kowloon Tong"
             },
             "geometry": {
                 "type": "Polygon",
@@ -32711,8 +32711,8 @@ export default {
                 "CNAME": "彩雲南",
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "牛池灣",
+                "SUBDISTIRCT_E": "Ngau Chi Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -32792,8 +32792,8 @@ export default {
                 "CNAME": "坪石",
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "牛池灣",
+                "SUBDISTIRCT_E": "Ngau Chi Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -33078,8 +33078,8 @@ export default {
                 "CNAME": "石硤尾",
                 "DISTRICT_T": "深水埗區",
                 "DISTRICT_E": "Sham Shui Po",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "石硤尾",
+                "SUBDISTIRCT_E": "Shek Kip Mei"
             },
             "geometry": {
                 "type": "Polygon",
@@ -34088,8 +34088,8 @@ export default {
                 "CNAME": "常樂",
                 "DISTRICT_T": "九龍城區",
                 "DISTRICT_E": "Kowloon City",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "何文田",
+                "SUBDISTIRCT_E": "Ho Man Tin"
             },
             "geometry": {
                 "type": "Polygon",
@@ -34213,8 +34213,8 @@ export default {
                 "CNAME": "康樂",
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "牛頭角",
+                "SUBDISTIRCT_E": "Ngau Tau Kok"
             },
             "geometry": {
                 "type": "Polygon",
@@ -34886,8 +34886,8 @@ export default {
                 "CNAME": "樂華南",
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "牛頭角",
+                "SUBDISTIRCT_E": "Ngau Tau Kok"
             },
             "geometry": {
                 "type": "Polygon",
@@ -35011,8 +35011,8 @@ export default {
                 "CNAME": "樂華北",
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "牛頭角",
+                "SUBDISTIRCT_E": "Ngau Tau Kok"
             },
             "geometry": {
                 "type": "Polygon",
@@ -36066,8 +36066,8 @@ export default {
                 "CNAME": "佐敦北",
                 "DISTRICT_T": "油尖旺區",
                 "DISTRICT_E": "Yau Tsim Mong",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "油麻地",
+                "SUBDISTIRCT_E": "Yau Ma Tei"
             },
             "geometry": {
                 "type": "Polygon",
@@ -37265,8 +37265,8 @@ export default {
                 "CNAME": "葵盛西邨",
                 "DISTRICT_T": "葵青區",
                 "DISTRICT_E": "Kwai Tsing",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "葵涌",
+                "SUBDISTIRCT_E": "Kwai Chung"
             },
             "geometry": {
                 "type": "Polygon",
@@ -38541,8 +38541,8 @@ export default {
                 "CNAME": "德華",
                 "DISTRICT_T": "荃灣區",
                 "DISTRICT_E": "Tsuen Wan",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "荃灣",
+                "SUBDISTIRCT_E": "Tsuen Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -39499,8 +39499,8 @@ export default {
                 "CNAME": "東頭",
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "黃大仙",
+                "SUBDISTIRCT_E": "Wong Tai Sin"
             },
             "geometry": {
                 "type": "Polygon",
@@ -39632,8 +39632,8 @@ export default {
                 "CNAME": "南山、大坑東及大坑西",
                 "DISTRICT_T": "深水埗區",
                 "DISTRICT_E": "Sham Shui Po",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "石硤尾",
+                "SUBDISTIRCT_E": "Shek Kip Mei"
             },
             "geometry": {
                 "type": "Polygon",
@@ -39906,8 +39906,8 @@ export default {
                 "CNAME": "東美",
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "黃大仙",
+                "SUBDISTIRCT_E": "Wong Tai Sin"
             },
             "geometry": {
                 "type": "Polygon",
@@ -40047,8 +40047,8 @@ export default {
                 "CNAME": "寶達",
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "秀茂坪",
+                "SUBDISTIRCT_E": "Sau Mau Ping"
             },
             "geometry": {
                 "type": "Polygon",
@@ -41362,8 +41362,8 @@ export default {
                 "CNAME": "景田",
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "藍田",
+                "SUBDISTIRCT_E": "Lam Tin"
             },
             "geometry": {
                 "type": "Polygon",
@@ -41887,8 +41887,8 @@ export default {
                 "CNAME": "新蒲崗",
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "新蒲崗",
+                "SUBDISTIRCT_E": "San Po Kong"
             },
             "geometry": {
                 "type": "Polygon",
@@ -42024,8 +42024,8 @@ export default {
                 "CNAME": "彩雲西",
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "牛池灣",
+                "SUBDISTIRCT_E": "Ngau Chi Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -42153,8 +42153,8 @@ export default {
                 "CNAME": "樂富",
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "樂富",
+                "SUBDISTIRCT_E": "Lok Fu"
             },
             "geometry": {
                 "type": "Polygon",
@@ -42862,8 +42862,8 @@ export default {
                 "CNAME": "兆禧",
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "屯門",
+                "SUBDISTIRCT_E": "Tuen Mun"
             },
             "geometry": {
                 "type": "Polygon",
@@ -42959,8 +42959,8 @@ export default {
                 "CNAME": "悅湖",
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "屯門",
+                "SUBDISTIRCT_E": "Tuen Mun"
             },
             "geometry": {
                 "type": "Polygon",
@@ -43242,8 +43242,8 @@ export default {
                 "CNAME": "梨木樹東",
                 "DISTRICT_T": "荃灣區",
                 "DISTRICT_E": "Tsuen Wan",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "梨木樹",
+                "SUBDISTIRCT_E": "Lei Muk Shue"
             },
             "geometry": {
                 "type": "Polygon",
@@ -44407,8 +44407,8 @@ export default {
                 "CNAME": "汀深",
                 "DISTRICT_T": "荃灣區",
                 "DISTRICT_E": "Tsuen Wan",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "深井",
+                "SUBDISTIRCT_E": "Sham Tseng"
             },
             "geometry": {
                 "type": "Polygon",
@@ -49143,8 +49143,8 @@ export default {
                 "CNAME": "景峰",
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "屯門",
+                "SUBDISTIRCT_E": "Tuen Mun"
             },
             "geometry": {
                 "type": "Polygon",
@@ -49376,8 +49376,8 @@ export default {
                 "CNAME": "石圍角",
                 "DISTRICT_T": "荃灣區",
                 "DISTRICT_E": "Tsuen Wan",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "荃灣",
+                "SUBDISTIRCT_E": "Tsuen Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -50597,8 +50597,8 @@ export default {
                 "CNAME": "新墟",
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "屯門",
+                "SUBDISTIRCT_E": "Tuen Mun"
             },
             "geometry": {
                 "type": "Polygon",
@@ -52489,8 +52489,8 @@ export default {
                 "CNAME": "樂翠",
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "屯門",
+                "SUBDISTIRCT_E": "Tuen Mun"
             },
             "geometry": {
                 "type": "Polygon",
@@ -52966,8 +52966,8 @@ export default {
                 "CNAME": "屯門鄉郊",
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "屯門",
+                "SUBDISTIRCT_E": "Tuen Mun"
             },
             "geometry": {
                 "type": "Polygon",
@@ -53587,8 +53587,8 @@ export default {
                 "CNAME": "寶田",
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "屯門",
+                "SUBDISTIRCT_E": "Tuen Mun"
             },
             "geometry": {
                 "type": "Polygon",
@@ -54256,8 +54256,8 @@ export default {
                 "CNAME": "十八鄉西",
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "元朗",
+                "SUBDISTIRCT_E": "Yuen Long"
             },
             "geometry": {
                 "type": "Polygon",
@@ -55062,8 +55062,8 @@ export default {
                 "CNAME": "十八鄉中",
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "元朗",
+                "SUBDISTIRCT_E": "Yuen Long"
             },
             "geometry": {
                 "type": "Polygon",
@@ -56975,8 +56975,8 @@ export default {
                 "CNAME": "慈祐",
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "天水圍",
+                "SUBDISTIRCT_E": "Tin Shui Wai"
             },
             "geometry": {
                 "type": "Polygon",
@@ -57064,8 +57064,8 @@ export default {
                 "CNAME": "十八鄉東",
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "元朗",
+                "SUBDISTIRCT_E": "Yuen Long"
             },
             "geometry": {
                 "type": "Polygon",
@@ -59163,8 +59163,8 @@ export default {
                 "CNAME": "下白田",
                 "DISTRICT_T": "深水埗區",
                 "DISTRICT_E": "Sham Shui Po",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "石硤尾",
+                "SUBDISTIRCT_E": "Shek Kip Mei"
             },
             "geometry": {
                 "type": "Polygon",
@@ -59260,8 +59260,8 @@ export default {
                 "CNAME": "寶麗",
                 "DISTRICT_T": "深水埗區",
                 "DISTRICT_E": "Sham Shui Po",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "長沙灣",
+                "SUBDISTIRCT_E": "Cheung Sha Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -59325,8 +59325,8 @@ export default {
                 "CNAME": "龍下",
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "黃大仙",
+                "SUBDISTIRCT_E": "Wong Tai Sin"
             },
             "geometry": {
                 "type": "Polygon",
@@ -59398,8 +59398,8 @@ export default {
                 "CNAME": "又一村",
                 "DISTRICT_T": "深水埗區",
                 "DISTRICT_E": "Sham Shui Po",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "九龍塘",
+                "SUBDISTIRCT_E": "Kowloon Tong"
             },
             "geometry": {
                 "type": "Polygon",
@@ -60796,8 +60796,8 @@ export default {
                 "CNAME": "龍坪及上白田",
                 "DISTRICT_T": "深水埗區",
                 "DISTRICT_E": "Sham Shui Po",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "長沙灣",
+                "SUBDISTIRCT_E": "Cheung Sha Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -63280,8 +63280,8 @@ export default {
                 "CNAME": "天強",
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "黃大仙",
+                "SUBDISTIRCT_E": "Wong Tai Sin"
             },
             "geometry": {
                 "type": "Polygon",
@@ -63397,8 +63397,8 @@ export default {
                 "CNAME": "慈雲東",
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "慈雲山",
+                "SUBDISTIRCT_E": "Tsz Wan Shan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -63792,8 +63792,8 @@ export default {
                 "CNAME": "興澤",
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "屯門",
+                "SUBDISTIRCT_E": "Tuen Mun"
             },
             "geometry": {
                 "type": "Polygon",
@@ -64087,8 +64087,8 @@ export default {
                 "CNAME": "元龍",
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "元朗",
+                "SUBDISTIRCT_E": "Yuen Long"
             },
             "geometry": {
                 "type": "Polygon",
@@ -64342,8 +64342,8 @@ export default {
                 "CNAME": "耀祐",
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "天水圍",
+                "SUBDISTIRCT_E": "Tin Shui Wai"
             },
             "geometry": {
                 "type": "Polygon",
@@ -64415,8 +64415,8 @@ export default {
                 "CNAME": "瑞華",
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "天水圍",
+                "SUBDISTIRCT_E": "Tin Shui Wai"
             },
             "geometry": {
                 "type": "Polygon",
@@ -64790,8 +64790,8 @@ export default {
                 "CNAME": "彩虹",
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "牛池灣",
+                "SUBDISTIRCT_E": "Ngau Chi Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -64863,8 +64863,8 @@ export default {
                 "CNAME": "橫頭磡",
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "黃大仙",
+                "SUBDISTIRCT_E": "Wong Tai Sin"
             },
             "geometry": {
                 "type": "Polygon",
@@ -65029,8 +65029,8 @@ export default {
                 "CNAME": "鳳德",
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "黃大仙",
+                "SUBDISTIRCT_E": "Wong Tai Sin"
             },
             "geometry": {
                 "type": "Polygon",
@@ -65126,8 +65126,8 @@ export default {
                 "CNAME": "竹園北",
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "黃大仙",
+                "SUBDISTIRCT_E": "Wong Tai Sin"
             },
             "geometry": {
                 "type": "Polygon",
@@ -65243,8 +65243,8 @@ export default {
                 "CNAME": "盛康",
                 "DISTRICT_T": "葵青區",
                 "DISTRICT_E": "Kwai Tsing",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "青衣",
+                "SUBDISTIRCT_E": "Tsing Yi"
             },
             "geometry": {
                 "type": "Polygon",
@@ -65344,8 +65344,8 @@ export default {
                 "CNAME": "偉盈",
                 "DISTRICT_T": "葵青區",
                 "DISTRICT_E": "Kwai Tsing",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "青衣",
+                "SUBDISTIRCT_E": "Tsing Yi"
             },
             "geometry": {
                 "type": "Polygon",
@@ -65739,8 +65739,8 @@ export default {
                 "CNAME": "南豐",
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "鰂魚涌",
+                "SUBDISTIRCT_E": "Quarry Bay"
             },
             "geometry": {
                 "type": "Polygon",
@@ -67683,8 +67683,8 @@ export default {
                 "CNAME": "安利",
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "觀塘",
+                "SUBDISTIRCT_E": "Kwun Tong"
             },
             "geometry": {
                 "type": "Polygon",
@@ -67760,8 +67760,8 @@ export default {
                 "CNAME": "南昌東",
                 "DISTRICT_T": "深水埗區",
                 "DISTRICT_E": "Sham Shui Po",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "石硤尾",
+                "SUBDISTIRCT_E": "Shek Kip Mei"
             },
             "geometry": {
                 "type": "Polygon",
@@ -67857,8 +67857,8 @@ export default {
                 "CNAME": "啟業",
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "九龍灣",
+                "SUBDISTIRCT_E": "Kowloon Bay"
             },
             "geometry": {
                 "type": "Polygon",
@@ -67998,8 +67998,8 @@ export default {
                 "CNAME": "雙彩",
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "牛池灣",
+                "SUBDISTIRCT_E": "Ngau Chi Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -68163,8 +68163,8 @@ export default {
                 "CNAME": "龍上",
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "黃大仙",
+                "SUBDISTIRCT_E": "Wong Tai Sin"
             },
             "geometry": {
                 "type": "Polygon",
@@ -68320,8 +68320,8 @@ export default {
                 "CNAME": "竹園南",
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "黃大仙",
+                "SUBDISTIRCT_E": "Wong Tai Sin"
             },
             "geometry": {
                 "type": "Polygon",
@@ -68429,8 +68429,8 @@ export default {
                 "CNAME": "龍星",
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "鑽石山",
+                "SUBDISTIRCT_E": "Diamond Hill"
             },
             "geometry": {
                 "type": "Polygon",
@@ -68602,8 +68602,8 @@ export default {
                 "CNAME": "鳳凰",
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "黃大仙",
+                "SUBDISTIRCT_E": "Wong Tai Sin"
             },
             "geometry": {
                 "type": "Polygon",
@@ -69012,8 +69012,8 @@ export default {
                 "CNAME": "瓊富",
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "慈雲山",
+                "SUBDISTIRCT_E": "Tsz Wan Shan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -69141,8 +69141,8 @@ export default {
                 "CNAME": "慈雲西",
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "慈雲山",
+                "SUBDISTIRCT_E": "Tsz Wan Shan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -69250,8 +69250,8 @@ export default {
                 "CNAME": "翠竹及鵬程",
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "黃大仙",
+                "SUBDISTIRCT_E": "Wong Tai Sin"
             },
             "geometry": {
                 "type": "Polygon",
@@ -69942,8 +69942,8 @@ export default {
                 "CNAME": "正愛",
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "慈雲山",
+                "SUBDISTIRCT_E": "Tsz Wan Shan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -71261,8 +71261,8 @@ export default {
                 "CNAME": "油塘東",
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "油塘",
+                "SUBDISTIRCT_E": "Yau Tong"
             },
             "geometry": {
                 "type": "Polygon",
@@ -73132,8 +73132,8 @@ export default {
                 "CNAME": "寶樂",
                 "DISTRICT_T": "觀塘區",
                 "DISTRICT_E": "Kwun Tong",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "觀塘",
+                "SUBDISTIRCT_E": "Kwun Tong"
             },
             "geometry": {
                 "type": "Polygon",
@@ -74003,8 +74003,8 @@ export default {
                 "CNAME": "南昌南",
                 "DISTRICT_T": "深水埗區",
                 "DISTRICT_E": "Sham Shui Po",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "深水埗",
+                "SUBDISTIRCT_E": "Sham Shui Po"
             },
             "geometry": {
                 "type": "Polygon",
@@ -74068,8 +74068,8 @@ export default {
                 "CNAME": "南昌北",
                 "DISTRICT_T": "深水埗區",
                 "DISTRICT_E": "Sham Shui Po",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "深水埗",
+                "SUBDISTIRCT_E": "Sham Shui Po"
             },
             "geometry": {
                 "type": "Polygon",
@@ -74271,8 +74271,8 @@ export default {
                 "CNAME": "山景",
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "屯門",
+                "SUBDISTIRCT_E": "Tuen Mun"
             },
             "geometry": {
                 "type": "Polygon",
@@ -74372,8 +74372,8 @@ export default {
                 "CNAME": "景興",
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "屯門",
+                "SUBDISTIRCT_E": "Tuen Mun"
             },
             "geometry": {
                 "type": "Polygon",
@@ -75103,8 +75103,8 @@ export default {
                 "CNAME": "福來",
                 "DISTRICT_T": "荃灣區",
                 "DISTRICT_E": "Tsuen Wan",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "荃灣",
+                "SUBDISTIRCT_E": "Tsuen Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -76552,8 +76552,8 @@ export default {
                 "CNAME": "祈德尊",
                 "DISTRICT_T": "荃灣區",
                 "DISTRICT_E": "Tsuen Wan",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "荃灣",
+                "SUBDISTIRCT_E": "Tsuen Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -77347,8 +77347,8 @@ export default {
                 "CNAME": "蝴蝶",
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "屯門",
+                "SUBDISTIRCT_E": "Tuen Mun"
             },
             "geometry": {
                 "type": "Polygon",
@@ -78209,8 +78209,8 @@ export default {
                 "CNAME": "荃灣郊區",
                 "DISTRICT_T": "荃灣區",
                 "DISTRICT_E": "Tsuen Wan",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "青龍頭",
+                "SUBDISTIRCT_E": "Tsing Lung Tau"
             },
             "geometry": {
                 "type": "Polygon",
@@ -79604,8 +79604,8 @@ export default {
                 "CNAME": "長沙灣",
                 "DISTRICT_T": "深水埗區",
                 "DISTRICT_E": "Sham Shui Po",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "長沙灣",
+                "SUBDISTIRCT_E": "Cheung Sha Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -79693,8 +79693,8 @@ export default {
                 "CNAME": "恆福",
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "屯門",
+                "SUBDISTIRCT_E": "Tuen Mun"
             },
             "geometry": {
                 "type": "Polygon",
@@ -80915,8 +80915,8 @@ export default {
                 "CNAME": "彩雲東",
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "牛池灣",
+                "SUBDISTIRCT_E": "Ngau Chi Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -81209,8 +81209,8 @@ export default {
                 "CNAME": "龍趣",
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "黃大仙",
+                "SUBDISTIRCT_E": "Wong Tai Sin"
             },
             "geometry": {
                 "type": "Polygon",
@@ -81310,8 +81310,8 @@ export default {
                 "CNAME": "湖景",
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "屯門",
+                "SUBDISTIRCT_E": "Tuen Mun"
             },
             "geometry": {
                 "type": "Polygon",
@@ -82889,8 +82889,8 @@ export default {
                 "CNAME": "富新",
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "屯門",
+                "SUBDISTIRCT_E": "Tuen Mun"
             },
             "geometry": {
                 "type": "Polygon",
@@ -82974,8 +82974,8 @@ export default {
                 "CNAME": "兆翠",
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "屯門",
+                "SUBDISTIRCT_E": "Tuen Mun"
             },
             "geometry": {
                 "type": "Polygon",
@@ -83111,8 +83111,8 @@ export default {
                 "CNAME": "象石",
                 "DISTRICT_T": "荃灣區",
                 "DISTRICT_E": "Tsuen Wan",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "荃灣",
+                "SUBDISTIRCT_E": "Tsuen Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -84915,8 +84915,8 @@ export default {
                 "CNAME": "兆置",
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "屯門",
+                "SUBDISTIRCT_E": "Tuen Mun"
             },
             "geometry": {
                 "type": "Polygon",
@@ -85634,8 +85634,8 @@ export default {
                 "CNAME": "龍門",
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "屯門",
+                "SUBDISTIRCT_E": "Tuen Mun"
             },
             "geometry": {
                 "type": "Polygon",
@@ -85988,8 +85988,8 @@ export default {
                 "CNAME": "翠興",
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "屯門",
+                "SUBDISTIRCT_E": "Tuen Mun"
             },
             "geometry": {
                 "type": "Polygon",
@@ -86085,8 +86085,8 @@ export default {
                 "CNAME": "田景",
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "屯門",
+                "SUBDISTIRCT_E": "Tuen Mun"
             },
             "geometry": {
                 "type": "Polygon",
@@ -86182,8 +86182,8 @@ export default {
                 "CNAME": "良景",
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "屯門",
+                "SUBDISTIRCT_E": "Tuen Mun"
             },
             "geometry": {
                 "type": "Polygon",
@@ -86299,8 +86299,8 @@ export default {
                 "CNAME": "建生",
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "屯門",
+                "SUBDISTIRCT_E": "Tuen Mun"
             },
             "geometry": {
                 "type": "Polygon",
@@ -86392,8 +86392,8 @@ export default {
                 "CNAME": "新景",
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "屯門",
+                "SUBDISTIRCT_E": "Tuen Mun"
             },
             "geometry": {
                 "type": "Polygon",
@@ -86753,8 +86753,8 @@ export default {
                 "CNAME": "兆康",
                 "DISTRICT_T": "屯門區",
                 "DISTRICT_E": "Tuen Mun",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "屯門",
+                "SUBDISTIRCT_E": "Tuen Mun"
             },
             "geometry": {
                 "type": "Polygon",
@@ -87804,8 +87804,8 @@ export default {
                 "CNAME": "翠怡",
                 "DISTRICT_T": "葵青區",
                 "DISTRICT_E": "Kwai Tsing",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "青衣",
+                "SUBDISTIRCT_E": "Tsing Yi"
             },
             "geometry": {
                 "type": "Polygon",
@@ -88001,8 +88001,8 @@ export default {
                 "CNAME": "正安",
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "慈雲山",
+                "SUBDISTIRCT_E": "Tsz Wan Shan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -88495,8 +88495,8 @@ export default {
                 "CNAME": "青發",
                 "DISTRICT_T": "葵青區",
                 "DISTRICT_E": "Kwai Tsing",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "青衣",
+                "SUBDISTIRCT_E": "Tsing Yi"
             },
             "geometry": {
                 "type": "Polygon",
@@ -89150,8 +89150,8 @@ export default {
                 "CNAME": "盛褔",
                 "DISTRICT_T": "北區",
                 "DISTRICT_E": "North",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "粉嶺",
+                "SUBDISTIRCT_E": "Fanling"
             },
             "geometry": {
                 "type": "Polygon",
@@ -89344,8 +89344,8 @@ export default {
                 "CNAME": "富恩",
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "天水圍",
+                "SUBDISTIRCT_E": "Tin Shui Wai"
             },
             "geometry": {
                 "type": "Polygon",
@@ -89417,8 +89417,8 @@ export default {
                 "CNAME": "晴景",
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "天水圍",
+                "SUBDISTIRCT_E": "Tin Shui Wai"
             },
             "geometry": {
                 "type": "Polygon",
@@ -89715,8 +89715,8 @@ export default {
                 "CNAME": "華明",
                 "DISTRICT_T": "北區",
                 "DISTRICT_E": "North",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "粉嶺",
+                "SUBDISTIRCT_E": "Fanling"
             },
             "geometry": {
                 "type": "Polygon",
@@ -89788,8 +89788,8 @@ export default {
                 "CNAME": "祥華",
                 "DISTRICT_T": "北區",
                 "DISTRICT_E": "North",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "粉嶺",
+                "SUBDISTIRCT_E": "Fanling"
             },
             "geometry": {
                 "type": "Polygon",
@@ -90228,8 +90228,8 @@ export default {
                 "CNAME": "麗濤",
                 "DISTRICT_T": "荃灣區",
                 "DISTRICT_E": "Tsuen Wan",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "荃灣",
+                "SUBDISTIRCT_E": "Tsuen Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -95534,8 +95534,8 @@ export default {
                 "CNAME": "天平西",
                 "DISTRICT_T": "北區",
                 "DISTRICT_E": "North",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "上水",
+                "SUBDISTIRCT_E": "Sheung Shui"
             },
             "geometry": {
                 "type": "Polygon",
@@ -96447,8 +96447,8 @@ export default {
                 "CNAME": "翠灣",
                 "DISTRICT_T": "東區",
                 "DISTRICT_E": "Eastern",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "柴灣",
+                "SUBDISTIRCT_E": "Chai Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -97175,8 +97175,8 @@ export default {
                 "CNAME": "梨木樹西",
                 "DISTRICT_T": "荃灣區",
                 "DISTRICT_E": "Tsuen Wan",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "梨木樹",
+                "SUBDISTIRCT_E": "Lei Muk Shue"
             },
             "geometry": {
                 "type": "Polygon",
@@ -97296,8 +97296,8 @@ export default {
                 "CNAME": "頌柏",
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "天水圍",
+                "SUBDISTIRCT_E": "Tin Shui Wai"
             },
             "geometry": {
                 "type": "Polygon",
@@ -97369,8 +97369,8 @@ export default {
                 "CNAME": "幸福",
                 "DISTRICT_T": "深水埗區",
                 "DISTRICT_E": "Sham Shui Po",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "長沙灣",
+                "SUBDISTIRCT_E": "Cheung Sha Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -97490,8 +97490,8 @@ export default {
                 "CNAME": "池彩",
                 "DISTRICT_T": "黃大仙區",
                 "DISTRICT_E": "Wong Tai Sin",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "牛池灣",
+                "SUBDISTIRCT_E": "Ngau Chi Wan"
             },
             "geometry": {
                 "type": "Polygon",
@@ -97912,8 +97912,8 @@ export default {
                 "CNAME": "何文田",
                 "DISTRICT_T": "九龍城區",
                 "DISTRICT_E": "Kowloon City",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "何文田",
+                "SUBDISTIRCT_E": "Ho Man Tin"
             },
             "geometry": {
                 "type": "Polygon",
@@ -98299,8 +98299,8 @@ export default {
                 "CNAME": "鳳翔",
                 "DISTRICT_T": "元朗區",
                 "DISTRICT_E": "Yuen Long",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "元朗",
+                "SUBDISTIRCT_E": "Yuen Long"
             },
             "geometry": {
                 "type": "Polygon",
@@ -99200,8 +99200,8 @@ export default {
                 "CNAME": "石湖墟",
                 "DISTRICT_T": "北區",
                 "DISTRICT_E": "North",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "上水",
+                "SUBDISTIRCT_E": "Sheung Shui"
             },
             "geometry": {
                 "type": "Polygon",
@@ -99413,8 +99413,8 @@ export default {
                 "CNAME": "鳳翠",
                 "DISTRICT_T": "北區",
                 "DISTRICT_E": "North",
-                "SUBDISTIRCT_T": "",
-                "SUBDISTIRCT_E": ""
+                "SUBDISTIRCT_T": "上水",
+                "SUBDISTIRCT_E": "Sheung Shui"
             },
             "geometry": {
                 "type": "Polygon",
