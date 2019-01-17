@@ -161,6 +161,9 @@ export default {
 .align-end {
   text-align: right;
   white-space: pre;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
 }
 
 </style>
