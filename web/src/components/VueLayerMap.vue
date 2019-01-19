@@ -7,7 +7,7 @@
     </vl-layer-tile>
 
     <!-- interactions -->
-    <vl-interaction-select :features="selectedFeatures" v-on:update:features="featureUpdated">
+    <vl-interaction-select :features.sync="selectedFeatures" >
       <!-- <template slot-scope="select">
           <vl-overlay class="feature-popup" v-for="feature in select.features" :key="feature.id" :id="feature.id"
                         :position="pointOnSurface(feature.geometry)" :auto-pan="true" :auto-pan-animation="{ duration: 300 }">
@@ -16,10 +16,10 @@
       </vl-interaction-select>
       <!--// interactions -->
 
-      <vl-feature v-for="(marker, index) in markers" :properties="marker" :key="index">
-        <div v-if="marker">
-          <vl-geom-point :coordinates="[Number(marker.coordinate().lng), Number(marker.coordinate().lat)]"></vl-geom-point>
-          <vl-style-box v-if="isMarkerSelected(marker)">
+      <vl-feature v-for="(feature, index) in features" :key="index" :properties="feature.properties">
+        <div v-if="feature">
+          <vl-geom-point :coordinates="feature.geometry.coordinates"></vl-geom-point>
+          <vl-style-box v-if="feature.properties.selected">
             <vl-style-icon
               :src="images.selectedPin"
               :scale="0.5"
@@ -48,12 +48,12 @@
   import ResultCard from "./ResultCard";
   export default {
     props: {
-      markers: Array,
+      searchResults: Array,
       filterOptions: Array
     },
     data() {
       return {
-        selectedFeatures: [],
+
         center: [114.160147, 22.35201],
         zoom: 11,
         rotation: 0,
@@ -63,17 +63,35 @@
         }
       };
     },
+    computed: {
+      features: function() {
+        return this.searchResults.map( address => ({
+          type: 'Feature',
+          id: address.input,
+          properties: { ...address },
+          geometry: {
+            type: 'Point',
+            coordinates: [Number(address.coordinate().lng), Number(address.coordinate().lat)]
+          }
+        }));
+      },
+      selectedFeatures: {
+        get: function() {
+          return this.features.filter(feature => feature.properties.selected);
+        },
+        set: function(features) {
+          this.$emit('featureSelected', features.length > 0 ? features[0] : null);
+        }
+      }
+    },
     methods: {
       pointOnSurface: findPointOnSurface,
-      isMarkerSelected: function(marker) {
-        if (this.selectedFeatures.length === 0) {
-          return false;
-        }
+      isMarkerSelected: function(address) {
+        console.log(this.selectedFeatures)
         return this.selectedFeatures[0].properties.index === marker.index;
       },
       featureUpdated: function(features) {
-        this.$emit('featureSelected', features.length > 0 ? features[0] : null);
-        this.selectedFeatures = features;
+
       }
     },
     // watch: {
