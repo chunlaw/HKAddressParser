@@ -3,7 +3,7 @@
  *
  */
 
-const { dcDistrict } = require('../utils/constants');
+const { region, dcDistrict } = require('../utils/constants');
 
 const CONFIDENT_ALL_MATCH = 1.0;
 const CONFIDENT_MULTIPLIER_NAME_ONLY = 0.5;
@@ -65,6 +65,14 @@ function dcDistrictMapping(val, isChinese) {
     }
   }
   return isChinese ? dcDistrict.invalid.chi : dcDistrict.invalid.eng;
+}
+
+function regionMapping(val) {
+  for (const reg in region) {
+    if (reg === val) {
+      return region[reg].eng;
+    }
+  }
 }
 
 
@@ -391,7 +399,11 @@ function transformDistrict(ogcioRecord) {
   if (ogcioRecord.chi.District) {
     ogcioRecord.chi.District.DcDistrict = dcDistrictMapping(ogcioRecord.chi.District.DcDistrict, true);
   }
-  return  ogcioRecord;
+
+  if (ogcioRecord.eng.Region) {
+    ogcioRecord.eng.Region = regionMapping(ogcioRecord.eng.Region);
+  }
+  return ogcioRecord;
 }
 
 function parseAddress(address, normalizedOGCIOResult) {
