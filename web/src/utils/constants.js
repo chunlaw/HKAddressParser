@@ -1,3 +1,18 @@
+const region = {
+  HK: {
+    eng: 'Hong Kong',
+    chi: '香港'
+  },
+  KLN: {
+    eng: 'Kowloon',
+    chi: '九龍'
+  },
+  NT: {
+    eng: 'New Territories',
+    chi: '新界'
+  }
+}
+
 const dcDistrict = {
   invalid: {
     eng: 'Invalid District Name',
@@ -79,5 +94,6 @@ const dcDistrict = {
 
 // MUST use common js style to let address-parse "require" work normally
 module.exports = {
+  region,
   dcDistrict
 };
