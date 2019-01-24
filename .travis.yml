@@ -31,6 +31,11 @@ before_install:
   - cd web
   - npm install
 
+before_deploy:
+  - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
+  - git tag $TRAVIS_TAG
+
+  
 jobs:
   include:
 
@@ -38,6 +43,7 @@ jobs:
       script:
         - echo "VUE_APP_GA_TRACKING_ID=$GA_TRACKING_ID" >> .env
         # if this is build from tag, just update the tag name, otherise use the previous tag name
+        - export TRAVIS_TAG=`git describe --exact-match`
         - if [[ -z "$TRAVIS_TAG" ]]; then echo "VUE_APP_REV_NAME=$(git describe --abbrev=0 --tags `git rev-list --tags  --max-count=1`)" >> .env; fi
         - if [[ ! -z "$TRAVIS_TAG" ]]; then echo "VUE_APP_REV_NAME=$TRAVIS_TAG" >> .env; fi
         - npm run build
@@ -51,3 +57,4 @@ jobs:
         local-dir: web/dist # the local dir is relative to root and ignoring the one set with before_install
         on:
           tags: true
+          all_branches: true
