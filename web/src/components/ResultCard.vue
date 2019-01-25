@@ -71,7 +71,7 @@
     </v-layout>
     <v-layout row>
       <v-flex pa-0>
-        <v-card>
+        <v-card flat>
           <v-card-text>{{ '資料來源： ' + result.dataSource() }}</v-card-text>
         </v-card>
       </v-flex>

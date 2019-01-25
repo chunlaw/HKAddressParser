@@ -6,11 +6,9 @@
         <v-layout row>
           <v-flex pa-0>
             <h1 class="teal--text">我哋幫你拆解難搞地址</h1>
-
-            <h3>
+            <p class="intro-text">
               輸入香港地址，我們幫你 <span class="amber lighten-4 red--text px-1">地址轉座標</span> 、 <span class="amber lighten-4 red--text px-1">中英翻譯地址</span> 、 <span class="amber lighten-4 red--text px-1">統一地址格式</span>
-            </h3>
-            <br>
+            </p>
           </v-flex>
         </v-layout>
         <v-layout row>
@@ -163,3 +161,10 @@ async function searchSingleResult(address, key) {
   return addressObj;
 }
 </script>
+
+<style scoped>
+p.intro-text {
+  font-weight: 700;
+  margin: 1rem 0;
+}
+</style>
