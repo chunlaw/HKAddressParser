@@ -21,7 +21,7 @@
 香港地址解析器可以將大量不同格式的中英地址解析成地區、街道、門牌、大廈、區議會選區等地址資料，用家下載CSV格式檔案後，可進一步作樞紐分析空間數據，歸納地址集中在哪一地區、哪條街道，從凌亂資料中提煉找出有價值的資訊。
 
 ## 採用開放數據 Source of open data 
-[地址搜尋服務](https://data.gov.hk/tc-data/dataset/hk-ogcio-st_div_02-als) （政府資訊科技總監辦公室） 
+[地址搜尋服務](https://data.gov.hk/tc-data/dataset/hk-ogcio-st_div_02-als) （政府資訊科技總監辦公室）  
 [地理位置搜尋應用程式介面](https://geodata.gov.hk/gs/locationSearchAPI?l=zh-Hant-HK) （地政總署） 
 
 ## 版本 Versions 
