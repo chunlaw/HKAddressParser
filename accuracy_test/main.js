@@ -105,7 +105,7 @@ async function runTest(program, file, address) {
         resolve(json);
       } catch (error) {
         console.error(error);
-        console.error(`Error when searching: ${result}`);
+        console.error(`Error when searching: ${address}`);
         reject(error);
       }
     });
