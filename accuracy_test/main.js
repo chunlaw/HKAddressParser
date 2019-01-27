@@ -116,6 +116,7 @@ async function runTest(program, file, address) {
 
 async function main({ mode = 3, limit = Infinity, outputFile = './result.json', tag}) {
   return new Promise(async (resolve, reject) => {
+    const startTime = moment();
     const allTestData = await readTestCases('./data/testcases_ogcio_searchable.csv');
     const result = {
       total: 0
@@ -164,6 +165,8 @@ async function main({ mode = 3, limit = Infinity, outputFile = './result.json', 
     }, // callback
       () => {
         log(`Finished! Total ${result.total} tests executed .`);
+        const timeElapsed = moment().diff(startTime, 'ms');
+        log(`Time elapsed: ${timeElapsed}ms`);
         // Write to file
         if (mode & 2) {
           result.py_success_rate = `${result.py_success / result.total}`;
