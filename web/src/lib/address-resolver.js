@@ -6,11 +6,16 @@ import ProjConvertor from '../utils/proj-convertor';
 const OGCIO_RECORD_COUNT = 200;
 const NEAR_THRESHOLD = 0.05; // 50 metre
 
-export default {
-  queryAddress: async (address) => {
-    // Fetch result from OGCIO
-    const ogcioURL = `https://www.als.ogcio.gov.hk/lookup?q=${encodeURI(address)}&n=${OGCIO_RECORD_COUNT}`;
+/**
+ *
+ * @param {string} address
+ * @returns Promise<Address[]>
+ */
+const searchAddressWithOGCIO = async function (address) {
 
+  let results = [];
+  try {
+    const ogcioURL = `https://www.als.ogcio.gov.hk/lookup?q=${encodeURI(address)}&n=${OGCIO_RECORD_COUNT}`;
     const ogcioRes = await fetch(ogcioURL, {
       headers: {
         "Accept": "application/json",
@@ -19,6 +24,17 @@ export default {
       }
     });
     const ogcioData = await ogcioRes.json();
+    results = (ogcioParser.searchResult(address, ogcioData)).map(record => AddressFactory.createAddress('ogcio', record));
+  } catch (error) {
+    console.error(error);
+  }
+  return Promise.resolve(results); Î
+}
+
+export default {
+  queryAddress: async (address) => {
+    // Fetch result from OGCIO
+    let sortedOgcioRecords = await searchAddressWithOGCIO(address);
     // Fetch result from GeoData Portal of Land Department
     const landsURL = `https://geodata.gov.hk/gs/api/v1.0.0/locationSearch?q=${encodeURI(address)}`;
     const landsRes = await fetch(landsURL);
@@ -41,7 +57,7 @@ export default {
 
     const sortedResults = [];
 
-    const sortedOgcioRecords = (ogcioParser.searchResult(address, ogcioData)).map(record => AddressFactory.createAddress('ogcio', record));
+
     // console.log(sortedOgcioRecords.map(rec => ({address: rec.fullAddress('chi'), score: rec.record.score})));
     // P.S. Result source (OGCIO/Land Department) should be displayed to user
     // this.results['source'] = ...
@@ -85,7 +101,20 @@ export default {
     }
 
 
-    // 3. ogcio not found but there is land result. We use the record then.
+    // 3. ogcio not found but there is land result. We try to search again from ogcio using the land result
+    // #89
+    const assumedLandResult = landRecords[0];
+    const fullAddressToSearch = landRecords[0].fullAddress('chi');
+    if (fullAddressToSearch !== '') {
+      sortedOgcioRecords = await searchAddressWithOGCIO(fullAddressToSearch);
+      if (sortedOgcioRecords[0].distanceTo(assumedLandResult) < NEAR_THRESHOLD) {
+        // 3.1 second round result is the nearest result
+        return sortedOgcioRecords;
+      }
+
+      // QUESTION: shall we loop through the ogcio records again?
+    }
+
     return landRecords;
 
   }
