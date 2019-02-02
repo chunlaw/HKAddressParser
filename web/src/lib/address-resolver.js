@@ -31,11 +31,7 @@ const searchAddressWithOGCIO = async function (address) {
   return Promise.resolve(results); Î
 }
 
-export default {
-  queryAddress: async (address) => {
-    // Fetch result from OGCIO
-    let sortedOgcioRecords = await searchAddressWithOGCIO(address);
-    // Fetch result from GeoData Portal of Land Department
+export const searchAddressFromLand = async function (address) {
     const landsURL = `https://geodata.gov.hk/gs/api/v1.0.0/locationSearch?q=${encodeURI(address)}`;
     const landsRes = await fetch(landsURL);
     const landRecords = [];
@@ -54,6 +50,16 @@ export default {
       // console.error(error.message);
       // console.error(error.stack);
     }
+
+    return landRecords;
+}
+
+export default {
+  queryAddress: async (address) => {
+    // Fetch result from OGCIO
+    let sortedOgcioRecords = await searchAddressWithOGCIO(address);
+    const landRecords = await searchAddressFromLand(address);
+
 
     const sortedResults = [];
 
