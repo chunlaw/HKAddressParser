@@ -65,6 +65,3 @@ export default class LandAddress extends Address{
     return 0;
   }
 }
-
-Address.LANG_EN = 'eng';
-Address.LANG_ZH = 'chi';

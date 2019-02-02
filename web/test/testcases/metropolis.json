@@ -1,0 +1,137 @@
+{
+  "query": "紅磡都會道6號國際都會5樓3號行人天橋大堂入口",
+  "location": {
+    "lat": 22.302753,
+    "lng": 114.183275
+  },
+  "data": [
+    {
+        "addressZH": "",
+        "nameZH": "都會道",
+        "x": 836956.55567,
+        "y": 818141.231860001,
+        "nameEN": "METROPOLIS DRIVE",
+        "addressEN": ""
+    },
+    {
+        "addressZH": "都會道   7號",
+        "nameZH": "都會海逸酒店",
+        "x": 836927,
+        "y": 818049,
+        "nameEN": "Harbour Plaza Metropolis",
+        "addressEN": "7 METROPOLIS DRIVE  "
+    },
+    {
+        "addressZH": "都會道   7-10號",
+        "nameZH": "國際都會",
+        "x": 836948,
+        "y": 818107,
+        "nameEN": "THE METROPOLIS",
+        "addressEN": "7-10 METROPOLIS DRIVE  "
+    },
+    {
+        "addressZH": "都會道   8-9號",
+        "nameZH": "都會軒第一座",
+        "x": 836959,
+        "y": 818161,
+        "nameEN": "The Metropolis Residence Tower 1",
+        "addressEN": "8-9 METROPOLIS DRIVE  "
+    },
+    {
+        "addressZH": "都會道   8-9號",
+        "nameZH": "都會軒第二座",
+        "x": 836958,
+        "y": 818238,
+        "nameEN": "The Metropolis Residence Tower 2",
+        "addressEN": "8-9 METROPOLIS DRIVE  "
+    },
+    {
+        "addressZH": "九龍 紅磡 都會道6-10號 國際都會",
+        "nameZH": "置富都會",
+        "x": 836948,
+        "y": 818107,
+        "nameEN": "Fortune Metropolis",
+        "addressEN": "The Metropolis, 6-10 Metropolis Drive, Hung Hom, KLN"
+    },
+    {
+        "addressZH": "九龍 紅磡 都會道6-10號 國際都會 置富都會  7樓729-733號舖",
+        "nameZH": "International-紅磡國際都會",
+        "x": 836923,
+        "y": 818308,
+        "nameEN": "International-Metropolis",
+        "addressEN": "Shops 729-733 , 7/F, Fortune Metropolis, The Metropolis, 6-10 Metropolis Drive, Hung Hom, KLN"
+    },
+    {
+        "addressZH": "九龍紅磡都會軒都會道8號1座27字樓20室",
+        "nameZH": "都會軒旅館",
+        "x": 836957.5,
+        "y": 818159.1,
+        "nameEN": "THE METROPOLIS MOTEL",
+        "addressEN": "Flat 20, 27/F, Block 01, The Metropolis Residence, 8 Metropolis Drive, Hung Hom, Kowloon."
+    },
+    {
+        "addressZH": "九龍 紅磡 都會道6-10號 國際都會 置富都會  9樓934室",
+        "nameZH": "中國基督教播道會尖福堂",
+        "x": 836948,
+        "y": 818107,
+        "nameEN": "Evangelical Free Church of China Tsim Fook Church",
+        "addressEN": "Room 934 , 9/F, Fortune Metropolis, The Metropolis, 6-10 Metropolis Drive, Hung Hom, KLN"
+    },
+    {
+        "addressZH": "九龍 紅磡 都會道6-10號 國際都會 置富都會  7層760號舖",
+        "nameZH": "7-11便利店-置富都會",
+        "x": 836937,
+        "y": 818210,
+        "nameEN": "7-Eleven Store-Fortune Metropolis",
+        "addressEN": "Shop 760 , Level 7 , Fortune Metropolis, The Metropolis, 6-10 Metropolis Drive, Hung Hom, KLN"
+    },
+    {
+        "addressZH": "紅磡 都會道6 號置富都會 8/F 美食廣場\"起筷",
+        "nameZH": "Wi-Fi.HK 熱點位置: 置富都會",
+        "x": 836919.8,
+        "y": 818203.6,
+        "nameEN": "Wi-Fi.HK Hotspot Locations: Fortune Metropolis",
+        "addressEN": "\"The Feast\", 8/F Food Court, Fortune Metropolis, 6 Metropolis Drive, Hung Hom"
+    },
+    {
+        "addressZH": "紅磡 都會道6 號置富都會 7/F 近 745 號舖",
+        "nameZH": "Wi-Fi.HK 熱點位置: 置富都會",
+        "x": 836919.8,
+        "y": 818203.6,
+        "nameEN": "Wi-Fi.HK Hotspot Locations: Fortune Metropolis",
+        "addressEN": "7/F near Shop 745, Fortune Metropolis, 6 Metropolis Drive, Hung Hom"
+    },
+    {
+        "addressZH": "紅磡 都會道6 號置富都會 7/F 近 765 號舖",
+        "nameZH": "Wi-Fi.HK 熱點位置: 置富都會",
+        "x": 836919.8,
+        "y": 818203.6,
+        "nameEN": "Wi-Fi.HK Hotspot Locations: Fortune Metropolis",
+        "addressEN": "7/F near Shop 765, Fortune Metropolis, 6 Metropolis Drive, Hung Hom"
+    },
+    {
+        "addressZH": "紅磡 都會道6 號置富都會 8/F 近 807 號舖",
+        "nameZH": "Wi-Fi.HK 熱點位置: 置富都會",
+        "x": 836919.8,
+        "y": 818203.6,
+        "nameEN": "Wi-Fi.HK Hotspot Locations: Fortune Metropolis",
+        "addressEN": "8/F near Shop 807, Fortune Metropolis, 6 Metropolis Drive, Hung Hom"
+    },
+    {
+        "addressZH": "紅磡 都會道6 號置富都會 7/F 近 769-771號舖",
+        "nameZH": "Wi-Fi.HK 熱點位置: 置富都會",
+        "x": 836919.8,
+        "y": 818203.6,
+        "nameEN": "Wi-Fi.HK Hotspot Locations: Fortune Metropolis",
+        "addressEN": "7/F near Shop 769-771, Fortune Metropolis, 6 Metropolis Drive, Hung Hom"
+    },
+    {
+        "addressZH": "紅磡 都會道6號 都會商場 7樓 760號舖 (7-Eleven)",
+        "nameZH": "已登記的WiFi 熱點: Hong Kong Telecommunications (HKT) Limited (APID 5694)",
+        "x": 836928.9,
+        "y": 818208.1,
+        "nameEN": "Registered WiFi Access Points: Hong Kong Telecommunications (HKT) Limited (APID 5694)",
+        "addressEN": "7-Eleven, Shop 706, Level 7, The Metropolis Mall, 6 Metropolis Drive Hung Hom Bay"
+    }
+  ]
+}
