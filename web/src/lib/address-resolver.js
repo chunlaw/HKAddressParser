@@ -2,6 +2,7 @@ import ogcioParser from './ogcio-parser';
 import * as AddressFactory from './models/address-factory';
 import proj4 from 'proj4';
 import ProjConvertor from '../utils/proj-convertor';
+import { sortLandResult } from './land-sorter';
 
 const OGCIO_RECORD_COUNT = 200;
 const NEAR_THRESHOLD = 0.05; // 50 metre
@@ -51,7 +52,7 @@ export const searchAddressFromLand = async function (address) {
       // console.error(error.stack);
     }
 
-    return landRecords;
+    return sortLandResult(address, landRecords);
 }
 
 export default {
