@@ -55,8 +55,8 @@ export default class Address {
   }
 
   distanceTo(address) {
-    const cord1 = turf.point([this.coordinate().lat, this.coordinate().lng]);
-    const cord2 = turf.point([address.coordinate().lat, address.coordinate().lng]);
+    const cord1 = turf.point([this.coordinate().lng, this.coordinate().lat]);
+    const cord2 = turf.point([address.coordinate().lng, address.coordinate().lat]);
 
     return turf.distance(cord1, cord2, {units: 'kilometers'});
   }
