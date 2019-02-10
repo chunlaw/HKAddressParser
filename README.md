@@ -1,5 +1,7 @@
 # 香港地址解析器 Hong Kong Address Parser
 
+方便地址轉座標、空間分析、製作地圖的小工具。可以將大量香港地址拆細成你想要的格式。  
+
 網站：[bit.ly/hkaddressparser](http://bit.ly/hkaddressparser)  
 
 ## 簡介 Overview
@@ -24,14 +26,15 @@
 [地址搜尋服務](https://data.gov.hk/tc-data/dataset/hk-ogcio-st_div_02-als) （政府資訊科技總監辦公室）  
 [地理位置搜尋應用程式介面](https://geodata.gov.hk/gs/locationSearchAPI?l=zh-Hant-HK) （地政總署） 
 
+## 等你幫手 We need your help!
+搜尋準確度取決於香港政府資料一線通[地址搜尋服務](https://data.gov.hk/tc-data/dataset/hk-ogcio-st_div_02-als)的數據質素，如發現有地址遺漏，請直接向[政府資訊科技總監辦公室](https://data.gov.hk/tc/feedback)指正。相反，如地址搜尋服務有收錄相關地址資料，但香港地址解析器未有顯示結果，任何查詢、功能建議，請向[我們](https://goo.gl/forms/r6bdJHG228IZTgIZ2)反映。　　
+
 ## 版本 Versions 
 [Release 1.0 (2019-01-16)](https://g0vhk-io.github.io/HKAddressParser/)  
 Release 0.3 (2018-12-22)  
 Release 0.2 (2018-11-25)  
 Release 0.1 (2018-11-07)  
 
-## 等你幫手 We need your help!
-如有查詢、功能建議，歡迎到([此](https://goo.gl/forms/r6bdJHG228IZTgIZ2))留言　　
 
 - Mapping sub-districts into district council constituency area, please refer to this [spreadsheet](
 https://docs.google.com/spreadsheets/d/1mNui-FsnnEiIXAGA-UBalqjywyBGhKMly2T9dLDhY7U/edit#gid=415942179)
@@ -39,9 +42,6 @@ https://docs.google.com/spreadsheets/d/1mNui-FsnnEiIXAGA-UBalqjywyBGhKMly2T9dLDh
 
 [Collaction 項目頁](https://www.collaction.hk/s/hkaddressparser/)
 
-
-## 貢獻者 Contributors 
-- 
 
 ## File structure
 ```
