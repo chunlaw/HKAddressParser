@@ -16,7 +16,7 @@
           <h2 class="teal--text">三大功能</h2>
 
           <v-layout row wrap>
-            <v-flex xs4>
+            <v-flex xs12 md4>
               <v-card color="rgba(255, 255, 255, 0)" flat>
                 <v-card-text>
                   <h3>中英翻譯地址</h3>
@@ -25,7 +25,7 @@
               </v-card>
             </v-flex>
 
-            <v-flex xs4>
+            <v-flex xs12 md4>
               <v-card color="rgba(255, 255, 255, 0)" flat>
                 <v-card-text>
                   <h3>地址轉座標</h3>
@@ -34,7 +34,7 @@
               </v-card>
             </v-flex>
 
-            <v-flex xs4>
+            <v-flex xs12 md4>
               <v-card color="rgba(255, 255, 255, 0)" flat>
                 <v-card-text>
                   <h3>統一地址格式</h3>
