@@ -44,13 +44,18 @@
             </v-flex>
           </v-layout>
 
-          <h2 class="teal--text">我們是誰</h2>
+          <h2 class="teal--text">搜尋準確度</h2>
 
-          <p>如有查詢、功能建議，歡迎到<a
-                class="teal--text text--darken-2"
-                href="https://goo.gl/forms/r6bdJHG228IZTgIZ2"
-                target="_blank"
-              >此</a>留言。</p>
+          <p>搜尋準確度取決於香港政府資料一線通<a class="teal--text text--darken-2"
+              href="https://data.gov.hk/tc-data/dataset/hk-ogcio-st_div_02-als"
+              target="_blank"
+          >地址搜尋服務</a>的數據質素，如發現有地址遺漏，請直接向<a class="teal--text text--darken-2"
+              href="https://data.gov.hk/tc/feedback"
+              target="_blank"
+          >政府資訊科技總監辦公室</a>指正。相反，如地址搜尋服務有收錄相關地址資料，但香港地址解析器未有顯示結果，請向<a class="teal--text text--darken-2"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSc4c6TaOYMw3B0H_dZ0JP21kKeLgXfCZZKZvXm3MOcapW2giA/viewform"
+              target="_blank"
+          >我們</a>反映。</p>
 
           <h2 class="teal--text">採用開放數據</h2>
           <ul>
