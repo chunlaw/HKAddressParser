@@ -20,7 +20,7 @@ function trackEvent(component, param) {
 /**
  * Track the user has initialize a single search
  * @param {Component} component
- * @param {String} address
+ * @param {int} searchSize
  */
 export const trackMapSearch = function (component, searchSize) {
   trackEvent(component, {
@@ -32,8 +32,8 @@ export const trackMapSearch = function (component, searchSize) {
 
 /**
  * Track the user has selected the pin in map mode
- * @param {*} component
- * @param {*} address
+ * @param {Component} component
+ * @param {String} address
  */
 export const trackPinSelected = function (component, address) {
   trackEvent(component, {
@@ -46,7 +46,7 @@ export const trackPinSelected = function (component, address) {
 /**
  * TODO: user give us some rating
  * @param {Component} component
- * @param {*} address
+ * @param {String} address
  * @param {int} satisfication 1-100. 100 = satisfy
  */
 export const trackSingleSearchSatisfication = function (component, address, satisfication) {
@@ -59,8 +59,8 @@ export const trackSingleSearchSatisfication = function (component, address, sati
 
 /**
  * Track the user has initialize a batch search
- * @param {*} component
- * @param {*} addresses
+ * @param {Component} component
+ * @param {int} batchSize
  */
 export const trackTableSearch = function (component, batchSize) {
   trackEvent(component, {
@@ -72,8 +72,8 @@ export const trackTableSearch = function (component, batchSize) {
 
 /**
  * Track the user has clicked on the download button
- * @param {*} component
- * @param {*} batchSize
+ * @param {Component} component
+ * @param {int} batchSize
  */
 export const trackDownloadCSV = function (component, batchSize) {
   trackEvent(component, {
@@ -84,7 +84,12 @@ export const trackDownloadCSV = function (component, batchSize) {
 }
 
 
-
+/**
+ * Track the user has toggled a filter option
+ * @param {Component} component
+ * @param {String} optionKey
+ * @param {Boolean} isOn
+ */
 export const trackToggleFilterOption = function (component, optionKey, isOn) {
   trackEvent(component, {
     eventCategory: GA_CATEGORY_SINGLE_SEARCH,
@@ -99,6 +104,7 @@ export const trackToggleFilterOption = function (component, optionKey, isOn) {
  * Track the user has initialize a single search
  * @param {Component} component
  * @param {String} address
+ * @param {Boolean} satisfied
  */
 export const trackSingleSearchSatisfied = function (component, address, satisfied) {
   trackEvent(component, {
