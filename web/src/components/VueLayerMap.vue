@@ -21,7 +21,7 @@
           <vl-geom-point :coordinates="feature.geometry.coordinates"></vl-geom-point>
           <vl-style-box v-if="feature.properties.selected">
             <vl-style-icon
-              :src="images.selectedPin"
+              :src="generateDynamicPin(index, true)"
               :scale="0.5"
               :anchor="[0.1, 0.5]"
               :size="[128, 128]"
@@ -29,7 +29,7 @@
           </vl-style-box>
           <vl-style-box v-else>
             <vl-style-icon
-              :src="images.pin"
+              :src="generateDynamicPin(index, false)"
               :scale="0.5"
               :anchor="[0.1, 0.5]"
               :size="[128, 128]"
@@ -91,7 +91,12 @@
         return this.selectedFeatures[0].properties.index === marker.index;
       },
       featureUpdated: function(features) {
-
+      },
+      generateDynamicPin: function(index, isSelected) {
+        let selectedColor = "FFFFFF";
+        let normalColor = "009688";
+        
+        return "https://chart.googleapis.com/chart?chst=d_map_spin&chld=1.2|0|" + (isSelected == true ? selectedColor : normalColor) + "|32|_|" + ( index + 1 );
       }
     },
     // watch: {
