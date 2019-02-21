@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import AddressResolver from "./../lib/address-resolver";
+import AddressResolver from "./../../../javascript/hk-address-parser/dist/hk-address-parser";
 import asyncLib from "async";
 import asyncify from "async/asyncify";
 import dclookup from "./../utils/dclookup";
@@ -138,7 +138,7 @@ export default {
 
 async function searchSingleResult(address, key) {
   // //const res = await fetch('http://localhost:8081/search/' + this.address);
-  const records = await AddressResolver.queryAddress(address);
+  const records = await AddressResolver(address);
   // We take only the first record
   if (records.length === 0) {
     // TODO: What happened when there is no results?

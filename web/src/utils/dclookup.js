@@ -7,7 +7,7 @@ export default {
   /**
    * Return the district and subdistrict name
    */
-  dcNameFromCoordinates: (lat, lng) => {
+  dcNameFromCoordinates (lat, lng) {
     const point = turf.point([lng, lat]);
 
 
@@ -21,7 +21,7 @@ export default {
           csubdistrict: feature.properties.SUBDISTIRCT_T,
           esubdistrict: feature.properties.SUBDISTIRCT_E,
         }
-      };
+      }
     }
     return {
       code: 'unknown',
