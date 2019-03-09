@@ -5,9 +5,9 @@
         <v-flex xs12 pa-0 mt-3>
           <h2 class="teal--text heading-2">表格模式</h2>
           <p>請將香港地址貼於下方表格，網站會將地址解析成地區、街道、門牌、大廈、區議會選區等地址資料。輸入地址時，建議加入<span class="amber lighten-4 red--text px-1">街道名稱</span>及<span class="amber lighten-4 red--text px-1">街號</span>以提升搜尋準確度。</p>
-          
+
           <p>你可以按「下載CSV」按鈕，進一步作樞紐分析空間數據，歸納地址集中在哪一地區、哪條街道，從凌亂資料中提煉找出有價值的資訊。</p>
-          
+
           <p>搜尋準確度取決於香港政府資料一線通<a class="teal--text text--darken-2"
               href="https://data.gov.hk/tc-data/dataset/hk-ogcio-st_div_02-als"
               target="_blank"
@@ -68,7 +68,7 @@
 </template>
 
 <script>
-import AddressResolver from "./../lib/address-resolver";
+import AddressResolver from "hk-address-parser";
 import asyncLib from "async";
 import dclookup from "./../utils/dclookup";
 import ogcioHelper from "./../utils/ogcio-helper";
