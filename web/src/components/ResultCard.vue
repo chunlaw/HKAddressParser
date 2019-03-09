@@ -7,9 +7,9 @@
             <p class="grey--text">搜尋地址：{{searchAddress}}</p>
             <h2>{{ result.fullAddress('chi') }}</h2>
             <h3>{{ result.fullAddress('eng') }}</h3>
-              <a 
-              class="grey--text no-underline" 
-              target='_blank' 
+              <a
+              class="grey--text no-underline"
+              target='_blank'
               :href='"https://www.google.com/maps/search/?api=1&query=" + result.coordinate().lat + "," + result.coordinate().lng'>{{ result.coordinate().lat + ", " + result.coordinate().lng }}</a>
 
           </v-card-text>
@@ -80,7 +80,7 @@
 </template>
 
 <script>
-import Address from "./../lib/models/address";
+import { Address } from "hk-address-parser";
 import dclookup from "./../utils/dclookup";
 import ButtonTick from "./ButtonTick";
 import ButtonCross from "./ButtonCross";
