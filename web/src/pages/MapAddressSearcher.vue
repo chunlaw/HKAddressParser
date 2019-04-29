@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import AddressResolver from "./../../../javascript/hk-address-parser/dist/hk-address-parser";
+import AddressResolver from "hk-address-parser";
 import asyncLib from "async";
 import asyncify from "async/asyncify";
 import dclookup from "./../utils/dclookup";
