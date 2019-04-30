@@ -3,6 +3,7 @@
 方便地址轉座標、空間分析、製作地圖的小工具。可以將大量香港地址拆細成你想要的格式。  
 
 網站：[bit.ly/hkaddressparser](http://bit.ly/hkaddressparser)  
+npm package: [hk-address-parser-lib](https://www.npmjs.com/package/hk-address-parser-lib)
 
 ## 簡介 Overview
 為何要拆解地址？假設你在找尋灣仔富德樓的位置，你會用Google地圖搜尋，然後得出地址全名、座標等資料。但如果你分析過千，甚至過萬個文字地址，又要顯示在地圖上，當中格式不統一、中英混雜，難道你要逐一搜尋？
@@ -29,6 +30,8 @@
 ## 等你幫手 We need your help!
 搜尋準確度取決於香港政府資料一線通[地址搜尋服務](https://data.gov.hk/tc-data/dataset/hk-ogcio-st_div_02-als)的數據質素，如發現有地址遺漏，請直接向[政府資訊科技總監辦公室](https://data.gov.hk/tc/feedback)指正。相反，如地址搜尋服務有收錄相關地址資料，但香港地址解析器未有顯示結果，任何查詢、功能建議，請向[我們](https://goo.gl/forms/r6bdJHG228IZTgIZ2)反映。　　
 
+我們已推出npm package：[hk-address-parser-lib](https://github.com/g0vhk-io/hk-address-parser-lib)，歡迎進貢Pull Request。
+
 ## 版本 Versions 
 [Release 1.0 (2019-01-16)](https://g0vhk-io.github.io/HKAddressParser/)  
 Release 0.3 (2018-12-22)  
@@ -42,6 +45,28 @@ https://docs.google.com/spreadsheets/d/1mNui-FsnnEiIXAGA-UBalqjywyBGhKMly2T9dLDh
 
 [Collaction 項目頁](https://www.collaction.hk/s/hkaddressparser/)
 
+## Contributers
+Brian Leung ([@cswbrian](https://github.com/cswbrian))  
+Nandi Wong ([@nandiheath](https://github.com/nandiheath))  
+Wong Wing Kam ([@wingkwong](https://github.com/wingkwong))  
+Kan Omar ([@oktak](https://github.com/oktak))  
+Law Wai Chun ([@chunlaw](https://github.com/chunlaw))  
+Chai ([@ylchan87](https://github.com/ylchan87))  
+UnKnoWn-Consortium ([@UnKnoWn](https://github.com/UnKnoWn-Consortium))  
+
+## Special Thanks
+HoLok Chen  
+Ho Wa Wong ([@howawong](https://github.com/howawong))  
+Ng Benny  
+Lam Wai  
+Himphen Hui Hau Him ([@himphen](https://github.com/himphen))  
+Ha Chi Yeung  
+Samson Lau  
+Carrie Lau  
+Gemini Cheng  
+Sze Ching Wee  
+Yat Tin Sunny Chan  
+Eric Yuen. Lun  
 
 ## File structure
 ```
