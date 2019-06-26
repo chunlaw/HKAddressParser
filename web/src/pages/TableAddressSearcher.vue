@@ -113,8 +113,12 @@ export default {
           value: "subdistrict_name"
         },
         {
-          text: "區議會選區",
-          value: "dc_name"
+          text: "區議會選區(2015)",
+          value: "dc_name_15"
+        },
+        {
+          text: "區議會選區(2019)",
+          value: "dc_name_19"
         },
         {
           text: "緯度",
@@ -146,17 +150,16 @@ export default {
       // TODO: english address
       const results = this.results.map((searchResults, index) => {
         const result = searchResults[0];
+        const dcLookupResult = dclookup.dcNameFromCoordinates(
+            result.coordinate().lat,
+            result.coordinate().lng
+          )
         let json = {
           address: this.addressesToSearch[index],
           full_address: result.fullAddress("chi"),
-          subdistrict_name: dclookup.dcNameFromCoordinates(
-            result.coordinate().lat,
-            result.coordinate().lng
-          ).csubdistrict,
-          dc_name: dclookup.dcNameFromCoordinates(
-            result.coordinate().lat,
-            result.coordinate().lng
-          ).cname,
+          subdistrict_name: dcLookupResult['2015'].csubdistrict,
+          dc_name_15: `${dcLookupResult['2015'].cname} (${dcLookupResult['2015'].code})`,
+          dc_name_19: `${dcLookupResult['2019'].cname} (${dcLookupResult['2019'].code})`,
           lat: result.coordinate().lat,
           lng: result.coordinate().lng
         };

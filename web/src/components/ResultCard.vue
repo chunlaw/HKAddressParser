@@ -36,19 +36,19 @@
                 <span>地區</span>
               </v-list-tile-content>
               <v-list-tile-content class="align-end">
-                <span>{{ district.esubdistrict }}</span>
-                <span>{{ district.csubdistrict }}</span>
+                <span>{{ district['2015'].esubdistrict }}</span>
+                <span>{{ district['2015'].csubdistrict }}</span>
               </v-list-tile-content>
             </v-list-tile>
             <v-divider></v-divider>
             <v-list-tile>
               <v-list-tile-content>
-                <span>District Council Constituency Area</span>
-                <span>區議會選區</span>
+                <span>District Council Constituency Area (2019)</span>
+                <span>區議會選區 (2019)</span>
               </v-list-tile-content>
               <v-list-tile-content class="align-end">
-                <span>{{ district.ename }}</span>
-                <span>{{ district.cname }}</span>
+                <span>{{ district['2019'].ename }}</span>
+                <span>{{ district['2019'].cname }} ({{ district['2019'].code }})</span>
               </v-list-tile-content>
             </v-list-tile>
             <v-divider></v-divider>
