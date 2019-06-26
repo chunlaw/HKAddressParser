@@ -68,7 +68,7 @@
 </template>
 
 <script>
-import AddressResolver from "hk-address-parser";
+import * as AddressResolver from 'hk-address-parser-lib';
 import asyncLib from "async";
 import dclookup from "./../utils/dclookup";
 import ogcioHelper from "./../utils/ogcio-helper";
@@ -251,7 +251,7 @@ export default {
 async function searchSingleResult(address, key) {
   // //const res = await fetch('http://localhost:8081/search/' + this.address);
 
-  const records = await AddressResolver.queryAddress(address);
+  const records = await AddressResolver.parse(address);
   this.$set(this.results, key, records);
   if (records && records.length > 0) {
     const result = records[0];
