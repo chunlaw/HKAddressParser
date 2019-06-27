@@ -44,7 +44,7 @@
   import {
     findPointOnSurface
   } from 'vuelayers/lib/ol-ext'
-  import { Address } from "hk-address-parser";
+  import { Address } from "hk-address-parser-lib";
   import ResultCard from "./ResultCard";
   export default {
     props: {

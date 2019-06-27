@@ -1,6 +1,6 @@
 const { expect } = require('chai');
 import * as turf from "@turf/turf"
-import { Address } from "hk-address-parser";
+import { Address } from "hk-address-parser-lib";
 
 
 const RAD = Math.PI / 180.0;

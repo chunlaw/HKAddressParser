@@ -80,7 +80,7 @@
 </template>
 
 <script>
-import { Address } from "hk-address-parser";
+import { Address } from "hk-address-parser-lib";
 import dclookup from "./../utils/dclookup";
 import ButtonTick from "./ButtonTick";
 import ButtonCross from "./ButtonCross";
