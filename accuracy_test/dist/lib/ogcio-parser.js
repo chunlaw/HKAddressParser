@@ -137,7 +137,6 @@ function normalizeResponse(responseFromOGCIO) {
 
 function tryToMatchAnyNumber(address, number) {
         
-  console.log(address)
   var matches = address.match(/\d+/g);
 
   if (matches === null) {
