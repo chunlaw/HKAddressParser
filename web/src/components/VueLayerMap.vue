@@ -44,7 +44,7 @@
   import {
     findPointOnSurface
   } from 'vuelayers/lib/ol-ext'
-  import Address from './../lib/models/address';
+  import { Address } from "hk-address-parser-lib";
   import ResultCard from "./ResultCard";
   export default {
     props: {
@@ -95,7 +95,7 @@
       generateDynamicPin: function(index, isSelected) {
         let selectedColor = "FFFFFF";
         let normalColor = "009688";
-        
+
         return "https://chart.googleapis.com/chart?chst=d_map_spin&chld=1.2|0|" + (isSelected == true ? selectedColor : normalColor) + "|32|_|" + ( index + 1 );
       }
     },

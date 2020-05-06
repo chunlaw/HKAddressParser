@@ -5,9 +5,9 @@
         <v-flex xs12 pa-0 mt-3>
           <h2 class="teal--text heading-2">表格模式</h2>
           <p>請將香港地址貼於下方表格，網站會將地址解析成地區、街道、門牌、大廈、區議會選區等地址資料。輸入地址時，建議加入<span class="amber lighten-4 red--text px-1">街道名稱</span>及<span class="amber lighten-4 red--text px-1">街號</span>以提升搜尋準確度。</p>
-          
+
           <p>你可以按「下載CSV」按鈕，進一步作樞紐分析空間數據，歸納地址集中在哪一地區、哪條街道，從凌亂資料中提煉找出有價值的資訊。</p>
-          
+
           <p>搜尋準確度取決於香港政府資料一線通<a class="teal--text text--darken-2"
               href="https://data.gov.hk/tc-data/dataset/hk-ogcio-st_div_02-als"
               target="_blank"
@@ -68,7 +68,7 @@
 </template>
 
 <script>
-import AddressResolver from "./../lib/address-resolver";
+import * as AddressResolver from 'hk-address-parser-lib';
 import asyncLib from "async";
 import dclookup from "./../utils/dclookup";
 import ogcioHelper from "./../utils/ogcio-helper";
@@ -113,8 +113,12 @@ export default {
           value: "subdistrict_name"
         },
         {
-          text: "區議會選區",
-          value: "dc_name"
+          text: "區議會選區(2015)",
+          value: "dc_name_15"
+        },
+        {
+          text: "區議會選區(2019)",
+          value: "dc_name_19"
         },
         {
           text: "緯度",
@@ -146,17 +150,16 @@ export default {
       // TODO: english address
       const results = this.results.map((searchResults, index) => {
         const result = searchResults[0];
+        const dcLookupResult = dclookup.dcNameFromCoordinates(
+            result.coordinate().lat,
+            result.coordinate().lng
+          )
         let json = {
           address: this.addressesToSearch[index],
           full_address: result.fullAddress("chi"),
-          subdistrict_name: dclookup.dcNameFromCoordinates(
-            result.coordinate().lat,
-            result.coordinate().lng
-          ).csubdistrict,
-          dc_name: dclookup.dcNameFromCoordinates(
-            result.coordinate().lat,
-            result.coordinate().lng
-          ).cname,
+          subdistrict_name: dcLookupResult['2015'].csubdistrict,
+          dc_name_15: `${dcLookupResult['2015'].cname} (${dcLookupResult['2015'].code})`,
+          dc_name_19: `${dcLookupResult['2019'].cname} (${dcLookupResult['2019'].code})`,
           lat: result.coordinate().lat,
           lng: result.coordinate().lng
         };
@@ -251,7 +254,7 @@ export default {
 async function searchSingleResult(address, key) {
   // //const res = await fetch('http://localhost:8081/search/' + this.address);
 
-  const records = await AddressResolver.queryAddress(address);
+  const records = await AddressResolver.parse(address);
   this.$set(this.results, key, records);
   if (records && records.length > 0) {
     const result = records[0];
