@@ -12,7 +12,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
     "@turf/turf": "^5.1.6",
-    "async": "^2.6.1",
+    "async": "^2.6.4",
     "bluebird": "^3.5.3",
     "commander": "^2.19.0",
     "es6-promise": "^4.2.5",
