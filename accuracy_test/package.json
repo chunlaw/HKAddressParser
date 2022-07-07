@@ -19,7 +19,7 @@
     "fast-csv": "^2.4.1",
     "isomorphic-fetch": "^2.2.1",
     "md5": "^2.2.1",
-    "moment": "^2.23.0",
+    "moment": "^2.29.4",
     "proj4": "^2.5.0",
     "request": "^2.88.0"
   },
