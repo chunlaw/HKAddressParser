@@ -13,7 +13,7 @@
     "@turf/turf": "^5.1.6",
     "@vue/cli-plugin-babel": "^3.0.5",
     "@vue/cli-plugin-eslint": "^3.0.5",
-    "@vue/cli-service": "^4.3.1",
+    "@vue/cli-service": "^5.0.8",
     "async": "^2.6.1",
     "hk-address-parser-lib": "^0.3.1",
     "http-server": "^0.12.3",
